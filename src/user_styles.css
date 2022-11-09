@@ -203,3 +203,7 @@ hr {
   justify-content: center;
   align-items: center;
 }
+
+table {
+  background-color: #fff;
+}
