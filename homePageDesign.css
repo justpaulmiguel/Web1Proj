@@ -1,0 +1,119 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+}
+#navBar{
+}
+#sideNav {
+    padding-bottom: 60px;
+    display: block;
+    width: 0px;
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.3s;
+    overflow-x: hidden;
+    box-shadow: 0px 0px 3px;
+}
+#sideNav ul {
+    transition: 0.3s;
+    padding-left: 2rem;
+    overflow-x: hidden;
+}
+#sideNav:hover{
+    color: #ECD59C;
+}
+
+#img1
+{
+    z-index: 3;
+    margin: 1rem 1rem 1rem;
+    height: 20px;
+    position: fixed;
+}
+#img1:hover
+{
+    cursor: pointer;
+}
+
+#brandTitle
+{
+    z-index: 2;
+    font-family: Raleway, sans-serif;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#home
+{
+    background-color: rgb(232, 232, 232);
+    padding-bottom: 4rem;
+}
+#homePage
+{
+    font-size: 3rem;
+    font-family: Raleway,sans-serif;
+    margin-top: 7rem;
+    padding-left: 4rem;
+}
+
+
+#myCarousel
+{
+    margin-right: 4rem;
+    margin-left: 2rem;
+    margin-top: 4rem;
+}
+/*HOME END HERE*/
+
+/*ABOUT US START HERE*/
+#aboutUs{
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+}
+#aboutUsTitle{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+#aboutUsContent{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 25px;
+}
+/*ABOUT US ENDS HERE*/
+
+/*CONTACT US STARTS HERE*/
+#contactUs{
+    background-color: #ECD59C;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+}
+#contactUsTitle{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+#contactUsContent{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 25px;
+}
+#contactUsContent a{
+    color: black;
+}
+
+
+
+
