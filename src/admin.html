@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- TODO Add label? tag so that whole row will be selected. -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -70,11 +70,166 @@
       </aside>
       <main>
         <h1 class="top-heading-text">APPOINTMENTS</h1>
-        <section>
+        <section class="section table-section approval-section">
           <h2>FOR APPROVAL</h2>
+          <div class="top-table-group">
+            <div class="selected-text-wrapper">
+              <p>Selected: <span class="selected-span-text">10</span> items</p>
+            </div>
+            <div class="table-btn-wrapper">
+              <!-- TODO add form here -->
+              <button href="#" class="accept-selected-btn btn">
+                Accept Selected
+              </button>
+              <button href="#" class="remove-selected-btn btn">
+                Remove Selected
+              </button>
+            </div>
+          </div>
+          <table
+            border="2"
+            cellpadding="8"
+            cellspacing="0"
+            class="table-approval_table table"
+          >
+            <tr>
+              <th>APPROVE</th>
+              <th>TRANSACTION NO.</th>
+              <th>NAME</th>
+              <th>CONTACT NO.</th>
+              <th>DATE</th>
+              <th>TIME</th>
+            </tr>
+
+            <tr align="center">
+              <td>
+                <input name="approved" value="sampleID01" type="checkbox" />
+              </td>
+              <td>006</td>
+              <td>Vincent Carmelo</td>
+              <td>0919 368 6789</td>
+              <td>Nov. 15, 2022</td>
+              <td>12:30 PM</td>
+            </tr>
+
+            <tr align="center">
+              <td>
+                <input name="approved" value="sampleID01" type="checkbox" />
+              </td>
+              <td>007</td>
+              <td>Jeff Lanuza</td>
+              <td>0912 613 8889</td>
+              <td>Nov. 18, 2022</td>
+              <td>1:00 PM</td>
+            </tr>
+
+            <tr align="center">
+              <td>
+                <input name="approved" value="sampleID03" type="checkbox" />
+              </td>
+              <td>008</td>
+              <td>Paul Miguel</td>
+              <td>0934 455 1331</td>
+              <td>Dec. 01, 2022</td>
+              <td>4:00 PM</td>
+            </tr>
+
+            <tr align="center">
+              <td>
+                <input name="approved" value="sampleID02" type="checkbox" />
+              </td>
+              <td>009</td>
+              <td>Wil Miranda</td>
+              <td>0956 875 6768</td>
+              <td>Jan. 01, 2023</td>
+              <td>8:00 AM</td>
+            </tr>
+
+            <tr align="center">
+              <td>
+                <input name="approved" value="sampleID05" type="checkbox" />
+              </td>
+              <td>010</td>
+              <td>Michaella Ong</td>
+              <td>0933 390 4434</td>
+              <td>Dec. 23, 2022</td>
+              <td>10:00 AM</td>
+            </tr>
+          </table>
         </section>
+        <hr />
         <section>
           <h2>SCHEDULED</h2>
+          <div class="top-table-group">
+            <div class="selected-text-wrapper">
+              <p>Selected: <span class="selected-span-text">10</span> items</p>
+            </div>
+            <div class="table-btn-wrapper">
+              <!-- TODO add form here -->
+              <button href="#" class="accept-selected-btn btn">
+                Accept Selected
+              </button>
+              <button href="#" class="remove-selected-btn btn">
+                Remove Selected
+              </button>
+            </div>
+          </div>
+
+          <table border="2" cellpadding="8" cellspacing="0">
+            <tr>
+              <th>APPROVED</th>
+              <th>TRANSACTION NO.</th>
+              <th>NAME</th>
+              <th>CONTACT NO.</th>
+              <th>DATE</th>
+              <th>TIME</th>
+            </tr>
+
+            <tr align="center">
+              <td><input type="checkbox" /></td>
+              <td>001</td>
+              <td>Reagan Bentley</td>
+              <td>0919 368 6789</td>
+              <td>Nov. 10, 2022</td>
+              <td>12:30 PM</td>
+            </tr>
+
+            <tr align="center">
+              <td><input type="checkbox" /></td>
+              <td>002</td>
+              <td>Finley Bruce</td>
+              <td>0912 613 8889</td>
+              <td>Nov. 12, 2022</td>
+              <td>1:00 PM</td>
+            </tr>
+
+            <tr align="center">
+              <td><input type="checkbox" /></td>
+              <td>003</td>
+              <td>Rishi David</td>
+              <td>0934 455 1331</td>
+              <td>Dec. 06, 2022</td>
+              <td>4:00 PM</td>
+            </tr>
+
+            <tr align="center">
+              <td><input type="checkbox" /></td>
+              <td>004</td>
+              <td>Chelsea Cruz</td>
+              <td>0956 875 6768</td>
+              <td>Jan. 24, 2023</td>
+              <td>8:00 AM</td>
+            </tr>
+
+            <tr align="center">
+              <td><input type="checkbox" /></td>
+              <td>005</td>
+              <td>Slade Cristobal</td>
+              <td>0933 390 4434</td>
+              <td>Dec. 17, 2022</td>
+              <td>10:00 AM</td>
+            </tr>
+          </table>
         </section>
       </main>
       <footer>
