@@ -24,3 +24,4 @@ function sidebarf2()
         sideBarToggle.style.width="0px";
     }
 }
+
