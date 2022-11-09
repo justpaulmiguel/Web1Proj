@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- TODO Add label? tag so that whole row will be selected. -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -67,25 +66,25 @@
         </ul>
       </aside>
       <main>
-        <h1 class="top-heading-text">Home</h1>
-        <section class="section greeting-wrapper">
-          <h2>Good to see you,</h2>
-          <h3>Paul Justine</h3>
-        </section>
-        <section class="schedule-wrapper">
-          <p>Your next approved schedule would be on:</p>
-          <p class="heading-date">9 AM Next Monday</p>
-          <p class="subheading-date">July 12 2022</p>
-          <div class="details-wrapper">
-            <p>Dental Service</p>
-            <p class="outlined-text">Oral Proposomething</p>
-            <p>Branch</p>
-            <p class="outlined-text">San Simon Branch</p>
-          </div>
-        </section>
-        <hr />
-        <section class="approval-wrapper">
-          <!-- TODO Finish this later -->
+        <div class="top-heading-text">
+          <h1>Booking</h1>
+        </div>
+        <section class="booking-wrapper">
+          <form action="">
+            <select name="branch" id="branch-option">
+              <option value="San Simon">San Simon</option>
+              <option value="Mexico">Mexico</option>
+            </select>
+            <select name="date" id="date-option">
+              <option value="">February 10 2022</option>
+              <option value="Mexico">February 11 2022</option>
+            </select>
+            <select name="service" id="service-option">
+              <option value="">Oral Check-up</option>
+              <option value="Mexico">Braces</option>
+            </select>
+            <button type="submit">Submit</button>
+          </form>
         </section>
       </main>
       <footer>

@@ -192,3 +192,14 @@ hr {
   text-align: center;
   font-weight: 700;
 }
+
+/* * User_bookings */
+.booking-wrapper form {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #fff;
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  align-items: center;
+}
