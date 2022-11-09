@@ -1,0 +1,109 @@
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+
+  min-height: 100vh;
+}
+
+.grid-wrap {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(10px, 3fr);
+
+  grid-template-rows: min-content 1fr min-content;
+  gap: 1px;
+  min-height: inherit;
+}
+
+header {
+  grid-column: 1 / -1;
+  background: #ffcdd2;
+}
+aside {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  background: #e1bee7;
+}
+main {
+  grid-column: 2 / 3;
+  grid-row: 2/3;
+  background: #dcedc8;
+  min-height: 100vh;
+}
+
+footer {
+  grid-column: 1 / -1;
+  background: #ffecb3;
+}
+
+/* sidebar */
+.options-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+aside {
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  padding-right: 0;
+}
+.options-bar li {
+  border-bottom: 2px solid #ecd59c;
+  margin-bottom: 1rem;
+}
+.options-bar a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-family: 600;
+  display: flex;
+  gap: 30px;
+}
+
+/* the icons */
+.icon-box span {
+  font-size: 2rem;
+  width: 1rem;
+  padding-right: 10px;
+}
+
+/* Heading */
+.top-heading-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 2.8em;
+}
+
+main {
+  font-family: "Inter";
+}
