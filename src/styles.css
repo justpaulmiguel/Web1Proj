@@ -153,7 +153,12 @@ table tr:hover {
 .remove-selected-btn {
   color: #1e1e1e;
   background-color: transparent;
-  border: 1px solid #1e1e1e;
+  border: 1px solid transparent;
+}
+.remove-selected-btn:hover {
+  border: 1px solid #c90101;
+  background-color: #c90101;
+  color: #fff;
 }
 .selected-text-wrapper {
   font-weight: 600;
