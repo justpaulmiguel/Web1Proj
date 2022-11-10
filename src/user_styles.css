@@ -3,7 +3,7 @@
 }
 body {
   margin: 0;
-
+  font-family: "Poppins SemiBold";
   min-height: 100vh;
 }
 
@@ -35,16 +35,10 @@ main {
 
 footer {
   grid-column: 1 / -1;
-  background: #ffecb3;
 }
 
 /* sidebar */
-.options-bar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1.5rem;
-}
+
 aside {
   background-color: #fff;
   display: flex;
@@ -53,13 +47,19 @@ aside {
   padding: 20px;
   padding-right: 0;
 }
+.options-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
 
 .options-bar li {
   border-bottom: 2px solid #ecd59c;
   margin-bottom: 1rem;
 }
 .options-bar a {
-  color: black;
+  color: #1e1e1e;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   font-family: 600;
@@ -72,6 +72,49 @@ aside {
   font-size: 2rem;
   width: 1rem;
   padding-right: 10px;
+}
+.header-title {
+  color: #a35709;
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.title-text {
+  font-family: "Poppins SemiBold", sans-serif;
+  font-size: 1.2em;
+}
+footer {
+  background-color: #a35709;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+footer .logo {
+  background-color: #fff;
+  color: #1e1e1e;
+}
+.contacts-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.contact-details.-wrapper {
+  margin: 0;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: #a35709;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
 /* Heading used on h1*/
@@ -86,8 +129,10 @@ header {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  padding-bottom: 0;
+
+  border-bottom: 2px solid #ff8303;
 }
 .sign-in-btn-wrapper {
 }
@@ -120,8 +165,11 @@ main {
   padding: 25px;
   color: #a35709;
   background-color: #f0e3ca;
+  padding-bottom: 50px;
 }
-
+main > section {
+  padding-left: 30px;
+}
 /* Tables */
 table {
   border: none;
