@@ -7,6 +7,8 @@ body {
   min-height: 100vh;
 }
 
+/* Values of the strucure of the page.
+ */
 .grid-wrap {
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(10px, 3fr);
@@ -14,11 +16,11 @@ body {
   grid-template-rows: min-content 1fr min-content;
   gap: 1px;
   min-height: inherit;
+  position: relative;
 }
 
 header {
   grid-column: 1 / -1;
-  background: #ffcdd2;
 }
 aside {
   grid-column: 1 / 2;
@@ -51,6 +53,7 @@ aside {
   padding: 20px;
   padding-right: 0;
 }
+
 .options-bar li {
   border-bottom: 2px solid #ecd59c;
   margin-bottom: 1rem;
@@ -64,7 +67,7 @@ aside {
   gap: 30px;
 }
 
-/* the icons */
+/* sidebar  icons */
 .icon-box span {
   font-size: 2rem;
   width: 1rem;
@@ -78,6 +81,31 @@ aside {
   font-size: 2.8em;
   color: #a35709;
 }
+
+header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-bottom: 0;
+}
+.sign-in-btn-wrapper {
+}
+#sign-out-btn {
+  color: #ff8303;
+  background-color: #fff;
+  border: 0;
+  padding: 15px 25px;
+  transition: all 0.3s ease;
+}
+#sign-out-btn:hover {
+  background-color: #e05c2a;
+  color: #fff;
+}
+#sign-out-btn:active {
+  background-color: #a35709;
+}
+
 /* * Home Section */
 .section-greeting-wrapper h1 {
   margin-top: 0;
@@ -125,8 +153,22 @@ table tr:hover {
   background-color: #fff;
   border: none;
   padding: 18px 20px;
+  font-family: "Poppins", sans-serif;
+}
+.btn:enabled {
+  transition: all 0.2s ease-in;
+  transition: color 0.2s ease-in-out;
 }
 
+/* * Generic btn transistion */
+
+.btn:enabled:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 6px rgba(2, 2, 2, 0.213);
+}
+.btn:active {
+  transform: scale(0.9);
+}
 /* Selected buttons */
 .top-table-group {
   display: flex;
@@ -301,14 +343,9 @@ details[open] summary {
 
 /* * Cancel Btn */
 .cancel-schedule-btn {
-  padding: 15px;
+  padding: 20px;
 }
 .cancel-schedule-btn:disabled {
   opacity: 0.8;
   color: #aaa;
-}
-
-/* main sections  */
-main > section {
-  margin-left: 20px;
 }
