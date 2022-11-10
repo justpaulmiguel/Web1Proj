@@ -71,16 +71,26 @@ aside {
   padding-right: 10px;
 }
 
-/* Heading */
+/* Heading used on h1*/
 .top-heading-text {
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins SemiBold", sans-serif;
   font-weight: 800;
   font-size: 2.8em;
+  color: #a35709;
+}
+/* * Home Section */
+.section-greeting-wrapper h1 {
+  margin-top: 0;
+  color: #ff8303;
+}
+.section-greeting-wrapper h2 {
+  margin: 0;
 }
 
 main {
   font-family: "Poppins";
   padding: 25px;
+  color: #a35709;
   background-color: #f0e3ca;
 }
 
@@ -201,9 +211,64 @@ hr {
   display: flex;
   flex-flow: wrap column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 35px;
+  color: #a35709;
+  gap: 10px;
+  border-radius: 15px;
 }
 
 table {
   background-color: #fff;
+}
+
+/* booking form */
+.input-wrapper {
+  display: flex;
+  flex-flow: nowrap column;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+.input-wrapper label {
+  font-weight: 800;
+}
+.input-wrapper select,
+.input-wrapper .fieldset-wrapper {
+  margin-left: 50px;
+}
+.booking-select-input {
+  border: 2px solid #a35709;
+  width: 80%;
+  padding: 10px;
+  background-color: transparent;
+  color: #ff8303;
+  font-size: 1.2rem;
+  font-family: "Poppins SemiBold", sans-serif;
+  border-radius: 15px;
+}
+
+.form-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+}
+.submit-btn {
+  color: #fff;
+  background-color: #ff8303;
+  padding: 10px 35px;
+}
+.form-btn-wrapper .reset-btn {
+  position: absolute;
+  right: 0;
+}
+
+.form-btn-wrapper .reset-btn:hover {
+  color: #c90101;
+}
+
+.fieldset-wrapper {
+  display: flex;
+  flex-flow: row wrap;
 }
