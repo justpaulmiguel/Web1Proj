@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- TODO Add label? tag so that whole row will be selected. -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -47,7 +46,7 @@
             >
           </li>
           <li>
-            <a href="user_bookings.html"
+            <a href="bookings.html"
               ><div class="icon-box">
                 <span class="material-icons"> event </span>
               </div>
@@ -80,21 +79,26 @@
 
           <h1 class="top-heading-text">Paul Justine</h1>
         </section>
+
         <section class="schedule-wrapper">
           <p>Your next approved schedule would be on:</p>
           <p class="heading-date">9 AM Next Monday</p>
           <p class="subheading-date">July 12 2022</p>
-          <div class="details-wrapper">
-            <p>Dental Service</p>
-            <p class="outlined-text">Oral Proposomething</p>
-            <p>Branch</p>
-            <p class="outlined-text">San Simon Branch</p>
+          <div class="schedule-details-wrapper">
+            <div class="detail-wrapper">
+              <p>Dental Service</p>
+              <p class="outlined-text">Oral Prophylaxis</p>
+            </div>
+            <div class="detail-wrapper">
+              <p>Branch</p>
+              <p class="outlined-text">San Simon Branch</p>
+            </div>
           </div>
         </section>
 
-        <section class="approval-wrapper">
-          <!-- TODO Finish this later -->
-        </section>
+        <!-- <section class="approval-wrapper">
+          TODO Finish this later
+        </section> -->
       </main>
       <footer>
         <div class="footer-wrapper">
@@ -113,7 +117,47 @@
         <p>All Rights Reserved © 2022</p>
       </footer>
     </div>
+
+    <!--  Modal For Signout Btn -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close-icon">&times;</span>
+        <div class="confimation">
+          <p>Are sure you want to Log Out?</p>
+          <div class="confirm-btn-wrapper">
+            <button class="btn modal-yes-btn">Yes</button>
+            <button class="btn modal-no-btn">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Signout Modal Script -->
-    <script></script>
+    <script>
+      // Get the modal
+      const modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      const btn = document.getElementById("sign-out-btn");
+
+      // Get the <span> element that closes the modal
+      const span = document.querySelector(".close-icon");
+      const noBtn = document.querySelector(".modal-no-btn");
+
+      btn.onclick = () => {
+        modal.style.display = "block";
+      };
+      span.onclick = () => {
+        modal.style.display = "none";
+      };
+      noBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+      window.onclick = (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>

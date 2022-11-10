@@ -204,8 +204,8 @@ table tr:hover {
   background-color: #fff;
   border: none;
   padding: 18px 20px;
-  transition: all 0.2s ease-in;
-  transition: color 0.2s ease-in-out;
+
+  transition: all 0.2s ease-in-out;
 
   font-family: "Poppins", sans-serif;
 }
@@ -244,7 +244,7 @@ table tr:hover {
   font-weight: 600;
 }
 .selected-span-text {
-  color: #e05c2a;
+  color: #ff8303;
   font-weight: 800;
 }
 
@@ -277,15 +277,21 @@ hr {
 .subheading-date {
   text-align: center;
 }
-.details-wrapper {
+.schedule-details-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+.detail-wrapper {
   display: flex;
   flex-direction: column;
-  width: fit-content;
-  gap: 10px;
 }
-.details-wrapper > p {
+.detail-wrapper p {
   margin: 0;
+  text-align: center;
 }
+
 .outlined-text {
   background-color: #a35709;
   color: #fff;
@@ -358,7 +364,8 @@ table {
 }
 
 .form-btn-wrapper .reset-btn:hover {
-  color: #c90101;
+  background-color: #c90101;
+  color: #fff;
 }
 
 .fieldset-wrapper {
@@ -398,4 +405,76 @@ details[open] summary {
 .cancel-schedule-btn:disabled {
   opacity: 0.8;
   color: #aaa;
+}
+
+/* * MODAL (FOR SIGNOUT BTN */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+.confirm-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.modal-content .btn {
+  padding: 15px 40px;
+}
+.modal-yes-btn {
+  background-color: #a35709;
+  color: #fff;
+}
+.modal-no-btn {
+  background-color: transparent;
+  color: #c90101;
+}
+.modal-no-btn:hover {
+  background-color: #c90101;
+  color: #fff;
+}
+/* The Close Button */
+.close-icon {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-icon:hover,
+.close-icon:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+@keyframes slideIn {
+  from {
+    margin-top: 300px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+
+    opacity: 1;
+  }
 }

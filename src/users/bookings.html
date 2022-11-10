@@ -46,7 +46,7 @@
             >
           </li>
           <li>
-            <a href="user_bookings.html"
+            <a href="bookings.html"
               ><div class="icon-box">
                 <span class="material-icons"> event </span>
               </div>
@@ -193,5 +193,46 @@
         <p>footer stuff</p>
       </footer>
     </div>
+    <!--  Modal For Signout Btn -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close-icon">&times;</span>
+        <div class="confimation">
+          <p>Are sure you want to Log Out?</p>
+          <div class="confirm-btn-wrapper">
+            <button class="btn modal-yes-btn">Yes</button>
+            <button class="btn modal-no-btn">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Signout Modal Script -->
+    <script>
+      // Get the modal
+      const modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      const btn = document.getElementById("sign-out-btn");
+
+      // Get the <span> element that closes the modal
+      const span = document.querySelector(".close-icon");
+      const noBtn = document.querySelector(".modal-no-btn");
+
+      btn.onclick = () => {
+        modal.style.display = "block";
+      };
+      span.onclick = () => {
+        modal.style.display = "none";
+      };
+      noBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+      window.onclick = (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>
