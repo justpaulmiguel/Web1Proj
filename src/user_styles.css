@@ -121,11 +121,12 @@ table tr:hover {
   border-radius: 16px;
   font-family: inherit;
   font-weight: bold;
-  color: #1e1e1e;
-  background-color: transparent;
+  color: #a35709;
+  background-color: #fff;
   border: none;
   padding: 18px 20px;
 }
+
 /* Selected buttons */
 .top-table-group {
   display: flex;
@@ -296,4 +297,18 @@ details[open] {
 details[open] summary {
   border-bottom: 1px solid #aaa;
   margin-bottom: 0.5em;
+}
+
+/* * Cancel Btn */
+.cancel-schedule-btn {
+  padding: 15px;
+}
+.cancel-schedule-btn:disabled {
+  opacity: 0.8;
+  color: #aaa;
+}
+
+/* main sections  */
+main > section {
+  margin-left: 20px;
 }
