@@ -107,7 +107,7 @@ body.viewport-lg {
 
 /*HOME END HERE*/
 
-
+/*login signup modal starts here*/
 .modal-content {
     box-shadow: 2px 2px 10px #ECD59C;
     border-color: #E05C2A;
@@ -185,6 +185,84 @@ body.viewport-lg {
     transform: translate(-50%, 10%);
     overflow: hidden;
 }
+/*login signup modal ends here*/
+
+
+/*Services Starts Here*/
+#services {
+    background-color: #ECD59C;
+    text-align: center;
+    position: sticky;
+    display: block;
+    size: 100%;
+    padding-top: 3rem;
+    padding-bottom: 11rem;
+}
+
+#servicesTitle {
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+#servicesContent {
+    height: 100%;
+    padding: 5px;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 18px;
+}
+
+
+
+.theService1 p {
+    color: #ECD59C;
+    background: #41423D;
+    border-radius: 20px;
+    overflow-y: hidden;
+    height: 250px;
+    text-decoration: none;
+    box-shadow: 0px 0px 3px #41423D;
+    transition: .5s;
+    border: solid white 1px;
+}
+
+.theService1 p:hover {
+    
+    height: 350px;
+    overflow-y:scroll;
+    box-shadow: 0px 0px 10px #121212;
+    border: solid white 1px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+
+p img {
+    box-shadow: 0px 0px 20px#121212;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 221px;
+    border-radius: 10px;
+}
+
+p {
+    align-content: center;
+    align-items: center;
+    padding: 23px 1rem 1rem 1rem;
+}
+/*Services ends here*/
 
 /*ABOUT US START HERE*/
 #aboutUs {
@@ -211,70 +289,8 @@ body.viewport-lg {
 
 /*ABOUT US ENDS HERE*/
 
-#services {
-    background-color: #ECD59C;
-    text-align: center;
-    position: sticky;
-    display: block;
-    size: 100%;
-    padding-top: 3rem;
-    padding-bottom: 11rem;
-}
-
-#servicesTitle {
-    margin-left: 6rem;
-    margin-right: 6rem;
-    font-size: 5rem;
-    margin-bottom: 1rem;
-}
-
-#servicesContent {
-    height: 100%;
-    padding: 5px;
-    margin-left: 6rem;
-    margin-right: 6rem;
-    font-size: 18px;
-}
-
-.theService1 p {
-    color: #ECD59C;
-    background: #41423D;
-    border-radius: 20px;
-    overflow-y: hidden;
-    height: 250px;
-    text-decoration: none;
-    box-shadow: 0px 0px 3px #41423D;
-    transition: .5s;
-    border: solid white 1px;
-}
-.theService1 ::-webkit-scrollbar{
-    width: 3px;
-}
 
 
-.theService1 p:hover {
-    
-    height: 350px;
-    overflow-y:scroll;
-    box-shadow: 0px 0px 10px #121212;
-    border: solid white 1px;
-}
-
-p img {
-    box-shadow: 0px 0px 20px#121212;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 221px;
-    border-radius: 10px;
-}
-
-p {
-    align-content: center;
-    align-items: center;
-    padding: 23px 1rem 1rem 1rem;
-}
 
 /*CONTACT US STARTS HERE*/
 #contactUs {
