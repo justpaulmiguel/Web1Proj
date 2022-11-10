@@ -1,121 +1,87 @@
-html,body
-{
+html,
+body {
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     scroll-behavior: smooth;
+    font-family: Raleway, sans-serif;
 }
+
 body.modal-open {
 
     overflow: hidden;
     position: fixed;
 }
+
 body.viewport-lg {
 
-    position: absolute; 
-}
-#navBar{
-}
-#sideNav {
-    display: block;
-    padding-bottom: 60px;
-    background-color: #41423D;
-    width: 0px;
-    z-index: 2;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    transition: 0.3s;
-    overflow-x: hidden;
-    box-shadow: 0px 0px 3px;
-}
-#sideNav ul {
-    transition: 0.3s;
-    padding-left: 2rem;
-    overflow-x: hidden;
-}
-#sideList li{
-    color:#E05C2A;
-}
-#sideNav:hover{
-    color: #ECD59C;
+    position: absolute;
 }
 
-#img1
-{
-    visibility: hidden;
-    z-index: 3;
-    margin: 1rem 1rem 1rem;
-    height: 20px;
-    position: fixed;
-}
-#img1:hover
-{
-    cursor: pointer;
-}
-
-#brandTitle
-{
+#brandTitle {
     z-index: 2;
     font-family: Raleway, sans-serif;
-    background-color:   #ECD59C;
+    background-color: #ECD59C;
     color: #41423D;
     text-align: center;
     font-size: 2rem;
 }
+
 .topnav {
     z-index: 2;
     overflow: hidden;
-    background-color: #f2f2f2;
+    background-color: rgba(12, 12, 12, 0.6);
     position: fixed;
     top: 0px;
     right: 0px;
     left: 0px;
-    
-  }
-  
-  .topnav a {
+
+}
+
+.topnav a {
     float: left;
-    color: #121212;
+    color: #ECD59C;
     text-align: center;
     padding: 14px 16px;
-    text-decoration:none;
+    text-decoration: none;
     font-size: 17px;
-    transition: .5s;
-  }
-  
-   .topnav  a:hover {
-    box-shadow: 0px 0px 5px #b7b7b7;
-  
-  }
+    transition: .4s;
+}
 
-  
-  .split {
+.topnav a:hover {
+    color: white;
+}
+
+.topnav a:active {
+    color: white;
+}
+
+
+.split {
+    padding-right: 14px;
     float: right;
-    
-  }
+}
 
-#home
-{
-    position:relative;
+#home {
+    position: relative;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
-#homePage
-{
+
+#homePage {
     color: #ECD59C;
     position: absolute;
-    transform: translate(15%,0%);
+    transform: translate(15%, 0%);
     z-index: 1;
     font-size: 1.8rem;
-    font-family: Raleway,sans-serif;
+    font-family: Raleway, sans-serif;
 
 }
-#bookButton{
+
+#bookButton {
     background-color: #E05C2A;
     color: white;
     border: none;
@@ -125,14 +91,15 @@ body.viewport-lg {
     border-radius: 5px;
     transition: .5s;
 }
-#bookButton:hover{
+
+#bookButton:hover {
     margin: 20px 5px 20px 5px;
     padding: 10px 4rem 10px 4rem;
     box-shadow: 2px 2px 20px #ECD59C;
 }
-#myCarousel
-{
-    transform: translate(0%,0%);
+
+#myCarousel {
+    transform: translate(0%, 0%);
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -141,41 +108,44 @@ body.viewport-lg {
 /*HOME END HERE*/
 
 
-#modalId{
-}
-.modal-content{
+.modal-content {
     box-shadow: 2px 2px 10px #ECD59C;
     border-color: #E05C2A;
     right: 50%;
     left: 50%;
-    position:absolute;
+    position: absolute;
     transform: translate(-50%, 25%);
-    width: 550px;
+    width: 475px;
 }
-#emailLogIn{
+
+#email,
+#pass,
+#nameSignUp,
+#addSignUp {
+    font-size: 14px;
     outline: none;
     border: none;
 }
-#passLogIn{
-    outline: none;
-    border: none;
-}
-.modal-body{
+
+.modal-body {
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
 .formBorder {
-    background: -webkit-linear-gradient(right, #ECD59C, #E05C2A,#E05C2A);
+    background: -webkit-linear-gradient(right, #ECD59C, #E05C2A, #E05C2A);
     height: 1px;
     width: 100%;
-  }
-.formLayout{
+}
+
+.formLayout {
     text-align: left;
     align-items: left;
     display: flex;
     flex-direction: column;
-  }
-  #submit {
+}
+
+#submit {
     color: white;
     background-color: #E05C2A;
     border: none;
@@ -184,129 +154,161 @@ body.viewport-lg {
     padding: 10px 25px 10px 25px;
     border-radius: 5px;
     transition: .5s;
-  }
-  #submit:hover {
+}
+
+#submit:hover {
     margin: 20px 5px 20px 5px;
     padding: 10px 5rem 10px 5rem;
-    box-shadow:2px 2px 20px #ECD59C;
-  }
-  #submitLogin{
+    box-shadow: 2px 2px 20px #ECD59C;
+}
+
+#submitLogin {
     text-align: center;
     align-items: center;
-  }
+}
 
-  #submit:hover {
+#submit:hover {
     margin: 20px 5px 20px 5px;
     padding: 10px 5rem 10px 5rem;
-    box-shadow:2px 2px 20px #ECD59C;
-  }
-  #submitLogin{
+    box-shadow: 2px 2px 20px #ECD59C;
+}
+
+#submitLogin {
     text-align: center;
     align-items: center;
-  }
+}
 
-#modalSignUp
-{
+#modalSignUp {
     right: 100%;
     left: 50%;
-    position:fixed;
+    position: fixed;
     transform: translate(-50%, 10%);
     overflow: hidden;
 }
 
-
-
-
-
-
 /*ABOUT US START HERE*/
-#aboutUs{
+#aboutUs {
+    text-align: center;
     position: relative;
     width: 100%;
     size: 100%;
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
-#aboutUsTitle{
+
+#aboutUsTitle {
     margin-left: 6rem;
     margin-right: 6rem;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
-#aboutUsContent{
+
+#aboutUsContent {
     margin-left: 6rem;
     margin-right: 6rem;
     font-size: 25px;
 }
+
 /*ABOUT US ENDS HERE*/
 
-#services{
-    position: relative;
+#services {
+    background-color: #ECD59C;
+    text-align: center;
+    position: sticky;
     display: block;
-    height: 100%;
-    width: 100%;
     size: 100%;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 11rem;
 }
-#servicesTitle{
+
+#servicesTitle {
     margin-left: 6rem;
     margin-right: 6rem;
-    font-size: 3rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
 }
-#servicesContent{
+
+#servicesContent {
     height: 100%;
     padding: 5px;
     margin-left: 6rem;
     margin-right: 6rem;
-    font-size: 20px;
+    font-size: 18px;
 }
 
-.thService1{
-    border-radius: 20px;
-    border: solid;
-}
-.theService1 p{
-    background: #ECD59C;
+.theService1 p {
+    color: #ECD59C;
+    background: #41423D;
     border-radius: 20px;
     overflow-y: hidden;
-    height: 200px;
+    height: 250px;
     text-decoration: none;
-    transition: 1s;
-    overflow: hidden;
+    box-shadow: 0px 0px 3px #41423D;
+    transition: .5s;
+    border: solid white 1px;
 }
-.theService1 p:hover{
-    border: none;
-    height: 500px;
+.theService1 ::-webkit-scrollbar{
+    width: 3px;
+}
+
+
+.theService1 p:hover {
+    
+    height: 350px;
     overflow-y:scroll;
-    box-shadow: 2px 2px 5px #41423D;
+    box-shadow: 0px 0px 10px #121212;
+    border: solid white 1px;
 }
-p{
-    padding:1rem;
+
+p img {
+    box-shadow: 0px 0px 20px#121212;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 221px;
+    border-radius: 10px;
+}
+
+p {
+    align-content: center;
+    align-items: center;
+    padding: 23px 1rem 1rem 1rem;
 }
 
 /*CONTACT US STARTS HERE*/
-#contactUs{
+#contactUs {
     background-color: #ECD59C;
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
-#contactUsTitle{
+
+#contactUsTitle {
     margin-left: 6rem;
     margin-right: 6rem;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
-#contactUsContent{
+
+#contactUsContent {
     margin-left: 6rem;
     margin-right: 6rem;
     font-size: 25px;
 }
-#contactUsContent a{
-    color: black;
+
+#contactUsContent a {
+    float: left;
+    color: #41423D;
+}
+.address{
+    float: right;
 }
 
-
-
-
+#gmap_canvas{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background: none !important;
+    border:0;
+    margin-left: 5rem;
+}
