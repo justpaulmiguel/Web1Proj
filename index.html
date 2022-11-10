@@ -13,113 +13,296 @@
             Home
         </title>
     </head>
-    <body>
+    <body  data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
         <!---------------------------------------- SIDEBAR STARTS HERE---------------------------------------->
         <!----------------------------------------Image menu button----------------------------------------->
         <img src="imgBtn\menuBtn.png" alt="menu"  onclick="sidebar1()" id="img1">
         
         <!----------------------------------------Sidebar itself---------------------------------------->
         <div class="container-fluid" id="navBar"></div>
-        <nav class="navbar bg-light" id="sideNav">
+        <nav class="navbar bg-dark navbar-dark" id="sideNav">
 
             <!----------------------------------------Sidebar contents start---------------------------------------->
-            <ul class="navbar-nav" onclick="sidebarf2()">
+            <ul id="sideList" class="navbar-nav"">
                 <br> <br>
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Login/Signup</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Login/Signup</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#aboutUs">About&nbsp;Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contactUs">Contact&nbsp;Us</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#bookNow">Book&nbsp;Now</a></li>
             </ul>
             <!----------------------------------------Sidebar contents end---------------------------------------->
 
         </nav>
     </div>
     <!----------------------------------------SIDEBAR ENDS HERE---------------------------------------->
-    
+  
     <div class="container-fluid" id="brandTitle">
+        <div class="topnav">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#aboutUs">About Us</a>
+            <a href="#contactUs">Contact Us</a>
+            <div class="split">
+              <a href="login.html"  data-bs-toggle="modal" data-bs-target="#modalId">Login/SignUp</a>
+            </div>
+          </div>
         Galang Dental Clinic
     </div>
-    
+
     
     <!----------------------------------------HOME STARTS HERE---------------------------------------->
-<div class="row" id="home" onclick="sidebarf2()">
-<div id="homePage"class="container-fluid col-sm">
+    <div   onclick="sidebarf2()">
+<div class="row" id="home">
+<div id="homePage"class="container-fluid">
 <div class="titleHome">
 OFFERING THE <br>BEST DENTAL CARE
 <br>
-<a name="" id="" class="btn btn-outline-danger" href="#" role="button">Book Now</a>
+<!--------------------------BOOK NOW BUTTON------------------------------>
+<a type="button" id="bookButton" data-bs-toggle="modal" data-bs-target="#modalId">
+    Book Now
+  </a>
+  <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignUp"></a>
+
 </div>
 </div>
 
 
 <!----------------------------------------CAROUSEL PICS STARTS HERE---------------------------------------->
-<div id="myCarousel" class="carousel slide col-sm-6 container-fluid" data-bs-ride="carousel">
+<div id="myCarousel" class="carousel col-12 slide d-block 2-100" data-bs-ride="carousel">
 
     <!----------------------------------------carousel indicators here---------------------------------------->
 <div class="carousel-indicators">
 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
-<bytton type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></bytton>
+<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
 </div>
 
 <!----------------------------------------carousel images---------------------------------------->
+
+
 <div class="carousel-inner">
 <div class="carousel-item active">
-<img src="images\img (1).jpg"  class="d-block w-100" alt="Front of Joseph Galang Dental Clinic">
+<img src="home\images\img (1).jpg"  class="d-block w-100" alt="Front of Joseph Galang Dental Clinic">
 </div>
 
 <div class="carousel-item">
-<img src="images\img (2).jpg" class="d-block w-100" alt="...">
+<img src="home\images\img (2).jpg" class="d-block w-100" alt="...">
 </div>
 
 <div class="carousel-item">
-<img src="images\img (3).jpg" class="d-block w-100" alt="...">
+<img src="home\images\img (3).jpg" class="d-block w-100" alt="...">
+</div>
+</div>
 </div>
 </div>
 
-<!----------------------------------------carousel side buttons here---------------------------------------->
-<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-<span class="carousel-control-prev-icon"></span>
-</button>
+<!-- Modal trigger button -->
 
-<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-<span class="carousel-control-next-icon"></span>
-</button>
-</div>
-</div>
+
 <!----------------------------------------CAROUSEL ENDS HERE---------------------------------------->
 <!----------------------------------------HOME ENDS HERE---------------------------------------->
 
+<!----------------------------------------LOGIN SIGNUP STARTS HERE---------------------------------------->
 
-<!----------------------------------------ABOUT US HOME STARTS HERE---------------------------------------->
+<!-------------------------------------- Modal Login----------------------------------------------------------------->
+<div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div id="modalLogIn"class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Login</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+            <div class="modal-body">
+                    
+                    
+                    <form class="formLayout" action="#">
+                        <div class="mb-3">
+                        <label for="emailLogIn">Email</label>
+                        <input type="email"  class="form-control" name="emailLogin" id="emailLogIn" placeholder="Enter Email" required>
+                        <div class="formBorder"></div>
+                        </div>
+
+                        <div class="mb-3">
+                        <label for="passLogIn">Password</label>
+                        <input type="password"  class="form-control" name="passLogin" id="passLogIn" placeholder="Enter Password" required>
+                        <div class="formBorder"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="checkbox"  class="form-check-input" name="remLogIn" >
+                            <label for="remLogIn">Remember me</label>
+                        </div>
+
+                        <div id="submitLogin" class="mb-3">
+                            <input  type="submit" name="submitLogIn" id="submit" value="L O G I N">
+                        </div> 
+                        <div id="submitLogin" class="mb-3">
+                            Don't have an account?
+                            <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSignUp"> Sign Up</a>
+                        </div>
+                        
+                    </form>
+                    
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-----------------------------------------------------Modal SIGN UP HERE------------------------------------------------>
+<div class="modal fade modal-lg" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div id="modalSignUp" class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Sign Up</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+            <div class="modal-body">
+                    
+                    
+                    <form class="formLayout" action="#">
+                        <div class="row">
+                            
+                        <div class="container-fluid col-6">
+                        <div class="mb-3">
+                        <label for="emailLogIn">Email</label>
+                        <input type="email"  class="form-control" name="emailLogin" id="emailLogIn" placeholder="Enter Email" required>
+                        <div class="formBorder"></div>
+                        </div>
+                        </div>
+
+                        <div class="col-6">
+                        <div class="mb-3">
+                        <label for="passLogIn">Password</label>
+                        <input type="password"  class="form-control" name="passLogin" id="passLogIn" placeholder="Enter Password" required>
+                        <div class="formBorder"></div>
+                        </div>
+                        </div>
+
+                        <div class="container-fluid col-6">
+                            <div class="mb-3">
+                            <label for="emailLogIn">Email</label>
+                            <input type="email"  class="form-control" name="emailLogin" id="emailLogIn" placeholder="Enter Email" required>
+                            <div class="formBorder"></div>
+                            </div>
+                            </div>
+    
+                            <div class="col-6">
+                            <div class="mb-3">
+                            <label for="passLogIn">Password</label>
+                            <input type="password"  class="form-control" name="passLogin" id="passLogIn" placeholder="Enter Password" required>
+                            <div class="formBorder"></div>
+                            </div>
+                            </div>
+
+                        <div class="mb-3">
+                            <input type="checkbox"  class="form-check-input" name="remLogIn" >
+                            <label for="remLogIn">I agree to the <a href="#"> Terms and Condition</a></label>
+                        </div>
+
+                        <div id="submitLogin" class="mb-3">
+                            <input  type="submit" name="submitLogIn" id="submit" value="S I G N U P">
+                        </div> 
+
+                        <div id="submitLogin" class="mb-3">
+                            Already have an account?
+                            <a href="#home" data-bs-toggle="modal" data-bs-target="#modalId"> Log In</a>
+                        </div>
+                        
+                    </div>
+                    </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!----------------------------------------LOGIN SIGNUP ENDS HERE---------------------------------------->
+
+<!----------------------------------------SERVICES STARTS HERE---------------------------------------->
+
+<div class="row" id="services">
+    <div class="container-fluid col-sm-12">
+    <div id="servicesTitle">Services</div>
+    <div id="servicesContent">
+
+        <div class="theService1">
+        <div class="row">
+            
+        <div id="service1" class="container-fluid col-sm-3">
+            <p>With our caring and dedicated staff, we strive to provide you with the most comfortable and relaxed
+            dental experience anywhere. Our state-of-the-art facility affords us the opportunity to provide for you,
+            </p>
+        </div>
+        <div id="service2" class="container-fluid col-sm-3">
+            <p>
+            your family, and friends the best that modern dentistry has to offer. Visit us on the web, then call and talk
+        to the warm friendly people that will ensure your first and subsequent visits are always pleasant ones.
+            </p>
+        </div>
+        <div id="service3" class="container-fluid col-sm-3">
+            <p>
+            The care we provide is comfortable, attentive, and anything but typical – so 
+            why not experience it for yourself? You may see the details below on how to contact us, to set a schedule
+            </p>
+        </div>
+        <div id="service4" class="container-fluid col-sm-3">
+            <p>
+            or an initial consultation, or simply to learn more about what sets us apart if you’d like to. 
+            </p>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+
+<!----------------------------------------SERVICES ENDS HERE---------------------------------------->
+
+<!----------------------------------------ABOUT US STARTS HERE---------------------------------------->
 <div class="row" id="aboutUs">
 <div class="container-fluid col-sm-12">
 <div id="aboutUsTitle">About Us</div>
 <div id="aboutUsContent">
 Since 1979, we’ve provided and practiced quality dentistry in Joseph Galang Dental Clinic.
+<br><br>
 With our caring and dedicated staff, we strive to provide you with the most comfortable and relaxed
 dental experience anywhere. Our state-of-the-art facility affords us the opportunity to provide for you,
 your family, and friends the best that modern dentistry has to offer. Visit us on the web, then call and talk
-to the warm friendly people that will ensure your first and subsequent visits are always pleasant ones. We
-hope to see you soon!
+to the warm friendly people that will ensure your first and subsequent visits are always pleasant ones.
+<br><br>
+The care we provide is comfortable, attentive, and anything but typical – so 
+why not experience it for yourself? You may see the details below on how to contact us, to set a schedule 
+or an initial consultation, or simply to learn more about what sets us apart if you’d like to. 
+<br>
+We hope to see you soon!
+
+
+
 </div>
 </div>
 </div>
 <!----------------------------------------ABOUT US ENDS HERE---------------------------------------->
 
-<!----------------------------------------CONTACT US STARTS HERE----------------------------------------><div class="row" id="contactUs">
+<!----------------------------------------CONTACT US STARTS HERE---------------------------------------->
+<div class="row" id="contactUs">
     <div class="container-fluid col-sm-12">
-    <div id="contactUsTitle">About Us</div>
+    <div id="contactUsTitle">Contact Us</div>
     <div id="contactUsContent">
         Address: Sanfernando, Pampanga <br>
         Tel/CP no.: 09xxxxxxxxx <br>
-        <a href="facebook.com"> Facebook: facebook.com </a> <br>
-        <a href="mailto:"> Email: pauljustine.miguel.a@bulsu.edu.ph </a> <br>
+        <a href="https://www.facebook.com/justpaulmiguel"> Facebook: facebook.com </a> <br>
+        <a href="mailto:pauljustine.miguel.a@bulsu.edu.ph"> Email: pauljustine.miguel.a@bulsu.edu.ph </a> <br>
     </div>
     </div>
     </div>
 <!--ABOUT US ENDS HERE-->
-
+</div>
 </body>
 </html>

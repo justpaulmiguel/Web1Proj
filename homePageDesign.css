@@ -7,11 +7,21 @@ html,body
     overflow-x: hidden; 
     scroll-behavior: smooth;
 }
+body.modal-open {
+
+    overflow: hidden;
+    position: fixed;
+}
+body.viewport-lg {
+
+    position: absolute; 
+}
 #navBar{
 }
 #sideNav {
-    padding-bottom: 60px;
     display: block;
+    padding-bottom: 60px;
+    background-color: #41423D;
     width: 0px;
     z-index: 2;
     position: fixed;
@@ -27,12 +37,16 @@ html,body
     padding-left: 2rem;
     overflow-x: hidden;
 }
+#sideList li{
+    color:#E05C2A;
+}
 #sideNav:hover{
     color: #ECD59C;
 }
 
 #img1
 {
+    visibility: hidden;
     z-index: 3;
     margin: 1rem 1rem 1rem;
     height: 20px;
@@ -47,43 +61,176 @@ html,body
 {
     z-index: 2;
     font-family: Raleway, sans-serif;
-    background-color: gray;
-    color: white;
+    background-color:   #ECD59C;
+    color: #41423D;
     text-align: center;
     font-size: 2rem;
 }
+.topnav {
+    z-index: 2;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    
+  }
+  
+  .topnav a {
+    float: left;
+    color: #121212;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:none;
+    font-size: 17px;
+    transition: .5s;
+  }
+  
+   .topnav  a:hover {
+    box-shadow: 0px 0px 5px #b7b7b7;
+  
+  }
+
+  
+  .split {
+    float: right;
+    
+  }
 
 #home
 {
-    background-color: rgb(232, 232, 232);
-    padding-bottom: 4rem;
+    position:relative;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 #homePage
 {
-    font-size: 3rem;
+    color: #ECD59C;
+    position: absolute;
+    transform: translate(15%,0%);
+    z-index: 1;
+    font-size: 1.8rem;
     font-family: Raleway,sans-serif;
-    margin-top: 7rem;
-    padding-left: 4rem;
+
 }
-
-
+#bookButton{
+    background-color: #E05C2A;
+    color: white;
+    border: none;
+    outline: none;
+    margin: 20px 5px 20px 5px;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    transition: .5s;
+}
+#bookButton:hover{
+    margin: 20px 5px 20px 5px;
+    padding: 10px 4rem 10px 4rem;
+    box-shadow: 2px 2px 20px #ECD59C;
+}
 #myCarousel
 {
-    margin-right: 4rem;
-    margin-left: 2rem;
-    margin-top: 4rem;
+    transform: translate(0%,0%);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
+
 /*HOME END HERE*/
+
+
+#modalId{
+}
+.modal-content{
+    box-shadow: 2px 2px 10px #ECD59C;
+    border-color: #E05C2A;
+    right: 50%;
+    left: 50%;
+    position:absolute;
+    transform: translate(-50%, 25%);
+    width: 550px;
+}
+#emailLogIn{
+    outline: none;
+    border: none;
+}
+#passLogIn{
+    outline: none;
+    border: none;
+}
+.modal-body{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.formBorder {
+    background: -webkit-linear-gradient(right, #ECD59C, #E05C2A,#E05C2A);
+    height: 1px;
+    width: 100%;
+  }
+.formLayout{
+    text-align: left;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+  }
+  #submit {
+    color: white;
+    background-color: #E05C2A;
+    border: none;
+    outline: none;
+    margin: 20px 5px 20px 5px;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    transition: .5s;
+  }
+  #submit:hover {
+    margin: 20px 5px 20px 5px;
+    padding: 10px 5rem 10px 5rem;
+    box-shadow:2px 2px 20px #ECD59C;
+  }
+  #submitLogin{
+    text-align: center;
+    align-items: center;
+  }
+
+  #submit:hover {
+    margin: 20px 5px 20px 5px;
+    padding: 10px 5rem 10px 5rem;
+    box-shadow:2px 2px 20px #ECD59C;
+  }
+  #submitLogin{
+    text-align: center;
+    align-items: center;
+  }
+
+#modalSignUp
+{
+    right: 100%;
+    left: 50%;
+    position:fixed;
+    transform: translate(-50%, 10%);
+    overflow: hidden;
+}
+
+
+
+
+
 
 /*ABOUT US START HERE*/
 #aboutUs{
-    margin-top: 4rem;
+    position: relative;
+    width: 100%;
+    size: 100%;
+    padding-top: 4rem;
     padding-bottom: 4rem;
 }
 #aboutUsTitle{
     margin-left: 6rem;
     margin-right: 6rem;
-    font-size: 5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 #aboutUsContent{
@@ -93,16 +240,62 @@ html,body
 }
 /*ABOUT US ENDS HERE*/
 
+#services{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    size: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+#servicesTitle{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+#servicesContent{
+    height: 100%;
+    padding: 5px;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 20px;
+}
+
+.thService1{
+    border-radius: 20px;
+    border: solid;
+}
+.theService1 p{
+    background: #ECD59C;
+    border-radius: 20px;
+    overflow-y: hidden;
+    height: 200px;
+    text-decoration: none;
+    transition: 1s;
+    overflow: hidden;
+}
+.theService1 p:hover{
+    border: none;
+    height: 500px;
+    overflow-y:scroll;
+    box-shadow: 2px 2px 5px #41423D;
+}
+p{
+    padding:1rem;
+}
+
 /*CONTACT US STARTS HERE*/
 #contactUs{
     background-color: #ECD59C;
-    margin-top: 4rem;
+    padding-top: 4rem;
     padding-bottom: 4rem;
 }
 #contactUsTitle{
     margin-left: 6rem;
     margin-right: 6rem;
-    font-size: 5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 #contactUsContent{
