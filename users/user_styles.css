@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: "Poppins SemiBold";
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 /*Scroll bar  width */
