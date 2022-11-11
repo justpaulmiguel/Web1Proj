@@ -158,9 +158,11 @@ body.viewport-lg {
     align-items: left;
     display: flex;
     flex-direction: column;
+    text-decoration: none;
 }
 
 #submit {
+    text-decoration: none;
     color: white;
     background-color: #E05C2A;
     border: none;
