@@ -1,165 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap\bootstrap.min.css" />
+    <script src="bootstrap\bootstrap.min.js"></script>
+    <link rel="stylesheet" href="user_styles.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&display=swap"
-    rel="stylesheet" />
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="bootstrap\bootstrap.min.css" />
-  <script src="bootstrap\bootstrap.min.js"></script>
-  <link rel="stylesheet" href="user_styles.css" />
+    <title>Dashboard</title>
+  </head>
 
-  <title>Dashboard</title>
-</head>
-
-<body>
-  <div class="grid-wrap">
-    <header>
-      <div class="header-title">
-        <div class="logo footer-place-holder-logo"><span>L</span></div>
-        <p class="title-text">Joseph Galang Dental Clinic</p>
-      </div>
-      <div class="sign-in-btn-wrapper">
-        <button class="signout-btn btn" id="sign-out-btn">Sign Out</button>
-      </div>
-    </header>
-    <aside>
-      <!-- sidebar -->
-      <ul class="options-bar">
-        <li>
-          <a href="user.html">
-            <div class="icon-box">
-              <span class="material-icons">home</span>
-            </div>
-            HOME
-          </a>
-        </li>
-        <li>
-          <a href="bookings.html">
-            <div class="icon-box">
-              <span class="material-icons"> event </span>
-            </div>
-
-            BOOKING
-          </a>
-        </li>
-        <li>
-          <a href="appointments.html">
-            <div class="icon-box">
-              <span class="material-icons"> people_alt </span>
-            </div>
-            RECORDS
-          </a>
-        </li>
-        <li>
-          <a href="services_offered.html">
-            <div class="icon-box">
-              <span class="material-icons"> feed </span>
-            </div>
-
-            SERVICES OFFERED
-          </a>
-        </li>
-      </ul>
-    </aside>
-    <main>
-      <section class="section-greeting-wrapper">
-        <h2>Good to see you,</h2>
-
-        <h1 class="top-heading-text">Paul Justine</h1>
-      </section>
-
-      <section class="schedule-wrapper">
-        <p>Your next approved schedule would be on:</p>
-        <p class="heading-date">9 AM Next Monday</p>
-        <p class="subheading-date">July 12 2022</p>
-        <div class="schedule-details-wrapper">
-          <div class="detail-wrapper">
-            <p>Dental Service</p>
-            <p class="outlined-text">Oral Prophylaxis</p>
-          </div>
-          <div class="detail-wrapper">
-            <p>Branch</p>
-            <p class="outlined-text">San Simon Branch</p>
-          </div>
+  <body>
+    <div class="grid-wrap">
+      <header>
+        <div class="header-title">
+          <div class="logo footer-place-holder-logo"><span>L</span></div>
+          <p class="title-text">Joseph Galang Dental Clinic</p>
         </div>
-      </section>
+        <div class="sign-in-btn-wrapper">
+          <button class="signout-btn btn" id="sign-out-btn">Sign Out</button>
+        </div>
+      </header>
+      <aside>
+        <!-- sidebar -->
+        <ul class="options-bar">
+          <li>
+            <a href="../index.html">
+              <div class="icon-box">
+                <span class="material-icons">home</span>
+              </div>
+              HOME
+            </a>
+          </li>
+          <li>
+            <a href="./user.html">
+              <div class="icon-box">
+                <span class="material-icons">dashboard</span>
+              </div>
+              DASHBOARD
+            </a>
+          </li>
+          <li>
+            <a href="bookings.html">
+              <div class="icon-box">
+                <span class="material-icons"> event </span>
+              </div>
 
-      <!-- <section class="approval-wrapper">
+              BOOKING
+            </a>
+          </li>
+          <li>
+            <a href="appointments.html">
+              <div class="icon-box">
+                <span class="material-icons"> people_alt </span>
+              </div>
+              RECORDS
+            </a>
+          </li>
+          <li>
+            <a href="services_offered.html">
+              <div class="icon-box">
+                <span class="material-icons"> feed </span>
+              </div>
+
+              SERVICES OFFERED
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <main>
+        <section class="section-greeting-wrapper">
+          <h2>Good to see you,</h2>
+
+          <h1 class="top-heading-text">Paul Justine</h1>
+        </section>
+
+        <section class="schedule-wrapper">
+          <p>Your next approved schedule would be on:</p>
+          <p class="heading-date">9 AM Next Monday</p>
+          <p class="subheading-date">July 12 2022</p>
+          <div class="schedule-details-wrapper">
+            <div class="detail-wrapper">
+              <p>Dental Service</p>
+              <p class="outlined-text">Oral Prophylaxis</p>
+            </div>
+            <div class="detail-wrapper">
+              <p>Branch</p>
+              <p class="outlined-text">San Simon Branch</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- <section class="approval-wrapper">
           TODO Finish this later
         </section> -->
-    </main>
-    <footer>
-      <div class="footer-wrapper">
-        <p>Contact Us</p>
-        <div class="contacts-wrapper">
-          <div class="logo footer-place-holder-logo"><span>L</span></div>
-          <div class="contact-details-wrapper">
-            <p>Address: Sanfernando, Pampanga</p>
-            <p>Tel/CP no.: 09xxxxxxxxx</p>
-            <p>Facebook: facebook.com</p>
-            <p>Email: pauljustine.miguel.a@bulsu.edu.ph</p>
+      </main>
+      <footer>
+        <div class="footer-wrapper">
+          <p>Contact Us</p>
+          <div class="contacts-wrapper">
+            <div class="logo footer-place-holder-logo"><span>L</span></div>
+            <div class="contact-details-wrapper">
+              <p>Address: Sanfernando, Pampanga</p>
+              <p>Tel/CP no.: 09xxxxxxxxx</p>
+              <p>Facebook: facebook.com</p>
+              <p>Email: pauljustine.miguel.a@bulsu.edu.ph</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <p>All Rights Reserved © 2022</p>
-    </footer>
-  </div>
+        <p>All Rights Reserved © 2022</p>
+      </footer>
+    </div>
 
-  <!--  Modal For Signout Btn -->
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close-icon">&times;</span>
-      <div class="confimation">
-        <p>Are sure you want to Log Out?</p>
-        <div class="confirm-btn-wrapper">
-          <!---------remove the form tag when doing the actual------->
-          <form action="/index.html">
-            <button class="btn modal-yes-btn">Yes</button>
-          </form>
-          <button class="btn modal-no-btn">No</button>
+    <!--  Modal For Signout Btn -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close-icon">&times;</span>
+        <div class="confimation">
+          <p>Are sure you want to Log Out?</p>
+          <div class="confirm-btn-wrapper">
+            <!---------remove the form tag when doing the actual------->
+            <form action="/index.html">
+              <button class="btn modal-yes-btn">Yes</button>
+            </form>
+            <button class="btn modal-no-btn">No</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Signout Modal Script -->
-  <script>
-    // Get the modal
-    const modal = document.getElementById("myModal");
+    <!-- Signout Modal Script -->
+    <script>
+      // Get the modal
+      const modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
-    const btn = document.getElementById("sign-out-btn");
+      // Get the button that opens the modal
+      const btn = document.getElementById("sign-out-btn");
 
-    // Get the <span> element that closes the modal
-    const span = document.querySelector(".close-icon");
-    const noBtn = document.querySelector(".modal-no-btn");
+      // Get the <span> element that closes the modal
+      const span = document.querySelector(".close-icon");
+      const noBtn = document.querySelector(".modal-no-btn");
 
-    btn.onclick = () => {
-      modal.style.display = "block";
-    };
-    span.onclick = () => {
-      modal.style.display = "none";
-    };
-    noBtn.onclick = () => {
-      modal.style.display = "none";
-    };
-    window.onclick = (event) => {
-      if (event.target == modal) {
+      btn.onclick = () => {
+        modal.style.display = "block";
+      };
+      span.onclick = () => {
         modal.style.display = "none";
-      }
-    };
-  </script>
-</body>
-
+      };
+      noBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+      window.onclick = (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
 </html>
