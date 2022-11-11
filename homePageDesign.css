@@ -20,6 +20,19 @@ body.viewport-lg {
     position: absolute;
 }
 
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #888;
+  }
+  
+
 #brandTitle {
     z-index: 2;
     font-family: Raleway, sans-serif;
@@ -39,12 +52,14 @@ body.viewport-lg {
     left: 0px;
 
 }
-
+.topnav img{
+    height: 29px;
+}
 .topnav a {
     float: left;
     color: #ECD59C;
     text-align: center;
-    padding: 14px 16px;
+    padding: 17px;
     text-decoration: none;
     font-size: 17px;
     transition: .4s;
@@ -234,16 +249,6 @@ body.viewport-lg {
     overflow-y:scroll;
     box-shadow: 0px 0px 10px #121212;
     border: solid white 1px;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
 }
 
 
