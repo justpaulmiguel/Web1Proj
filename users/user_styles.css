@@ -26,7 +26,7 @@ body {
 
   /* grid-template-rows: min-content 1fr min-content; */
   /* changed header default size to accomudate old header top bar */
-  grid-template-rows: 50px 1fr min-content;
+  grid-template-rows: 67px 1fr min-content;
   gap: 1px;
   min-height: inherit;
   position: relative;
@@ -89,11 +89,14 @@ aside {
   left: 0px;
 }
 
+.topnav img {
+  height: 29px;
+}
 .topnav a {
   float: left;
   color: #ecd59c;
   text-align: center;
-  padding: 14px 16px;
+  padding: 17px;
   text-decoration: none;
   font-size: 17px;
   transition: 0.4s;
