@@ -19,6 +19,50 @@ body {
   position: relative;
 }
 
+#brandTitle {
+    z-index: 2;
+    font-family: Raleway, sans-serif;
+    background-color: #ECD59C;
+    color: #41423D;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.topnav {
+    z-index: 2;
+    overflow: hidden;
+    background-color: rgba(12, 12, 12, 0.6);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+
+}
+
+.topnav a {
+    float: left;
+    color: #ECD59C;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .4s;
+}
+
+.topnav a:hover {
+    color: white;
+}
+
+.topnav a:active {
+    color: white;
+}
+
+
+.split {
+    padding-right: 14px;
+    float: right;
+}
+
 header {
   grid-column: 1 / -1;
 }

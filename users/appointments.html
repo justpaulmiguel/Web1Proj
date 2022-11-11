@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="user_styles.css" />
+  <title>Document</title>
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="grid-wrap">
+    <header>
+      <div class="header-title">
+        <div class="logo footer-place-holder-logo"><span>L</span></div>
+        <p class="title-text">Joseph Galang Dental Clinic</p>
+      </div>
+      <div class="sign-in-btn-wrapper">
+        <button class="signout-btn btn" id="sign-out-btn">Sign Out</button>
+      </div>
+    </header>
+    <aside>
+      <!-- sidebar -->
+      <ul class="options-bar">
+        <li>
+          <a href="user.html">
+            <div class="icon-box">
+              <span class="material-icons">home</span>
+            </div>
+            HOME
+          </a>
+        </li>
+        <li>
+          <a href="bookings.html">
+            <div class="icon-box">
+              <span class="material-icons"> event </span>
+            </div>
+
+            BOOKING
+          </a>
+        </li>
+        <li>
+          <a href="appointments.html">
+            <div class="icon-box">
+              <span class="material-icons"> people_alt </span>
+            </div>
+            RECORDS
+          </a>
+        </li>
+        <li>
+          <a href="services_offered.html">
+            <div class="icon-box">
+              <span class="material-icons"> feed </span>
+            </div>
+
+            SERVICES OFFERED
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <h1 class="top-heading-text">Records</h1>
+      <section class="scheduled-record-wrapper">
+        <h2>Scheduled</h2>
+        <div class="top-table-group">
+          <div class="selected-text-wrapper">
+            <p>Selected: <span class="selected-span-text">0</span> items</p>
+          </div>
+          <div class="table-btn-wrapper">
+            <!-- TODO add form here -->
+            <button href="#" class="cancel-schedule-btn btn" disabled>
+              CANCEL SCHEDULE(S)
+            </button>
+          </div>
+        </div>
+        <table border="2" cellpadding="8" cellspacing="0">
+          <tr>
+            <th></th>
+            <th>TYPE OF SERVICE</th>
+            <th>DATE</th>
+            <th>TIME</th>
+          </tr>
+
+          <tr align="center">
+            <td>
+              <input type="checkbox" name="cancel-schedule" id="" />
+            </td>
+            <td>Oral Prophylaxis</td>
+            <td>Feb. 18, 2023</td>
+            <td>3:00 PM</td>
+          </tr>
+
+          <tr align="center">
+            <td>
+              <input type="checkbox" name="cancel-schedule" id="" />
+            </td>
+            <td>Tooth Jacket</td>
+            <td>Jan. 06, 2023</td>
+            <td>12:30 PM</td>
+          </tr>
+
+          <tr align="center">
+            <td>
+              <input type="checkbox" name="cancel-schedule" id="" />
+            </td>
+            <td>Oral Prophylaxis</td>
+            <td>May 18, 2023</td>
+            <td>4:30 PM</td>
+          </tr>
+        </table>
+      </section>
+      <section class="approval-record-wrapper">
+        <h2>For Approval</h2>
+        <div class="top-table-group">
+          <div class="selected-text-wrapper">
+            <p>Selected: <span class="selected-span-text">0</span> items</p>
+          </div>
+          <div class="table-btn-wrapper">
+            <!-- TODO add form here -->
+            <button href="#" class="cancel-schedule-btn btn" disabled>
+              CANCEL SCHEDULE(S)
+            </button>
+          </div>
+        </div>
+        <table border="2" cellpadding="8" cellspacing="0">
+          <tr>
+            <th></th>
+            <th>TYPE OF SERVICE</th>
+            <th>DATE</th>
+            <th>TIME</th>
+          </tr>
+
+          <tr align="center">
+            <td>
+              <input type="checkbox" name="cancel-schedule" id="" />
+            </td>
+            <td>Oral Prophylaxis</td>
+            <td>Dec. 21, 2023</td>
+            <td>2:00 PM</td>
+          </tr>
+
+          <tr align="center">
+            <td>
+              <input type="checkbox" name="cancel-schedule" id="" />
+            </td>
+            <td>Tooth Jacket</td>
+            <td>Apr. 26, 2023</td>
+            <td>11:00 AM</td>
+          </tr>
+
+          <tr align="center">
+            <td>
+              <input type="checkbox" name="cancel-schedule" id="" />
+            </td>
+
+            <td>Oral Prophylaxis</td>
+            <td>July 28, 2023</td>
+            <td>10:30 AM</td>
+          </tr>
+        </table>
+      </section>
+      <section class="past-record-wrapper">
+        <h2>Past Records</h2>
+        <table border="2" cellpadding="8" cellspacing="0">
+          <tr>
+            <th>TYPE OF SERVICE</th>
+            <th>DATE</th>
+            <th>TIME</th>
+          </tr>
+
+          <tr align="center">
+            <td>Oral Prophylaxis</td>
+            <td>Aug. 26, 2013</td>
+            <td>12:30 PM</td>
+          </tr>
+
+          <tr align="center">
+            <td>Tooth Jacket</td>
+            <td>Feb. 14, 2014</td>
+            <td>12:30 PM</td>
+          </tr>
+
+          <tr align="center">
+            <td>Oral Prophylaxis</td>
+            <td>Apr. 30, 2002</td>
+            <td>4:30 PM</td>
+          </tr>
+
+          <tr align="center">
+            <td>Oral Prophylaxis</td>
+            <td>May. 22, 2000</td>
+            <td>12:30 PM</td>
+          </tr>
+
+          <tr align="center">
+            <td>Dental Fillings</td>
+            <td>Oct. 02, 1980</td>
+            <td>12:30 PM</td>
+          </tr>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-wrapper">
+        <p>Contact Us</p>
+        <div class="contacts-wrapper">
+          <div class="logo footer-place-holder-logo"><span>L</span></div>
+          <div class="contact-details-wrapper">
+            <p>Address: Sanfernando, Pampanga</p>
+            <p>Tel/CP no.: 09xxxxxxxxx</p>
+            <p>Facebook: facebook.com</p>
+            <p>Email: pauljustine.miguel.a@bulsu.edu.ph</p>
+          </div>
+        </div>
+      </div>
+
+      <p>All Rights Reserved © 2022</p>
+    </footer>
+  </div>
+  <!--  Modal For Signout Btn -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close-icon">&times;</span>
+      <div class="confimation">
+        <p>Are sure you want to Log Out?</p>
+        <div class="confirm-btn-wrapper">
+          <!---------remove the form tag when doing the actual------->
+          <form action="/index.html">
+            <button class="btn modal-yes-btn">Yes</button>
+          </form>
+          <button class="btn modal-no-btn">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Signout Modal Script -->
+  <script>
+    // Get the modal
+    const modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    const btn = document.getElementById("sign-out-btn");
+
+    // Get the <span> element that closes the modal
+    const span = document.querySelector(".close-icon");
+    const noBtn = document.querySelector(".modal-no-btn");
+
+    btn.onclick = () => {
+      modal.style.display = "block";
+    };
+    span.onclick = () => {
+      modal.style.display = "none";
+    };
+    noBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+
+</html>

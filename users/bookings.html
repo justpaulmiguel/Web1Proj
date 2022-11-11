@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="bootstrap\bootstrap.min.css" />
+  <script src="bootstrap\bootstrap.min.js"></script>
+  <link rel="stylesheet" href="user_styles.css" />
+
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <div class="grid-wrap">
+    <header>
+      <div class="header-title">
+        <div class="logo footer-place-holder-logo"><span>L</span></div>
+        <p class="title-text">Joseph Galang Dental Clinic</p>
+      </div>
+      <div class="sign-in-btn-wrapper">
+        <button class="signout-btn btn" id="sign-out-btn">Sign Out</button>
+      </div>
+    </header>
+    <aside>
+      <!-- sidebar -->
+      <ul class="options-bar">
+        <li>
+          <a href="user.html">
+            <div class="icon-box">
+              <span class="material-icons">home</span>
+            </div>
+            HOME
+          </a>
+        </li>
+        <li>
+          <a href="bookings.html">
+            <div class="icon-box">
+              <span class="material-icons"> event </span>
+            </div>
+
+            BOOKING
+          </a>
+        </li>
+        <li>
+          <a href="appointments.html">
+            <div class="icon-box">
+              <span class="material-icons"> people_alt </span>
+            </div>
+            RECORDS
+          </a>
+        </li>
+        <li>
+          <a href="services_offered.html">
+            <div class="icon-box">
+              <span class="material-icons"> feed </span>
+            </div>
+
+            SERVICES OFFERED
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <h1 class="top-heading-text">Booking</h1>
+      <section class="booking-wrapper">
+        <form action="">
+          <div class="input-wrapper">
+            <label for="branch-option">branch:</label>
+            <select name="branch" id="branch-option" class="booking-select-input select-input">
+              <option value="San Simon">San Simon</option>
+              <option value="Mexico">Mexico</option>
+            </select>
+          </div>
+          <div class="input-wrapper">
+            <label for="date-option">date:</label>
+            <div class="fieldset-wrapper">
+              <fieldset>
+                <legend>February 10 2022</legend>
+
+                <input type="radio" name="datetime" value="02@0930-1000" checked />
+                <label for="kraken">9 - 10 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1030-1100" />
+                <label for="sasquatch">10 - 11 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1300-1400" />
+                <label for="mothman">1 - 2 AM</label>
+              </fieldset>
+              <fieldset>
+                <legend>February 12 2022</legend>
+
+                <input type="radio" name="datetime" value="02@0930-1000" />
+                <label for="kraken">9 - 10 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1030-1100" />
+                <label for="sasquatch">10 - 11 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1300-1400" />
+                <label for="mothman">1 - 2 AM</label>
+              </fieldset>
+              <fieldset>
+                <legend>February 13 2022</legend>
+
+                <input type="radio" name="datetime" value="02@0930-1000" />
+                <label for="kraken">9 - 10 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1030-1100" />
+                <label for="sasquatch">10 - 11 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1300-1400" />
+                <label for="mothman">1 - 2 AM</label>
+              </fieldset>
+              <fieldset>
+                <legend>February 14 2022</legend>
+
+                <input type="radio" name="datetime" value="02@0930-1000" />
+                <label for="kraken">9 - 10 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1030-1100" />
+                <label for="sasquatch">10 - 11 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1300-1400" />
+                <label for="mothman">1 - 2 AM</label>
+              </fieldset>
+              <fieldset>
+                <legend>February 15 2022</legend>
+
+                <input type="radio" name="datetime" value="02@0930-1000" />
+                <label for="kraken">9 - 10 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1030-1100" />
+                <label for="sasquatch">10 - 11 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1300-1400" />
+                <label for="mothman">1 - 2 AM</label>
+              </fieldset>
+              <fieldset>
+                <legend>February 16 2022</legend>
+
+                <input type="radio" name="datetime" value="02@0930-1000" />
+                <label for="kraken">9 - 10 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1030-1100" />
+                <label for="sasquatch">10 - 11 AM</label><br />
+
+                <input type="radio" name="datetime" value="02@1300-1400" />
+                <label for="mothman">1 - 2 AM</label>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="service-option">service type:</label>
+            <select name="service" id="service-option" class="booking-select-input select-input">
+              <option value="">Oral Check-up</option>
+              <option value="Mexico">Braces</option>
+            </select>
+          </div>
+          <div class="form-btn-wrapper">
+            <button class="submit-btn btn" type="submit">Submit</button>
+            <button class="btn reset-btn">Reset</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-wrapper">
+        <p>Contact Us</p>
+        <div class="contacts-wrapper">
+          <div class="logo footer-place-holder-logo"><span>L</span></div>
+          <div class="contact-details-wrapper">
+            <p>Address: Sanfernando, Pampanga</p>
+            <p>Tel/CP no.: 09xxxxxxxxx</p>
+            <p>Facebook: facebook.com</p>
+            <p>Email: pauljustine.miguel.a@bulsu.edu.ph</p>
+          </div>
+        </div>
+      </div>
+
+      <p>All Rights Reserved © 2022</p>
+    </footer>
+  </div>
+  <!--  Modal For Signout Btn -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close-icon">&times;</span>
+      <div class="confimation">
+        <p>Are sure you want to Log Out?</p>
+        <div class="confirm-btn-wrapper">
+          <!---------remove the form tag when doing the actual------->
+          <form action="/index.html">
+            <button class="btn modal-yes-btn">Yes</button>
+          </form>
+          <button class="btn modal-no-btn">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Signout Modal Script -->
+  <script>
+    // Get the modal
+    const modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    const btn = document.getElementById("sign-out-btn");
+
+    // Get the <span> element that closes the modal
+    const span = document.querySelector(".close-icon");
+    const noBtn = document.querySelector(".modal-no-btn");
+
+    btn.onclick = () => {
+      modal.style.display = "block";
+    };
+    span.onclick = () => {
+      modal.style.display = "none";
+    };
+    noBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+
+</html>
