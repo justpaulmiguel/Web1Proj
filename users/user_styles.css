@@ -5,64 +5,32 @@ body {
   margin: 0;
   font-family: "Poppins SemiBold";
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
-/* Values of the strucure of the page.
+/*Scroll bar  width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Grid Structure of the page.
  */
 .grid-wrap {
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(10px, 3fr);
 
-  grid-template-rows: min-content 1fr min-content;
+  /* grid-template-rows: min-content 1fr min-content; */
+  /* changed header default size to accomudate old header top bar */
+  grid-template-rows: 50px 1fr min-content;
   gap: 1px;
   min-height: inherit;
   position: relative;
 }
-
-#brandTitle {
-    z-index: 2;
-    font-family: Raleway, sans-serif;
-    background-color: #ECD59C;
-    color: #41423D;
-    text-align: center;
-    font-size: 2rem;
-}
-
-.topnav {
-    z-index: 2;
-    overflow: hidden;
-    background-color: rgba(12, 12, 12, 0.6);
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-
-}
-
-.topnav a {
-    float: left;
-    color: #ECD59C;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    transition: .4s;
-}
-
-.topnav a:hover {
-    color: white;
-}
-
-.topnav a:active {
-    color: white;
-}
-
-
-.split {
-    padding-right: 14px;
-    float: right;
-}
-
 header {
   grid-column: 1 / -1;
 }
@@ -74,13 +42,25 @@ main {
   grid-column: 2 / 3;
   grid-row: 2/3;
   min-height: 100vh;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
-
+main {
+  padding: 25px;
+  color: #a35709;
+  background-color: #f0e3ca;
+  padding-bottom: 50px;
+}
 footer {
   grid-column: 1 / -1;
 }
-
+footer {
+  background-color: #a35709;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
 /* sidebar */
 
 aside {
@@ -89,6 +69,49 @@ aside {
   padding: 20px;
   padding-right: 0;
 }
+
+#brandTitle {
+  z-index: 2;
+  font-family: Raleway, sans-serif;
+  background-color: #ecd59c;
+  color: #41423d;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.topnav {
+  z-index: 2;
+  overflow: hidden;
+  background-color: rgba(12, 12, 12, 0.6);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+.topnav a {
+  float: left;
+  color: #ecd59c;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.4s;
+}
+
+.topnav a:hover {
+  color: white;
+}
+
+.topnav a:active {
+  color: white;
+}
+
+.split {
+  padding-right: 14px;
+  float: right;
+}
+
 .options-bar {
   list-style-type: none;
   margin: 0;
@@ -132,14 +155,7 @@ aside {
   font-family: "Poppins SemiBold", sans-serif;
   font-size: 1.2em;
 }
-footer {
-  background-color: #a35709;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
+
 footer .logo {
   background-color: #fff;
   color: #1e1e1e;
@@ -170,6 +186,7 @@ footer .logo {
   font-weight: 800;
   font-size: 2.8em;
   color: #a35709;
+  margin-bottom: 0;
 }
 
 header {
@@ -178,21 +195,19 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-
-  border-bottom: 2px solid #ff8303;
 }
-.sign-in-btn-wrapper {
-}
+/* .sign-in-btn-wrapper {
+} */
 #sign-out-btn {
-  color: #ff8303;
-  background-color: #fff;
+  color: #ecd59c;
+  background-color: transparent;
   border: 0;
-  padding: 15px 25px;
+  padding: 10px 25px;
   transition: all 0.3s ease;
 }
 #sign-out-btn:hover {
-  background-color: #e05c2a;
-  color: #fff;
+  background-color: #fff;
+  color: #a35709;
 }
 #sign-out-btn:active {
   background-color: #a35709;
@@ -207,19 +222,14 @@ header {
   margin: 0;
 }
 
-main {
-  font-family: "Poppins";
-  padding: 25px;
-  color: #a35709;
-  background-color: #f0e3ca;
-  padding-bottom: 50px;
-}
 main > section {
   padding-left: 30px;
 }
 /* Tables */
+
 table {
   border: none;
+  background-color: #fff;
 }
 table th {
   background-color: #c13500db;
@@ -254,7 +264,7 @@ table tr:hover {
   font-family: "Poppins", sans-serif;
 }
 
-/* * Generic btn transistion */
+/* * Generic btn transition */
 
 .btn:enabled:hover {
   transform: translateY(-5px);
@@ -263,6 +273,7 @@ table tr:hover {
 .btn:enabled:active {
   transform: scale(0.9);
 }
+
 /* Selected buttons */
 .top-table-group {
   display: flex;
@@ -361,10 +372,6 @@ hr {
   border-radius: 15px;
 }
 
-table {
-  background-color: #fff;
-}
-
 /* booking form */
 .input-wrapper {
   display: flex;
@@ -452,19 +459,18 @@ details[open] summary {
 }
 
 /* * MODAL (FOR SIGNOUT BTN */
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal Content */
@@ -497,7 +503,7 @@ details[open] summary {
   background-color: #c90101;
   color: #fff;
 }
-/* The Close Button */
+/* The Close Button icon */
 .close-icon {
   color: #aaaaaa;
   float: right;

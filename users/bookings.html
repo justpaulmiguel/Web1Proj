@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&family=Raleway&display=swap"
       rel="stylesheet"
     />
     <!-- Bootstrap -->
@@ -27,25 +27,29 @@
   <body>
     <div class="grid-wrap">
       <header>
-        <div class="header-title">
-          <div class="logo footer-place-holder-logo"><span>L</span></div>
-          <p class="title-text">Joseph Galang Dental Clinic</p>
+        <!---------------------------------------------------Top Bar Start------------------------------------------------------>
+        <div class="row">
+          <div class="container-fluid col-12" id="brandTitle">
+            <div class="topnav">
+              <a href="../index.html#home">Home</a>
+              <a href="../index.html#services">Services</a>
+              <a href="../index.html#aboutUs">About Us</a>
+              <a href="../index.html#contactUs">Contact Us</a>
+              <div class="split">
+                <div class="sign-in-btn-wrapper">
+                  <button class="signout-btn btn" id="sign-out-btn">
+                    Sign Out
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="sign-in-btn-wrapper">
-          <button class="signout-btn btn" id="sign-out-btn">Sign Out</button>
-        </div>
+        <!---------------------------------------------------Top Bar End------------------------------------------------------>
       </header>
       <aside>
         <!-- sidebar -->
         <ul class="options-bar">
-          <li>
-            <a href="../index.html">
-              <div class="icon-box">
-                <span class="material-icons">home</span>
-              </div>
-              HOME
-            </a>
-          </li>
           <li>
             <a href="./user.html">
               <div class="icon-box">
@@ -84,6 +88,7 @@
       </aside>
       <main>
         <h1 class="top-heading-text">Booking</h1>
+        <p>Reserve an appointment with our doctors.</p>
         <section class="booking-wrapper">
           <form action="">
             <div class="input-wrapper">
@@ -112,10 +117,7 @@
                   <label for="kraken">9 - 10 AM</label><br />
 
                   <input type="radio" name="datetime" value="02@1030-1100" />
-                  <label for="sasquatch">10 - 11 AM</label><br />
-
-                  <input type="radio" name="datetime" value="02@1300-1400" />
-                  <label for="mothman">1 - 2 AM</label>
+                  <label for="sasquatch">12:30 - 1 PM</label><br />
                 </fieldset>
                 <fieldset>
                   <legend>February 12 2022</legend>
@@ -131,12 +133,8 @@
                 </fieldset>
                 <fieldset>
                   <legend>February 13 2022</legend>
-
-                  <input type="radio" name="datetime" value="02@0930-1000" />
-                  <label for="kraken">9 - 10 AM</label><br />
-
                   <input type="radio" name="datetime" value="02@1030-1100" />
-                  <label for="sasquatch">10 - 11 AM</label><br />
+                  <label for="sasquatch">12:30 - 1 PM</label><br />
 
                   <input type="radio" name="datetime" value="02@1300-1400" />
                   <label for="mothman">1 - 2 AM</label>
@@ -156,12 +154,6 @@
                 <fieldset>
                   <legend>February 15 2022</legend>
 
-                  <input type="radio" name="datetime" value="02@0930-1000" />
-                  <label for="kraken">9 - 10 AM</label><br />
-
-                  <input type="radio" name="datetime" value="02@1030-1100" />
-                  <label for="sasquatch">10 - 11 AM</label><br />
-
                   <input type="radio" name="datetime" value="02@1300-1400" />
                   <label for="mothman">1 - 2 AM</label>
                 </fieldset>
@@ -173,9 +165,6 @@
 
                   <input type="radio" name="datetime" value="02@1030-1100" />
                   <label for="sasquatch">10 - 11 AM</label><br />
-
-                  <input type="radio" name="datetime" value="02@1300-1400" />
-                  <label for="mothman">1 - 2 AM</label>
                 </fieldset>
               </div>
             </div>
