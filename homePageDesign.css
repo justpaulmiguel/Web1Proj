@@ -1,7 +1,8 @@
 html,
 body {
     width: 100%;
-    height: 100%;
+    /* ! changed height to min-height to accomudate service-offered page. */
+    min-height: 100vh;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
@@ -10,34 +11,34 @@ body {
 }
 
 body.modal-open {
-
     overflow: hidden;
     position: fixed;
 }
 
 body.viewport-lg {
-
     position: absolute;
 }
 
 
 /* width */
+
 ::-webkit-scrollbar {
     width: 7px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background: #888;
-  }
-  
+}
 
 #brandTitle {
     z-index: 2;
     font-family: Raleway, sans-serif;
-    background-color: #ECD59C;
-    color: #41423D;
+    background-color: #ecd59c;
+    color: #41423d;
     text-align: center;
     font-size: 2rem;
 }
@@ -50,19 +51,20 @@ body.viewport-lg {
     top: 0px;
     right: 0px;
     left: 0px;
-
 }
-.topnav img{
+
+.topnav img {
     height: 29px;
 }
+
 .topnav a {
     float: left;
-    color: #ECD59C;
+    color: #ecd59c;
     text-align: center;
     padding: 17px;
     text-decoration: none;
     font-size: 17px;
-    transition: .4s;
+    transition: 0.4s;
 }
 
 .topnav a:hover {
@@ -72,7 +74,6 @@ body.viewport-lg {
 .topnav a:active {
     color: white;
 }
-
 
 .split {
     padding-right: 14px;
@@ -87,30 +88,29 @@ body.viewport-lg {
 }
 
 #homePage {
-    color: #ECD59C;
+    color: #ecd59c;
     position: absolute;
     transform: translate(15%, 0%);
     z-index: 1;
     font-size: 1.8rem;
     font-family: Raleway, sans-serif;
-
 }
 
 #bookButton {
-    background-color: #E05C2A;
+    background-color: #e05c2a;
     color: white;
     border: none;
     outline: none;
     margin: 20px 5px 20px 5px;
     padding: 10px 25px 10px 25px;
     border-radius: 5px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 #bookButton:hover {
     margin: 20px 5px 20px 5px;
     padding: 10px 4rem 10px 4rem;
-    box-shadow: 2px 2px 20px #ECD59C;
+    box-shadow: 2px 2px 20px #ecd59c;
 }
 
 #myCarousel {
@@ -120,12 +120,15 @@ body.viewport-lg {
     align-items: center;
 }
 
+
 /*HOME END HERE*/
 
+
 /*login signup modal starts here*/
+
 .modal-content {
-    box-shadow: 2px 2px 10px #ECD59C;
-    border-color: #E05C2A;
+    box-shadow: 2px 2px 10px #ecd59c;
+    border-color: #e05c2a;
     right: 50%;
     left: 50%;
     position: absolute;
@@ -148,7 +151,7 @@ body.viewport-lg {
 }
 
 .formBorder {
-    background: -webkit-linear-gradient(right, #ECD59C, #E05C2A, #E05C2A);
+    background: -webkit-linear-gradient(right, #ecd59c, #e05c2a, #e05c2a);
     height: 1px;
     width: 100%;
 }
@@ -164,19 +167,19 @@ body.viewport-lg {
 #submit {
     text-decoration: none;
     color: white;
-    background-color: #E05C2A;
+    background-color: #e05c2a;
     border: none;
     outline: none;
     margin: 20px 5px 20px 5px;
     padding: 10px 25px 10px 25px;
     border-radius: 5px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 #submit:hover {
     margin: 20px 5px 20px 5px;
     padding: 10px 5rem 10px 5rem;
-    box-shadow: 2px 2px 20px #ECD59C;
+    box-shadow: 2px 2px 20px #ecd59c;
 }
 
 #submitLogin {
@@ -187,7 +190,7 @@ body.viewport-lg {
 #submit:hover {
     margin: 20px 5px 20px 5px;
     padding: 10px 5rem 10px 5rem;
-    box-shadow: 2px 2px 20px #ECD59C;
+    box-shadow: 2px 2px 20px #ecd59c;
 }
 
 #submitLogin {
@@ -202,12 +205,15 @@ body.viewport-lg {
     transform: translate(-50%, 10%);
     overflow: hidden;
 }
+
+
 /*login signup modal ends here*/
 
 
 /*Services Starts Here*/
+
 #services {
-    background-color: #ECD59C;
+    background-color: #ecd59c;
     text-align: center;
     position: sticky;
     display: block;
@@ -231,28 +237,24 @@ body.viewport-lg {
     font-size: 18px;
 }
 
-
-
 .theService1 p {
-    color: #ECD59C;
-    background: #41423D;
+    color: #ecd59c;
+    background: #41423d;
     border-radius: 20px;
     overflow-y: hidden;
     height: 250px;
     text-decoration: none;
-    box-shadow: 0px 0px 3px #41423D;
-    transition: .5s;
+    box-shadow: 0px 0px 3px #41423d;
+    transition: 0.5s;
     border: solid white 1px;
 }
 
 .theService1 p:hover {
-    
     height: 350px;
-    overflow-y:scroll;
+    overflow-y: scroll;
     box-shadow: 0px 0px 10px #121212;
     border: solid white 1px;
 }
-
 
 p img {
     box-shadow: 0px 0px 20px#121212;
@@ -269,9 +271,13 @@ p {
     align-items: center;
     padding: 23px 1rem 1rem 1rem;
 }
+
+
 /*Services ends here*/
 
+
 /*ABOUT US START HERE*/
+
 #aboutUs {
     text-align: center;
     position: relative;
@@ -294,14 +300,14 @@ p {
     font-size: 25px;
 }
 
+
 /*ABOUT US ENDS HERE*/
 
 
-
-
 /*CONTACT US STARTS HERE*/
+
 #contactUs {
-    background-color: #ECD59C;
+    background-color: #ecd59c;
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
@@ -321,17 +327,18 @@ p {
 
 #contactUsContent a {
     float: left;
-    color: #41423D;
+    color: #41423d;
 }
-.address{
+
+.address {
     float: right;
 }
 
-#gmap_canvas{
+#gmap_canvas {
     width: 300px;
     height: 300px;
     overflow: hidden;
     background: none !important;
-    border:0;
+    border: 0;
     margin-left: 5rem;
 }

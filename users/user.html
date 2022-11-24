@@ -1,153 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google Icons -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&family=Raleway&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&family=Raleway&display=swap" rel="stylesheet" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="bootstrap\bootstrap.min.css" />
     <script src="bootstrap\bootstrap.min.js"></script>
     <link rel="stylesheet" href="user_styles.css" />
 
     <title>Dashboard</title>
-  </head>
+</head>
 
-  <body>
-    <div class="grid-wrap">
-      <header>
-        <!---------------------------------------------------Top Bar Start------------------------------------------------------>
-        <div class="row">
-          <div class="container-fluid col-12" id="brandTitle">
-            <div class="topnav">
-              <a href="../index.html#home"><img src="../logo.png" /></a>
-              <a href="../index.html#home">Home</a>
-              <a href="../index.html#services">Services</a>
-              <a href="../index.html#aboutUs">About Us</a>
-              <a href="../index.html#contactUs">Contact Us</a>
-              <div class="split">
-                <div class="sign-in-btn-wrapper">
-                  <button class="signout-btn btn" id="sign-out-btn">
-                    Sign Out
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+<body>
+    <!---------------------------------------------------Top Bar Start------------------------------------------------------>
+    <header>
+        <div class="header-title">
+            <div class="logo footer-place-holder-logo"><span>L</span></div>
+            <p class="title-text">Joseph Galang Dental Clinic</p>
         </div>
-        <!---------------------------------------------------Top Bar End------------------------------------------------------>
-      </header>
-      <aside>
+        <div class="split">
+            <span class="material-icons" id="menu-icon"> menu </span>
+        </div>
+    </header>
+
+    <!---------------------------------------------------Top Bar End------------------------------------------------------>
+    <aside>
         <!-- sidebar -->
         <ul class="options-bar">
-          <li>
-            <a href="./user.html">
-              <div class="icon-box">
-                <span class="material-icons">dashboard</span>
-              </div>
-              DASHBOARD
-            </a>
-          </li>
-          <li>
-            <a href="bookings.html">
-              <div class="icon-box">
-                <span class="material-icons"> event </span>
-              </div>
+            <li>
+                <a href="./user.html">
+                    <div class="icon-box">
+                        <span class="material-icons">dashboard</span>
+                    </div>
+                    DASHBOARD
+                </a>
+            </li>
+            <li>
+                <a href="bookings.html">
+                    <div class="icon-box">
+                        <span class="material-icons"> event </span>
+                    </div>
 
-              BOOKING
-            </a>
-          </li>
-          <li>
-            <a href="appointments.html">
-              <div class="icon-box">
-                <span class="material-icons"> people_alt </span>
-              </div>
-              RECORDS
-            </a>
-          </li>
-          <li>
-            <a href="services_offered.html">
-              <div class="icon-box">
-                <span class="material-icons"> feed </span>
-              </div>
+                    BOOKING
+                </a>
+            </li>
+            <li>
+                <a href="appointments.html">
+                    <div class="icon-box">
+                        <span class="material-icons"> people_alt </span>
+                    </div>
+                    RECORDS
+                </a>
+            </li>
+            <li>
+                <a href="services_offered.html">
+                    <div class="icon-box">
+                        <span class="material-icons"> feed </span>
+                    </div>
 
-              SERVICES OFFERED
-            </a>
-          </li>
+                    SERVICES OFFERED
+                </a>
+            </li>
         </ul>
-      </aside>
-      <main>
-        <section class="section-greeting-wrapper">
-          <h2>Good to see you,</h2>
 
-          <h1 class="top-heading-text">Paul Justine</h1>
-        </section>
-
-        <section class="schedule-wrapper">
-          <p>Your next approved schedule would be on:</p>
-          <p class="heading-date">9 AM Next Monday</p>
-          <p class="subheading-date">July 12 2022</p>
-          <div class="schedule-details-wrapper">
-            <div class="detail-wrapper">
-              <p>Dental Service</p>
-              <p class="outlined-text">Oral Prophylaxis</p>
+        <div class="bottom-part">
+            <div id="signout-btn">
+                <span class="material-icons"> logout </span>
+                <span>Logout</span>
             </div>
-            <div class="detail-wrapper">
-              <p>Branch</p>
-              <p class="outlined-text">San Simon Branch</p>
-            </div>
-          </div>
-        </section>
+        </div>
+    </aside>
+    <div class="side-content">
+        <main>
+            <section class="section-greeting-wrapper">
+                <h2>Good to see you,</h2>
 
-        <!-- <section class="approval-wrapper">
+                <h1 class="top-heading-text">Paul Justine</h1>
+            </section>
+
+            <section class="schedule-wrapper">
+                <p>Your next approved schedule would be on:</p>
+                <p class="heading-date">9 AM Next Monday</p>
+                <p class="subheading-date">July 12 2022</p>
+                <div class="schedule-details-wrapper">
+                    <div class="detail-wrapper">
+                        <p>Dental Service</p>
+                        <p class="outlined-text">Oral Prophylaxis</p>
+                    </div>
+                    <div class="detail-wrapper">
+                        <p>Branch</p>
+                        <p class="outlined-text">San Simon Branch</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section class="approval-wrapper">
           TODO Finish this later
         </section> -->
-      </main>
-      <footer>
-        <div class="footer-wrapper">
-          <p>Contact Us</p>
-          <div class="contacts-wrapper">
-            <div class="logo footer-place-holder-logo"><span>L</span></div>
-            <div class="contact-details-wrapper">
-              <p>Address: Sanfernando, Pampanga</p>
-              <p>Tel/CP no.: 09xxxxxxxxx</p>
-              <p>Facebook: facebook.com</p>
-              <p>Email: pauljustine.miguel.a@bulsu.edu.ph</p>
+        </main>
+        <footer>
+            <div class="footer-wrapper">
+                <p>Contact Us</p>
+                <div class="contacts-wrapper">
+                    <div class="logo footer-place-holder-logo"><span>L</span></div>
+                    <div class="contact-details-wrapper">
+                        <p>Address: Sanfernando, Pampanga</p>
+                        <p>Tel/CP no.: 09xxxxxxxxx</p>
+                        <p>Facebook: facebook.com</p>
+                        <p>Email: pauljustine.miguel.a@bulsu.edu.ph</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <p>All Rights Reserved © 2022</p>
-      </footer>
+            <p>All Rights Reserved © 2022</p>
+        </footer>
     </div>
 
     <!--  Modal For Signout Btn -->
     <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close-icon">&times;</span>
-        <div class="confimation">
-          <p>Are sure you want to Log Out?</p>
-          <div class="confirm-btn-wrapper">
-            <!---------remove the form tag when doing the actual------->
-              <a type="button" style="text-decoration: none;" href="../index.html" class="btn modal-yes-btn">Yes</a>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close-icon">&times;</span>
+            <div class="confimation">
+                <p>Are sure you want to Log Out?</p>
+                <div class="confirm-btn-wrapper">
+                    <!---------remove the form tag when doing the actual------->
+                    <a type="button" style="text-decoration: none" href="../index.html" class="btn modal-yes-btn">Yes</a
+            >
             <a type="button" class="btn modal-no-btn">No</a>
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- Signout Modal Script -->
-    <script src="./signout_modal.js"></script>
-  </body>
+
+    <script src="./userScripts/sidebar.js"></script>
+    <script src="./userScripts/signout_modal.js"></script>
+    <script src="./userScripts/headerslide-logic.js"></script>
+</body>
+
 </html>
