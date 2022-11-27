@@ -36,7 +36,7 @@
                 <a href="#aboutUs">About Us</a>
                 <a href="#contactUs">Contact Us</a>
                 <div class="split">
-                    <a href="login.html" data-bs-toggle="modal" data-bs-target="#modalId">Login/SignUp</a>
+                    <a href="login.html" data-bs-toggle="modal" data-bs-target="#modalId">Login</a>
                 </div>
             </div>
         </div>
