@@ -641,7 +641,8 @@ details[open] summary {
 .hidden-btn {
   display: none;
 }
-.input-wrapper input {
+.input-wrapper input[type="text"],
+.input-wrapper input[type="password"] {
   width: 200px;
   border-radius: 10px;
   padding: 8px;

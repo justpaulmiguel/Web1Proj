@@ -81,7 +81,7 @@
 
 // Account Details logic
 // saves the values of the input first before editing.
-(() => {
+if (document.querySelector("#edit-account-form")) {
   let fName = "";
   let lName = "";
   let contactNum = "";
@@ -124,4 +124,4 @@
   });
 
   // todo add confirmation modal here before passing into the form dom
-})();
+}
