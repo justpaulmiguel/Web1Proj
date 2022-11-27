@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	if(!isset($_SESSION["email"]) && !isset($_SESSION["password"]))
+	{
+	header('Location: ../index.php');
+	exit();
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -277,7 +285,7 @@
             <a
               type="button"
               style="text-decoration: none"
-              href="../index.html"
+              href="../php/logout.php"
               class="btn modal-yes-btn"
               >Yes</a
             >
@@ -290,3 +298,4 @@
     <script src="./script.js"></script>
   </body>
 </html>
+
