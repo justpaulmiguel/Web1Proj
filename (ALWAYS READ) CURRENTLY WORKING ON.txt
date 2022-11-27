@@ -1,0 +1,8 @@
+> this is to avoid conflicts when editing or adding
+> please write here what you are currently working on and which files you are editing and date and committed mark
+> example (registration backend - files: index.php, register.html - 2022/11/27) COMMITTED
+
+
+
+
+START HERE
