@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+
+    <link rel="stylesheet" href="./register.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Register</h1>
+    <main class="register-wrapper">
+      <div class="register-form-wrapper">
+        <h2>You are almost done</h2>
+        <p>Fill up your details to get started.</p>
+        <form action="/path/to/php" method="post">
+          <div class="name-input-wrapper">
+            <div class="input-wrapper">
+              <label for="inputFName">First Name:</label>
+              <input
+                type="text"
+                min="2"
+                max="100"
+                name="firstName"
+                id="inputFName"
+                class=""
+                required
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="inputLName">Last Name:</label>
+              <input
+                type="text"
+                min="2"
+                max="100"
+                name="lastName"
+                id="inputLName"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="inputContactNumber">Contact Number:</label>
+            <input
+              type="text"
+              min="2"
+              max="100"
+              name="contactNumber"
+              id="inputContactNumber"
+              required
+            />
+          </div>
+
+          <input type="submit" class="btn" value="Submit" />
+        </form>
+        <div>
+          <a href="/users/user.html">Fill up later</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
