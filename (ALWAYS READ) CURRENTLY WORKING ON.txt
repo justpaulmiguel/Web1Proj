@@ -8,4 +8,4 @@
 START HERE
 
 Wil 
-- Admin ui (wip)
+- admin backend (wip)
