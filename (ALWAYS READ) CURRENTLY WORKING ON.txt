@@ -9,3 +9,5 @@ START HERE
 
 Wil 
 - admin backend (wip)
+
+- login, isAdmin check 2022/11/28
