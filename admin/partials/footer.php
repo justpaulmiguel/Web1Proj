@@ -24,7 +24,7 @@
             <p>Are sure you want to Log Out?</p>
             <div class="confirm-btn-wrapper">
                 <!---------remove the form tag when doing the actual------->
-                <a type="button" style="text-decoration: none" href="../index.html" class="btn modal-yes-btn">Yes</a>
+                <a type="button" style="text-decoration: none" href="../php/logout.php" class="btn modal-yes-btn">Yes</a>
                 <a type="button" class="btn modal-no-btn">No</a>
             </div>
         </div>

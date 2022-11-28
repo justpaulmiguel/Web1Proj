@@ -1,10 +1,14 @@
 <?php
 	session_start();
-	if(!isset($_SESSION["email"]) && !isset($_SESSION["password"]))
+	if(!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESSION["isAdmin"]))
 	{
 	header('Location: ../index.php');
 	exit();
 	}
+  if($_SESSION["isAdmin"]!=0){
+    header("Location: ../admin/dashboard.php");
+	  exit();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

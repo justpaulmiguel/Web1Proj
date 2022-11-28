@@ -1,11 +1,12 @@
 <?php
+    # CHECKS IF AN ACCOUNT IS ALREADY LOGGED IN
 	session_start();
-	if(isset($_SESSION["emailLogin"]) && isset($_SESSION["passLogin"])){
-		header('Location: menu.php');
-		exit();
+	if(isset($_SESSION["email"]) && isset($_SESSION["password"]) && isset($_SESSION["isAdmin"]))
+	{
+        header("Location: users/user.php"); 
+        exit();
 	}
 ?>
-
 <!DOCTYPE html>
 
 <html>
@@ -116,10 +117,6 @@
                         <!--------------------------------------Form for Log in start-------------------------------------------------->
                         <!---------------change the action="" when doing the actual--------------->
                         <form class="formLayout" action="php/login.php" method="post">
-
-                            <?php if(isset($_GET['error'])) { ?>
-                                <p class"error"> <?php echo $_GET['error']; ?></p>
-                            <?php } ?>
 
                             <div class="mb-3">
                                 <label for="emailLogIn">Email</label>
