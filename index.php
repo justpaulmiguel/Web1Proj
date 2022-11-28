@@ -1,11 +1,5 @@
 <?php
-    # CHECKS IF AN ACCOUNT IS ALREADY LOGGED IN
-	session_start();
-	if(isset($_SESSION["email"]) && isset($_SESSION["password"]) && isset($_SESSION["isAdmin"]))
-	{
-        header("Location: users/user.php"); 
-        exit();
-	}
+    include "php/loginCheck.php"
 ?>
 <!DOCTYPE html>
 
@@ -121,7 +115,7 @@
                             <div class="mb-3">
                                 <label for="emailLogIn">Email</label>
                                 <input type="email" class="form-control" name="emailLogin" id="email"
-                                    placeholder="Enter Email">
+                                    placeholder="Enter Email" required>
                                     <!-- add required in email when doing the actual-->
                                 <div class="formBorder"></div>
                             </div>
@@ -129,7 +123,7 @@
                             <div class="mb-3">
                                 <label for="passLogIn">Password</label>
                                 <input type="password" class="form-control" name="passLogin" id="pass"
-                                    placeholder="Enter Password" >
+                                    placeholder="Enter Password" required>
                                     <!-- add required in password when doing the actual-->
                                 <div class="formBorder"></div>
                             </div>
@@ -172,41 +166,31 @@
                     <div class="modal-body">
 
                         <!------------------------------------------Form for Sign Up start---------------------------------------------->
-                        <form class="formLayout" action="#">
+                        <form class="formLayout" action="php/register_process.php">
                             <div class="row">
 
-                                <div class="container-fluid col-6">
-                                    <div class="mb-3">
-                                        <label for="nameSignUp">Name</label>
-                                        <input type="text" class="form-control" name="nameSignUp" id="nameSignUp"
-                                            placeholder="Enter Name" required>
-                                        <div class="formBorder"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-6">
-                                    <div class="mb-3">
-                                        <label for="addSignUp">Address</label>
-                                        <input type="text" class="form-control" name="addSignUp" id="addSignUp"
-                                            placeholder="Enter Address" required>
-                                        <div class="formBorder"></div>
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="emailSignup">Email</label>
+                                    <input type="email" class="form-control" name="emailSignup" id="email"
+                                        placeholder="Enter Email" required>
+                                    <div class="formBorder"></div>
                                 </div>
 
                                 <div class="container-fluid col-6">
                                     <div class="mb-3">
-                                        <label for="emailLogIn">Email</label>
-                                        <input type="email" class="form-control" name="emailLogin" id="email"
-                                            placeholder="Enter Email" required>
-                                        <div class="formBorder"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-6">
-                                    <div class="mb-3">
-                                        <label for="passLogIn">Password</label>
-                                        <input type="password" class="form-control" name="passLogin" id="pass"
+                                        <label for="passSignUp">Password</label>
+                                        <input type="password" class="form-control" name="passSignUp" id="nameSignUp"
                                             placeholder="Enter Password" required>
+                                        <div class="formBorder"></div>
+                                    </div>
+                                </div>
+                                
+
+                                <div class="container-fluid col-6">
+                                    <div class="mb-3">
+                                        <label for="passSignupConfirm">Confirm Password</label>
+                                        <input type="password" class="form-control" name="passSignupConfirm" id="email"
+                                            placeholder="Confirm Password" required>
                                         <div class="formBorder"></div>
                                     </div>
                                 </div>
@@ -214,7 +198,7 @@
                                 <div class="mb-3">
                                     <form>
                                         <label for="terms">
-                                            <input type="checkbox" class="form-check-input" name="terms">
+                                            <input type="checkbox" class="form-check-input" name="terms" required>
                                             I agree to the</label> <a href="#"> Terms and Condition</a>
                                     </form>
                                 </div>
