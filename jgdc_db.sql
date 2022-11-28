@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2022 at 08:58 AM
+-- Generation Time: Nov 28, 2022 at 08:05 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `accounts` (
   `Email` varchar(255) NOT NULL,
   `Password` varchar(20) NOT NULL,
-  `isAdmin` varchar(3) NOT NULL
+  `isAdmin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -38,7 +38,8 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`Email`, `Password`, `isAdmin`) VALUES
-('carmelomelvincent@gmail.com', '12345', '0');
+('carmelomelvincent@gmail.com', '12345', 0),
+('test@email.com', '12345', 1);
 
 -- --------------------------------------------------------
 
@@ -77,7 +78,8 @@ CREATE TABLE `patient_info` (
   `FName` int(20) NOT NULL,
   `LName` int(20) NOT NULL,
   `CP_No` int(11) NOT NULL,
-  `Email` varchar(50) NOT NULL
+  `Email` varchar(50) NOT NULL,
+  `Emp_ID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -124,7 +126,8 @@ ALTER TABLE `emp_info`
 -- Constraints for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  ADD CONSTRAINT `PatEmFK` FOREIGN KEY (`Email`) REFERENCES `accounts` (`Email`);
+  ADD CONSTRAINT `PatEmFK` FOREIGN KEY (`Email`) REFERENCES `accounts` (`Email`),
+  ADD CONSTRAINT `PatEmp_IDFK` FOREIGN KEY (`Emp_ID`) REFERENCES `emp_info` (`Emp_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
