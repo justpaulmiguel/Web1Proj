@@ -78,8 +78,7 @@ CREATE TABLE `patient_info` (
   `FName` int(20) NOT NULL,
   `LName` int(20) NOT NULL,
   `CP_No` int(11) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Emp_ID` int(10) NOT NULL
+  `Email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -110,7 +109,6 @@ ALTER TABLE `emp_info`
 --
 ALTER TABLE `patient_info`
   ADD KEY `PatEmFK` (`Email`),
-  ADD KEY `PatEmp_IDFK` (`Emp_ID`);
 
 --
 -- Constraints for dumped tables
@@ -126,8 +124,7 @@ ALTER TABLE `emp_info`
 -- Constraints for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  ADD CONSTRAINT `PatEmFK` FOREIGN KEY (`Email`) REFERENCES `accounts` (`Email`),
-  ADD CONSTRAINT `PatEmp_IDFK` FOREIGN KEY (`Emp_ID`) REFERENCES `emp_info` (`Emp_ID`);
+  ADD CONSTRAINT `PatEmFK` FOREIGN KEY (`Email`) REFERENCES `accounts` (`Email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
