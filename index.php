@@ -17,6 +17,56 @@
     <title>
         Home
     </title>
+
+    <style>
+        #passCheck {
+            display: none;
+            margin: -25px -30px -25px -10px;
+        }
+        #passCheck p{
+            text-align: justify;
+        }
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+            color: green;
+        }
+
+        .valid:before {
+            content: "✔    ";
+        }
+
+        /* Add a red text color and an "x" icon when the requirements are wrong */
+        .invalid {
+            color: red;
+        }
+        .invalid:before {
+            content: "✖    ";
+        }
+
+        #passCheck2 {
+            display: none;
+            margin: -25px -30px -25px 60px;
+        }
+        #passCheck2 p{
+            text-align: justify;
+        }
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid2 {
+            color: green;
+        }
+
+        .valid2:before {
+            content: "✔ PASSWORD MATCHED";
+        }
+
+        /* Add a red text color and an "x" icon when the requirements are wrong */
+        .invalid2 {
+            color: red;
+        }
+        .invalid2:before {
+            content: "✖ PASSWORD DOES NOT MATCH";
+    }
+    </style>
 </head>
 
 <body>
@@ -166,7 +216,7 @@
                     <div class="modal-body">
 
                         <!------------------------------------------Form for Sign Up start---------------------------------------------->
-                        <form class="formLayout" action="php/register_process.php">
+                        <form class="formLayout" action="php/register_process.php" method="post" onsubmit="validate();">
                             <div class="row">
 
                                 <div class="mb-3">
@@ -179,8 +229,8 @@
                                 <div class="container-fluid col-6">
                                     <div class="mb-3">
                                         <label for="passSignUp">Password</label>
-                                        <input type="password" class="form-control" name="passSignUp" id="nameSignUp"
-                                            placeholder="Enter Password" required>
+                                        <input type="password" class="form-control" name="passSignup" id="passSignup"
+                                            placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                         <div class="formBorder"></div>
                                     </div>
                                 </div>
@@ -189,11 +239,115 @@
                                 <div class="container-fluid col-6">
                                     <div class="mb-3">
                                         <label for="passSignupConfirm">Confirm Password</label>
-                                        <input type="password" class="form-control" name="passSignupConfirm" id="email"
-                                            placeholder="Confirm Password" required>
+                                        <input type="password" class="form-control" name="passSignupConfirm" id="passSignupConfirm"
+                                            placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                         <div class="formBorder"></div>
                                     </div>
                                 </div>
+
+                                <div id= "passCheck" display = "none">
+                                    <div role="alert">
+                                        <p id= "passInput" class= "invalid">Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</p>
+                                    </div>
+                                </div>
+
+                                <div id= "passCheck2" display = "none">
+                                    <div role="alert">
+                                        <p id= "passInput2" class= "invalid2"></p>
+                                    </div>
+                                </div>
+
+                                <script type="text/javascript">
+
+                                    var pass = document.getElementById("passSignup");
+                                    var passConf = document.getElementById("passSignupConfirm");
+                                    var passInput = document.getElementById("passInput");
+                                    var passInput2 = document.getElementById("passInput2");
+                                    var upper = false;
+                                    var lower = false;
+                                    var number = false;
+                                    var length = false;
+
+                                    passConf.onkeyup = function() {
+                                        if (pass.value == passConf.value) {
+                                            passInput2.classList.remove("invalid2");
+                                            passInput2.classList.add("valid2");
+                                        } else {
+                                            passInput2.classList.remove("valid2");
+                                            passInput2.classList.add("invalid2");
+                                        }
+                                    }
+
+                                    // When the user starts to type something inside the password field
+                                    pass.onfocus = function() {
+                                        document.getElementById("passCheck").style.display = "block";
+                                    }
+                            
+                                    // When the user clicks outside of the password field, hide the message box
+                                    pass.onblur = function() {
+                                        document.getElementById("passCheck").style.display = "none";
+                                    }
+
+                                    // When the user starts to type something inside the password field
+                                    passConf.onfocus = function() {
+                                        document.getElementById("passCheck2").style.display = "block";
+                                    }
+                            
+                                    // When the user clicks outside of the password field, hide the message box
+                                    passConf.onblur = function() {
+                                        document.getElementById("passCheck2").style.display = "none";
+                                    }
+
+                                    // When the user starts to type something inside the password field
+                                    pass.onkeyup = function() {
+                                        // Validate lowercase letters
+                                        var lowerCaseLetters = /[a-z]/g;
+                                        if(pass.value.match(lowerCaseLetters)) {  
+                                            lower = true;
+                                        } else {
+                                            lower = false;
+                                        }
+  
+                                        // Validate capital letters
+                                        var upperCaseLetters = /[A-Z]/g;
+                                        if(pass.value.match(upperCaseLetters)) {  
+                                            upper = true;
+                                        } else {
+                                            upper = false;
+                                        }
+
+                                        // Validate numbers
+                                        var numbers = /[0-9]/g;
+                                        if(pass.value.match(numbers)) {  
+                                            number = true;
+                                        } else {
+                                            number = false;
+                                        }
+                                      
+                                        // Validate length
+                                        if(pass.value.length >= 8) {
+                                            length = true;
+                                        } else {
+                                            length = false;
+                                        }
+
+                                        if(lower && upper && number && length) {
+                                            passInput.classList.remove("invalid");
+                                            passInput.classList.add("valid");
+                                        } else {
+                                            passInput.classList.remove("valid");
+                                            passInput.classList.add("invalid");
+                                        }
+                                    }
+
+                                    function validate() {
+                                        if(pass.value != passConf.value) {
+                                            passConf.focus();
+                                            event.preventDefault();
+                                        }
+                                    }
+
+                                </script>
 
                                 <div class="mb-3">
                                     <form>
@@ -214,6 +368,7 @@
 
                             </div>
                         </form>
+                        
 
                         <!------------------------------------------Form for Sign Up end---------------------------------------------->
                     </div>
