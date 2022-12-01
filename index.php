@@ -13,11 +13,59 @@
     <!--<script src="homePageDesign.js"></script>-->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 
-
     <title>
         Home
     </title>
+    
+    <style>
+        #passCheck {
+            display: none;
+            margin: -25px -30px -25px -10px;
+        }
+        #passCheck p{
+            text-align: justify;
+        }
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+            color: green;
+        }
 
+        .valid:before {
+            content: "✔    ";
+        }
+
+        /* Add a red text color and an "x" icon when the requirements are wrong */
+        .invalid {
+            color: red;
+        }
+        .invalid:before {
+            content: "✖    ";
+        }
+
+        #passCheck2 {
+            display: none;
+            margin: -25px -30px -25px 60px;
+        }
+        #passCheck2 p{
+            text-align: justify;
+        }
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid2 {
+            color: green;
+        }
+
+        .valid2:before {
+            content: "✔ PASSWORD MATCHED";
+        }
+
+        /* Add a red text color and an "x" icon when the requirements are wrong */
+        .invalid2 {
+            color: red;
+        }
+        .invalid2:before {
+            content: "✖ PASSWORD DOES NOT MATCH";
+    }
+    </style>
 </head>
 
 <body>
