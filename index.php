@@ -16,18 +16,20 @@
     <title>
         Home
     </title>
-    
+
     <style>
         #passCheck {
             display: none;
-            margin: -25px -30px -25px -10px;
+            margin-top: -25px;
+            margin-bottom: -25px;
         }
         #passCheck p{
-            text-align: justify;
+            text-align: center;
         }
         /* Add a green text color and a checkmark when the requirements are right */
         .valid {
             color: green;
+            text-align: justify;
         }
 
         .valid:before {
@@ -37,6 +39,7 @@
         /* Add a red text color and an "x" icon when the requirements are wrong */
         .invalid {
             color: red;
+            text-align: justify;
         }
         .invalid:before {
             content: "✖    ";
@@ -44,13 +47,15 @@
 
         #passCheck2 {
             display: none;
-            margin: -25px -30px -25px 60px;
+            margin-top: -25px;
+            margin-bottom: -25px;
         }
         #passCheck2 p{
-            text-align: justify;
+            text-align: center;
         }
         /* Add a green text color and a checkmark when the requirements are right */
         .valid2 {
+            text-align: center;
             color: green;
         }
 
@@ -60,6 +65,7 @@
 
         /* Add a red text color and an "x" icon when the requirements are wrong */
         .invalid2 {
+            
             color: red;
         }
         .invalid2:before {
