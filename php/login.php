@@ -21,16 +21,45 @@ if($count==1){
     # ADMIN ACCOUNT CHECK
     if($isAdmin[0])  {
         $_SESSION["isAdmin"] = $isAdmin[0];
-        header("Location: ../admin/dashboard.php");
+        ?>
+        <script>
+            Swal.fire({
+            icon: 'success',
+            text: 'Success!',
+            confirmButtonColor: '#e05c2a'
+            }).then(function() {
+                window.location = "admin/dashboard.php";
+            });
+        </script>");
+        <?php
     } else {
         $_SESSION["isAdmin"] = $isAdmin[0];
-        header("Location: ../users/user.php"); 
+        ?>
+        <script>
+            Swal.fire({
+            icon: 'success',
+            text: 'Success!',
+            confirmButtonColor: '#e05c2a'
+            }).then(function() {
+                window.location = "users/user.php";
+            });
+        </script>");
+        <?php
     }
     
 }
 else{
     header("refresh: 0; url=../index.php");
-    echo ("<script>alert('Email or Password is Incorrect.')</script>");
+    ?>
+    <script>
+        Swal.fire({
+        icon: 'error',
+        text: 'EMAIL OR PASSWORD IS INCORRECT!',
+        confirmButtonColor: '#e05c2a'
+        })
+    </script>");
+    <?php
 }
 mysqli_close($conn);
 ?>
+confirmButtonText: '<a href="url">LINK</a>'

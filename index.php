@@ -1,5 +1,5 @@
 <?php
-    include "php/loginCheck.php"
+    include "php/loginCheck.php";
 ?>
 <!DOCTYPE html>
 
@@ -12,11 +12,13 @@
     <link rel="stylesheet" href="homePageDesign.css">
     <!--<script src="homePageDesign.js"></script>-->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>
         Home
     </title>
-
+    
     <style>
         #passCheck {
             display: none;
@@ -70,11 +72,20 @@
         }
         .invalid2:before {
             content: "✖ PASSWORD DOES NOT MATCH";
-    }
+        }
+        #passSignup,
+        #passSignupConfirm {
+            font-size: 14px;
+            outline: none;
+            border: none;
+        }
     </style>
+
 </head>
 
 <body>
+    
+<div id="response" style="display: none;"></div>
 
     <!---------------------------------------------------Top Bar Start------------------------------------------------------>
     <div class="row">
@@ -93,6 +104,8 @@
     </div>
     <!---------------------------------------------------Top Bar End------------------------------------------------------>
 
+
+    
     <!----------------------------------------HOME STARTS HERE---------------------------------------->
     <div onclick="sidebarf2()">
         <div class="row" id="home">
@@ -165,7 +178,7 @@
 
                         <!--------------------------------------Form for Log in start-------------------------------------------------->
                         <!---------------change the action="" when doing the actual--------------->
-                        <form class="formLayout" action="php/login.php" method="post">
+                        <form class="formLayout" action="php/login.php" method="post" id="formLogin">
 
                             <div class="mb-3">
                                 <label for="emailLogIn">Email</label>
@@ -206,8 +219,26 @@
         </div>
         <!---------------------------------------------------Log in ends here------------------------------------------->
 
+    <script>
+        var submit = document.getElementsByName("submitLogIn");
+        var form = document.getElementById("formLogin");
 
+        $(submit).click( function() {
+        
+        $.post( $(form).attr("action"),
+                $(form).serializeArray(),
+            function(info) {
+        
+                $("#response").empty();
+                $("#response").html(info);
 
+            });
+        
+        $(form).submit( function() {
+            return false;  
+        });
+        });
+    </script>
         <!-----------------------------------------------------Modal SIGN UP HERE------------------------------------------------>
         <!-------------------------------------- Modal Sign for pop-up login---------------------------------->
         <div class="modal fade modal-lg" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
@@ -221,7 +252,7 @@
                     <div class="modal-body">
 
                         <!------------------------------------------Form for Sign Up start---------------------------------------------->
-                        <form class="formLayout" action="php/register_process.php" method="post" onsubmit="validate();">
+                        <form class="formLayout" action="php/register_process.php" method="post" onsubmit="validate();" id="formSignup">
                             <div class="row">
 
                                 <div class="mb-3">
@@ -363,7 +394,7 @@
                                 </div>
 
                                 <div id="submitLogin">
-                                    <input type="submit" name="submitLogIn" id="submit" value="S I G N U P">
+                                    <input type="submit" name="submitSignup" id="submit" value="S I G N U P">
                                 </div>
 
                                 <div id="submitLogin" class="mb-3">
@@ -385,6 +416,27 @@
 
 
         <!----------------------------------------LOGIN SIGNUP ENDS HERE---------------------------------------->
+
+        <script>
+        var submit2 = document.getElementsByName("submitSignup");
+        var form2 = document.getElementById("formSignup");
+
+        $(submit2).click( function() {
+        
+        $.post( $(form2).attr("action"),
+                $(form2).serializeArray(),
+            function(info) {
+        
+                $("#response").empty();
+                $("#response").html(info);
+
+            });
+        
+        $(form2).submit( function() {
+            return false;  
+        });
+        });
+    </script>
 
         <!----------------------------------------SERVICES STARTS HERE---------------------------------------->
 
