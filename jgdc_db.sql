@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2022 at 02:13 PM
+-- Generation Time: Dec 01, 2022 at 08:21 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,6 +39,7 @@ CREATE TABLE `accounts` (
 
 INSERT INTO `accounts` (`Email`, `Password`, `isAdmin`) VALUES
 ('carmelomelvincent@gmail.com', '12345', 0),
+('test2@gmail.com', '12345', 0),
 ('test@email.com', '12345', 1);
 
 -- --------------------------------------------------------
@@ -80,7 +81,8 @@ CREATE TABLE `emp_info` (
 --
 
 INSERT INTO `emp_info` (`Emp_ID`, `Emp_Name`, `Email`) VALUES
-(1, 'Juan Dela Cruz', 'test@email.com');
+(1, 'Juan Dela Cruz', 'test@email.com'),
+(2, 'John Doe', 'example@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -125,8 +127,7 @@ ALTER TABLE `bookings`
 -- Indexes for table `emp_info`
 --
 ALTER TABLE `emp_info`
-  ADD PRIMARY KEY (`Emp_ID`),
-  ADD KEY `EmpEmFK` (`Email`);
+  ADD PRIMARY KEY (`Emp_ID`);
 
 --
 -- Indexes for table `patient_info`
@@ -143,7 +144,7 @@ ALTER TABLE `patient_info`
 -- AUTO_INCREMENT for table `emp_info`
 --
 ALTER TABLE `emp_info`
-  MODIFY `Emp_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Emp_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `patient_info`
@@ -161,12 +162,6 @@ ALTER TABLE `patient_info`
 ALTER TABLE `bookings`
   ADD CONSTRAINT `EmpIdFK` FOREIGN KEY (`Emp_ID`) REFERENCES `emp_info` (`Emp_ID`),
   ADD CONSTRAINT `PatIdFK` FOREIGN KEY (`Pat_ID`) REFERENCES `patient_info` (`Pat_ID`);
-
---
--- Constraints for table `emp_info`
---
-ALTER TABLE `emp_info`
-  ADD CONSTRAINT `EmpEmFK` FOREIGN KEY (`Email`) REFERENCES `accounts` (`Email`);
 
 --
 -- Constraints for table `patient_info`
