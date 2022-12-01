@@ -220,24 +220,23 @@
         <!---------------------------------------------------Log in ends here------------------------------------------->
 
     <script>
-        var submit = document.getElementsByName("submitLogIn");
         var form = document.getElementById("formLogin");
 
-        $(submit).click( function() {
-        
-        $.post( $(form).attr("action"),
-                $(form).serializeArray(),
-            function(info) {
-        
-                $("#response").empty();
-                $("#response").html(info);
+        $(document).ready(function (){
+            $(form).submit(function (event) {
+                event.preventDefault()
 
-            });
-        
-        $(form).submit( function() {
-            return false;  
-        });
-        });
+                $.post( $(form).attr("action"),
+                $(form).serializeArray(),
+                function(info) {
+            
+                    $("#response").empty();
+                    $("#response").html(info);
+
+                });
+
+            })
+        })
     </script>
         <!-----------------------------------------------------Modal SIGN UP HERE------------------------------------------------>
         <!-------------------------------------- Modal Sign for pop-up login---------------------------------->
@@ -255,9 +254,28 @@
                         <form class="formLayout" action="php/register_process.php" method="post" onsubmit="validate();" id="formSignup">
                             <div class="row">
 
+                                <div class="container-fluid col-6">
+                                    <div class="mb-3">
+                                        <label for="fnameSignUp">First Name</label>
+                                        <input type="text" class="form-control" name="fnameSignup" id="fnameSignup"
+                                            placeholder="Enter First Name" required>
+                                        <div class="formBorder"></div>
+                                    </div>
+                                </div>
+                                
+
+                                <div class="container-fluid col-6">
+                                    <div class="mb-3">
+                                        <label for="lnameSignup">Last Name</label>
+                                        <input type="text" class="form-control" name="lnameSignup" id="lnameSignup"
+                                            placeholder="Enter Last Name" required>
+                                        <div class="formBorder"></div>
+                                    </div>
+                                </div>
+
                                 <div class="mb-3">
                                     <label for="emailSignup">Email</label>
-                                    <input type="email" class="form-control" name="emailSignup" id="email"
+                                    <input type="email" class="form-control" name="emailSignup" id="emailSignup"
                                         placeholder="Enter Email" required>
                                     <div class="formBorder"></div>
                                 </div>
@@ -385,6 +403,13 @@
 
                                 </script>
 
+                                <div   div class="mb-3">
+                                    <label for="contactSignup">Contact Number</label>
+                                    <input type="text" class="form-control" name="contactSignup" id="contactSignup"
+                                        placeholder="eg: 09220001111" pattern="[0-9]{11}" required>
+                                    <div class="formBorder"></div>
+                                </div>
+
                                 <div class="mb-3">
                                     <form>
                                         <label for="terms">
@@ -418,24 +443,25 @@
         <!----------------------------------------LOGIN SIGNUP ENDS HERE---------------------------------------->
 
         <script>
-        var submit2 = document.getElementsByName("submitSignup");
         var form2 = document.getElementById("formSignup");
 
-        $(submit2).click( function() {
-        
-        $.post( $(form2).attr("action"),
-                $(form2).serializeArray(),
-            function(info) {
-        
-                $("#response").empty();
-                $("#response").html(info);
+        $(document).ready(function (){
+            $(form2).submit(function (event) {
+                event.preventDefault()
 
-            });
+                $.post( $(form2).attr("action"),
+                $(form2).serializeArray(),
+                function(info) {
+            
+                    $("#response").empty();
+                    $("#response").html(info);
+
+                });
+
+            })
+        })
+
         
-        $(form2).submit( function() {
-            return false;  
-        });
-        });
     </script>
 
         <!----------------------------------------SERVICES STARTS HERE---------------------------------------->
