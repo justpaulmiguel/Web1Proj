@@ -1,3 +1,15 @@
+<?php
+// Requires session details before accessing admin pages
+// todo might add redirection info
+
+
+require('../php/loginCheck.php');
+if ($_SESSION["permissionLvl"] == 0) {
+    header("Location: ../users/user.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
