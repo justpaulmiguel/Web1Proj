@@ -34,7 +34,7 @@ Remove the task to the features and add task that you're workin on here.
 
 ### CARMELO
 
-- I will try to make a email verification thingy
+- Dashboard Backend
 
 ## Finished
 
