@@ -15,7 +15,7 @@ Git clone the repo. Create new database named `jgdc_db`. Import the data from th
 
 ## Superuser (Admin) Account
 
-> email is `test@email.com` , pasword is `12345`
+> email is `test@email.com` , pasword is `aA345678`
 
 ## Features to be implemeted
 
