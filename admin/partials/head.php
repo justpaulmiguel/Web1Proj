@@ -15,6 +15,12 @@
 
     <!-- css styles -->
     <link rel="stylesheet" href="style.css">
+    <!-- Modal Library -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 </head>
 
 <body>

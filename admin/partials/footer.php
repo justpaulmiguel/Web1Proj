@@ -15,23 +15,6 @@
     <p>All Rights Reserved © 2022</p>
 </footer>
 </div>
-<!--  Modal For Signout Btn -->
-<div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close-icon">&times;</span>
-        <div class="confimation">
-            <p>Are sure you want to Log Out?</p>
-            <div class="confirm-btn-wrapper">
-                <!---------remove the form tag when doing the actual------->
-                <a type="button" style="text-decoration: none" href="../php/logout.php" class="btn modal-yes-btn">Yes</a>
-                <a type="button" class="btn modal-no-btn">No</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
 <script src="./script.js"></script>
 
 </body>
