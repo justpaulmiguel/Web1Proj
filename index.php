@@ -79,6 +79,15 @@
             outline: none;
             border: none;
         }
+        #dialCode {
+            position: relative;
+            top: 30px;
+            right: 120px;
+            font-size: 14px;
+        }
+        #contactSignup {
+            text-indent: 20px;
+        }
     </style>
 
 </head>
@@ -403,10 +412,11 @@
 
                                 </script>
 
-                                <div   div class="mb-3">
+                                <div div class="mb-3">
                                     <label for="contactSignup">Contact Number</label>
+                                    <label id="dialCode" for="contactSignup">+63</label>
                                     <input type="text" class="form-control" name="contactSignup" id="contactSignup"
-                                        placeholder="eg: 09220001111" pattern="[0-9]{11}" required>
+                                        placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" required>
                                     <div class="formBorder"></div>
                                 </div>
 
@@ -443,6 +453,7 @@
         <!----------------------------------------LOGIN SIGNUP ENDS HERE---------------------------------------->
 
         <script>
+            
         var form2 = document.getElementById("formSignup");
 
         $(document).ready(function (){

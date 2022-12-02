@@ -137,7 +137,11 @@ body.viewport-lg {
 #passSignup,
 #addSignUp,
 #passSignup,
-#passSignupConfirm {
+#passSignupConfirm,
+#fnameSignup,
+#lnameSignup,
+#contactSignup,
+#emailSignup {
   font-size: 14px;
   outline: none;
   border: none;

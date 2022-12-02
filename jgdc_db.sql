@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 07:38 AM
+-- Generation Time: Dec 02, 2022 at 11:01 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `accounts` (
   `email` varchar(255) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `permissionLvl` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,8 +38,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`email`, `password`, `permissionLvl`) VALUES
-('carmelomelvincent@gmail.com', '12345', 0),
-('test@email.com', '12345', 2);
+('carmelomelvincent2@gmail.com', '$2y$10$AXaCLs6uMlMEY/2aPALm5.kc72zsETRXx7/CqdqZcdG.980j7PU3a', 0),
+('carmelomelvincent@gmail.com', '$2y$10$zlKOHK1qQ1Os/h8MAi/fFO3xCCpzUKfJG9QIJp7XQsK5iKvQAtUSq', 0),
+('test@email.com', '$2y$10$B602TJx63yjEP64b/r4d4e001RxLfXRqlCG2ervxDlGJ5hCo7lSGW', 2);
 
 -- --------------------------------------------------------
 
@@ -56,14 +57,6 @@ CREATE TABLE `bookings` (
   `time` time NOT NULL,
   `state` enum('pending','accepted','completed') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`booking_ID`, `emp_ID`, `pat_ID`, `service`, `date`, `time`, `state`) VALUES
-(2, 3, 2, 'clean', '2022-12-10', '14:30:00', 'pending'),
-(3, 3, 2, 'pasta', '2022-12-04', '15:36:13', 'completed');
 
 -- --------------------------------------------------------
 
@@ -84,7 +77,7 @@ CREATE TABLE `emp_info` (
 --
 
 INSERT INTO `emp_info` (`emp_ID`, `emp_fname`, `emp_lname`, `contactNo`, `email`) VALUES
-(3, 'Juan', 'Dela Cruz', '9254994400', 'test@email.com');
+(4, 'Juan', 'Dela Cruz', '9254994400', 'test@email.com');
 
 -- --------------------------------------------------------
 
@@ -105,7 +98,8 @@ CREATE TABLE `patient_info` (
 --
 
 INSERT INTO `patient_info` (`pat_ID`, `pat_fname`, `pat_lname`, `contactNo`, `email`) VALUES
-(2, 'Vincent', 'Carmelo', '9254976600', 'carmelomelvincent@gmail.com');
+(3, 'Mel Vincent', 'Carmelo', '9254976600', 'carmelomelvincent@gmail.com'),
+(5, 'Carmelo, Mel Vincent T.', 'Carmelo', '9254976600', 'carmelomelvincent2@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -153,13 +147,13 @@ ALTER TABLE `bookings`
 -- AUTO_INCREMENT for table `emp_info`
 --
 ALTER TABLE `emp_info`
-  MODIFY `emp_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `emp_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  MODIFY `pat_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pat_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
