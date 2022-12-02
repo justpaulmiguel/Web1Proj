@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 08:21 AM
+-- Generation Time: Dec 02, 2022 at 07:38 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,19 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `accounts` (
-  `Email` varchar(255) NOT NULL,
-  `Password` varchar(20) NOT NULL,
-  `isAdmin` tinyint(1) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `permissionLvl` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`Email`, `Password`, `isAdmin`) VALUES
+INSERT INTO `accounts` (`email`, `password`, `permissionLvl`) VALUES
 ('carmelomelvincent@gmail.com', '12345', 0),
-('test2@gmail.com', '12345', 0),
-('test@email.com', '12345', 1);
+('test@email.com', '12345', 2);
 
 -- --------------------------------------------------------
 
@@ -49,11 +48,12 @@ INSERT INTO `accounts` (`Email`, `Password`, `isAdmin`) VALUES
 --
 
 CREATE TABLE `bookings` (
-  `Emp_ID` int(10) NOT NULL,
-  `Pat_ID` int(10) NOT NULL,
-  `Service` enum('clean','pasta','d_crown','wisdom') NOT NULL,
-  `Date` date NOT NULL,
-  `Time` time NOT NULL,
+  `booking_ID` int(10) NOT NULL,
+  `emp_ID` int(10) NOT NULL,
+  `pat_ID` int(10) NOT NULL,
+  `service` enum('clean','pasta','d_crown','wisdom') NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
   `state` enum('pending','accepted','completed') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,8 +61,9 @@ CREATE TABLE `bookings` (
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`Emp_ID`, `Pat_ID`, `Service`, `Date`, `Time`, `state`) VALUES
-(1, 1, 'clean', '2022-06-04', '10:00:00', 'pending');
+INSERT INTO `bookings` (`booking_ID`, `emp_ID`, `pat_ID`, `service`, `date`, `time`, `state`) VALUES
+(2, 3, 2, 'clean', '2022-12-10', '14:30:00', 'pending'),
+(3, 3, 2, 'pasta', '2022-12-04', '15:36:13', 'completed');
 
 -- --------------------------------------------------------
 
@@ -71,18 +72,19 @@ INSERT INTO `bookings` (`Emp_ID`, `Pat_ID`, `Service`, `Date`, `Time`, `state`) 
 --
 
 CREATE TABLE `emp_info` (
-  `Emp_ID` int(10) NOT NULL,
-  `Emp_Name` varchar(60) NOT NULL,
-  `Email` varchar(255) NOT NULL
+  `emp_ID` int(10) NOT NULL,
+  `emp_fname` varchar(50) NOT NULL,
+  `emp_lname` varchar(50) NOT NULL,
+  `contactNo` varchar(10) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `emp_info`
 --
 
-INSERT INTO `emp_info` (`Emp_ID`, `Emp_Name`, `Email`) VALUES
-(1, 'Juan Dela Cruz', 'test@email.com'),
-(2, 'John Doe', 'example@gmail.com');
+INSERT INTO `emp_info` (`emp_ID`, `emp_fname`, `emp_lname`, `contactNo`, `email`) VALUES
+(3, 'Juan', 'Dela Cruz', '9254994400', 'test@email.com');
 
 -- --------------------------------------------------------
 
@@ -91,19 +93,19 @@ INSERT INTO `emp_info` (`Emp_ID`, `Emp_Name`, `Email`) VALUES
 --
 
 CREATE TABLE `patient_info` (
-  `Pat_ID` int(10) NOT NULL,
-  `FName` varchar(30) NOT NULL,
-  `LName` varchar(30) NOT NULL,
-  `CP_No` varchar(11) NOT NULL,
-  `Email` varchar(255) NOT NULL
+  `pat_ID` int(10) NOT NULL,
+  `pat_fname` varchar(30) NOT NULL,
+  `pat_lname` varchar(30) NOT NULL,
+  `contactNo` varchar(10) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `patient_info`
 --
 
-INSERT INTO `patient_info` (`Pat_ID`, `FName`, `LName`, `CP_No`, `Email`) VALUES
-(1, 'Mel Vincent', 'Carmelo', '09254976600', 'carmelomelvincent@gmail.com');
+INSERT INTO `patient_info` (`pat_ID`, `pat_fname`, `pat_lname`, `contactNo`, `email`) VALUES
+(2, 'Vincent', 'Carmelo', '9254976600', 'carmelomelvincent@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -113,44 +115,51 @@ INSERT INTO `patient_info` (`Pat_ID`, `FName`, `LName`, `CP_No`, `Email`) VALUES
 -- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
-  ADD PRIMARY KEY (`Email`);
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indexes for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`Emp_ID`,`Pat_ID`),
-  ADD KEY `EmpIdFK` (`Emp_ID`),
-  ADD KEY `PatIdFK` (`Pat_ID`);
+  ADD PRIMARY KEY (`booking_ID`),
+  ADD KEY `EmpIdFK` (`emp_ID`),
+  ADD KEY `PatIdFK` (`pat_ID`);
 
 --
 -- Indexes for table `emp_info`
 --
 ALTER TABLE `emp_info`
-  ADD PRIMARY KEY (`Emp_ID`);
+  ADD PRIMARY KEY (`emp_ID`),
+  ADD KEY `EmpEmFK` (`email`);
 
 --
 -- Indexes for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  ADD PRIMARY KEY (`Pat_ID`),
-  ADD KEY `PatEmFK` (`Email`);
+  ADD PRIMARY KEY (`pat_ID`),
+  ADD KEY `PatEmFK` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `booking_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `emp_info`
 --
 ALTER TABLE `emp_info`
-  MODIFY `Emp_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `emp_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  MODIFY `Pat_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pat_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -160,14 +169,20 @@ ALTER TABLE `patient_info`
 -- Constraints for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD CONSTRAINT `EmpIdFK` FOREIGN KEY (`Emp_ID`) REFERENCES `emp_info` (`Emp_ID`),
-  ADD CONSTRAINT `PatIdFK` FOREIGN KEY (`Pat_ID`) REFERENCES `patient_info` (`Pat_ID`);
+  ADD CONSTRAINT `EmpIdFK` FOREIGN KEY (`emp_ID`) REFERENCES `emp_info` (`emp_ID`),
+  ADD CONSTRAINT `PatIdFK` FOREIGN KEY (`pat_ID`) REFERENCES `patient_info` (`pat_ID`);
+
+--
+-- Constraints for table `emp_info`
+--
+ALTER TABLE `emp_info`
+  ADD CONSTRAINT `EmpEmFK` FOREIGN KEY (`email`) REFERENCES `accounts` (`email`);
 
 --
 -- Constraints for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  ADD CONSTRAINT `PatEmFK` FOREIGN KEY (`Email`) REFERENCES `accounts` (`Email`);
+  ADD CONSTRAINT `PatEmFK` FOREIGN KEY (`email`) REFERENCES `accounts` (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
