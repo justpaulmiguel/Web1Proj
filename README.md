@@ -32,6 +32,10 @@ Remove the task to the features and add task that you're workin on here.
 
 - Dashboard UI
 
+### CARMELO
+
+- I will try to make a email verification thingy
+
 ## Finished
 
 Move your task after you completed it here.
