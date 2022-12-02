@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 11:01 AM
+-- Generation Time: Dec 02, 2022 at 12:13 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -69,15 +69,16 @@ CREATE TABLE `emp_info` (
   `emp_fname` varchar(50) NOT NULL,
   `emp_lname` varchar(50) NOT NULL,
   `contactNo` varchar(10) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `emp_info`
 --
 
-INSERT INTO `emp_info` (`emp_ID`, `emp_fname`, `emp_lname`, `contactNo`, `email`) VALUES
-(4, 'Juan', 'Dela Cruz', '9254994400', 'test@email.com');
+INSERT INTO `emp_info` (`emp_ID`, `emp_fname`, `emp_lname`, `contactNo`, `email`, `active`) VALUES
+(4, 'Juan', 'Dela Cruz', '9254994400', 'test@email.com', 0);
 
 -- --------------------------------------------------------
 
