@@ -18,7 +18,7 @@ if($count==1){
         text: 'EMAIL ALREADY USED!',
         confirmButtonColor: '#e05c2a'
         })
-    </script>");
+    </script>
     <?php
 }
 else{
@@ -28,7 +28,7 @@ else{
 
     if ($count2==1) {
 
-        $query = "INSERT INTO accounts (`Email`, `Password`, `isAdmin`) VALUES ('$email', '$pass', '1');";
+        $query = "INSERT INTO accounts (`email`, `password`, `isAdmin`) VALUES ('$email', '$pass', '1');";
 
         if (mysqli_query($conn, $query)) {
             session_unset();
@@ -42,7 +42,7 @@ else{
                 }).then(function() {
                     window.location = "index.php";
                 });
-            </script>");
+            </script>
             <?php
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -66,7 +66,7 @@ else{
                 }).then(function() {
                     window.location = "index.php";
                 });
-            </script>");
+            </script>"
             <?php
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
