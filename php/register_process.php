@@ -29,7 +29,7 @@ else{
 
     if (mysqli_query($conn, $query)) {
 
-        $query = "INSERT INTO patient_info (`pat_fname`, `pat_lname`, `contactNo`, `email`) 
+        $query = "INSERT INTO account_info (`fname`, `lname`, `contactNo`, `email`) 
         VALUES ('$fname', '$lname', '$contact', '$email');";
 
         mysqli_query($conn, $query);
