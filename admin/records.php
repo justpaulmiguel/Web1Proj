@@ -4,75 +4,48 @@
 <main>
     <h1>Past Records</h1>
     <p>Lorem ipsum dolor sit amet </p>
-    <table border="2" cellpadding="10" cellspacing="1">
-        <tr>
-            <th>Date</th>
-            <th>Time</th>
-            <th colspan="2">Name</th>
-            <th>Service</th>
-            <th>Doctor</th>
-        </tr>
-
-        <tr align="center">
-            <td>09/01/2022</td>
-            <td>9:00AM - 9:30PM</td>
-            <td>Squarepants</td>
-            <td>Spongebob</td>
-            <td>Oral Propalaxyis</td>
-            <td>Joseph Joestar</td>
-        </tr>
 
 
-        <tr align="center">
-            <td>09/01/2022</td>
-            <td>9:00AM - 9:30PM</td>
-            <td>Squarepants</td>
-            <td>Spongebob</td>
-            <td>Oral Propalaxyis</td>
-            <td>Joseph Joestar</td>
-        </tr>
+    <form action="">
+        <select name="filters" id="filters">
+            <option value="select" selected disabled>Select a Filter</option>
+            <option value="state">State</option>
+            <option value="date">Date</option>
+            <option value="service">Service</option>
+            <option value="email">Email</option>
+        </select>
 
+        <br>
+        <select name="stateFilters" id="stateFilters">
+            <option value="selectState" selected disabled>Select a State</option>
+            <option value="stateCompleted">Completed</option>
+            <option value="stateDeclined">Date</option>
+            <option value="stateCancelled">Service</option>
+        </select>
 
-        <tr align="center">
-            <td>09/01/2022</td>
-            <td>9:00AM - 9:30PM</td>
-            <td>Squarepants</td>
-            <td>Spongebob</td>
-            <td>Oral Propalaxyis</td>
-            <td>Joseph Joestar</td>
-        </tr>
+        <br>
+        <label for="dateFilter">Select Date</label>
+        <input type="date" id="dateFilter" name="dateFilter">
 
+        <br>
+        <select name="serviceFilters" id="serviceFilters">
+            <option value="selectService" selected disabled>Select a Service</option>
+            <option value="cleaning">Cleaning</option>
+            <option value="dentalCrown">Dental Crown</option>
+            <option value="wisdomTExtract">Wisdom Tooth Extraction</option>
+        </select>
 
-        <tr align="center">
-            <td>09/01/2022</td>
-            <td>9:00AM - 9:30PM</td>
-            <td>Squarepants</td>
-            <td>Spongebob</td>
-            <td>Oral Propalaxyis</td>
-            <td>Joseph Joestar</td>
-        </tr>
+        <br>
+        <label for="emailFilter">Input Email</label>
+        <input type="email" placeholder="email" name="emailFilter" id="emailFilter">
 
+        <br>
+        <label for="emailFilter">Input Email</label>
+        <input type="email" placeholder="email" name="emailFilter" id="emailFilter">
 
-        <tr align="center">
-            <td>09/01/2022</td>
-            <td>9:00AM - 9:30PM</td>
-            <td>Squarepants</td>
-            <td>Spongebob</td>
-            <td>Oral Propalaxyis</td>
-            <td>Joseph Joestar</td>
-        </tr>
-
-
-        <tr align="center">
-            <td>09/01/2022</td>
-            <td>9:00AM - 9:30PM</td>
-            <td>Squarepants</td>
-            <td>Spongebob</td>
-            <td>Oral Propalaxyis</td>
-            <td>Joseph Joestar</td>
-        </tr>
-
-    </table>
+        <br>
+        <input type="submit" value="Log In">
+    </form>
 </main>
 
 
