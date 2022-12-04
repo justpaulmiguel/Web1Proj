@@ -3,11 +3,22 @@
 // todo might add redirection info
 
 
-require('../php/loginCheck.php');
-if ($_SESSION["permissionLvl"] == 0) {
-    header("Location: ../users/user.php");
+# CHECKS IF AN ACCOUNT IS ALREADY LOGGED IN
+session_start();
+if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESSION["permissionLvl"])) {
+
+
+    header('Location: ../index.php');
     exit();
 }
+
+// if ($_SESSION["permissionLvl"] !== 2) {
+//     // header("Location: ../users/user.php");
+
+//     echo "<script>alert(" . $_SESSION["permissionLvl"] . ")</script>";
+//     echo $_SESSION["permissionLvl"];
+// }
+
 ?>
 
 <!DOCTYPE html>
