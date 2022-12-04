@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 12:55 PM
+-- Generation Time: Dec 04, 2022 at 12:45 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -40,7 +40,8 @@ CREATE TABLE `accounts` (
 INSERT INTO `accounts` (`email`, `password`, `permissionLvl`) VALUES
 ('carmelomelvincent2@gmail.com', '$2y$10$AXaCLs6uMlMEY/2aPALm5.kc72zsETRXx7/CqdqZcdG.980j7PU3a', 0),
 ('carmelomelvincent@gmail.com', '$2y$10$zlKOHK1qQ1Os/h8MAi/fFO3xCCpzUKfJG9QIJp7XQsK5iKvQAtUSq', 0),
-('test@email.com', '$2y$10$B602TJx63yjEP64b/r4d4e001RxLfXRqlCG2ervxDlGJ5hCo7lSGW', 2);
+('itsvincentcarmelo@gmail.com', '$2y$10$HPjNoSv.CDD6xCQ4dx0foOL5TQt9URRhcTbNzWjxpigRdX60u7sIm', 0),
+('test2@gmail.com', '$2y$10$GHWEPjdVMcL7GMttBXIuoOU8FAegaFyBS4/bur7prYkzJ9.bVI6ai', 2);
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,9 @@ CREATE TABLE `account_info` (
 
 INSERT INTO `account_info` (`account_ID`, `fname`, `lname`, `contactNo`, `email`) VALUES
 (3, 'Mel Vincent', 'Carmelo', '9254976600', 'carmelomelvincent@gmail.com'),
-(5, 'Carmelo, Mel Vincent T.', 'Carmelo', '9254976600', 'carmelomelvincent2@gmail.com');
+(5, 'Carmelo, Mel Vincent T.', 'Carmelo', '9254976600', 'carmelomelvincent2@gmail.com'),
+(6, 'John', 'Doe', '9254976600', 'test2@gmail.com'),
+(7, 'Vincent', 'Carmelo', '9254976600', 'itsvincentcarmelo@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -76,7 +79,8 @@ CREATE TABLE `bookings` (
   `service` enum('clean','pasta','d_crown','wisdom') NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `state` enum('pending','accepted','completed') NOT NULL
+  `state` enum('pending','accepted','completed','declined','cancelled') NOT NULL,
+  `branch` enum('s_simon','mexico') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -111,7 +115,7 @@ ALTER TABLE `bookings`
 -- AUTO_INCREMENT for table `account_info`
 --
 ALTER TABLE `account_info`
-  MODIFY `account_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `account_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `bookings`
