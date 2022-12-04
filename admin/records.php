@@ -40,10 +40,6 @@
         <input type="email" placeholder="email" name="emailFilter" id="emailFilter">
 
         <br>
-        <label for="emailFilter">Input Email</label>
-        <input type="email" placeholder="email" name="emailFilter" id="emailFilter">
-
-        <br>
         <input type="submit" value="Log In">
     </form>
 </main>
