@@ -6,7 +6,7 @@
                 <div class="icon-box">
                     <span class="material-icons">dashboard</span>
                 </div>
-                DASHBOARD
+                Dashboard
             </a>
         </li>
         <li>
@@ -16,7 +16,7 @@
                         pending_actions
                     </span>
                 </div>
-                PENDING REQUEST
+                Pending Request
             </a>
         </li>
         <li>
@@ -26,7 +26,7 @@
                         inventory
                     </span>
                 </div>
-                PAST RECORDS
+                Past Records
             </a>
         </li>
         <li>
@@ -37,7 +37,30 @@
                     </span>
                 </div>
 
-                EMPLOYEES
+                Employees
+            </a>
+        </li>
+
+        <li>
+            <a href="./information.php">
+                <div class="icon-box">
+                    <span class="material-icons">
+                        account_circle
+                    </span>
+                </div>
+
+                My Information
+            </a>
+        </li>
+        <li>
+            <a href="./settings.php">
+                <div class="icon-box">
+                    <span class="material-icons">
+                        manage_accounts
+                    </span>
+                </div>
+
+                Account Settings
             </a>
         </li>
     </ul>

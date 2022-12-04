@@ -11,7 +11,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESS
     header('Location: ../index.php');
     exit();
 }
-
+// todo fix later
 // if ($_SESSION["permissionLvl"] !== 2) {
 //     // header("Location: ../users/user.php");
 
