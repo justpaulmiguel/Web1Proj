@@ -15,8 +15,12 @@
     <link rel="stylesheet" href="bootstrap\bootstrap.min.css" />
     <script src="bootstrap\bootstrap.min.js"></script>
     <link rel="stylesheet" href="user_styles.css" />
-
+    <!-- Modal Library -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Dashboard</title>
+
 </head>
 
 <body>

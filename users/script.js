@@ -51,34 +51,6 @@
   window.addEventListener("load", adjustSidebar);
 })();
 
-/**
- * Gets the elements related to modal and add display logic
- */
-(() => {
-  const modal = document.getElementById("myModal");
-
-  const btn = document.getElementById("signout-btn");
-
-  // elements that closes the modal
-  const span = document.querySelector(".close-icon");
-  const noBtn = document.querySelector(".modal-no-btn");
-
-  btn.onclick = () => {
-    modal.style.display = "block";
-  };
-  span.onclick = () => {
-    modal.style.display = "none";
-  };
-  noBtn.onclick = () => {
-    modal.style.display = "none";
-  };
-  window.onclick = (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-})();
-
 // Account Details logic
 // saves the values of the input first before editing.
 if (document.querySelector("#edit-account-form")) {
@@ -124,4 +96,24 @@ if (document.querySelector("#edit-account-form")) {
   });
 
   // todo add confirmation modal here before passing into the form dom
+}
+// Signout modal
+if (document.querySelector("#signout-btn")) {
+  const logoutBtn = document.querySelector("#signout-btn");
+
+  logoutBtn.addEventListener("click", () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location = "/../php/logout.php";
+      }
+    });
+  });
 }
