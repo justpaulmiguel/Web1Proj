@@ -205,11 +205,6 @@
                                 <div class="formBorder"></div>
                             </div>
 
-                            <div class="mb-3">
-                                <input type="checkbox" class="form-check-input" name="remLogIn">
-                                <label for="remLogIn">Remember me</label>
-                            </div>
-
                             <div id="submitLogin" class="mb-3">
                                 <input type="submit" name="submitLogIn" id="submit" value="L O G I N"></input>
                             </div>
