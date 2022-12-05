@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     echo showModalError("Error updating of Password");
                 }
+                mysqli_close($conn);
             }
         }
     }
