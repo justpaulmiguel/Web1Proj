@@ -37,7 +37,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESS
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&family=Raleway&display=swap" rel="stylesheet" />
 
     <!-- css styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <!-- Modal Library -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JQuery -->

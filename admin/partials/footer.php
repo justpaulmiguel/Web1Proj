@@ -15,7 +15,7 @@
     <p>All Rights Reserved © 2022</p>
 </footer>
 </div>
-<script src="./script.js"></script>
+<script src="./assets/script.js"></script>
 
 </body>
 
