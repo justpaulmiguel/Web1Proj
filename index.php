@@ -18,6 +18,7 @@
     <title>
         Home
     </title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
     
     <style>
         #passCheck {
@@ -255,7 +256,7 @@
                     <div class="modal-body">
 
                         <!------------------------------------------Form for Sign Up start---------------------------------------------->
-                        <form class="formLayout" action="php/register_process.php" method="post" onsubmit="validate();" id="formSignup">
+                        <form class="formLayout" action="php/register_process.php" method="post" id="formSignup">
                             <div class="row">
 
                                 <div class="container-fluid col-6">
@@ -398,13 +399,6 @@
                                         }
                                     }
 
-                                    function validate() {
-                                        if(pass.value != passConf.value) {
-                                            passConf.focus();
-                                            event.preventDefault();
-                                        }
-                                    }
-
                                 </script>
 
                                 <div div class="mb-3">
@@ -450,20 +444,26 @@
         <script>
             
         var form2 = document.getElementById("formSignup");
+        var pass = document.getElementById("passSignup");
+        var passConf = document.getElementById("passSignupConfirm");
 
         $(document).ready(function (){
             $(form2).submit(function (event) {
-                event.preventDefault()
+                if(pass.value != passConf.value) {
+                    passConf.focus();
+                    event.preventDefault();
+                } else {
+                    event.preventDefault()
 
-                $.post( $(form2).attr("action"),
-                $(form2).serializeArray(),
-                function(info) {
-            
-                    $("#response").empty();
-                    $("#response").html(info);
+                    $.post( $(form2).attr("action"),
+                    $(form2).serializeArray(),
+                    function(info) {
 
-                });
+                        $("#response").empty();
+                        $("#response").html(info);
 
+                    });
+                }
             })
         })  
         </script>
