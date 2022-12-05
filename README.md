@@ -18,6 +18,11 @@ Git clone the repo. Create new database named `jgdc_db`. Import the data from th
 email: `test2@gmail.com`
 pasword : `aA345678`
 
+## Patient Account
+
+email: `carmelomelvincent2@gmail.com`
+password: `aA345678`
+
 ## Features to be implemeted
 
 Create tasks here for everyone to see and pick which one would you like to work on.
@@ -26,6 +31,7 @@ Create tasks here for everyone to see and pick which one would you like to work 
 
 - Change Password Admin UI
 - Admin UI Design
+- Add logic to update page title based from the page
 
 ## Working
 
@@ -42,6 +48,8 @@ Remove the task to the features and add task that you're workin on here.
 ## Finished
 
 Move your task after you completed it here.
+
+- Restruture user folder
 
 ### CARMELO
 
