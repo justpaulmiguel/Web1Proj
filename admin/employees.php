@@ -1,5 +1,10 @@
-<?php require("partials/head.php") ?>
+<?php
 
+
+require("partials/head.php");
+
+
+?>
 
 <main>
     <h1>Employees</h1>
@@ -20,13 +25,17 @@
             <p>paulMiguelMapagmahal@gmail.com</p>
         </div>
     </section>
-    <section class="employee-edit-btns-wrapper">
-        <button class="btn">Add New</button>
 
-        <button class="btn remove-selected-btn">Delete</button>
-        <!-- TODO add modal for add new employee later  -->
-        <!-- todo add functionlity for the delete button later. (something like a radio btn) -->
-    </section>
+    <?php if ($_SESSION["permissionLvl"] == 2) : ?>
+        <section class="employee-edit-btns-wrapper">
+            <button class="btn">Add New</button>
+
+            <button class="btn remove-selected-btn">Delete</button>
+            <!-- TODO add modal for add new employee later  -->
+            <!-- todo add functionlity for the delete button later. (something like a radio btn) -->
+        </section>
+
+    <?php endif; ?>
 </main>
 
 
