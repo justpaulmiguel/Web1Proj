@@ -15,7 +15,8 @@ Git clone the repo. Create new database named `jgdc_db`. Import the data from th
 
 ## Superuser (Admin) Account
 
-> email is `test@email.com` , pasword is `aA345678`
+email: `test2@gmail.com`
+pasword : `aA345678`
 
 ## Features to be implemeted
 
@@ -24,7 +25,7 @@ Create tasks here for everyone to see and pick which one would you like to work 
 - _Bug on php/login.php_ - when logging in as admin, expected result is for line `29` to trigger and the permissionLvl session to be saved as 2 (admin). Actual result is permissionLvl not having value, line `41` else block triggers
 
 - Change Password Admin UI
-- CRUD in Admin (can be broken to smaller details later)
+- Admin UI Design
 
 ## Working
 
@@ -32,7 +33,7 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Dashboard UI
+- Read values in Admin
 
 ### CARMELO
 
