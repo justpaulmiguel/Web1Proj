@@ -27,8 +27,6 @@ password: `aA345678`
 
 Create tasks here for everyone to see and pick which one would you like to work on.
 
-- 
-
 - Change Password Admin UI
 - Admin UI Design
 - Add logic to update page title based from the page
@@ -54,5 +52,5 @@ Move your task after you completed it here.
 - Password Hashing and Salting
 - Reworked Database (Please Update your Local one)
 
-#BUG FIXED
+##BUG FIXED
 - Bug on php/login.php_ - when logging in as admin, expected result is for line `29` to trigger and the permissionLvl session to be saved as 2 (admin). Actual result is permissionLvl not having value, line `41` else block triggers
