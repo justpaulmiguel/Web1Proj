@@ -22,3 +22,15 @@ function showModalError($message)
     </script>
     ";
 }
+function showModalSuccess($message)
+{
+    return "
+    <script>
+            Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: '{$message}'
+            })
+    </script>
+    ";
+}

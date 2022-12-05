@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newPass = $_POST["newPassword"];
     $confirmNewPass = $_POST["confirmNewPassword"];
 
-    $toggle = false;
+    $willUpdate = true;
     // post values validation
     if (
         strlen($currentPass) == 0
@@ -16,28 +16,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ) {
 
         echo showModalError("Incomplete details");
-        $toggle = true;
+        $willUpdate = false;
     }
 
-
+    // check if password is the same
     if (strcmp($newPass, $confirmNewPass) != 0) {
         echo  showModalError("New passwords are not the same!" . $currentPass . $newPass);
-        $toggle = true;
+        $willUpdate = false;
     }
 
-    if (!$toggle) {
-        // Query time
-        // check if password is the same
+    if ($willUpdate) {
         require('../php/dbConnect.php');
         $query = sprintf("SELECT password FROM accounts WHERE email='%s' LIMIT 1;", $_SESSION['email']);
         $result = mysqli_query($conn, $query);
-        if (mysqli_num_rows($result) > 0) {
-            $passHash = mysqli_fetch_array($result)[0];
 
-            if (password_verify(
+        if (mysqli_num_rows($result) <= 0) {
+            echo showModalError("SQL Error");
+        } else {
+
+            $passHash = mysqli_fetch_array($result)[0];
+            // checks db password before updating
+            if (!password_verify(
                 $currentPass,
                 $passHash
             )) {
+                echo showModalError("Entered current password is incorrect." . $currentPass);
+            } else {
                 $passHash = password_hash($newPass, PASSWORD_DEFAULT);
                 // perform changing of password
                 $query = sprintf(
@@ -46,18 +50,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['email']
                 );
                 if (mysqli_query($conn, $query)) {
-                    echo showModalError("Updated Successfully");
+                    echo showModalSuccess("Password updated successfully!");
                 } else {
                     echo showModalError("Error updating of Password");
                 }
-            } else {
-                echo showModalError("Current Password is incorrect desu." . $currentPass);
             }
-        } else {
-            echo showModalError("Sql failed me lol");
         }
     }
 }
+
+
 ?>
 
 <main>
