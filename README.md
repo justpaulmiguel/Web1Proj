@@ -31,13 +31,21 @@ Create tasks here for everyone to see and pick which one would you like to work 
 - Admin UI Design
 - Add logic to update page title based from the page
 
+Admin
+
+- Dashboard
+- Employees
+- My Information
+- Past Records (Search Bar)
+- Requests
+
 ## Working
 
 Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Read values in Admin
+- Settings
 
 ### CARMELO
 

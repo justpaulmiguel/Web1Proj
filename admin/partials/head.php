@@ -19,6 +19,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESS
 //     echo $_SESSION["permissionLvl"];
 // }
 
+require("../php/functions.php");
 ?>
 
 <!DOCTYPE html>
