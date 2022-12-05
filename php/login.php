@@ -21,7 +21,7 @@ if ($count == 1) {
 
         $_SESSION["email"] = $email;
         $_SESSION["password"] = $pass;
-        $query = "SELECT permissionLvl FROM accounts WHERE email='$email'and password='$pass'";
+        $query = "SELECT permissionLvl FROM accounts WHERE email='$email'";
         $result = mysqli_query($conn, $query);
         $permissionLvl = mysqli_fetch_array($result);
         # PERMISSION LEVEL CHECK
