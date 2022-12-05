@@ -2,7 +2,7 @@
      <!-- sidebar -->
      <ul class="options-bar">
          <li>
-             <a href="./user.php">
+             <a href="./dashboard.php">
                  <div class="icon-box">
                      <span class="material-icons">dashboard</span>
                  </div>
