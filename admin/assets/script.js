@@ -154,7 +154,7 @@ if (document.querySelector("#signout-btn")) {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location = "/../php/logout.php";
+        window.location = "../php/logout.php";
       }
     });
   });
