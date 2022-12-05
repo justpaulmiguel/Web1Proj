@@ -14,7 +14,8 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="bootstrap\bootstrap.min.css" />
     <script src="bootstrap\bootstrap.min.js"></script>
-    <link rel="stylesheet" href="user_styles.css" />
+    <!-- Asset CSS -->
+    <link rel="stylesheet" href="asset/user_styles.css" />
     <!-- Modal Library -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JQuery -->
