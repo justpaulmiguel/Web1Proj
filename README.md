@@ -34,7 +34,7 @@ Create tasks here for everyone to see and pick which one would you like to work 
 Admin
 
 - Dashboard
-- Employees
+
 - My Information
 - Past Records (Search Bar)
 - Requests
@@ -45,7 +45,7 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Settings
+- Admin Employees
 
 ### CARMELO
 
@@ -55,10 +55,12 @@ Remove the task to the features and add task that you're workin on here.
 
 Move your task after you completed it here.
 
+- Admin Settings
 - Restruture user folder
 - Complete Login and Register
 - Password Hashing and Salting
 - Reworked Database (Please Update your Local one)
 
 ## BUG FIXED
-- Bug on php/login.php_ - when logging in as admin, expected result is for line `29` to trigger and the permissionLvl session to be saved as 2 (admin). Actual result is permissionLvl not having value, line `41` else block triggers
+
+- Bug on php/login.php\_ - when logging in as admin, expected result is for line `29` to trigger and the permissionLvl session to be saved as 2 (admin). Actual result is permissionLvl not having value, line `41` else block triggers
