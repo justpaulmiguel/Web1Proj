@@ -3,6 +3,11 @@
 
 require("partials/head.php");
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // insert logic here
+
+}
 
 ?>
 
@@ -26,11 +31,13 @@ require("partials/head.php");
         </div>
     </section>
 
-    <?php if ($_SESSION["permissionLvl"] == 2) : ?>
-        <section class="employee-edit-btns-wrapper">
-            <button class="btn">Add New</button>
 
-            <button class="btn remove-selected-btn">Delete</button>
+    <?php if ($_SESSION["permissionLvl"] == 2) : ?>
+        <!-- // Gets seen when permission level is admin level -->
+        <section class="employee-edit-btns-wrapper">
+            <button class="btn" id="add-employee-btn">Add New</button>
+
+            <button class="btn remove-selected-btn" id="remove-employee-btn">Delete</button>
             <!-- TODO add modal for add new employee later  -->
             <!-- todo add functionlity for the delete button later. (something like a radio btn) -->
         </section>
