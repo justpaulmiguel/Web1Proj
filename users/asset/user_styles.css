@@ -501,6 +501,15 @@ hr {
   color: #fff;
 }
 
+.schedule-wrapper .cancel-btn {
+  float:right;
+}
+
+.schedule-wrapper .cancel-btn:hover {
+  background-color: #c90101;
+  color: #fff;
+}
+
 .fieldset-wrapper {
   display: flex;
   flex-flow: row wrap;
