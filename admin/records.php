@@ -1,6 +1,12 @@
 <?php
 $title = 'Past Records';
-require("partials/head.php") ?>
+
+
+// todo add script to buttons
+// todo defaults to date 
+
+?>
+
 
 
 <main>
@@ -9,27 +15,43 @@ require("partials/head.php") ?>
 
 
     <form action="">
-        <select name="filters" id="filters">
-            <option value="select" selected disabled>Select a Filter</option>
-            <option value="state">State</option>
-            <option value="date">Date</option>
+        <p>Search our records.</p>
+
+        <select name="branch" id="branch" required>
+            <option value="" disabled>Select a Filter</option>
+            <option value="all" selected>All Branches</option>
+            <option value="san simon">San Simon, Pampanga</option>
+            <option value="mexico">Mexico, Pampanga</option>
+        </select>
+
+        <select name="filter" id="filters" required>
+            <option value="" disabled>Select a Filter</option>
+            <option value="date" selected>From Date</option>
+            <option value="state">Appointment State</option>
             <option value="service">Service</option>
             <option value="email">Email</option>
+
         </select>
 
-        <br>
+        <select name="sort" id="sort" required>
+            <!-- <option value="select" selected disabled>Select a Filter</option> -->
+            <option value="" disabled>Sort by</option>
+            <option value="0" selected>Newest</option>
+            <option value="1">Oldest</option>
+
+        </select>
+
+
         <select name="stateFilters" id="stateFilters">
             <option value="selectState" selected disabled>Select a State</option>
-            <option value="stateCompleted">Completed</option>
-            <option value="stateDeclined">Date</option>
-            <option value="stateCancelled">Service</option>
+            <option value="completed">Completed</option>
+            <option value="declined">Date</option>
+            <option value="cancelled">Service</option>
         </select>
 
-        <br>
         <label for="dateFilter">Select Date</label>
         <input type="date" id="dateFilter" name="dateFilter">
 
-        <br>
         <select name="serviceFilters" id="serviceFilters">
             <option value="selectService" selected disabled>Select a Service</option>
             <option value="cleaning">Cleaning</option>
@@ -37,12 +59,10 @@ require("partials/head.php") ?>
             <option value="wisdomTExtract">Wisdom Tooth Extraction</option>
         </select>
 
-        <br>
         <label for="emailFilter">Input Email</label>
         <input type="email" placeholder="email" name="emailFilter" id="emailFilter">
 
-        <br>
-        <input type="submit" value="Log In">
+        <input type="submit" value="Search">
     </form>
 </main>
 
