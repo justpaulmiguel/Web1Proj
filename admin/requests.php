@@ -78,8 +78,14 @@ mysqli_close($conn);
             </table>
 
             <!-- todo have form event handler, add modal before continue -->
-            <input value="accepted" name="requestType" class="" type="radio" checked>Accept</input>
-            <input value="declined" name="requestType" class="" type="radio">Decline</input>
+            <label for="accept-radio">
+                <input value="accepted" name="requestType" class="" type="radio" checked id="accept-radio" />
+                Accept
+            </label>
+            <label for="decline-radio">
+                <input value="declined" name="requestType" class="" type="radio" id="decline-radio" />
+                Decline
+            </label>
             <button class="btn " type="submit">Submit</button>
             <!-- todo disable buttons when theres no marked -->
     </form>
