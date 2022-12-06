@@ -1,4 +1,44 @@
-<?php require("partials/head.php") ?>
+<?php require("partials/head.php");
+
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     $state = 'accepted';
+//     $id = 12;
+//     $query = "";
+//     require("../php/dbConnect.php");
+
+//     if (!empty($_POST['patientId'])) {
+//         foreach ($_POST['patientId'] as $id) {
+//             $query .= sprintf("UPDATE  bookings SET state='%s' WHERE account_ID='%s' ;", $state, $id);
+//         }
+//         if (mysqli_multi_query($conn, $sql)) {
+//             echo showModalError("Accepted successfully");
+//         } else {
+//             echo "Error: " . $query . "<br>" . mysqli_error($conn);
+//         }
+//         mysqli_close($conn);
+//     }
+// }
+
+$pendingRequests = [];
+
+$query = "SELECT  bookings.account_id ,	bookings.booking_ID,bookings.service,bookings.date,bookings.time,
+bookings.state,bookings.branch, account_info.fname,account_info.lname FROM bookings
+INNER JOIN account_info
+ON bookings.account_id = account_info.account_id
+ WHERE state='pending'";
+
+require("../php/dbConnect.php");
+$result = mysqli_query($conn, $query);
+if (mysqli_num_rows($result) <= 0) {
+    echo showModalError("Can't Retrieve Emails");
+} else {
+    while ($row = mysqli_fetch_assoc($result)) {
+        array_push($pendingRequests, $row);
+    }
+}
+mysqli_close($conn);
+
+?>
 
 
 <main>
@@ -11,92 +51,31 @@
                 <th>Time</th>
                 <th colspan="2">Name</th>
                 <th>Service</th>
-                <th>Doctor</th>
                 <th>Checkbox</th>
             </tr>
+            <?php foreach ($pendingRequests as $pending) : ?>
+                <tr align="center" class="patient-req-row">
+                    <td><?= $pending['date'] ?></td>
+                    <td><?= $pending['time'] ?></td>
+                    <td><?= $pending['lname'] ?></td>
+                    <td><?= $pending['fname'] ?></td>
+                    <td><?= $pending['service'] ?></td>
+                    <!-- <td>9:00AM - 9:30PM</td>
+                    <td>Squarepants</td>
+                    <td>Spongebob</td>
+                    <td>Oral Propalaxyis</td> -->
+                    <td>
+                        <input type="checkbox" value="<?= $pending['account_id'] ?>" name="patientId[]">
+                    </td>
+                </tr>
 
-            <tr align="center" class="patient-req-row">
-                <td>09/01/2022</td>
-                <td>9:00AM - 9:30PM</td>
-                <td>Squarepants</td>
-                <td>Spongebob</td>
-                <td>Oral Propalaxyis</td>
-                <td>Joseph Joestar</td>
-                <td>
-                    <input type="checkbox" value="id or somethis" name="patient" id="input-id1" data-id="patient-id">
-                </td>
-            </tr>
-
-
-            <tr align="center" class="patient-req-row">
-                <td>09/01/2022</td>
-                <td>9:00AM - 9:30PM</td>
-                <td>Squarepants</td>
-                <td>Spongebob</td>
-                <td>Oral Propalaxyis</td>
-                <td>Joseph Joestar</td>
-                <td>
-                    <input type="checkbox" value="id or somethis" name="patient" id="input-id1" data-id="patient-id">
-                </td>
-            </tr>
+            <?php endforeach; ?>
 
 
-            <tr align="center" class="patient-req-row">
-                <td>09/01/2022</td>
-                <td>9:00AM - 9:30PM</td>
-                <td>Suarepants</td>
-                <td>Spongebob</td>
-                <td>Oral Propalaxyis</td>
-                <td>Joseph Joestar</td>
 
-                <td>
-                    <input type="checkbox" value="id or somethis" name="patient" id="input-id3" data-id="patient-id">
-                </td>
-            </tr>
-
-
-            <tr align="center" class="patient-req-row">
-                <td>09/01/2022</td>
-                <td>9:00AM - 9:30PM</td>
-                <td>Squarepants</td>
-                <td>Spongebob</td>
-                <td>Oral Propalaxyis</td>
-                <td>Joseph Joestar</td>
-
-                <td>
-                    <input type="checkbox" value="id or somethis" name="patient" id="input-id1" data-id="patient-id">
-                </td>
-            </tr>
-
-
-            <tr align="center" class="patient-req-row">
-                <td>09/01/2022</td>
-                <td>9:00AM - 9:30PM</td>
-                <td>Squarepants</td>
-                <td>Spongebob</td>
-                <td>Oral Propalaxyis</td>
-                <td>Joseph Joestar</td>
-
-                <td>
-                    <input type="checkbox" value="id or somethis" name="patient" id="input-id1" data-id="patient-id">
-                </td>
-            </tr>
-
-
-            <tr align="center" class="patient-req-row">
-                <td>09/01/2022</td>
-                <td>9:00AM - 9:30PM</td>
-                <td>Squarepants</td>
-                <td>Spongebob</td>
-                <td>Oral Propalaxyis</td>
-                <td>Joseph Joestar</td>
-
-                <td>
-                    <input type="checkbox" value="id or somethis" name="patient" id="input-id1" data-id="patient-id">
-                </td>
-            </tr>
 
         </table>
+        <!-- todo have form event handler, add modal before continue -->
         <button value="accept" name="type" class="btn ">Accept</button>
         <button value="decline" name="type" class="btn remove-selected-btn">Decline</button>
         <!-- todo disable buttons when theres no marked -->
