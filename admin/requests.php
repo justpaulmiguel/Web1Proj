@@ -1,23 +1,7 @@
 <?php require("partials/head.php");
 
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     $state = 'accepted';
-//     $id = 12;
-//     $query = "";
-//     require("../php/dbConnect.php");
-
-//     if (!empty($_POST['patientId'])) {
-//         foreach ($_POST['patientId'] as $id) {
-//             $query .= sprintf("UPDATE  bookings SET state='%s' WHERE account_ID='%s' ;", $state, $id);
-//         }
-//         if (mysqli_multi_query($conn, $sql)) {
-//             echo showModalError("Accepted successfully");
-//         } else {
-//             echo "Error: " . $query . "<br>" . mysqli_error($conn);
-//         }
-//         mysqli_close($conn);
-//     }
-// }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+}
 
 $pendingRequests = [];
 
@@ -43,8 +27,8 @@ mysqli_close($conn);
 
 <main>
     <h1>Requests</h1>
-    <form id="patient-requests-form" action="/path/to/db" method="get">
-
+    <form id="patient-requests-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <input type="text" value="hello" name="hello">
         <table border="2" cellpadding="10" cellspacing="1">
             <tr>
                 <th>Date</th>
@@ -65,7 +49,7 @@ mysqli_close($conn);
                     <td>Spongebob</td>
                     <td>Oral Propalaxyis</td> -->
                     <td>
-                        <input type="checkbox" value="<?= $pending['account_id'] ?>" name="patientId[]">
+                        <input type="checkbox" value="<?= $pending['booking_id'] ?>" name="patientId[]">
                     </td>
                 </tr>
 
@@ -75,11 +59,14 @@ mysqli_close($conn);
 
 
         </table>
+
         <!-- todo have form event handler, add modal before continue -->
-        <button value="accept" name="type" class="btn ">Accept</button>
-        <button value="decline" name="type" class="btn remove-selected-btn">Decline</button>
+        <input value="accept" name="type" class="" type="radio" checked>Accept</input>
+        <input value="decline" name="type" class="" type="radio">Decline</input>
+        <button class="btn " type="submit">Submit</button>
         <!-- todo disable buttons when theres no marked -->
     </form>
+
 </main>
 
 

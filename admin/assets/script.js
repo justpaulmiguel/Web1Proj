@@ -110,6 +110,30 @@ if (document.querySelector("#patient-requests-form")) {
       checkbox.checked = !checkbox.checked;
     });
   });
+
+  const form = document.querySelector("#patient-requests-form");
+
+  [...form.querySelectorAll(".btn")].forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to add these to accepted list?",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          form.submit();
+        }
+      });
+    });
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
 }
 
 // Signout modal
