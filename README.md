@@ -27,16 +27,16 @@ password: `aA345678`
 
 Create tasks here for everyone to see and pick which one would you like to work on.
 
-- Change Password Admin UI
-- Admin UI Design
+- Continue Designing (will be broken up later)
 - Add logic to update page title based from the page
 
 Admin
 
 - Dashboard
-
-- Past Records (Search Bar)
 - Requests
+- Finish todos
+
+- Review features
 
 ## Working
 
@@ -44,7 +44,7 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- My Information
+- Past Records (Search Bar)
 
 ### CARMELO
 
@@ -54,6 +54,7 @@ Remove the task to the features and add task that you're workin on here.
 
 Move your task after you completed it here.
 
+- Admin My Information
 - Admin Employees
 - Admin Settings
 - Restruture user folder
