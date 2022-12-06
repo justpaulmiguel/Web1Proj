@@ -1,6 +1,25 @@
 <?php require("partials/head.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // todo add validation
+    // todo add condition if no patientId
+
+    $state = $_POST['requestType'] == 'accepted' ? 'accepted' : 'declined';
+    $query = "";
+    if (!empty($_POST['patientId'])) {
+        require("../php/dbConnect.php");
+        foreach ($_POST['patientId'] as $id) {
+
+            $query .= sprintf("UPDATE  bookings SET state='%s' WHERE booking_id='%s' ;", $state, $id);
+        }
+        if (mysqli_multi_query($conn, $query)) {
+            echo showModalSuccess($state == 'accepted' ?  "Accepted successfully" : 'Declined successfully');
+        } else {
+            echo showModalError("SQL Error");
+        }
+        mysqli_close($conn);
+    }
 }
 
 $pendingRequests = [];
@@ -28,41 +47,42 @@ mysqli_close($conn);
 <main>
     <h1>Requests</h1>
     <form id="patient-requests-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="text" value="hello" name="hello">
-        <table border="2" cellpadding="10" cellspacing="1">
-            <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th colspan="2">Name</th>
-                <th>Service</th>
-                <th>Checkbox</th>
-            </tr>
-            <?php foreach ($pendingRequests as $pending) : ?>
+
+
+
+
+
+        <?php foreach ($pendingRequests as $pending) : ?>
+
+            <table border="2" cellpadding="10" cellspacing="1">
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th colspan="2">Name</th>
+                    <th>Service</th>
+                    <th>Checkbox</th>
+                </tr>
                 <tr align="center" class="patient-req-row">
                     <td><?= $pending['date'] ?></td>
                     <td><?= $pending['time'] ?></td>
                     <td><?= $pending['lname'] ?></td>
                     <td><?= $pending['fname'] ?></td>
                     <td><?= $pending['service'] ?></td>
-                    <!-- <td>9:00AM - 9:30PM</td>
-                    <td>Squarepants</td>
-                    <td>Spongebob</td>
-                    <td>Oral Propalaxyis</td> -->
                     <td>
-                        <input type="checkbox" value="<?= $pending['booking_id'] ?>" name="patientId[]">
+                        <input type="checkbox" value="<?= $pending['booking_ID'] ?>" name="patientId[]">
                     </td>
                 </tr>
 
-            <?php endforeach; ?>
+            </table>
+        <?php endforeach; ?>
 
 
 
 
-        </table>
 
         <!-- todo have form event handler, add modal before continue -->
-        <input value="accept" name="type" class="" type="radio" checked>Accept</input>
-        <input value="decline" name="type" class="" type="radio">Decline</input>
+        <input value="accepted" name="requestType" class="" type="radio" checked>Accept</input>
+        <input value="declined" name="requestType" class="" type="radio">Decline</input>
         <button class="btn " type="submit">Submit</button>
         <!-- todo disable buttons when theres no marked -->
     </form>

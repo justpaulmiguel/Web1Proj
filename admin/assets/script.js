@@ -117,7 +117,9 @@ if (document.querySelector("#patient-requests-form")) {
     btn.addEventListener("click", (e) => {
       Swal.fire({
         title: "Are you sure?",
-        text: "Do you want to add these to accepted list?",
+        text: `Do you want to add these to ${
+          form.requestType.value === "accepted" ? "accepted" : "declined"
+        } list?`,
         icon: "info",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
