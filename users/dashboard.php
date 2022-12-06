@@ -72,12 +72,17 @@ require("../php/dbConnect.php");
     $dateRaw = $booking['date'];
     $date = date("F j, Y", strtotime($dateRaw));
 
+    $Today = date("Y-m-d"); 
+    $NextDay = date("Y-m-d", strtotime('+1 day', strtotime($Today)));
     $FirstDay = date("Y-m-d", strtotime('sunday last week'));  
     $LastDay = date("Y-m-d", strtotime('sunday this week')); 
     $NextWeekLast = date("Y-m-d", strtotime('sunday next week')); 
 
-
-    if($dateRaw > $FirstDay && $dateRaw < $LastDay) {
+    if ($dateRaw == $Today) {
+      $when = "Today";
+    } else if ($dateRaw == $NextDay){
+      $when = "Tomorrow";
+    } else if($dateRaw > $FirstDay && $dateRaw < $LastDay) {
       $when = "Next " . date('l', strtotime("$dateRaw"));
     } else if ($dateRaw < $NextWeekLast) {
       $when = "Next Week, " . date('l', strtotime("$dateRaw"));
