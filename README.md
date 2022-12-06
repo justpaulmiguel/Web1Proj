@@ -35,7 +35,6 @@ Admin
 
 - Dashboard
 
-- My Information
 - Past Records (Search Bar)
 - Requests
 
@@ -45,7 +44,7 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Admin Employees
+- My Information
 
 ### CARMELO
 
@@ -55,6 +54,7 @@ Remove the task to the features and add task that you're workin on here.
 
 Move your task after you completed it here.
 
+- Admin Employees
 - Admin Settings
 - Restruture user folder
 - Complete Login and Register
