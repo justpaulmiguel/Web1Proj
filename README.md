@@ -48,7 +48,7 @@ Remove the task to the features and add task that you're workin on here.
 
 ### CARMELO
 
-- User Dashboard Backend
+
 
 ## Finished
 
@@ -61,6 +61,7 @@ Move your task after you completed it here.
 - Complete Login and Register
 - Password Hashing and Salting
 - Reworked Database (Please Update your Local one)
+- User Dashboard Backend
 
 ## BUG FIXED
 
