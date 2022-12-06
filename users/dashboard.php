@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require("./partials/head.php");
 
 require("../php/dbConnect.php");
@@ -25,7 +27,7 @@ require("../php/dbConnect.php");
   </section>
   <?php 
 
-  $query = "SELECT bookings.service, bookings.date, bookings.time, bookings.branch, bookings.note
+  $query = "SELECT bookings.booking_ID, bookings.service, bookings.date, bookings.time, bookings.branch, bookings.note
   FROM bookings
   WHERE bookings.account_ID='$id' AND bookings.state='accepted'
   ORDER BY bookings.date, bookings.time
@@ -36,7 +38,10 @@ require("../php/dbConnect.php");
 
   if($count > 0) {
     $booking = mysqli_fetch_array($result);
-    
+
+    $bookingID = $booking['booking_ID'];
+    $_SESSION["bookingID"] = $bookingID;
+
     switch($booking['service']) {
       case "clean":
         $service = "Oral Prophylaxis";
@@ -84,6 +89,27 @@ require("../php/dbConnect.php");
 
     ?>
 
+    <script>
+
+    // Cancel Booking
+    function cancelBook() {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You want to cancel this Booking?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location = "asset/cancel_booking.php";
+        }
+      });
+    }
+
+    </script>
+
     <section class="schedule-wrapper">
         
         <p>Your next approved schedule would be on:</p>
@@ -99,7 +125,7 @@ require("../php/dbConnect.php");
             <p class="outlined-text"><?=$branch?> Branch</p>
           </div>
         </div>
-        <button class="btn cancel-btn" type="button">Cancel Booking</button>
+        <button class="btn cancel-btn" id="cancelBookBtn" type="button" onclick="cancelBook()">Cancel Booking</button>
         <br><br>
     </section>
 
