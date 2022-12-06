@@ -189,17 +189,6 @@ if (document.querySelector("#add-employee-btn")) {
         }
       },
     });
-
-    // .then((result) => {
-    //   const form = Swal.getPopup().querySelector("form");
-    //   const email = Swal.getPopup().querySelector("#email");
-    //   form.addEventListener("submit", (e) => e.preventDefaults());
-    //   console.log(email.value);
-    //   console.log(form.email);
-    //   console.log(result);
-    //   if (result.value && result.isConfirmed) {
-    //   }
-    // });
   });
 }
 
@@ -215,7 +204,7 @@ if (document.querySelector("#remove-employee-btn")) {
       <form method="post" action="employees.php">
         <label> Remove an employee! Account is still active</label> 
          <input type='hidden' value='remove' name='type'/>
-         <input type="text" name="email" required id="remove-email" class="swal2-input" placeholder="Enter Email">
+         <input type="email" name="email" required id="remove-email" class="swal2-input" placeholder="Enter Email">
       </form> 
       `,
         inputAttributes: {
@@ -233,16 +222,5 @@ if (document.querySelector("#remove-employee-btn")) {
           }
         },
       });
-
-      // .then((result) => {
-      //   const form = Swal.getPopup().querySelector("form");
-      //   const email = Swal.getPopup().querySelector("#email");
-      //   form.addEventListener("submit", (e) => e.preventDefaults());
-      //   console.log(email.value);
-      //   console.log(form.email);
-      //   console.log(result);
-      //   if (result.value && result.isConfirmed) {
-      //   }
-      // });
     });
 }
