@@ -33,10 +33,9 @@ Create tasks here for everyone to see and pick which one would you like to work 
 Admin
 
 - Dashboard
-- Requests
 - Finish todos
-
 - Review features
+- Decouple php logic part to view part
 
 ## Working
 
@@ -48,12 +47,11 @@ Remove the task to the features and add task that you're workin on here.
 
 ### CARMELO
 
-
-
 ## Finished
 
 Move your task after you completed it here.
 
+- Admin Requests
 - Admin My Information
 - Admin Employees
 - Admin Settings
