@@ -48,12 +48,9 @@ mysqli_close($conn);
     <h1>Requests</h1>
     <form id="patient-requests-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-
-
-
-
-        <?php foreach ($pendingRequests as $pending) : ?>
-
+        <?php if (empty($pendingRequests)) : ?>
+            <h2>You have no pending requests!</h2>
+        <?php else : ?>
             <table border="2" cellpadding="10" cellspacing="1">
                 <tr>
                     <th>Date</th>
@@ -62,30 +59,41 @@ mysqli_close($conn);
                     <th>Service</th>
                     <th>Checkbox</th>
                 </tr>
-                <tr align="center" class="patient-req-row">
-                    <td><?= $pending['date'] ?></td>
-                    <td><?= $pending['time'] ?></td>
-                    <td><?= $pending['lname'] ?></td>
-                    <td><?= $pending['fname'] ?></td>
-                    <td><?= $pending['service'] ?></td>
-                    <td>
-                        <input type="checkbox" value="<?= $pending['booking_ID'] ?>" name="patientId[]">
-                    </td>
-                </tr>
+                <?php foreach ($pendingRequests as $pending) : ?>
 
+
+                    <tr align="center" class="patient-req-row">
+                        <td><?= $pending['date'] ?></td>
+                        <td><?= $pending['time'] ?></td>
+                        <td><?= $pending['lname'] ?></td>
+                        <td><?= $pending['fname'] ?></td>
+                        <td><?= $pending['service'] ?></td>
+                        <td>
+                            <input type="checkbox" value="<?= $pending['booking_ID'] ?>" name="patientId[]">
+                        </td>
+                    </tr>
+
+
+                <?php endforeach; ?>
             </table>
-        <?php endforeach; ?>
 
-
-
-
-
-        <!-- todo have form event handler, add modal before continue -->
-        <input value="accepted" name="requestType" class="" type="radio" checked>Accept</input>
-        <input value="declined" name="requestType" class="" type="radio">Decline</input>
-        <button class="btn " type="submit">Submit</button>
-        <!-- todo disable buttons when theres no marked -->
+            <!-- todo have form event handler, add modal before continue -->
+            <input value="accepted" name="requestType" class="" type="radio" checked>Accept</input>
+            <input value="declined" name="requestType" class="" type="radio">Decline</input>
+            <button class="btn " type="submit">Submit</button>
+            <!-- todo disable buttons when theres no marked -->
     </form>
+<?php endif ?>
+
+
+
+
+
+
+
+
+
+
 
 </main>
 
