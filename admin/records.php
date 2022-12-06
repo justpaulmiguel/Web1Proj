@@ -2,8 +2,8 @@
 $title = 'Past Records';
 
 
-// todo add script to buttons
-// todo defaults to date 
+// todo add values to db
+// todo work on the  logic
 
 ?>
 
@@ -11,11 +11,11 @@ $title = 'Past Records';
 
 <main>
     <h1>Past Records</h1>
-    <p>Lorem ipsum dolor sit amet </p>
+    <p>Search our records.</p>
 
 
-    <form action="">
-        <p>Search our records.</p>
+
+    <form action="" id="search-record-form">
 
         <select name="branch" id="branch" required>
             <option value="" disabled>Select a Filter</option>
@@ -24,7 +24,7 @@ $title = 'Past Records';
             <option value="mexico">Mexico, Pampanga</option>
         </select>
 
-        <select name="filter" id="filters" required>
+        <select name="filter" id="filter-select" required>
             <option value="" disabled>Select a Filter</option>
             <option value="date" selected>From Date</option>
             <option value="state">Appointment State</option>
@@ -42,27 +42,8 @@ $title = 'Past Records';
         </select>
 
 
-        <select name="stateFilters" id="stateFilters">
-            <option value="selectState" selected disabled>Select a State</option>
-            <option value="completed">Completed</option>
-            <option value="declined">Date</option>
-            <option value="cancelled">Service</option>
-        </select>
 
-        <label for="dateFilter">Select Date</label>
-        <input type="date" id="dateFilter" name="dateFilter">
-
-        <select name="serviceFilters" id="serviceFilters">
-            <option value="selectService" selected disabled>Select a Service</option>
-            <option value="cleaning">Cleaning</option>
-            <option value="dentalCrown">Dental Crown</option>
-            <option value="wisdomTExtract">Wisdom Tooth Extraction</option>
-        </select>
-
-        <label for="emailFilter">Input Email</label>
-        <input type="email" placeholder="email" name="emailFilter" id="emailFilter">
-
-        <input type="submit" value="Search">
+        <input type="submit" id="search-btn" value="Search">
     </form>
 </main>
 
