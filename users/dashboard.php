@@ -16,7 +16,6 @@ require("../php/dbConnect.php");
 
 ?>
 
-
 <main>
   <section class="section-greeting-wrapper">
     <br>
@@ -152,17 +151,20 @@ require("../php/dbConnect.php");
   $result = mysqli_query($conn, $query);
 
   if (mysqli_num_rows($result) <= 0) {
-    echo showModalError("Can't Retrieve Emails");
+    ?>
+    <section class="section past-record-wrapper">
+      <br><br>
+      <h2>You have no Past Records</h2>
+    </section>
+    <?php
   } else {
       while ($row = mysqli_fetch_assoc($result)) {
           array_push($records, $row);
       }
-  }
 
-  mysqli_close($conn);
-  ?>
-  
-  <section class="section past-record-wrapper">
+      ?>
+
+<section class="section past-record-wrapper">
     <h2>Past Records</h2>
     <table border="2" cellpadding="8" cellspacing="0">
       <tr>
@@ -221,6 +223,14 @@ require("../php/dbConnect.php");
 
     </table>
   </section>
+
+
+      <?php
+
+  }
+
+  mysqli_close($conn);
+  ?>
 
 
 
