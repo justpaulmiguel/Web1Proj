@@ -1,5 +1,5 @@
 <?php
-
+$title = 'My Settings';
 require("./partials/head.php");
 ?>
 <main>

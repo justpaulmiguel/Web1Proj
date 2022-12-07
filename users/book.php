@@ -1,5 +1,5 @@
 <?php
-
+$title = 'Bookings';
 require("./partials/head.php");
 
 ?>

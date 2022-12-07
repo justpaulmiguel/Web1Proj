@@ -33,7 +33,7 @@ if ($_SESSION["permissionLvl"] > 0) {
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Dashboard</title>
+    <title><?= $title ?></title>
 
 </head>
 

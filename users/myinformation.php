@@ -1,4 +1,5 @@
 <?php
+$title = 'My Information';
 require("./partials/head.php");
 ?>
 
