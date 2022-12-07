@@ -134,3 +134,14 @@ function cancelBook() {
     }
   });
 }
+
+// tab highlighting
+(() => {
+  // works by comparing last url name to last link url
+  const sidebarLinks = [...document.querySelectorAll(".options-bar a")];
+  const pageName = window.location.href.split("/").pop();
+  const activeTab = sidebarLinks.find((a) => {
+    return a.href.split("/").pop() === pageName;
+  });
+  activeTab.classList.add("active");
+})();

@@ -656,3 +656,16 @@ details[open] summary {
   padding: 8px;
   border: none;
 }
+
+/* tab highlighting */
+/* todo work on the design */
+.options-bar a {
+  opacity: 0.8;
+}
+.options-bar a:hover {
+  opacity: 1;
+}
+.options-bar a.active {
+  opacity: 1;
+  color: #a35709;
+}
