@@ -2,8 +2,8 @@
 $title = 'Past Records';
 
 
-// todo add values to db
 // todo work on the  logic
+
 
 ?>
 
@@ -13,9 +13,7 @@ $title = 'Past Records';
     <h1>Past Records</h1>
     <p>Search our records.</p>
 
-
-
-    <form action="" id="search-record-form">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="search-record-form">
 
         <select name="branch" id="branch" required>
             <option value="" disabled>Select a Filter</option>
