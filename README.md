@@ -28,7 +28,6 @@ password: `aA345678`
 Create tasks here for everyone to see and pick which one would you like to work on.
 
 - Continue Designing (will be broken up later)
-- Add logic to update page title based from the page
 
 Admin
 
@@ -53,6 +52,7 @@ Remove the task to the features and add task that you're workin on here.
 
 Move your task after you completed it here.
 
+- Add logic to update page title based from the page
 - Admin Requests
 - Admin My Information
 - Admin Employees
