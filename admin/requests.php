@@ -1,4 +1,6 @@
-<?php require("partials/head.php");
+<?php
+$title = 'Pending Requests';
+require("partials/head.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

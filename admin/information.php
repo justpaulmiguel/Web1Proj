@@ -1,4 +1,7 @@
-<?php require("partials/head.php");
+<?php
+$title = 'My Information';
+require("partials/head.php");
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

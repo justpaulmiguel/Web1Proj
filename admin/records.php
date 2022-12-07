@@ -1,4 +1,6 @@
-<?php require("partials/head.php") ?>
+<?php
+$title = 'Past Records';
+require("partials/head.php") ?>
 
 
 <main>

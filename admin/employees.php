@@ -1,5 +1,5 @@
 <?php
-
+$title = 'Employees';
 
 require("partials/head.php");
 

@@ -1,4 +1,6 @@
-<?php require("partials/head.php") ?>
+<?php
+$title = 'My Settings';
+require("partials/head.php") ?>
 
 <?php
 
