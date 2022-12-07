@@ -2,12 +2,12 @@
 //CHECKS FOR LOGIN SESSION
 session_start();
 if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESSION["permissionLvl"])) {
-  header('Location: ../index.php');
-  exit();
+    header('Location: ../index.php');
+    exit();
 }
 if ($_SESSION["permissionLvl"] > 0) {
-  header("Location: ../admin/dashboard.php");
-  exit();
+    header("Location: ../admin/dashboard.php");
+    exit();
 }
 ?>
 
@@ -40,13 +40,14 @@ if ($_SESSION["permissionLvl"] > 0) {
 <body>
     <!---------------------------------------------------Top Bar Start------------------------------------------------------>
     <header>
+        <div class="menu-wrapper">
+            <span class="material-icons" id="menu-icon"> menu </span>
+        </div>
         <div class="header-title">
             <div class="logo footer-place-holder-logo"><span>L</span></div>
             <p class="title-text">Joseph Galang Dental Clinic</p>
         </div>
-        <div class="split">
-            <span class="material-icons" id="menu-icon"> menu </span>
-        </div>
+
     </header>
     <!---------------------------------------------------Top Bar End------------------------------------------------------>
 
