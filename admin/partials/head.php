@@ -52,13 +52,14 @@ require("../php/functions.php");
     <!---------------------------------------------------Top Bar Start------------------------------------------------------>
 
     <header>
+        <div class="menu-wrapper">
+            <span class="material-icons" id="menu-icon"> menu </span>
+        </div>
         <div class="header-title">
             <div class="logo footer-place-holder-logo"><span>L</span></div>
             <p class="title-text">Joseph Galang Dental Clinic</p>
         </div>
-        <div class="split">
-            <span class="material-icons" id="menu-icon"> menu </span>
-        </div>
+
     </header>
     <!---------------------------------------------------Top Bar End------------------------------------------------------>
 
