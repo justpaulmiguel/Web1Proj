@@ -1,4 +1,4 @@
- <aside>
+<aside>
      <!-- sidebar -->
      <ul class="options-bar">
          <li>
@@ -10,7 +10,7 @@
              </a>
          </li>
          <li>
-             <a href="./book.php">
+             <a href="./book_service.php">
                  <div class="icon-box">
                      <span class="material-icons"> event </span>
                  </div>

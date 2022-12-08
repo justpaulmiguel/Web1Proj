@@ -669,3 +669,12 @@ details[open] summary {
   opacity: 1;
   color: #a35709;
 }
+
+#gmap_canvas {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background: none !important;
+  border: 0;
+  margin-left: 5rem;
+}
