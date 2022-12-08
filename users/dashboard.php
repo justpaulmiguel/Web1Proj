@@ -134,7 +134,7 @@ $fname = $value['fname'];
 
       <p class="heading-date"><?= $message ?></p>
       <div class="form-btn-wrapper">
-        <button class="submit-btn btn" onclick="location.href='book.php';"><?= $button ?></button>
+        <button class="submit-btn btn" onclick="location.href='book_service.php';"><?= $button ?></button>
       </div>
     </section>
   <?php
@@ -144,7 +144,8 @@ $fname = $value['fname'];
 
   $query = "SELECT * FROM bookings
   WHERE bookings.account_ID='$id' AND bookings.state in ('completed','declined','cancelled')
-  ORDER BY bookings.date, bookings.time";
+  ORDER BY bookings.date, bookings.time DESC
+  LIMIT 10";
   $result = mysqli_query($conn, $query);
 
   if (mysqli_num_rows($result) <= 0) {
@@ -162,7 +163,7 @@ $fname = $value['fname'];
   ?>
 
     <section class="section past-record-wrapper">
-      <h2>Past Records</h2>
+      <h2>Your Most Recent Past Records:</h2>
       <table border="2" cellpadding="8" cellspacing="0">
         <tr>
           <th>TYPE OF SERVICE</th>
