@@ -62,6 +62,7 @@ Move your task after you completed it here.
 - Password Hashing and Salting
 - Reworked Database (Please Update your Local one)
 - User Dashboard Backend
+- Booking Page Functionality (Not yet inserting into database)
 
 ## BUG FIXED
 
