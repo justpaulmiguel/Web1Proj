@@ -263,6 +263,10 @@ header {
   gap: 10px;
 }
 
+#signout-text {
+  cursor:pointer;
+}
+
 #sign-out-btn:hover {
   color: #c13500db;
 }
