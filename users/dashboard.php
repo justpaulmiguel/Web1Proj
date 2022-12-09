@@ -1,5 +1,4 @@
 <?php
-
 $title = 'Dashboard';
 require("./partials/head.php");
 
@@ -16,6 +15,7 @@ $fname = $value['fname'];
 ?>
 
 <main>
+  
   <section class="section-greeting-wrapper">
     <br>
     <h2>Good to see you,</h2>
@@ -24,6 +24,19 @@ $fname = $value['fname'];
     <br>
   </section>
   <?php
+
+  if(isset($_SESSION["submit"])) {
+    ?>
+      <script>
+          Swal.fire({
+              icon: 'success',
+              text: 'BOOKING SUCCESS!',
+              confirmButtonColor: '#e05c2a'
+          })
+      </script>")
+    <?php
+    unset($_SESSION["submit"]);
+  }
 
   $query = "SELECT bookings.booking_ID, bookings.service, bookings.date, bookings.time, bookings.branch, bookings.note
   FROM bookings

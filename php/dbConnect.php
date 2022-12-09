@@ -1,5 +1,4 @@
 <?php
-
     $server = "localhost";
     $unmae = "root";
     $dbpass = "";
@@ -11,5 +10,4 @@
     if(!$conn) {
         die("connection error");
     }
-
-    ?>
+?>

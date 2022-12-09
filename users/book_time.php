@@ -102,6 +102,7 @@ switch ($_SESSION["branch"]){
                   while ($row = mysqli_fetch_assoc($result)) {
                     array_push($times, $row);
                   }
+                  mysqli_close($conn);
               
                   foreach ($times as $time) {
                     switch ($time["time"]) {
@@ -181,6 +182,7 @@ switch ($_SESSION["branch"]){
                   if($finalcount==0) {
                     ?>
                       <p class="subheading-date">NO AVAILABLE TIME SLOT LEFT</p>
+                      
                     <?php
                   }
                 }
@@ -197,6 +199,7 @@ switch ($_SESSION["branch"]){
     </form>
   </section>
 </main>
+
 
 <?php
 require("./partials/footer.php");
