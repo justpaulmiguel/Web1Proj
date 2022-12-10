@@ -40,6 +40,8 @@ Admin
 
 Remove the task to the features and add task that you're workin on here.
 
+- My Account Info and Account Settings is the same for both admin and user just copy the one to the other
+
 ### Wil
 
 - Past Records (Search Bar)
