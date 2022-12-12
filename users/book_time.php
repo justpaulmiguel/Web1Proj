@@ -6,6 +6,7 @@ require("../php/dbConnect.php");
 
 unset($_SESSION["time"]);
 
+//INITIALIZATION
 if(!isset($_SESSION["date"])) {
   if(isset($_POST["date"])) {
     $dateRaw = $_POST["date"];
@@ -50,7 +51,7 @@ switch ($_SESSION["branch"]){
   <h1 class="top-heading-text">Booking</h1>
   <p>Reserve an appointment with our doctors.</p>
   <section class="booking-wrapper">
-    <form method="post" action="asset/submit_book.php">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
       <p class="subheading-date">Service: <?=$service?></p>
       <p class="subheading-date">Branch: <?=$branch?></p>
@@ -62,6 +63,7 @@ switch ($_SESSION["branch"]){
           <div class="fieldset-wrapper">
             <fieldset id="timepick">
               <?php 
+              //PREVENTING USER FROM CHOOSING ALREADY FULLY BOOKED TIME
               $count1 = 0;
               $count2 = 0;
               $count3 = 0;
@@ -197,6 +199,62 @@ switch ($_SESSION["branch"]){
         <button class="btn reset-btn" type="button" onClick="location.href='book_date.php'">Back</button>
       </div>
     </form>
+    <?php
+      //BOOKING SCRIPT
+      if (isset($_POST["datetime"]) && isset($_SESSION["service"]) && isset($_SESSION["branch"]) && isset($_SESSION["date"])) {
+        $service = $_SESSION["service"];
+        $branch = $_SESSION["branch"];
+        $date = $_SESSION["date"];
+        $time = $_POST["datetime"];
+
+        require("../php/dbConnect.php");
+
+        $email = $_SESSION["email"];
+
+        $query = "SELECT account_info.account_ID FROM account_info WHERE email='$email'";
+        $result = mysqli_query($conn, $query);
+        $value = mysqli_fetch_array($result);
+        $id = $value['account_ID'];
+
+        $query = "INSERT INTO bookings (bookings.account_ID, bookings.service, bookings.date, bookings.time, bookings.state, bookings.branch) 
+        VALUES ('$id', '$service', '$date', '$time', 'pending', '$branch')";
+
+        if (mysqli_query($conn, $query)) {
+
+          mysqli_close($conn);
+
+          unset($_POST["datetime"]);
+          unset($_SESSION["service"]);
+          unset($_SESSION["branch"]);
+          unset($_SESSION["date"]);
+
+          ?>
+          <script>
+              Swal.fire({
+                  icon: 'success',
+                  text: 'Booking Success!',
+                  confirmButtonColor: '#e05c2a'
+              }).then(function() {
+                  window.location = "dashboard.php";
+              });
+          </script>");
+          <?php
+        } else {
+
+          mysqli_close($conn);
+          
+          ?>
+          <script>
+              Swal.fire({
+                  icon: 'error',
+                  text: 'ERROR!',
+                  confirmButtonColor: '#e05c2a'
+              })
+          </script>");
+          <?php
+        }
+      }
+    ?>
   </section>
 </main>
 
