@@ -10,19 +10,25 @@ $filterType = isset($_GET['filter']) ? $_GET['filter'] : "date";
 $sortType = isset($_GET['sort']) ? $_GET['sort'] : 0;
 $specificFilter;
 $filterName = '';
+$searchTitle = "Search Result for ";
 
 if ($filterType == 'date') {
-    $specificFilter = isset($_GET['dateFilter']) ? $_GET['dateFilter'] : date('Y-m-d');
+    $dateToday = date('Y-m-d');
+    $specificFilter = isset($_GET['dateFilter']) ? $_GET['dateFilter'] : $dateToday;
     $filterName = 'dateFilter';
+    $searchTitle = 'Search Date for ' . $dateToday;
 } else if ($filterType == 'state') {
     $specificFilter = $_GET['stateFilters'];
     $filterName = 'stateFilters';
+    $searchTitle .= "'$state' State";
 } else if ($filterType == 'email') {
     $specificFilter = $_GET['emailFilter'];
     $filterName = 'emailFilter';
+    $searchTitle .= "'$specificFilter' Email";
 } else if ($filterType == 'service') {
     $specificFilter = $_GET['serviceFilters'];
     $filterName = 'serviceFilters';
+    $searchTitle .= "'$specificFilter' Service";
 }
 
 // get number of pages
@@ -54,8 +60,6 @@ $query = getQuery($filterType, $limit, $offset, $specificFilter, $sortType);
 
 $records = getRecords($query);
 
-// todo change based from query
-$searchTitle = "Recent History"
 
 ?>
 
