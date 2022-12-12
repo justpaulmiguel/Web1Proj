@@ -2,10 +2,10 @@
 $title = 'Past Records';
 require("./partials/head.php");
 
-// functions on record querying
+// functions on record queries
 require("./recordQueries.php");
 
-// GET the filter properties
+// get the GET request properties
 $filterType = isset($_GET['filter']) ? $_GET['filter'] : "date";
 $sortType = isset($_GET['sort']) ? $_GET['sort'] : 0;
 $specificFilter;
@@ -52,15 +52,12 @@ $offset = ($page - 1)  * $limit;
 $start = $offset + 1;
 $end = min(($offset + $limit), $count);
 
-
+// anchor link for pagination url
 $linkName = '?' . 'filter=' . $filterType . '&sort=' . $sortType . '&' . $filterName;
 
 
 $query = getQuery($filterType, $limit, $offset, $specificFilter, $sortType);
-
 $records = getRecords($query);
-
-
 ?>
 
 
