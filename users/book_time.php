@@ -73,9 +73,10 @@ switch ($_SESSION["branch"]){
               $count7 = 0;
               $finalcount = 0;
               $times = [];
+              $branchRaw = $_SESSION["branch"];
               
               $query = "SELECT bookings.time FROM bookings
-                WHERE bookings.date='$dateRaw' AND bookings.state ='accepted'";
+                WHERE bookings.date='$dateRaw' AND bookings.state ='accepted' AND bookings.branch = '$branchRaw'";
               
                 $result = mysqli_query($conn, $query);
               $count = mysqli_num_rows($result);
