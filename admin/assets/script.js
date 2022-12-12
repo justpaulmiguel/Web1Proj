@@ -223,6 +223,68 @@ if (document.querySelector("#remove-employee-btn")) {
       });
     });
 }
+const getTodayDate = () => {
+  const now = new Date();
+  const day = ("0" + now.getDate()).slice(-2);
+  const month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+  return now.getFullYear() + "-" + month + "-" + day;
+};
+
+// Records Logic
+if (document.querySelector("#search-record-form")) {
+  console.log("first");
+  const form = document.querySelector("#search-record-form");
+  const select = form.querySelector("#filter-select");
+
+  const insertedNode = document.createElement("div");
+  insertedNode.classList.add("insertedNode");
+  insertedNode.innerHTML = `
+  <label for="dateFilter">Select Date</label>
+  <input type="date" id="dateFilter" name="dateFilter" value='${getTodayDate()}'>
+  `;
+  form.insertBefore(insertedNode, form.children[3]);
+
+  select.addEventListener("change", (e) => {
+    const val = e.target.value;
+    let element = "";
+    if (val === "date") {
+      element = `
+      <label for="dateFilter">Select Date</label>
+      <input type="date" id="dateFilter" name="dateFilter" value='${getTodayDate()}'>
+      `;
+    } else if (val === "state") {
+      element = `
+      <select name="stateFilters" id="stateFilters">
+      <option value="selectState"  disabled>Select a State</option>
+      <option selected value="completed">Completed</option>
+      <option value="declined">Pending</option>
+      <option value="declined">Declined</option>
+      <option value="accepted">Accepted</option>
+       </select>
+
+      `;
+    } else if (val === "service") {
+      element = `
+      <select name="serviceFilters" id="serviceFilters">
+      <option value="selectService"  disabled>Select a Service</option>
+      <option value="clean" selected>Cleaning</option>
+      <option value="dentalCrown">Dental Crown</option>
+      <option value="wisdomTExtract">Wisdom Tooth Extraction</option>
+  </select>
+      `;
+    } else {
+      element = `
+      <label for="emailFilter">Input Email</label>
+      <input type="email" placeholder="email" name="emailFilter" id="emailFilter" required>
+      `;
+    }
+    // clears all the content
+    insertedNode.replaceChildren();
+    // inserts new content
+    insertedNode.innerHTML = element;
+  });
+}
 
 // tab highlighting
 (() => {

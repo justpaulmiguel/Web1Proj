@@ -31,7 +31,6 @@ Create tasks here for everyone to see and pick which one would you like to work 
 
 Admin
 
-- Dashboard
 - Finish todos
 - Review features
 - Decouple php logic part to view part
@@ -44,12 +43,13 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Past Records (Search Bar)
+- Admin Dashboard
 
 ## Finished
 
 Move your task after you completed it here.
 
+- Admin Past Records (Search Bar)
 - Add logic to update page title based from the page
 - Admin Requests
 - Admin My Information
@@ -65,4 +65,4 @@ Move your task after you completed it here.
 
 ## BUG FIXED
 
-- Bug on php/login.php\_ - when logging in as admin, expected result is for line `29` to trigger and the permissionLvl session to be saved as 2 (admin). Actual result is permissionLvl not having value, line `41` else block triggers
+- Bug on php/login.php
