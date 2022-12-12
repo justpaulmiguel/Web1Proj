@@ -1,15 +1,8 @@
 <?php
-// todo
-// query the count of this query first
-// then add pagination
-// decouple the pagination
 
-
-// make a file that collates all requests in the records
-// make it a function
 
 /***
- * Returns the count of a query
+ * Performs sql request query
  * 
  * @return integer rowcount
  */
@@ -21,7 +14,11 @@ function getCount(string $query)
     return mysqli_num_rows($result);
 }
 
-
+/***
+ * Returns sql query for counting rows in the database.
+ * 
+ * @return string query
+ */
 function getCountQuery($type, $value)
 {
     if ($type == 'email') {
@@ -32,6 +29,12 @@ function getCountQuery($type, $value)
     }
 }
 
+
+/***
+ * Fetches records from the database
+ * 
+ * @return array if theres rows, null otherwise
+ */
 function getRecords($query)
 {
     $records = [];
@@ -48,6 +51,11 @@ function getRecords($query)
     return $records;
 }
 
+/***
+ * Returns a query based from the type of filter
+ * 
+ * @return string sql query string.
+ */
 function getQuery($type, $limit, $offset, $value, $sort)
 {
     $sortMode = $sort == 0 ? 'DESC' : 'ASC';
