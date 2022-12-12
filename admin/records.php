@@ -9,15 +9,20 @@ require("./recordQueries.php");
 $filterType = isset($_GET['filter']) ? $_GET['filter'] : "date";
 $sortType = isset($_GET['sort']) ? $_GET['sort'] : 0;
 $specificFilter;
+$filterName = '';
 
 if ($filterType == 'date') {
     $specificFilter = isset($_GET['dateFilter']) ? $_GET['dateFilter'] : date('Y-m-d');
+    $filterName = 'dateFilter';
 } else if ($filterType == 'state') {
     $specificFilter = $_GET['stateFilters'];
+    $filterName = 'stateFilters';
 } else if ($filterType == 'email') {
     $specificFilter = $_GET['emailFilter'];
+    $filterName = 'emailFilter';
 } else if ($filterType == 'service') {
     $specificFilter = $_GET['serviceFilters'];
+    $filterName = 'serviceFilters';
 }
 
 // get number of pages
@@ -39,17 +44,10 @@ $offset = ($page - 1)  * $limit;
 
 // Some information to display to the user
 $start = $offset + 1;
-$end = min(($offset + $limit), $total);
+$end = min(($offset + $limit), $count);
 
-// todo configure to use php self to preserve filter details on links
-// The "back" link
-$prevlink = ($page > 1) ? '<a href="?page=1" title="First page">&laquo;</a> <a href="?page=' . ($page - 1) . '" title="Previous page">&lsaquo;</a>' : '<span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>';
 
-// The "forward" link
-$nextlink = ($page < $pages) ? '<a href="?page=' . ($page + 1) . '" title="Next page">&rsaquo;</a> <a href="?page=' . $pages . '" title="Last page">&raquo;</a>' : '<span class="disabled">&rsaquo;</span> <span class="disabled">&raquo;</span>';
-
-// Display the paging information
-$pageInfo =  '<div id="paging"><p>' . $prevlink . ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $total . ' results ' . $nextlink . ' </p></div>';
+$linkName = '?' . 'filter=' . $filterType . '&sort=' . $sortType . '&' . $filterName;
 
 
 $query = getQuery($filterType, $limit, $offset, $specificFilter, $sortType);
@@ -69,13 +67,6 @@ $searchTitle = "Recent History"
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="search-record-form">
 
-        <!-- <select name="branch" id="branch" required>
-            <option value="" disabled>Select a Filter</option>
-            <option value="all" selected>All Branches</option>
-            <option value="san simon">San Simon, Pampanga</option>
-            <option value="mexico">Mexico, Pampanga</option>
-        </select> -->
-
         <select name="filter" id="filter-select" required>
             <option value="" disabled>Select a Filter</option>
             <option value="date" selected>From Date</option>
@@ -86,7 +77,6 @@ $searchTitle = "Recent History"
         </select>
 
         <select name="sort" id="sort" required>
-            <!-- <option value="select" selected disabled>Select a Filter</option> -->
             <option value="" disabled>Sort by</option>
             <option value="0" selected>Newest</option>
             <option value="1">Oldest</option>
@@ -126,9 +116,31 @@ $searchTitle = "Recent History"
 
             <?php endforeach; ?>
         </table>
-        <a><?= $prevlink ?></a>
-        <a><?= $nextlink ?></a>
-        <p><?= $pageInfo ?></p>
+
+        <?php if ($page > 1) : /**Previous Page Arrow*/ ?>
+            <a href="<?= $linkName . '&page=1' ?>" title="First page">&laquo;</a>
+            <a href="<?= $linkName . '&page=' . ($page - 1) ?>" title="Previous page">&lsaquo;</a>
+        <?php else : ?>
+            <span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>
+        <?php endif ?>
+
+        <?php if ($page < $pages) : /**Next Page Arrow */  ?>
+            <a href="<?= $linkName . '&page=' . ($page + 1) ?>" title="Next page">&rsaquo;</a>
+            <a href="<?= $linkName . '&page=' . $pages ?>" title="Last page">&raquo;</a>
+        <?php else : ?>
+            <span class="disabled">&rsaquo;</span>
+            <span class="disabled">&raquo;</span>
+        <?php endif ?>
+
+        <div id="paging">
+            <p> <?=
+                /**Page Information*/
+                ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $total . ' results ' . $nextlink
+
+                ?>
+            </p>
+        </div>
+
 
     <?php else : ?>
         <h2>No Records found!</h2>

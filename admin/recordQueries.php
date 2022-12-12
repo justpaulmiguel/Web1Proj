@@ -68,7 +68,7 @@ function getQuery($type, $limit, $offset, $value, $sort)
         INNER JOIN account_info
         ON account_info.account_ID = bookings.account_ID
         WHERE bookings.%s = '%s'
-        ORDER BY date %s
-        LIMIT $limit OFFSET $offset", $type, $value, $sortMode);
+        ORDER BY date %s, time %s
+        LIMIT $limit OFFSET $offset", $type, $value, $sortMode, $sortMode);
     }
 }
