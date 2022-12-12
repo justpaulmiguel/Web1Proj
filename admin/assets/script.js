@@ -268,7 +268,7 @@ if (document.querySelector("#search-record-form")) {
       element = `
       <select name="serviceFilters" id="serviceFilters">
       <option value="selectService"  disabled>Select a Service</option>
-      <option value="cleaning" selected>Cleaning</option>
+      <option value="clean" selected>Cleaning</option>
       <option value="dentalCrown">Dental Crown</option>
       <option value="wisdomTExtract">Wisdom Tooth Extraction</option>
   </select>
