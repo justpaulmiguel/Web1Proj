@@ -256,18 +256,19 @@ if (document.querySelector("#search-record-form")) {
     } else if (val === "state") {
       element = `
       <select name="stateFilters" id="stateFilters">
-      <option value="selectState" selected disabled>Select a State</option>
-      <option value="completed">Completed</option>
-      <option value="declined">Date</option>
-      <option value="cancelled">Service</option>
+      <option value="selectState"  disabled>Select a State</option>
+      <option selected value="completed">Completed</option>
+      <option value="declined">Pending</option>
+      <option value="declined">Declined</option>
+      <option value="accepted">Accepted</option>
        </select>
 
       `;
     } else if (val === "service") {
       element = `
       <select name="serviceFilters" id="serviceFilters">
-      <option value="selectService" selected disabled>Select a Service</option>
-      <option value="cleaning">Cleaning</option>
+      <option value="selectService"  disabled>Select a Service</option>
+      <option value="cleaning" selected>Cleaning</option>
       <option value="dentalCrown">Dental Crown</option>
       <option value="wisdomTExtract">Wisdom Tooth Extraction</option>
   </select>
@@ -275,7 +276,7 @@ if (document.querySelector("#search-record-form")) {
     } else {
       element = `
       <label for="emailFilter">Input Email</label>
-      <input type="email" placeholder="email" name="emailFilter" id="emailFilter">
+      <input type="email" placeholder="email" name="emailFilter" id="emailFilter" required>
       `;
     }
     // clears all the content
