@@ -9,6 +9,7 @@ if ($_SESSION["permissionLvl"] > 0) {
     header("Location: ../admin/dashboard.php");
     exit();
 }
+require("../php/functions.php");
 ?>
 
 <!DOCTYPE html>

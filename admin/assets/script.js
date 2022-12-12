@@ -296,3 +296,38 @@ if (document.querySelector("#search-record-form")) {
   });
   activeTab.classList.add("active");
 })();
+
+// todo add input logic here in the requests input
+
+// Delete an Employee logic
+if (document.querySelector("#remove-employee-btn")) {
+  document
+    .querySelector("#remove-employee-btn")
+    .addEventListener("click", () => {
+      Swal.fire({
+        icon: "warning",
+        title: "Remove an employee",
+        html: `
+      <form method="post" action="employees.php">
+        <label> Remove an employee! Account is still active</label> 
+         <input type='hidden' value='remove' name='type'/>
+         <input type="email" name="email" required id="remove-email" class="swal2-input" placeholder="Enter Email">
+      </form> 
+      `,
+        inputAttributes: {
+          autocapitalize: "off",
+        },
+        showCancelButton: true,
+        confirmButtonText: "Remove Employee",
+        preConfirm: () => {
+          const form = Swal.getPopup().querySelector("form");
+          const email = Swal.getPopup().querySelector("#remove-email");
+          if (!email.value || !email.validity.valid) {
+            Swal.showValidationMessage(`Please enter proper email!`);
+          } else {
+            form.submit();
+          }
+        },
+      });
+    });
+}
