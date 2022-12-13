@@ -27,11 +27,9 @@ password: `aA345678`
 
 Create tasks here for everyone to see and pick which one would you like to work on.
 
-- Continue Designing (will be broken up later)
-
 Admin
 
-- Finish todos
+- Refactor Design on Search Bar
 - Review features
 - Decouple php logic part to view part
 
@@ -39,16 +37,17 @@ Admin
 
 Remove the task to the features and add task that you're workin on here.
 
-- My Account Info and Account Settings is the same for both admin and user just copy the one to the other
-
 ### Wil
 
-- Admin Dashboard
+- Finish todos
+- Fix modal text
 
 ## Finished
 
 Move your task after you completed it here.
 
+- My Account Info and Account Settings is the same for both admin and user just copy the one to the other
+- Admin Dashboard
 - Admin Past Records (Search Bar)
 - Add logic to update page title based from the page
 - Admin Requests
