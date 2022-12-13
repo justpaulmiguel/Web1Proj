@@ -1,14 +1,17 @@
 <?php
-		require ("../php/dbConnect.php");	
-	if(isset($_REQUEST['stateChange']))
-	{
-	
-		$bookID1 = $_POST["stateChange"];
-		$query2="UPDATE `bookings` SET `state` = 'completed' WHERE booking_ID='$bookID1'";
-		$result2 = mysqli_query($conn,$query2);
-		mysqli_query($conn,$query2);
-		mysqli_close($conn);
-        header("refresh: 0; url=dashboard.php");
+session_start();
 
-	}
-?>
+require("../php/dbConnect.php");
+if (isset($_REQUEST['stateChange'])) {
+
+	$bookID1 = $_POST["stateChange"];
+	$query2 = "UPDATE `bookings` SET `state` = 'completed' WHERE booking_ID='$bookID1'";
+	$result2 = mysqli_query($conn, $query2);
+	mysqli_query($conn, $query2);
+	mysqli_close($conn);
+	$_SESSION['flash_message'] = "Update Successful";
+} else {
+	$_SESSION['flash_message'] = "Update Unsucessful";
+}
+
+header("refresh: 0; url=dashboard.php");
