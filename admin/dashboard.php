@@ -21,7 +21,8 @@ if (isset($_SESSION['flash_message'])) {
 
 		<?php
 		require("../php/dbConnect.php");
-		$query = "SELECT booking_ID, account_ID, state,  DATE_FORMAT(date,'%W, %M %d %Y') as date , TIME_FORMAT(time, '%l:%i %p') as time  FROM bookings WHERE state='accepted'";
+		$date = date('Y-m-d');
+		$query = "SELECT booking_ID, account_ID, state,  DATE_FORMAT(date,'%W, %M %d %Y') as date , TIME_FORMAT(time, '%l:%i %p') as time  FROM bookings WHERE state='accepted' AND date='$date'";
 		$result = mysqli_query($conn, $query);
 		if (mysqli_num_rows($result) > 0) {
 		?>
