@@ -1,5 +1,9 @@
 // Sweet alert library must be loaded first
 
+const YES_CONFIRM_BTN_COLOR = "#a35709";
+const NO_CONFIRM_BTN_COLOR = "gray";
+const DEFAULT_CONFIRM_BTN_COLOR = "#c85022";
+
 /**
  * Logic for the sliding header upon scroll.
  * works by checking the window Yoffset and adding/removing class.
@@ -114,30 +118,28 @@ if (document.querySelector("#patient-requests-form")) {
 
   const form = document.querySelector("#patient-requests-form");
 
-  // todo btn now showing
   const btn = document.querySelector(".form-submit");
-  console.log(btn);
   btn.addEventListener("click", () => {
     if (form.requestType.value == "declined") {
       Swal.fire({
-        title: "Are you sure?",
-        text: `Do you want to decline all of these?`,
+        title: "Decline Confirmation",
+        text: `Do you want to decline all marked appointments?`,
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        cancelButtonColor: NO_CONFIRM_BTN_COLOR,
         confirmButtonText: "Yes",
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire({
-            title: "Reason for declining",
+            title: "Declining Reason",
             icon: "info",
             input: "text",
             inputAttributes: {
               autocapitalize: "off",
             },
             showCancelButton: true,
-            confirmButtonText: "Look up",
+            confirmButtonText: "Send",
             showLoaderOnConfirm: true,
             preConfirm: (declineText) => {
               const input = document.createElement("input");
@@ -145,8 +147,6 @@ if (document.querySelector("#patient-requests-form")) {
               input.setAttribute("value", declineText);
               input.setAttribute("type", "hidden");
               form.append(input);
-              console.log(form);
-              console.log(input);
             },
           }).then((result) => {
             if (result.isConfirmed) {
@@ -157,12 +157,12 @@ if (document.querySelector("#patient-requests-form")) {
       });
     } else {
       Swal.fire({
-        title: "Are you sure?",
-        text: `Do you want to confirm all of these?`,
+        title: "Accept Confirmation",
+        text: `Do you want to accept all marked appointments?`,
         icon: "info",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        cancelButtonColor: NO_CONFIRM_BTN_COLOR,
         confirmButtonText: "Yes",
       }).then((result) => {
         if (result.isConfirmed) {
@@ -186,8 +186,8 @@ if (document.querySelector("#signout-btn")) {
       text: "You will be logged out!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+      cancelButtonColor: NO_CONFIRM_BTN_COLOR,
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
@@ -334,37 +334,3 @@ if (document.querySelector("#search-record-form")) {
   });
   activeTab.classList.add("active");
 })();
-
-// Add note when declining a request
-// Delete an Employee logic
-if (document.querySelector("#remove-employee-btn")) {
-  document
-    .querySelector("#remove-employee-btn")
-    .addEventListener("click", () => {
-      Swal.fire({
-        icon: "warning",
-        title: "Remove an employee",
-        html: `
-      <form method="post" action="employees.php">
-        <label> Remove an employee! Account is still active</label> 
-         <input type='hidden' value='remove' name='type'/>
-         <input type="email" name="email" required id="remove-email" class="swal2-input" placeholder="Enter Email">
-      </form> 
-      `,
-        inputAttributes: {
-          autocapitalize: "off",
-        },
-        showCancelButton: true,
-        confirmButtonText: "Remove Employee",
-        preConfirm: () => {
-          const form = Swal.getPopup().querySelector("form");
-          const email = Swal.getPopup().querySelector("#remove-email");
-          if (!email.value || !email.validity.valid) {
-            Swal.showValidationMessage(`Please enter proper email!`);
-          } else {
-            form.submit();
-          }
-        },
-      });
-    });
-}

@@ -4,8 +4,8 @@ require("partials/head.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // todo add validation
-    // todo add condition if no patientId
+    // TODO add validation
+    // TODO add condition if no patientId
     $state = $_POST['requestType'] == 'accepted' ? 'accepted' : 'declined';
     $query = "";
     if (!empty($_POST['patientId'])) {
