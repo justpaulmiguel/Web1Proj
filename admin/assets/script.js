@@ -100,6 +100,7 @@ if (document.querySelector("#edit-account-form")) {
 
   // todo add confirmation modal here before passing into the form dom
 }
+
 // request schedule script
 if (document.querySelector("#patient-requests-form")) {
   // get all td data
@@ -113,13 +114,51 @@ if (document.querySelector("#patient-requests-form")) {
 
   const form = document.querySelector("#patient-requests-form");
 
-  [...form.querySelectorAll(".btn")].forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+  // todo btn now showing
+  const btn = document.querySelector(".form-submit");
+  console.log(btn);
+  btn.addEventListener("click", () => {
+    if (form.requestType.value == "declined") {
       Swal.fire({
         title: "Are you sure?",
-        text: `Do you want to add these to ${
-          form.requestType.value === "accepted" ? "accepted" : "declined"
-        } list?`,
+        text: `Do you want to decline all of these?`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Reason for declining",
+            icon: "info",
+            input: "text",
+            inputAttributes: {
+              autocapitalize: "off",
+            },
+            showCancelButton: true,
+            confirmButtonText: "Look up",
+            showLoaderOnConfirm: true,
+            preConfirm: (declineText) => {
+              const input = document.createElement("input");
+              input.setAttribute("name", "declineReason");
+              input.setAttribute("value", declineText);
+              input.setAttribute("type", "hidden");
+              form.append(input);
+              console.log(form);
+              console.log(input);
+            },
+          }).then((result) => {
+            if (result.isConfirmed) {
+              form.submit();
+            }
+          });
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "Are you sure?",
+        text: `Do you want to confirm all of these?`,
         icon: "info",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -130,9 +169,8 @@ if (document.querySelector("#patient-requests-form")) {
           form.submit();
         }
       });
-    });
+    }
   });
-
   form.addEventListener("submit", (e) => {
     e.preventDefault();
   });
@@ -296,3 +334,37 @@ if (document.querySelector("#search-record-form")) {
   });
   activeTab.classList.add("active");
 })();
+
+// Add note when declining a request
+// Delete an Employee logic
+if (document.querySelector("#remove-employee-btn")) {
+  document
+    .querySelector("#remove-employee-btn")
+    .addEventListener("click", () => {
+      Swal.fire({
+        icon: "warning",
+        title: "Remove an employee",
+        html: `
+      <form method="post" action="employees.php">
+        <label> Remove an employee! Account is still active</label> 
+         <input type='hidden' value='remove' name='type'/>
+         <input type="email" name="email" required id="remove-email" class="swal2-input" placeholder="Enter Email">
+      </form> 
+      `,
+        inputAttributes: {
+          autocapitalize: "off",
+        },
+        showCancelButton: true,
+        confirmButtonText: "Remove Employee",
+        preConfirm: () => {
+          const form = Swal.getPopup().querySelector("form");
+          const email = Swal.getPopup().querySelector("#remove-email");
+          if (!email.value || !email.validity.valid) {
+            Swal.showValidationMessage(`Please enter proper email!`);
+          } else {
+            form.submit();
+          }
+        },
+      });
+    });
+}
