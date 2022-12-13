@@ -6,15 +6,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // todo add validation
     // todo add condition if no patientId
-
     $state = $_POST['requestType'] == 'accepted' ? 'accepted' : 'declined';
     $query = "";
     if (!empty($_POST['patientId'])) {
         require("../php/dbConnect.php");
-        foreach ($_POST['patientId'] as $id) {
-
-            $query .= sprintf("UPDATE  bookings SET state='%s' WHERE booking_id='%s' ;", $state, $id);
+        $query = '';
+        if ($state == 'declined') {
+            $note = $_POST['declineReason'];
+            foreach ($_POST['patientId'] as $id) {
+                $query .= sprintf("UPDATE  bookings SET state='%s', note='%s' WHERE booking_id='%s' ;", $state, $note, $id);
+            }
+        } else {
+            foreach ($_POST['patientId'] as $id) {
+                $query .= sprintf("UPDATE  bookings SET state='%s' WHERE booking_id='%s' ;", $state, $id);
+            }
         }
+
         if (mysqli_multi_query($conn, $query)) {
             echo showModalSuccess($state == 'accepted' ?  "Accepted successfully" : 'Declined successfully');
         } else {
@@ -34,8 +41,9 @@ ON bookings.account_id = account_info.account_id
 
 require("../php/dbConnect.php");
 $result = mysqli_query($conn, $query);
+
 if (mysqli_num_rows($result) <= 0) {
-    echo showModalError("Can't Retrieve Emails");
+    $pendingRequests = [];
 } else {
     while ($row = mysqli_fetch_assoc($result)) {
         array_push($pendingRequests, $row);
@@ -48,11 +56,12 @@ mysqli_close($conn);
 
 <main>
     <h1>Requests</h1>
-    <form id="patient-requests-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-        <?php if (empty($pendingRequests)) : ?>
-            <h2>You have no pending requests!</h2>
-        <?php else : ?>
+    <?php if (empty($pendingRequests)) : ?>
+        <h2>You have no pending requests!</h2>
+    <?php else : ?>
+        <form id="patient-requests-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
             <table border="2" cellpadding="10" cellspacing="1">
                 <tr>
                     <th>Date</th>
@@ -65,13 +74,13 @@ mysqli_close($conn);
 
 
                     <tr align="center" class="patient-req-row">
-                        <td><?= $pending['date'] ?></td>
-                        <td><?= $pending['time'] ?></td>
-                        <td><?= $pending['lname'] ?></td>
-                        <td><?= $pending['fname'] ?></td>
-                        <td><?= $pending['service'] ?></td>
+                        <td><?= $pending['date']; ?></td>
+                        <td><?= $pending['time']; ?></td>
+                        <td><?= $pending['lname']; ?></td>
+                        <td><?= $pending['fname']; ?></td>
+                        <td><?= $pending['service']; ?></td>
                         <td>
-                            <input type="checkbox" value="<?= $pending['booking_ID'] ?>" name="patientId[]">
+                            <input type="checkbox" value="<?= $pending['booking_ID']; ?>" name="patientId[]">
                         </td>
                     </tr>
 
@@ -79,7 +88,6 @@ mysqli_close($conn);
                 <?php endforeach; ?>
             </table>
 
-            <!-- todo have form event handler, add modal before continue -->
             <label for="accept-radio">
                 <input value="accepted" name="requestType" class="" type="radio" checked id="accept-radio" />
                 Accept
@@ -88,10 +96,9 @@ mysqli_close($conn);
                 <input value="declined" name="requestType" class="" type="radio" id="decline-radio" />
                 Decline
             </label>
-            <button class="btn " type="submit">Submit</button>
-            <!-- todo disable buttons when theres no marked -->
-    </form>
-<?php endif ?>
+            <button class="btn form-submit" type="submit">Submit</button>
+        </form>
+    <?php endif ?>
 
 
 

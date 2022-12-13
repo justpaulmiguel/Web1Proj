@@ -16,6 +16,9 @@ if ($filterType == 'date') {
     $dateToday = date('Y-m-d');
     $specificFilter = isset($_GET['dateFilter']) ? $_GET['dateFilter'] : $dateToday;
     $filterName = 'dateFilter';
+    if ($dateToday == date("Y-m-d")) {
+        $dateToday = 'the recent records';
+    }
     $searchTitle = 'Search Date for ' . $dateToday;
 } else if ($filterType == 'state') {
     $specificFilter = $_GET['stateFilters'];
