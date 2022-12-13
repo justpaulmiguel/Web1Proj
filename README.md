@@ -39,6 +39,7 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
+- Refactor date and time to more readable format
 - Finish todos
 - Fix modal text
 
