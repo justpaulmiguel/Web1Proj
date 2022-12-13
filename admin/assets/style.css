@@ -264,7 +264,7 @@ header {
 }
 
 #signout-text {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 #sign-out-btn:hover {
@@ -308,12 +308,8 @@ table td {
   padding: 8px;
 }
 
-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
 table tr:hover {
-  background-color: #ddd;
+  background-color: rgba(222, 222, 222, 0.35);
 }
 
 /* Button Styles */
@@ -694,4 +690,42 @@ details[open] summary {
 .options-bar a.active {
   opacity: 1;
   color: #a35709;
+}
+
+.main-content {
+  background-color: white;
+  padding: 10px;
+  padding-left: 24px;
+  padding-bottom: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 64px;
+}
+
+.main-content .section-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 16px;
+}
+.main-content .section-header > * {
+  padding: 0;
+  margin: 0;
+}
+
+.main-content .table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-width: 100%;
+  margin-left: 24px;
+}
+
+.main-content table th {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+.main-content .table-container table td {
+  border: none;
+  padding: 0;
 }
