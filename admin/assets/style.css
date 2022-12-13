@@ -648,11 +648,6 @@ details[open] summary {
   border: none;
 }
 
-/* Admin Employee Page */
-.employees-wrapper {
-  /* todo Add someting later */
-}
-
 .employees-wrapper .emp-wrapper {
   display: flex;
   flex-flow: row nowrap;
