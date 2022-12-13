@@ -54,3 +54,4 @@ require("../php/functions.php");
 
     <?php require("sidebar.php") ?>
     <div class="side-content">
+        <div class="wave-container">

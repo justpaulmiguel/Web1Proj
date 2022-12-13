@@ -78,7 +78,6 @@ if (isset($_SESSION['flash_message'])) {
 
 	</div>
 
-
 </main>
 
 

@@ -48,6 +48,7 @@ footer {
   align-items: flex-end;
   justify-content: space-between;
   flex-flow: row wrap;
+  position: relative;
 }
 
 /* sidebar */
@@ -723,4 +724,31 @@ details[open] summary {
 .main-content .table-container table td {
   border: none;
   padding: 0;
+}
+
+/* Footer wave design */
+.wave-container {
+  position: relative;
+  padding-bottom: 10rem;
+  background-color: #f0e3ca;
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background-color: #f0e3ca;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(142% + 1.3px);
+  height: 113px;
+}
+
+.wave .shape-fill {
+  fill: #a35709;
 }
