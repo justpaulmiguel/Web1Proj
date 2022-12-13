@@ -2,7 +2,7 @@
 $title = 'Dashboard';
 require("partials/head.php");
 
-
+// todo get the current record for the week
 
 if (isset($_SESSION['flash_message'])) {
 	$message = $_SESSION['flash_message'];
