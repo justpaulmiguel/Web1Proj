@@ -263,8 +263,9 @@ header {
   justify-content: flex-start;
   gap: 10px;
 }
-
-#signout-text {
+#signout-btn:hover {
+  color: #e05c2a;
+  transform: translateY(-5px);
   cursor: pointer;
 }
 
@@ -676,9 +677,8 @@ details[open] summary {
 }
 
 /* tab highlighting */
-/* todo work on the design */
 .options-bar a {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .options-bar a:hover {
   opacity: 1;
@@ -686,8 +686,8 @@ details[open] summary {
 .options-bar a.active {
   opacity: 1;
   color: #a35709;
+  font-weight: 800;
 }
-
 .main-content {
   background-color: white;
   padding: 10px;

@@ -67,8 +67,8 @@
 
     <div class="bottom-part">
         <div id="signout-btn">
-            <span id="signout-text" class="material-icons"> logout </span>
-            <span id="signout-text">Logout</span>
+            <span class="material-icons"> logout </span>
+            <span>Logout</span>
         </div>
     </div>
 </aside>
