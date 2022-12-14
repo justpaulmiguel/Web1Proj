@@ -863,3 +863,16 @@ details[open] summary {
 .insertedNode {
   width: 250px;
 }
+
+.week-appointment-list {
+  list-style: none;
+}
+
+.week-list-item {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.week-list-item > * {
+  width: 230px;
+}

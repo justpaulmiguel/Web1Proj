@@ -77,7 +77,26 @@ if (isset($_SESSION['flash_message'])) {
 
 
 			</div>
+			<div class="section-content">
+				<h2>Remaining appointments for the week</h2>
+				<?php require('./weekSched.php') ?>
+				<?php if (count($weekRecords) == 0) : ?>
+					<h3>No more appointments!</h3>
+				<?php else : ?>
+					<ul class="week-appointment-list">
+						<?php foreach ($weekRecords as $rec) : ?>
+							<li>
+								<div class="week-list-item">
+									<p><?= $rec["name"] ?></p>
+									<p><?= $rec["date"] ?></p>
+									<p><?= $rec["time"] ?></p>
+								</div>
+							</li>
+						<?php endforeach ?>
+					</ul>
+				<?php endif ?>
 
+			</div>
 </main>
 
 
