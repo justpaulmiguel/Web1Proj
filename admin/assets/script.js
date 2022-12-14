@@ -278,17 +278,15 @@ if (document.querySelector("#search-record-form")) {
   const insertedNode = document.createElement("div");
   insertedNode.classList.add("insertedNode");
   insertedNode.innerHTML = `
-  <label for="dateFilter">Select Date</label>
   <input type="date" id="dateFilter" name="dateFilter" value='${getTodayDate()}'>
   `;
-  form.insertBefore(insertedNode, form.children[3]);
+  form.insertBefore(insertedNode, form.children[1]);
 
   select.addEventListener("change", (e) => {
     const val = e.target.value;
     let element = "";
     if (val === "date") {
       element = `
-      <label for="dateFilter">Select Date</label>
       <input type="date" id="dateFilter" name="dateFilter" value='${getTodayDate()}'>
       `;
     } else if (val === "state") {
@@ -313,7 +311,6 @@ if (document.querySelector("#search-record-form")) {
       `;
     } else {
       element = `
-      <label for="emailFilter">Input Email</label>
       <input type="email" placeholder="email" name="emailFilter" id="emailFilter" required>
       `;
     }

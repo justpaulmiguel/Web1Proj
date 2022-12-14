@@ -17,7 +17,7 @@ if (isset($_SESSION['flash_message'])) {
 <main>
 	<h1>Dashboard</h1>
 
-	<div class="main-content">
+	<div class="section-content">
 		<?php
 		require("../php/dbConnect.php");
 		$date = date('Y-m-d');
@@ -91,7 +91,7 @@ if (isset($_SESSION['flash_message'])) {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
 				Swal.fire({
-					title: 'Are you sure?',
+					title: 'Missed Appointment Confirmation',
 					text: "Do you want to mark this appointment as missed?",
 					icon: 'warning',
 					showCancelButton: true,
@@ -115,8 +115,8 @@ if (isset($_SESSION['flash_message'])) {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
 				Swal.fire({
-					title: 'Are you sure?',
-					text: "Do you want to mark this appointment as complete",
+					title: 'Completed Appointment Confirmation',
+					text: "Do you want to mark this appointment as complete?",
 					icon: 'info',
 					showCancelButton: true,
 					confirmButtonColor: '#3085d6',

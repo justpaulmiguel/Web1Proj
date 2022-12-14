@@ -73,11 +73,13 @@ function getQuery($type, $limit, $offset, $value, $sort)
         ORDER BY date %s, time %s
         LIMIT $limit OFFSET $offset", $type, $value, $sortMode, $sortMode);
     } else {
-        return sprintf("SELECT * FROM bookings
+        return sprintf("SELECT DATE_FORMAT(date,'%s') as date, TIME_FORMAT(time, '%s') as time, 
+        state, lname,fname,service,bookings.account_ID,booking_ID,branch
+         FROM bookings
         INNER JOIN account_info
         ON account_info.account_ID = bookings.account_ID
         WHERE bookings.%s = '%s'
         ORDER BY date %s, time %s
-        LIMIT $limit OFFSET $offset", $type, $value, $sortMode, $sortMode);
+        LIMIT $limit OFFSET $offset", '%M %d ,%Y', '%l:%i %p', $type, $value, $sortMode, $sortMode);
     }
 }

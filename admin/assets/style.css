@@ -696,6 +696,43 @@ details[open] summary {
   max-width: 1000px;
   margin: 0 auto;
   margin-top: 64px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  border-radius: 15px;
+}
+.section-content {
+  background-color: white;
+  padding: 10px;
+  padding-left: 24px;
+  padding-bottom: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 64px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  border-radius: 15px;
+}
+.section-content .section-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 16px;
+}
+.section-content .section-header > * {
+  padding: 0;
+  margin: 0;
+}
+.section-content table th {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+.section-content .table-container table td {
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  padding: 0 1rem;
 }
 
 .main-content .section-header {
@@ -792,4 +829,37 @@ details[open] summary {
   background-color: #c90101;
   color: white;
   cursor: pointer;
+}
+
+#search-record-form input,
+#search-record-form select {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#search-record-form {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 15px;
+}
+
+#search-record-form input:hover {
+  cursor: pointer;
+}
+
+#search-record-form #search-btn {
+  width: 120px;
+  background-color: #ff8303;
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.insertedNode {
+  width: 250px;
 }

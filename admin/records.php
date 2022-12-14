@@ -16,14 +16,15 @@ if ($filterType == 'date') {
     $dateToday = date('Y-m-d');
     $specificFilter = isset($_GET['dateFilter']) ? $_GET['dateFilter'] : $dateToday;
     $filterName = 'dateFilter';
-    if ($dateToday == date("Y-m-d")) {
-        $dateToday = 'the recent records';
+    if ($dateToday == $specificFilter) {
+        $searchTitle = 'Recent Records';
+    } else {
+        $searchTitle .= "'$specificFilter' and older date";
     }
-    $searchTitle = 'Search Date for ' . $dateToday;
 } else if ($filterType == 'state') {
     $specificFilter = $_GET['stateFilters'];
     $filterName = 'stateFilters';
-    $searchTitle .= "'$state' State";
+    $searchTitle .= "'$specificFilter' status";
 } else if ($filterType == 'email') {
     $specificFilter = $_GET['emailFilter'];
     $filterName = 'emailFilter';
@@ -48,8 +49,12 @@ $page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array(
         'min_range' => 1,
     ),
 )));
+echo $page;
+
+$page = $page <= 0 ? 1 : $page;
 
 $offset = ($page - 1)  * $limit;
+
 
 // Some information to display to the user
 $start = $offset + 1;
@@ -93,8 +98,8 @@ function getBranchName($code)
 
         <select name="filter" id="filter-select" required>
             <option value="" disabled>Select a Filter</option>
-            <option value="date" selected>From Date</option>
-            <option value="state">Appointment State</option>
+            <option value="date" selected> Date</option>
+            <option value="state">Appointment Status</option>
             <option value="email">Email</option>
             <option value="service">Service</option>
 
@@ -164,7 +169,7 @@ function getBranchName($code)
 
 
     <?php else : ?>
-        <h2>No Records found!</h2>
+        <h2>No Records about that yet!</h2>
     <?php endif ?>
 </main>
 
