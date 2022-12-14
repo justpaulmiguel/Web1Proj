@@ -724,6 +724,9 @@ details[open] summary {
 .main-content .table-container table td {
   border: none;
   padding: 0;
+  margin: 0;
+  text-align: left;
+  padding: 0 1rem;
 }
 
 /* Footer wave design */
@@ -751,4 +754,42 @@ details[open] summary {
 
 .wave .shape-fill {
   fill: #a35709;
+}
+
+#complete-appointment {
+}
+
+#complete-appointment a {
+  color: inherit;
+}
+
+#complete-appointment a:hover {
+  color: #ff8303;
+}
+
+/* dashboard form btn */
+
+#complete-appointment .form-btn {
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: bold;
+  color: #a35709;
+  background-color: transparent;
+  border: 2px solid #a35709;
+  width: 120px;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  transition: all 0.2s ease-in-out;
+  font-family: "Poppins", sans-serif;
+}
+
+#complete-appointment .completed-btn:hover {
+  color: white;
+  background-color: #a35709;
+  cursor: pointer;
+}
+#complete-appointment .missed-btn:hover {
+  background-color: #c90101;
+  color: white;
+  cursor: pointer;
 }
