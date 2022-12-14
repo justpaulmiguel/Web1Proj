@@ -11,7 +11,7 @@ function getCount(string $query)
     require("../php/dbConnect.php");
     $result = mysqli_query($conn, $query);
     mysqli_close($conn);
-    return mysqli_num_rows($result);
+    return mysqli_fetch_row($result)[0];
 }
 
 /***
@@ -21,6 +21,7 @@ function getCount(string $query)
  */
 function getCountQuery($type, $value)
 {
+
     if ($type == 'email') {
         return sprintf("SELECT COUNT(*) FROM account_info WHERE email = '%s'", $value);
     } else {

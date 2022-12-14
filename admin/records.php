@@ -61,6 +61,26 @@ $linkName = '?' . 'filter=' . $filterType . '&sort=' . $sortType . '&' . $filter
 
 $query = getQuery($filterType, $limit, $offset, $specificFilter, $sortType);
 $records = getRecords($query);
+function getServiceName($code)
+{
+    if ($code == 'clean') {
+        return 'Cleaning';
+    } else if ($code == 'd_crown') {
+        return 'Crown';
+    } else if ($code == 'pasta') {
+        return 'Pasta';
+    } else if ($code == 'wisdom') {
+        return 'Wisdom Tooth Extraction';
+    }
+}
+function getBranchName($code)
+{
+    if ($code == 's_simon') {
+        return 'San Simon';
+    } else if ($code == 'mexico') {
+        return 'Mexico';
+    }
+}
 ?>
 
 
@@ -97,9 +117,9 @@ $records = getRecords($query);
             <tr>
                 <th>Date</th>
                 <th>Time</th>
-                <th>State</th>
+                <th>Status</th>
                 <th>Branch</th>
-                <th colspan="2">Name</th>
+                <th>Name</th>
                 <th>Service</th>
                 <th>Account ID</th>
             </tr>
@@ -110,11 +130,10 @@ $records = getRecords($query);
                     <td><?= $record['date'] ?></td>
                     <td><?= $record['time'] ?></td>
                     <td><?= $record['state'] ?></td>
-                    <td><?= $record['branch'] ?></td>
-                    <td><?= $record['lname'] ?></td>
-                    <td><?= $record['fname'] ?></td>
-                    <td><?= $record['service'] ?></td>
-                    <td><?= $record['account_ID'] ?></td>
+                    <td><?= getBranchName($record['branch']); ?></td>
+                    <td><?= $record['lname'] . ", " .  $record['fname']; ?></td>
+                    <td><?= getServiceName($record['service'])  ?></td>
+                    <td><?= $record['account_ID']; ?></td>
                 </tr>
 
 
@@ -139,9 +158,7 @@ $records = getRecords($query);
         <div id="paging">
             <p> <?=
                 /**Page Information*/
-                ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $total . ' results ' . $nextlink
-
-                ?>
+                ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $count . ' results ' ?>
             </p>
         </div>
 
