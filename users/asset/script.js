@@ -77,8 +77,11 @@ if (document.querySelector("#signout-btn")) {
   // works by comparing last url name to last link url
   const sidebarLinks = [...document.querySelectorAll(".options-bar a")];
   const pageName = window.location.href.split("/").pop();
+
   const activeTab = sidebarLinks.find((a) => {
-    return a.href.split("/").pop() === pageName;
+    const linkName = a.href.split("/").pop();
+    if (pageName.includes("book") && linkName.includes("book")) return true;
+    return linkName === pageName;
   });
   activeTab.classList.add("active");
 })();

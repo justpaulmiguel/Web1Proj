@@ -1,3 +1,23 @@
+/* CSS Variables */
+/* * Colors */
+
+:root {
+  --accent-color-2-bg: #e05c2a;
+  --accent-color-bg: #ff8303;
+  --accent-color-dark: #a35709;
+  --light-color-bg: #ecd59c;
+  --white-color-bg: white;
+  /* button color */
+  --btn-primary-color-bg: var(--accent-color-dark);
+  --btn-accent-color-bg: var(--accent-color-bg);
+  --btn-secondary-color-bg: var(--accent-color-2-bg);
+
+  /* text colors */
+  --text-dark-color: var(--accent-color-dark);
+  --text-gray-color: gray;
+  --text-light-color: white;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -29,7 +49,7 @@ body {
 main {
   padding: 25px;
   padding-top: 100px;
-  color: #a35709;
+  color: var(--accent-color-dark);
   background-color: #f0e3ca;
   padding-bottom: 50px;
   min-height: 100vh;
@@ -41,7 +61,7 @@ footer {
 }
 
 footer {
-  background-color: #a35709;
+  background-color: var(--accent-color-dark);
   color: #fff;
   padding: 20px;
   display: flex;
@@ -134,7 +154,7 @@ aside.menu-closed + .side-content {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -165,7 +185,7 @@ aside.menu-closed + .side-content {
 }
 
 .header-title {
-  color: #a35709;
+  color: var(--accent-color-dark);
   display: flex;
   margin-left: 20px;
   align-items: center;
@@ -198,7 +218,7 @@ footer .logo {
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  background-color: #a35709;
+  background-color: var(--accent-color-dark);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,7 +231,7 @@ footer .logo {
   font-family: "Poppins SemiBold", sans-serif;
   font-weight: 800;
   font-size: 2.8em;
-  color: #a35709;
+  color: var(--accent-color-dark);
   margin-bottom: 0;
 }
 
@@ -254,7 +274,7 @@ header {
 } */
 
 #signout-btn {
-  color: #a35709;
+  color: var(--accent-color-dark);
   background-color: transparent;
   border: 0;
   transition: all 0.3s ease;
@@ -322,7 +342,7 @@ table tr:hover {
   border-radius: 16px;
   font-family: inherit;
   font-weight: bold;
-  color: #a35709;
+  color: var(--accent-color-dark);
   background-color: #fff;
   border: none;
   padding: 18px 20px;
@@ -389,11 +409,14 @@ hr {
 
 .schedule-wrapper {
   background-color: #fff;
-  color: #a35709;
+  color: var(--accent-color-dark);
   padding: 30px;
   width: 75%;
   margin: 0 auto;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  max-width: 1000px;
 }
 
 .heading-date {
@@ -426,7 +449,7 @@ hr {
 }
 
 .outlined-text {
-  background-color: #a35709;
+  background-color: var(--accent-color-dark);
   color: #fff;
   display: inline-block;
   padding: 10px;
@@ -446,7 +469,7 @@ hr {
   justify-content: center;
   align-items: flex-start;
   padding: 35px;
-  color: #a35709;
+  color: var(--accent-color-dark);
   gap: 10px;
   border-radius: 15px;
 }
@@ -470,7 +493,7 @@ hr {
 }
 
 .booking-select-input {
-  border: 2px solid #a35709;
+  border: 2px solid var(--accent-color-dark);
   width: 80%;
   padding: 10px;
   background-color: transparent;
@@ -596,7 +619,7 @@ details[open] summary {
 }
 
 .modal-yes-btn {
-  background-color: #a35709;
+  background-color: var(--accent-color-dark);
   color: #fff;
 }
 
@@ -662,16 +685,16 @@ details[open] summary {
 }
 
 /* tab highlighting */
-/* todo work on the design */
 .options-bar a {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .options-bar a:hover {
   opacity: 1;
 }
 .options-bar a.active {
   opacity: 1;
-  color: #a35709;
+  color: var(--accent-color-dark);
+  font-weight: 800;
 }
 
 #gmap_canvas {
@@ -707,5 +730,5 @@ details[open] summary {
 }
 
 .wave .shape-fill {
-  fill: #a35709;
+  fill: var(--accent-color-dark);
 }
