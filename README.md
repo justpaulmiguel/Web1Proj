@@ -30,7 +30,7 @@ Create tasks here for everyone to see and pick which one would you like to work 
 Admin
 
 - Review features
-- Decouple php logic part to view part
+- Finish todos
 
 ## Working
 
@@ -38,9 +38,8 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Finish todos
-- Fix modal text
 - Add js validation on input
+- Fix modal text
 
 ## Finished
 
