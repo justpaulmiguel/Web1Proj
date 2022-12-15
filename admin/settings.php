@@ -82,8 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="inputCurrentPassword">Current Password:</label>
                     <input type="password" max="100" name="currentPassword" id="inputCurrentPassword" required />
                 </div>
-                <button type="submit" class="secondary-btn btn">Change</button>
-                <button type="reset" class="secondary-btn btn">Reset</button>
+                <button type="submit" class="secondary-btn  btn">Change</button>
+                <button type="reset" class="reset-btn btn">Reset</button>
             </form>
         </div>
     </section>

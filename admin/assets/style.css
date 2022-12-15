@@ -312,6 +312,11 @@ table td {
 table tr:hover {
   background-color: rgba(222, 222, 222, 0.35);
 }
+
+.table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+}
 .appointment-today-wrapper table {
   margin: 0 auto;
 }
@@ -322,11 +327,28 @@ table tr:hover {
 .section-content .appointment-today-wrapper table td {
   text-align: left;
 }
+
+.remaining-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.remaining-number-wrapper {
+  border-radius: 100%;
+  background: #ff8303;
+  height: 50px;
+  width: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
 /* Button Styles */
 
 .btn {
   border-radius: 16px;
-  font-family: inherit;
   font-weight: bold;
   color: #a35709;
   background-color: #fff;
@@ -334,6 +356,7 @@ table tr:hover {
   padding: 18px 20px;
   transition: all 0.2s ease-in-out;
   font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 
 /* * Generic btn transition */
@@ -505,7 +528,7 @@ hr {
   right: 0;
 }
 
-.form-btn-wrapper .reset-btn:hover {
+.reset-btn:hover {
   background-color: #c90101;
   color: #fff;
 }
@@ -669,6 +692,7 @@ details[open] summary {
   border-color: #000;
   color: #000;
 }
+
 .input-wrapper input[type="text"]:enabled,
 .input-wrapper input[type="password"]:enabled {
   border-color: #a35709;
@@ -677,6 +701,7 @@ details[open] summary {
 .input-wrapper input[type="password"] {
   width: 200px;
   border-radius: 10px;
+  margin-left: 16px;
   padding: 8px;
   border: none;
   font-size: 1.5rem;
@@ -687,11 +712,9 @@ details[open] summary {
 
 .emp-wrapper {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
   background-color: white;
-  width: 65%;
-  margin: 0 auto;
   border-radius: 20px;
   margin-bottom: 20px;
   gap: 20px;
@@ -699,7 +722,7 @@ details[open] summary {
 }
 .emp-details {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   background-color: white;
 }
 .emp-details > * {
@@ -731,24 +754,10 @@ details[open] summary {
   color: #a35709;
   font-weight: 800;
 }
-.main-content {
-  background-color: white;
-  padding: 10px;
-  padding-left: 24px;
-  padding-bottom: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-  margin-top: 64px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  border-radius: 15px;
-}
+
 .section-content {
   background-color: white;
-  padding: 10px;
-  padding: 24px 0;
-  padding-left: 24px;
-  min-width: 500px;
+  padding: 24px;
   max-width: 1000px;
   margin: 0 auto;
   margin-top: 64px;
@@ -761,22 +770,11 @@ details[open] summary {
   max-width: 500px;
 }
 
-.section-content h2,
-.section-content h3,
-.section-content h4 {
-  margin: 0;
-  margin-bottom: 24px;
-}
-
 .section-content .section-header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 16px;
-}
-.section-content .section-header > * {
-  padding: 0;
-  margin: 0;
+  margin-bottom: 16px;
 }
 .section-content table th {
   background-color: transparent;
@@ -789,37 +787,6 @@ details[open] summary {
   border: none;
   padding: 10px;
   text-align: right;
-}
-
-.main-content .section-header {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 16px;
-}
-.main-content .section-header > * {
-  padding: 0;
-  margin: 0;
-}
-
-.main-content .table-container {
-  overflow-x: auto;
-  overflow-y: auto;
-  max-width: 100%;
-  margin-left: 24px;
-}
-
-.main-content table th {
-  background-color: transparent;
-  color: inherit;
-  padding: 0;
-}
-.main-content .table-container table td {
-  border: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  padding: 0 1rem;
 }
 
 /* Footer wave design */

@@ -27,7 +27,12 @@ if (isset($_SESSION['flash_message'])) {
 		?>
 			<div class="section-header">
 				<h2>Appointments Today</h2>
-				<span>Left: <?= mysqli_num_rows($result); ?></span>
+				<div class="remaining-wrapper">
+					<span>Left:</span>
+					<div class="remaining-number-wrapper">
+						<span><?= mysqli_num_rows($result); ?></span>
+					</div>
+				</div>
 			</div>
 
 			<form method="post" action="updateDashboard.php" id="complete-appointment">
