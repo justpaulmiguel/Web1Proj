@@ -74,7 +74,7 @@ function getQuery($type, $limit, $offset, $value, $sort)
         LIMIT $limit OFFSET $offset", $type, $value, $sortMode, $sortMode);
     } else {
         return sprintf("SELECT DATE_FORMAT(date,'%s') as date, TIME_FORMAT(time, '%s') as time, 
-        state, lname,fname,service,bookings.account_ID,booking_ID,branch
+        state, lname,fname,service,bookings.account_ID,booking_ID,branch,note
          FROM bookings
         INNER JOIN account_info
         ON account_info.account_ID = bookings.account_ID
