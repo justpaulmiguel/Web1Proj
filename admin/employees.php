@@ -79,6 +79,7 @@ mysqli_close($conn);
     <h1>Employees</h1>
     <section>
         <div class="section-content">
+            <h2>Employee List</h2>
             <ul class="employee-list no-list-style">
                 <?php foreach ($employees as $employee) : ?>
                     <div class="emp-wrapper">
@@ -87,8 +88,11 @@ mysqli_close($conn);
                         </div>
                         <div class="emp-details">
                             <p><?= $employee['lname'] . ", " .  $employee['fname']; ?> </p>
-                            <p><?= $employee["permissionLvl"] == 1
-                                    ? "employee" : "administrator"   ?></p>
+                            <p class="
+                            <?= $employee["permissionLvl"] == 1
+                                ? "emp-text" : "admin-text" ?>
+                            "><?= $employee["permissionLvl"] == 1
+                                    ? "Employee" : "Administrator"   ?></p>
                             <p><?= $employee["email"] ?></p>
                         </div>
 
@@ -107,7 +111,8 @@ mysqli_close($conn);
         <section>
             <div class="section-content">
                 <section class="employee-edit-btns-wrapper">
-                    <button class="btn" id="add-employee-btn">Add New</button>
+                    <h3>Manage Employees</h3>
+                    <button class="btn add-btn" id="add-employee-btn">Add New</button>
                     <button class="btn remove-selected-btn" id="remove-employee-btn">Delete</button>
                 </section>
             </div>

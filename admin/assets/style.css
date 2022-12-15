@@ -724,6 +724,7 @@ details[open] summary {
   display: flex;
   flex-flow: row wrap;
   background-color: white;
+  font-weight: 600;
 }
 .emp-details > * {
   min-width: 150px;
@@ -740,6 +741,20 @@ details[open] summary {
   align-items: center;
   font-size: 2rem;
   font-size: bold;
+}
+
+.add-btn {
+  background: #a35709;
+  color: white;
+}
+
+.admin-text {
+  font-weight: 800;
+  color: blueviolet;
+}
+.emp-text {
+  color: #ff8303;
+  font-weight: 800;
 }
 
 /* tab highlighting */
