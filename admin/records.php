@@ -91,7 +91,7 @@ function getBranchName($code)
 
 
 <main>
-    <h1>Past Records</h1>
+    <h1>History Records</h1>
     <p>Search our records.</p>
 
     <div class="section-content">
@@ -142,28 +142,30 @@ function getBranchName($code)
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?php if ($page > 1) : /**Previous Page Arrow*/ ?>
-                <a href="<?= $linkName . '&page=1' ?>" title="First page">&laquo;</a>
-                <a href="<?= $linkName . '&page=' . ($page - 1) ?>" title="Previous page">&lsaquo;</a>
-            <?php else : ?>
-                <span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>
-            <?php endif ?>
-            <?php if ($page < $pages) : /**Next Page Arrow */  ?>
-                <a href="<?= $linkName . '&page=' . ($page + 1) ?>" title="Next page">&rsaquo;</a>
-                <a href="<?= $linkName . '&page=' . $pages ?>" title="Last page">&raquo;</a>
-            <?php else : ?>
-                <span class="disabled">&rsaquo;</span>
-                <span class="disabled">&raquo;</span>
-            <?php endif ?>
-            <div id="paging">
-                <p> <?=
-                    /**Page Information*/
-                    ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $count . ' results ' ?>
-                </p>
+            <div class="control-btns">
+                <?php if ($page > 1) : /**Previous Page Arrow*/ ?>
+                    <a href="<?= $linkName . '&page=1' ?>" title="First page">&laquo;</a>
+                    <a href="<?= $linkName . '&page=' . ($page - 1) ?>" title="Previous page">&lsaquo;</a>
+                <?php else : ?>
+                    <span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>
+                <?php endif ?>
+                <?php if ($page < $pages) : /**Next Page Arrow */  ?>
+                    <a href="<?= $linkName . '&page=' . ($page + 1) ?>" title="Next page">&rsaquo;</a>
+                    <a href="<?= $linkName . '&page=' . $pages ?>" title="Last page">&raquo;</a>
+                <?php else : ?>
+                    <span class="disabled">&rsaquo;</span>
+                    <span class="disabled">&raquo;</span>
             </div>
-        <?php else : ?>
-            <h2>No Records about that yet!</h2>
         <?php endif ?>
+        <div id="paging">
+            <p> <?=
+                /**Page Information*/
+                ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $count . ' results ' ?>
+            </p>
+        </div>
+    <?php else : ?>
+        <h2>No Records about that yet!</h2>
+    <?php endif ?>
     </div>
 </main>
 

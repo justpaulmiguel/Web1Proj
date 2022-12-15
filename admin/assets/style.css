@@ -901,3 +901,11 @@ details[open] summary {
 .week-list-item > * {
   width: 230px;
 }
+
+.control-btns {
+  font-size: 2rem;
+}
+
+.control-btns .disabled {
+  opacity: 0.5;
+}
