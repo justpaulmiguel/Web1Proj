@@ -694,17 +694,16 @@ details[open] summary {
   color: #000;
 }
 
-.input-wrapper input[type="text"]:enabled,
-.input-wrapper input[type="password"]:enabled {
+input[type="text"]:enabled,
+input[type="password"]:enabled {
   border-color: #a35709;
 }
-.input-wrapper input[type="text"],
-.input-wrapper input[type="password"] {
+input[type="text"],
+input[type="password"] {
   width: 200px;
   border-radius: 10px;
   margin-left: 16px;
   padding: 8px;
-  border: none;
   font-size: 1.5rem;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
@@ -940,4 +939,14 @@ details[open] summary {
 .show-note-btn:hover {
   background-color: #a35709;
   color: white;
+}
+
+input[type="password"]:user-invalid,
+input[type="text"]:user-invalid {
+  border: 3px solid #ff0000;
+  color: #c90101;
+}
+
+.disabled-btn {
+  opacity: 0.4;
 }

@@ -346,3 +346,97 @@ if (document.querySelector(".show-note-btn")) {
     });
   });
 }
+
+// input validation
+if (document.querySelector(".input-wrapper")) {
+}
+
+if (
+  document.querySelector("#inputConfirmNewPassword") &&
+  document.querySelector("#inputNewPassword")
+) {
+  const form = document.querySelector("#changePassForm");
+
+  const newPass = document.querySelector("#inputNewPassword");
+  const newPassNotif = document.querySelector(
+    "#inputNewPassword+.input-notif-msg"
+  );
+  const confirmPass = document.querySelector("#inputConfirmNewPassword");
+  const confirmPassNotif = document.querySelector(
+    "#inputConfirmNewPassword+.input-notif-msg"
+  );
+  const currentPass = document.querySelector("#inputCurrentPassword");
+  const currentPassNotif = document.querySelector(
+    "#inputCurrentPassword+.input-notif-msg"
+  );
+
+  const passwordMsg =
+    "X Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters";
+
+  const submitBtn = form.querySelector(".submit-btn");
+  const isAllValid = () =>
+    newPass.validity.valid &&
+    confirmPass.validity.valid &&
+    currentPass.validity.valid &&
+    confirmPass.value === newPass.value;
+
+  const toggleSubmitBtn = () => {
+    if (isAllValid()) {
+      submitBtn.classList.remove("disabled-btn");
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.classList.add("disabled-btn");
+      submitBtn.disabled = true;
+    }
+  };
+  newPass.addEventListener("input", (e) => {
+    if (!newPass.validity.valid) {
+      newPassNotif.textContent = passwordMsg;
+    } else {
+      newPassNotif.textContent = "✔";
+    }
+    toggleSubmitBtn();
+  });
+
+  confirmPass.addEventListener("input", (e) => {
+    if (!confirmPass.validity.valid) {
+      confirmPassNotif.textContent = passwordMsg;
+      return;
+    } else {
+      confirmPassNotif.textContent = "✔";
+    }
+
+    if (confirmPass.value === newPass.value) {
+      confirmPassNotif.textContent = "✔ Passwords Matched!";
+      confirmPass.validity.valid = true;
+    } else {
+      confirmPassNotif.textContent = "X Passwords don't match";
+      confirmPass.validity.valid = false;
+    }
+    toggleSubmitBtn();
+  });
+
+  currentPass.addEventListener("input", (e) => {
+    if (!currentPass.validity.valid) {
+      currentPassNotif.textContent = passwordMsg;
+    } else {
+      currentPassNotif.textContent = "";
+    }
+    toggleSubmitBtn();
+  });
+
+  const togglePassword = document.querySelector("#togglePassword");
+  togglePassword.addEventListener("click", function (e) {
+    const type =
+      confirmPass.getAttribute("type") === "password" ? "text" : "password";
+    confirmPass.setAttribute("type", type);
+    currentPass.setAttribute("type", type);
+    newPass.setAttribute("type", type);
+  });
+  const resetBtn = form.querySelector(".reset-btn");
+  resetBtn.addEventListener("click", () => {
+    newPassNotif.textContent = "";
+    confirmPassNotif.textContent = "";
+    currentPassNotif.textContent = "";
+  });
+}

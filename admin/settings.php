@@ -69,20 +69,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Change Password</h2>
     <section class="change-password-wrapper">
         <div class="section-content section-content-small">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <form id="changePassForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="input-wrapper">
                     <label for="inputNewPassword">New Password:</label>
-                    <input type="password" max="100" name="newPassword" id="inputNewPassword" required />
+                    <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" max="100" name="newPassword" id="inputNewPassword" required />
+                    <span class="input-notif-msg"></span>
                 </div>
                 <div class="input-wrapper">
                     <label for="inputConfirmNewPassword">Confirm New Password:</label>
-                    <input type="password" max="100" name="confirmNewPassword" id="inputConfirmNewPassword" required />
+                    <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" max="100" name="confirmNewPassword" id="inputConfirmNewPassword" required />
+                    <span class="input-notif-msg"></span>
                 </div>
                 <div class="input-wrapper">
                     <label for="inputCurrentPassword">Current Password:</label>
-                    <input type="password" max="100" name="currentPassword" id="inputCurrentPassword" required />
+                    <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" minlength="6" max="64" name="currentPassword" id="inputCurrentPassword" required />
+                    <span class="input-notif-msg"></span>
                 </div>
-                <button type="submit" class="secondary-btn  btn">Change</button>
+                <label for="togglePassword">
+                    Show Passsword
+                    <input id="togglePassword" type="checkbox">
+
+                </label>
+
+                <button type="submit" disabled class="submit-btn secondary-btn  btn disabled-btn">Change</button>
                 <button type="reset" class="reset-btn btn">Reset</button>
             </form>
         </div>
