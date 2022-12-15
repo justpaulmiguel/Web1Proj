@@ -40,8 +40,7 @@ if (isset($_SESSION['flash_message'])) {
 
 					<table style="text-align: center;">
 						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
+							<th>Name</th>
 							<th>Contact</th>
 							<th>Time</th>
 							<th>Mark As</th>
@@ -59,8 +58,7 @@ if (isset($_SESSION['flash_message'])) {
 									$email = $row1['email'];
 									$contactNo = $row1['contactNo'];
 									echo "<tr><td> "
-										. $fname . "</td><td>"
-										. $lname . "</td><td>"
+										. $fname . ",  " . $lname . "</td><td>"
 										.
 										"<p>0" .
 										$contactNo . "</p>" . "<a href=mailto:$email>" . $email . "</a>" . "</td><td>"

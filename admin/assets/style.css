@@ -307,6 +307,7 @@ table th {
 
 table td {
   padding: 8px;
+  vertical-align: baseline;
 }
 
 table tr:hover {
