@@ -732,3 +732,76 @@ details[open] summary {
 .wave .shape-fill {
   fill: var(--accent-color-dark);
 }
+
+/* redesign */
+
+.secondary-btn {
+  padding: 5px 0;
+  width: 200px;
+  background-color: transparent;
+  border: 2px solid #a35709;
+  color: #a35709;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.section-content {
+  background-color: white;
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 64px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  border-radius: 15px;
+}
+.section-content-small {
+  min-width: 200px;
+  max-width: 500px;
+}
+
+.section-content .section-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.section-content table th {
+  background-color: transparent;
+  border: none;
+  color: #e05c2a;
+  padding: 0;
+  text-align: left;
+}
+.section-content tbody td {
+  border: none;
+  padding: 10px;
+  text-align: right;
+}
+
+.input-wrapper input[type="text"]:enabled,
+.input-wrapper input[type="password"]:enabled {
+  border-color: #a35709;
+}
+.input-wrapper input[type="text"],
+.input-wrapper input[type="password"] {
+  width: 200px;
+  border-radius: 10px;
+  margin-left: 16px;
+  padding: 8px;
+  border: none;
+  font-size: 1.5rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+}
+
+#edit-account-form .update-btn:hover {
+  background-color: #ff8303;
+  border: none;
+  color: white;
+}
+#edit-account-form .cancel-btn:hover {
+  border-color: #000;
+  color: #000;
+}
