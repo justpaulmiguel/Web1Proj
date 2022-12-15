@@ -805,3 +805,12 @@ details[open] summary {
   border-color: #000;
   color: #000;
 }
+.form-btn-wrapper .reset-btn {
+  position: absolute;
+  right: 0;
+}
+
+.reset-btn:hover {
+  background-color: #c90101;
+  color: #fff;
+}
