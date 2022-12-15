@@ -29,7 +29,6 @@ Create tasks here for everyone to see and pick which one would you like to work 
 
 Admin
 
-- Refactor Design on Search Bar
 - Review features
 - Decouple php logic part to view part
 
@@ -39,15 +38,17 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Add schedule for the week in dashboard
-- Refactor date and time to more readable format
 - Finish todos
 - Fix modal text
+- Add js validation on input
 
 ## Finished
 
 Move your task after you completed it here.
 
+- Refactor Design on Search Bar
+- Add schedule for the week in dashboard
+- Refactor date and time to more readable format
 - My Account Info and Account Settings is the same for both admin and user just copy the one to the other
 - Admin Dashboard
 - Admin Past Records (Search Bar)
