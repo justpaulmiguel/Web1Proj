@@ -29,9 +29,10 @@ if (isset($_SESSION['flash_message'])) {
 				<h2>Appointments Today</h2>
 				<span>Left: <?= mysqli_num_rows($result); ?></span>
 			</div>
-			<div class="table-container">
 
-				<form method="post" action="updateDashboard.php" id="complete-appointment">
+			<form method="post" action="updateDashboard.php" id="complete-appointment">
+				<div class="table-container appointment-today-wrapper">
+
 					<table style="text-align: center;">
 						<tr>
 							<th>First Name</th>
@@ -66,7 +67,7 @@ if (isset($_SESSION['flash_message'])) {
 								}
 							}
 						}
-						echo "</table> </form> </div>";
+						echo "</table></div> </form> ";
 						?>
 
 					<?php
@@ -76,27 +77,27 @@ if (isset($_SESSION['flash_message'])) {
 					?>
 
 
-			</div>
-			<div class="section-content">
-				<h2>Remaining appointments for the week</h2>
-				<?php require('./weekSched.php') ?>
-				<?php if (count($weekRecords) == 0) : ?>
-					<h3>No more appointments!</h3>
-				<?php else : ?>
-					<ul class="week-appointment-list">
-						<?php foreach ($weekRecords as $rec) : ?>
-							<li>
-								<div class="week-list-item">
-									<p><?= $rec["name"] ?></p>
-									<p><?= $rec["date"] ?></p>
-									<p><?= $rec["time"] ?></p>
-								</div>
-							</li>
-						<?php endforeach ?>
-					</ul>
-				<?php endif ?>
+				</div>
+				<div class="section-content">
+					<h2>Remaining appointments for the week</h2>
+					<?php require('./weekSched.php') ?>
+					<?php if (count($weekRecords) == 0) : ?>
+						<h3>No more appointments!</h3>
+					<?php else : ?>
+						<ul class="week-appointment-list">
+							<?php foreach ($weekRecords as $rec) : ?>
+								<li>
+									<div class="week-list-item">
+										<p><?= $rec["name"] ?></p>
+										<p><?= $rec["date"] ?></p>
+										<p><?= $rec["time"] ?></p>
+									</div>
+								</li>
+							<?php endforeach ?>
+						</ul>
+					<?php endif ?>
 
-			</div>
+				</div>
 </main>
 
 

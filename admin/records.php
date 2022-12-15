@@ -94,83 +94,77 @@ function getBranchName($code)
     <h1>Past Records</h1>
     <p>Search our records.</p>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="search-record-form">
+    <div class="section-content">
+        <h3>Filter By:</h3>
 
-        <select name="filter" id="filter-select" required>
-            <option value="" disabled>Select a Filter</option>
-            <option value="date" selected> Date</option>
-            <option value="state">Appointment Status</option>
-            <option value="email">Email</option>
-            <option value="service">Service</option>
-
-        </select>
-
-        <select name="sort" id="sort" required>
-            <option value="" disabled>Sort by</option>
-            <option value="0" selected>Newest</option>
-            <option value="1">Oldest</option>
-
-        </select>
-
-
-
-        <input type="submit" id="search-btn" value="Search">
-    </form>
-    <?php if (!empty($records)) : ?>
-        <h2> <?= $searchTitle ?></h2>
-        <table border="2" cellpadding="10" cellspacing="1">
-            <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th>Branch</th>
-                <th>Name</th>
-                <th>Service</th>
-                <th>Account ID</th>
-            </tr>
-            <?php foreach ($records as $record) : ?>
-
-
-                <tr align="center" class="patient-req-row">
-                    <td><?= $record['date'] ?></td>
-                    <td><?= $record['time'] ?></td>
-                    <td><?= $record['state'] ?></td>
-                    <td><?= getBranchName($record['branch']); ?></td>
-                    <td><?= $record['lname'] . ", " .  $record['fname']; ?></td>
-                    <td><?= getServiceName($record['service'])  ?></td>
-                    <td><?= $record['account_ID']; ?></td>
-                </tr>
-
-
-            <?php endforeach; ?>
-        </table>
-
-        <?php if ($page > 1) : /**Previous Page Arrow*/ ?>
-            <a href="<?= $linkName . '&page=1' ?>" title="First page">&laquo;</a>
-            <a href="<?= $linkName . '&page=' . ($page - 1) ?>" title="Previous page">&lsaquo;</a>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="search-record-form">
+            <select name="filter" id="filter-select" required>
+                <option value="" disabled>Select a Filter</option>
+                <option value="date" selected> Date</option>
+                <option value="state">Appointment Status</option>
+                <option value="email">Email</option>
+                <option value="service">Service</option>
+            </select>
+            <select name="sort" id="sort" required>
+                <option value="" disabled>Sort by</option>
+                <option value="0" selected>Newest</option>
+                <option value="1">Oldest</option>
+            </select>
+            <input type="submit" id="search-btn" value="Search">
+        </form>
+    </div>
+    <div class="section-content">
+        <?php if (!empty($records)) : ?>
+            <h3> <?= $searchTitle ?></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Branch</th>
+                        <th>Name</th>
+                        <th>Service</th>
+                        <th>Account ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($records as $record) : ?>
+                        <tr align="center" class="patient-req-row">
+                            <td><?= $record['date'] ?></td>
+                            <td><?= $record['time'] ?></td>
+                            <td><?= $record['state'] ?></td>
+                            <td><?= getBranchName($record['branch']); ?></td>
+                            <td><?= $record['lname'] . ", " .  $record['fname']; ?></td>
+                            <td><?= getServiceName($record['service'])  ?></td>
+                            <td><?= $record['account_ID']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php if ($page > 1) : /**Previous Page Arrow*/ ?>
+                <a href="<?= $linkName . '&page=1' ?>" title="First page">&laquo;</a>
+                <a href="<?= $linkName . '&page=' . ($page - 1) ?>" title="Previous page">&lsaquo;</a>
+            <?php else : ?>
+                <span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>
+            <?php endif ?>
+            <?php if ($page < $pages) : /**Next Page Arrow */  ?>
+                <a href="<?= $linkName . '&page=' . ($page + 1) ?>" title="Next page">&rsaquo;</a>
+                <a href="<?= $linkName . '&page=' . $pages ?>" title="Last page">&raquo;</a>
+            <?php else : ?>
+                <span class="disabled">&rsaquo;</span>
+                <span class="disabled">&raquo;</span>
+            <?php endif ?>
+            <div id="paging">
+                <p> <?=
+                    /**Page Information*/
+                    ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $count . ' results ' ?>
+                </p>
+            </div>
         <?php else : ?>
-            <span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>
+            <h2>No Records about that yet!</h2>
         <?php endif ?>
-
-        <?php if ($page < $pages) : /**Next Page Arrow */  ?>
-            <a href="<?= $linkName . '&page=' . ($page + 1) ?>" title="Next page">&rsaquo;</a>
-            <a href="<?= $linkName . '&page=' . $pages ?>" title="Last page">&raquo;</a>
-        <?php else : ?>
-            <span class="disabled">&rsaquo;</span>
-            <span class="disabled">&raquo;</span>
-        <?php endif ?>
-
-        <div id="paging">
-            <p> <?=
-                /**Page Information*/
-                ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $count . ' results ' ?>
-            </p>
-        </div>
-
-
-    <?php else : ?>
-        <h2>No Records about that yet!</h2>
-    <?php endif ?>
+    </div>
 </main>
 
 

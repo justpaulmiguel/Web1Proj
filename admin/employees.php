@@ -3,8 +3,7 @@ $title = 'Employees';
 
 require("partials/head.php");
 
-// TODO refactor later
-// todo Add modal if email is already an employee
+// TODO Add modal if email is already an employee
 
 
 $employees = [];
@@ -78,28 +77,40 @@ mysqli_close($conn);
 
 <main>
     <h1>Employees</h1>
-    <section class="employees-wrapper">
+    <section>
+        <div class="section-content">
+            <ul class="employee-list no-list-style">
+                <?php foreach ($employees as $employee) : ?>
+                    <div class="emp-wrapper">
+                        <div class="img-wrapper">
+                            <span><?= $employee['lname'][0] ?></span>
+                        </div>
+                        <div class="emp-details">
+                            <p><?= $employee['lname'] . ", " .  $employee['fname']; ?> </p>
+                            <p><?= $employee["permissionLvl"] == 1
+                                    ? "employee" : "administrator"   ?></p>
+                            <p><?= $employee["email"] ?></p>
+                        </div>
 
-        <?php foreach ($employees as $employee) : ?>
-            <div class="emp-wrapper">
-                <div class="img-wrapper">
-                    <span><?= $employee['lname'][0] ?></span>
-                </div>
 
-                <p><?= $employee['lname'] . " " .  $employee['fname']; ?> </p>
-                <p><?= $employee["email"] ?></p>
-                <p><?= $employee["permissionLvl"] == 1
-                        ? "employee" : "administrator"   ?></p>
-            </div>
-        <?php endforeach; ?>
+                    </div>
+                <?php endforeach; ?>
+            </ul>
+
+        </div>
+
     </section>
 
 
-    <?php if ($_SESSION["permissionLvl"] == 2) : ?>
-        <!-- // Gets seen when permission level is admin level -->
-        <section class="employee-edit-btns-wrapper">
-            <button class="btn" id="add-employee-btn">Add New</button>
-            <button class="btn remove-selected-btn" id="remove-employee-btn">Delete</button>
+    <?php if ($_SESSION["permissionLvl"] == 2) : // Gets seen when permission level is admin level 
+    ?>
+        <section>
+            <div class="section-content">
+                <section class="employee-edit-btns-wrapper">
+                    <button class="btn" id="add-employee-btn">Add New</button>
+                    <button class="btn remove-selected-btn" id="remove-employee-btn">Delete</button>
+                </section>
+            </div>
         </section>
 
     <?php endif; ?>

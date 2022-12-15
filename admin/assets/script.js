@@ -327,7 +327,7 @@ if (document.querySelector("#search-record-form")) {
   const sidebarLinks = [...document.querySelectorAll(".options-bar a")];
   const pageName = window.location.href.split("/").pop();
   const activeTab = sidebarLinks.find((a) => {
-    return a.href.split("/").pop() === pageName;
+    return pageName.includes(a.href.split("/").pop());
   });
   activeTab.classList.add("active");
 })();

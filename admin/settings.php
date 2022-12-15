@@ -68,25 +68,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main>
     <h2>Change Password</h2>
     <section class="change-password-wrapper">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="input-wrapper">
-                <label for="inputNewPassword">New Password:</label>
-                <input type="password" max="100" name="newPassword" id="inputNewPassword" required />
-            </div>
-
-            <div class="input-wrapper">
-                <label for="inputConfirmNewPassword">Confirm New Password:</label>
-                <input type="password" max="100" name="confirmNewPassword" id="inputConfirmNewPassword" required />
-            </div>
-
-            <div class="input-wrapper">
-                <label for="inputCurrentPassword">Current Password:</label>
-                <input type="password" max="100" name="currentPassword" id="inputCurrentPassword" required />
-            </div>
-
-            <button type="submit">Change</button>
-            <button type="reset">Reset</button>
-        </form>
+        <div class="section-content section-content-small">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="input-wrapper">
+                    <label for="inputNewPassword">New Password:</label>
+                    <input type="password" max="100" name="newPassword" id="inputNewPassword" required />
+                </div>
+                <div class="input-wrapper">
+                    <label for="inputConfirmNewPassword">Confirm New Password:</label>
+                    <input type="password" max="100" name="confirmNewPassword" id="inputConfirmNewPassword" required />
+                </div>
+                <div class="input-wrapper">
+                    <label for="inputCurrentPassword">Current Password:</label>
+                    <input type="password" max="100" name="currentPassword" id="inputCurrentPassword" required />
+                </div>
+                <button type="submit" class="secondary-btn btn">Change</button>
+                <button type="reset" class="secondary-btn btn">Reset</button>
+            </form>
+        </div>
     </section>
 </main>
 
