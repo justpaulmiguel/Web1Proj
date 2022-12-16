@@ -267,14 +267,6 @@ header {
   cursor: pointer;
 }
 
-#sign-out-btn:hover {
-  color: #c13500db;
-}
-
-/* #sign-out-btn:active {
-    background-color: #a35709;
-} */
-
 /* * Home Section */
 
 .section-greeting-wrapper h1 {
