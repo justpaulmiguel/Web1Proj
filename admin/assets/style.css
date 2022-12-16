@@ -24,8 +24,6 @@ body {
 /* Grid Structure of the page.
  */
 
-/* TODO Change this to mobile first. */
-
 main {
   padding: 25px;
   padding-top: 100px;
@@ -144,7 +142,6 @@ aside.menu-closed + .side-content {
 }
 
 .options-bar li {
-  border-bottom: 2px solid #ecd59c;
   margin-bottom: 1rem;
 }
 
@@ -268,14 +265,6 @@ header {
   transform: translateY(-5px);
   cursor: pointer;
 }
-
-#sign-out-btn:hover {
-  color: #c13500db;
-}
-
-/* #sign-out-btn:active {
-    background-color: #a35709;
-} */
 
 /* * Home Section */
 
@@ -485,13 +474,16 @@ hr {
 
 .input-wrapper {
   display: flex;
-  flex-flow: nowrap column;
+  flex-flow: wrap row;
+  align-items: center;
+
   gap: 10px;
   font-family: "Poppins", sans-serif;
 }
 
 .input-wrapper label {
   font-weight: 800;
+  min-width: 200px;
 }
 
 .input-wrapper select,
@@ -694,17 +686,16 @@ details[open] summary {
   color: #000;
 }
 
-.input-wrapper input[type="text"]:enabled,
-.input-wrapper input[type="password"]:enabled {
+input[type="text"]:enabled,
+input[type="password"]:enabled {
   border-color: #a35709;
 }
-.input-wrapper input[type="text"],
-.input-wrapper input[type="password"] {
+input[type="text"],
+input[type="password"] {
   width: 200px;
   border-radius: 10px;
   margin-left: 16px;
   padding: 8px;
-  border: none;
   font-size: 1.5rem;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
@@ -784,6 +775,12 @@ details[open] summary {
 .section-content-small {
   min-width: 200px;
   max-width: 500px;
+}
+
+.section-content-md {
+  min-width: 200px;
+  max-width: 600px;
+  min-height: 500px;
 }
 
 .section-content .section-header {
@@ -924,4 +921,46 @@ details[open] summary {
 
 .control-btns .disabled {
   opacity: 0.5;
+}
+
+.show-note-btn {
+  padding: 5px 0;
+  width: 100px;
+  background-color: transparent;
+  border: 2px solid #a35709;
+  color: #a35709;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.7rem;
+}
+.show-note-btn:hover {
+  background-color: #a35709;
+  color: white;
+}
+
+input[type="password"]:user-invalid,
+input[type="text"]:user-invalid {
+  border: 3px solid #ff0000;
+  color: #c90101;
+}
+input[type="password"]:valid,
+input[type="text"]:valid {
+  border: 3px solid #411530;
+  color: #411530;
+}
+.disabled-btn {
+  opacity: 0.4;
+}
+
+.input-notif-msg {
+  color: red;
+}
+
+.form-input-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
 }

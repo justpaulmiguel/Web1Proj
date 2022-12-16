@@ -77,7 +77,9 @@ mysqli_close($conn);
                     <div class="input-wrapper">
                         <label for="inputContactNumber">Contact Number:</label>
                         <!-- Use digits  -->
-                        <input type="text" maxlength="11" name="contactNo" id="inputContactNumber" required value="<?= $account['contactNo']    ?>" disabled class="disabled-input account-input" />
+                        <input type="text" maxlength="10" name="contactNo" id="inputContactNumber" required value="<?= $account['contactNo']    ?>" disabled class="disabled-input account-input" />
+                        <span class="input-notif-msg"></span>
+
                     </div>
 
                     <button id="btn-edit-info" type="button" class="btn edit-btn secondary-btn information-btn">Edit</button>

@@ -86,7 +86,7 @@ aside {
   opacity: 1;
   visibility: visible;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: space-between;
 }
 
@@ -163,7 +163,6 @@ aside.menu-closed + .side-content {
 }
 
 .options-bar li {
-  border-bottom: 2px solid #ecd59c;
   margin-bottom: 1rem;
 }
 
@@ -281,14 +280,13 @@ header {
   display: flex;
   justify-content: flex-start;
   gap: 10px;
-}
-
-#signout-text {
   cursor: pointer;
 }
 
-#sign-out-btn:hover {
-  color: #c13500db;
+#signout-btn:hover {
+  color: #e05c2a;
+  transform: translateY(-5px);
+  cursor: pointer;
 }
 
 /* #sign-out-btn:active {
@@ -478,13 +476,16 @@ hr {
 
 .input-wrapper {
   display: flex;
-  flex-flow: nowrap column;
+  flex-flow: wrap row;
+  align-items: center;
+
   gap: 10px;
   font-family: "Poppins", sans-serif;
 }
 
 .input-wrapper label {
   font-weight: 800;
+  min-width: 200px;
 }
 
 .input-wrapper select,
@@ -676,14 +677,22 @@ details[open] summary {
 .hidden-btn {
   display: none;
 }
-.input-wrapper input[type="text"],
-.input-wrapper input[type="password"] {
+
+input[type="text"]:enabled,
+input[type="password"]:enabled {
+  border-color: #a35709;
+}
+input[type="text"],
+input[type="password"] {
   width: 200px;
   border-radius: 10px;
+  margin-left: 16px;
   padding: 8px;
-  border: none;
+  font-size: 1.5rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
 }
-
 /* tab highlighting */
 .options-bar a {
   opacity: 0.7;
@@ -779,23 +788,21 @@ details[open] summary {
   text-align: right;
 }
 
-.input-wrapper input[type="text"]:enabled,
-.input-wrapper input[type="password"]:enabled {
+input[type="text"]:enabled,
+input[type="password"]:enabled {
   border-color: #a35709;
 }
-.input-wrapper input[type="text"],
-.input-wrapper input[type="password"] {
+input[type="text"],
+input[type="password"] {
   width: 200px;
   border-radius: 10px;
   margin-left: 16px;
   padding: 8px;
-  border: none;
   font-size: 1.5rem;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
   border: 2px solid transparent;
 }
-
 #edit-account-form .update-btn:hover {
   background-color: #ff8303;
   border: none;
@@ -813,4 +820,35 @@ details[open] summary {
 .reset-btn:hover {
   background-color: #c90101;
   color: #fff;
+}
+
+input[type="password"]:user-invalid,
+input[type="text"]:user-invalid {
+  border: 3px solid #ff0000;
+  color: #c90101;
+}
+input[type="password"]:valid,
+input[type="text"]:valid {
+  border: 3px solid #411530;
+  color: #411530;
+}
+.disabled-btn {
+  opacity: 0.4;
+}
+
+.input-notif-msg {
+  color: red;
+}
+
+.form-input-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+.section-content-md {
+  min-width: 200px;
+  max-width: 600px;
+  min-height: 500px;
 }

@@ -126,6 +126,8 @@ function getBranchName($code)
                         <th>Name</th>
                         <th>Service</th>
                         <th>Account ID</th>
+                        <th>Note</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -138,6 +140,13 @@ function getBranchName($code)
                             <td><?= $record['lname'] . ", " .  $record['fname']; ?></td>
                             <td><?= getServiceName($record['service'])  ?></td>
                             <td><?= $record['account_ID']; ?></td>
+                            <td>
+                                <?php if ($record['note'] != '') : ?>
+                                    <button class="show-note-btn" data-note-value="<?= $record['note'] ?>">Show Note</button>
+                                <?php else : ?>
+                                    ----
+                                <?php endif ?>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
