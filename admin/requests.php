@@ -26,6 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo showModalError("SQL Error");
         }
         mysqli_close($conn);
+    } else {
+        echo showModalError("No rows selected!");
     }
 }
 
