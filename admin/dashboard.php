@@ -87,17 +87,32 @@ if (isset($_SESSION['flash_message'])) {
 					<?php if (count($weekRecords) == 0) : ?>
 						<h3>No more appointments!</h3>
 					<?php else : ?>
-						<ul class="week-appointment-list">
-							<?php foreach ($weekRecords as $rec) : ?>
-								<li>
-									<div class="week-list-item">
-										<p><?= $rec["name"] ?></p>
-										<p><?= $rec["date"] ?></p>
-										<p><?= $rec["time"] ?></p>
-									</div>
-								</li>
-							<?php endforeach ?>
-						</ul>
+						<div class="table-container">
+							<table>
+								<thead>
+									<tr>
+										<th>Date</th>
+										<th>Time</th>
+										<th>Branch</th>
+										<th>Name</th>
+										<th>Service</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach ($weekRecords as $rec) : ?>
+										<tr>
+											<td><?= $rec["date"] ?></td>
+											<td><?= $rec["time"] ?></td>
+											<td><?= $rec["branch"] ?></td>
+											<td><?= $rec["name"] ?></td>
+											<td><?= $rec["service"] ?></td>
+										</tr>
+									<?php endforeach ?>
+								</tbody>
+
+
+							</table>
+						</div>
 					<?php endif ?>
 
 				</div>

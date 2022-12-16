@@ -319,6 +319,11 @@ table tr:hover {
   overflow-y: auto;
   max-height: 70vh;
 }
+
+.table-container table {
+  margin: 0 auto;
+}
+
 .appointment-today-wrapper table {
   margin: 0 auto;
 }
@@ -914,7 +919,7 @@ input[type="password"] {
   width: 400px;
 }
 
-.week-appointment-list {
+/* .week-appointment-list {
   list-style: none;
 }
 
@@ -925,7 +930,7 @@ input[type="password"] {
 }
 .week-list-item > * {
   width: 230px;
-}
+} */
 
 .control-btns {
   font-size: 2rem;
