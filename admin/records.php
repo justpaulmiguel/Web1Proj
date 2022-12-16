@@ -66,26 +66,8 @@ $linkName = '?' . 'filter=' . $filterType . '&sort=' . $sortType . '&' . $filter
 
 $query = getQuery($filterType, $limit, $offset, $specificFilter, $sortType);
 $records = getRecords($query);
-function getServiceName($code)
-{
-    if ($code == 'clean') {
-        return 'Cleaning';
-    } else if ($code == 'd_crown') {
-        return 'Crown';
-    } else if ($code == 'pasta') {
-        return 'Pasta';
-    } else if ($code == 'wisdom') {
-        return 'Wisdom Tooth Extraction';
-    }
-}
-function getBranchName($code)
-{
-    if ($code == 's_simon') {
-        return 'San Simon';
-    } else if ($code == 'mexico') {
-        return 'Mexico';
-    }
-}
+
+
 ?>
 
 
