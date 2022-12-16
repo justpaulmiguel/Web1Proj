@@ -97,42 +97,43 @@ $records = getRecords($query);
     </div>
     <div class="section-content">
         <?php if (!empty($records)) : ?>
-            <h3> <?= $searchTitle ?></h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Status</th>
-                        <th>Branch</th>
-                        <th>Name</th>
-                        <th>Service</th>
-                        <th>Account ID</th>
-                        <th>Note</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($records as $record) : ?>
-                        <tr align="center" class="patient-req-row">
-                            <td><?= $record['date'] ?></td>
-                            <td><?= $record['time'] ?></td>
-                            <td><?= $record['state'] ?></td>
-                            <td><?= getBranchName($record['branch']); ?></td>
-                            <td><?= $record['lname'] . ", " .  $record['fname']; ?></td>
-                            <td><?= getServiceName($record['service'])  ?></td>
-                            <td><?= $record['account_ID']; ?></td>
-                            <td>
-                                <?php if ($record['note'] != '') : ?>
-                                    <button class="show-note-btn" data-note-value="<?= $record['note'] ?>">Show Note</button>
-                                <?php else : ?>
-                                    ----
-                                <?php endif ?>
-                            </td>
+            <div class="table-container">
+                <h3> <?= $searchTitle ?></h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Branch</th>
+                            <th>Name</th>
+                            <th>Service</th>
+                            <th>Account ID</th>
+                            <th>Note</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($records as $record) : ?>
+                            <tr align="center" class="patient-req-row">
+                                <td><?= $record['date'] ?></td>
+                                <td><?= $record['time'] ?></td>
+                                <td><?= $record['state'] ?></td>
+                                <td><?= getBranchName($record['branch']); ?></td>
+                                <td><?= $record['lname'] . ", " .  $record['fname']; ?></td>
+                                <td><?= getServiceName($record['service'])  ?></td>
+                                <td><?= $record['account_ID']; ?></td>
+                                <td>
+                                    <?php if ($record['note'] != '') : ?>
+                                        <button class="show-note-btn" data-note-value="<?= $record['note'] ?>">Show Note</button>
+                                    <?php else : ?>
+                                        ----
+                                    <?php endif ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
             <div class="control-btns">
                 <?php if ($page > 1) : /**Previous Page Arrow*/ ?>
                     <a href="<?= $linkName . '&page=1' ?>" title="First page">&laquo;</a>
