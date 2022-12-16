@@ -49,7 +49,7 @@ switch ($_SESSION["branch"]){
     <form id="formDate" method="post" action="book_time.php" autocomplete="off">
 
       <p class="subheading-date">Service: <?=$service?></p>
-      <p class="subheading-date">Branch: <?=$branch?></p>
+      <p id="branch" class="subheading-date">Branch: <?=$branch?></p>
       
       <div class="input-wrapper">
         <label for="date-option" class="heading-date">Choose the Date:</label>
@@ -88,9 +88,20 @@ $(document).ready(function (){
 
  //Datepicker Dialog (flatpickr)
 
-
+ var branch = document.getElementById("branch").textContent;
  var min = new Date();
  var max = min.setMonth(min.getMonth() + 2);
+
+ switch (branch) {
+  case "Branch: San Simon":
+    var disable = [2,4,6];
+    break;
+  case "Branch: Mexico":
+    var disable = [1,3,5];
+    break;
+ }
+
+
 
  config = {
  minDate: new Date().fp_incr(1),
@@ -101,7 +112,7 @@ $(document).ready(function (){
  "disable": [
      function(date) {
          // return true to disable
-         return (date.getDay() === 0 || date.getDay() === 2 || date.getDay() === 4 || date.getDay() === 6);
+         return (date.getDay() === 0 || date.getDay() === disable[0] || date.getDay() === disable[1] || date.getDay() === disable[2]);
 
      },
 
