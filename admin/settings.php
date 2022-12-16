@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // check if password is the same
     if (strcmp($newPass, $confirmNewPass) != 0) {
-        echo  showModalError("New passwords are not the same!" . $currentPass . $newPass);
+        echo  showModalError("New passwords are not the same!");
         $willUpdate = false;
     }
 

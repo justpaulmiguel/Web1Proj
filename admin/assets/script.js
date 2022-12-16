@@ -371,7 +371,7 @@ if (
   );
 
   const passwordMsg =
-    "X Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters";
+    "X Must contain at least 8 characters with number and uppercase";
 
   const submitBtn = form.querySelector(".submit-btn");
   const isAllValid = () =>
@@ -393,7 +393,7 @@ if (
     if (!newPass.validity.valid) {
       newPassNotif.textContent = passwordMsg;
     } else {
-      newPassNotif.textContent = "✔";
+      newPassNotif.textContent = "";
     }
     toggleSubmitBtn();
   });
@@ -403,7 +403,7 @@ if (
       confirmPassNotif.textContent = passwordMsg;
       return;
     } else {
-      confirmPassNotif.textContent = "✔";
+      confirmPassNotif.textContent = "";
     }
 
     if (confirmPass.value === newPass.value) {
