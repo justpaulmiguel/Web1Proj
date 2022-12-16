@@ -4,8 +4,6 @@ require("partials/head.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // TODO add validation
-    // TODO add condition if no patientId
     $state = $_POST['requestType'] == 'accepted' ? 'accepted' : 'declined';
     $query = "";
     if (!empty($_POST['patientId'])) {
@@ -43,7 +41,7 @@ ON bookings.account_id = account_info.account_id
 
 $query = "SELECT bookings.account_ID,
       TIME_FORMAT(time, '%l:%i %p') as time,
-      DATE_FORMAT(date,'%M %d %Y') as date,
+      DATE_FORMAT(date,'%b %d %Y') as date,
       CONCAT(fname,' ',  lname) as name,
       branch,
       service
@@ -91,9 +89,9 @@ mysqli_close($conn);
                             <tr align="center" class="patient-req-row">
                                 <td><?= $pending['date']; ?></td>
                                 <td><?= $pending['time']; ?></td>
-                                <td><?= $pending['branch']; ?></td>
+                                <td><?= getBranchName($pending['branch']); ?></td>
                                 <td><?= $pending['name']; ?></td>
-                                <td><?= $pending['service']; ?></td>
+                                <td><?= getServiceName($pending['service']); ?></td>
                                 <td>
                                     <input type="checkbox" value="<?= $pending['booking_ID']; ?>" name="patientId[]">
                                 </td>
