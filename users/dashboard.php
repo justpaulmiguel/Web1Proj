@@ -15,7 +15,7 @@ $fname = $value['fname'];
 ?>
 
 <main>
-  
+
   <section class="section-greeting-wrapper">
     <br>
     <h2>Good to see you,</h2>
@@ -163,62 +163,59 @@ $fname = $value['fname'];
 
     <section class="section past-record-wrapper">
       <h2>Your Most Recent Past Records:</h2>
-      <table border="2" cellpadding="8" cellspacing="0">
-        <tr>
-          <th>TYPE OF SERVICE</th>
-          <th>DATE</th>
-          <th>TIME</th>
-          <th>BRANCH</th>
-          <th>STATE</th>
-          <th>NOTE</th>
-        </tr>
-
-        <?php foreach ($records as $record) :
-          switch ($record['service']) {
-            case "clean":
-              $service = "Oral Prophylaxis";
-              break;
-            case "pasta":
-              $service = "Dental Fillings";
-              break;
-            case "d_crown":
-              $service = "Tooth Jacket";
-              break;
-            case "wisdom":
-              $service = "Wisdom Tooth Extraction";
-              break;
-          }
-
-          $time = $record['time'];
-          $time = date("h:i A", strtotime($time));
-
-          $dateRaw = $record['date'];
-          $date = date("F j, Y", strtotime($dateRaw));
-
-          switch ($record['branch']) {
-            case "s_simon":
-              $branch = "San Simon";
-              break;
-            case "mexico":
-              $branch = "Mexico";
-              break;
-          }
-
-          $state = $record['state'];
-          $note = $record['note'];
-
-        ?>
-          <tr align="center">
-            <td><?= $service ?></td>
-            <td><?= $date ?></td>
-            <td><?= $time ?></td>
-            <td><?= $branch ?></td>
-            <td><?= $state ?></td>
-            <td><?= $note ?></td>
-          </tr>
-        <?php endforeach; ?>
-
-      </table>
+      <div class="section-content">
+        <div class="table-container">
+          <table border="2" cellpadding="8" cellspacing="0">
+            <tr>
+              <th>TYPE OF SERVICE</th>
+              <th>DATE</th>
+              <th>TIME</th>
+              <th>BRANCH</th>
+              <th>STATE</th>
+              <th>NOTE</th>
+            </tr>
+            <?php foreach ($records as $record) :
+              switch ($record['service']) {
+                case "clean":
+                  $service = "Oral Prophylaxis";
+                  break;
+                case "pasta":
+                  $service = "Dental Fillings";
+                  break;
+                case "d_crown":
+                  $service = "Tooth Jacket";
+                  break;
+                case "wisdom":
+                  $service = "Wisdom Tooth Extraction";
+                  break;
+              }
+              $time = $record['time'];
+              $time = date("h:i A", strtotime($time));
+              $dateRaw = $record['date'];
+              $date = date("F j, Y", strtotime($dateRaw));
+              switch ($record['branch']) {
+                case "s_simon":
+                  $branch = "San Simon";
+                  break;
+                case "mexico":
+                  $branch = "Mexico";
+                  break;
+              }
+              $state = $record['state'];
+              $note = $record['note'];
+            ?>
+              <tr align="center">
+                <td><?= $service ?></td>
+                <td><?= $date ?></td>
+                <td><?= $time ?></td>
+                <td><?= $branch ?></td>
+                <td><?= $state ?></td>
+                <td><?= $note ?></td>
+              </tr>
+            <?php endforeach; ?>
+          </table>
+        </div>
+      </div>
     </section>
 
 
