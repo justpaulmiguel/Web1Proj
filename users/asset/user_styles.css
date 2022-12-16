@@ -779,23 +779,21 @@ details[open] summary {
   text-align: right;
 }
 
-.input-wrapper input[type="text"]:enabled,
-.input-wrapper input[type="password"]:enabled {
+input[type="text"]:enabled,
+input[type="password"]:enabled {
   border-color: #a35709;
 }
-.input-wrapper input[type="text"],
-.input-wrapper input[type="password"] {
+input[type="text"],
+input[type="password"] {
   width: 200px;
   border-radius: 10px;
   margin-left: 16px;
   padding: 8px;
-  border: none;
   font-size: 1.5rem;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
   border: 2px solid transparent;
 }
-
 #edit-account-form .update-btn:hover {
   background-color: #ff8303;
   border: none;
@@ -813,4 +811,35 @@ details[open] summary {
 .reset-btn:hover {
   background-color: #c90101;
   color: #fff;
+}
+
+input[type="password"]:user-invalid,
+input[type="text"]:user-invalid {
+  border: 3px solid #ff0000;
+  color: #c90101;
+}
+input[type="password"]:valid,
+input[type="text"]:valid {
+  border: 3px solid #411530;
+  color: #411530;
+}
+.disabled-btn {
+  opacity: 0.4;
+}
+
+.input-notif-msg {
+  color: red;
+}
+
+.form-input-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+.section-content-md {
+  min-width: 200px;
+  max-width: 600px;
+  min-height: 500px;
 }
