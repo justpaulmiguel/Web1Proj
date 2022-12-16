@@ -466,3 +466,16 @@ if (document.querySelector("#inputContactNumber")) {
     notif.textContent = "";
   });
 }
+
+if (document.querySelector(".radio-container")) {
+  const labels = document.querySelectorAll(".radio-container");
+  labels.forEach((label) => {
+    const input = label.querySelector("input");
+    label.addEventListener("click", () => {
+      if (input.checked) {
+        labels.forEach((l) => l.classList.remove("label-checked"));
+        label.classList.add("label-checked");
+      }
+    });
+  });
+}

@@ -1,3 +1,14 @@
+:root {
+  /*  style */
+  --radio-switch-width: 186px;
+  --radio-switch-height: 46px;
+  --radio-switch-padding: 3px;
+  --radio-switch-radius: 50em;
+
+  /* animation */
+  --radio-switch-animation-duration: 0.3s;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -963,4 +974,35 @@ input[type="text"]:valid {
   justify-content: center;
   align-items: flex-start;
   gap: 32px;
+}
+
+/* radio buttons pending requests*/
+label.radio-container {
+  color: #a35709;
+  border: 2px solid #a35709;
+  padding: 0.7rem;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+label.radio-container.label-checked {
+  background: #a35709;
+  border-color: transparent;
+  color: white;
+}
+#patient-requests-form .form-submit {
+  background-color: #ff8303;
+  color: white;
+}
+#patient-requests-form .btn-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+.radio-group-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  align-items: baseline;
+  align-content: center;
 }
