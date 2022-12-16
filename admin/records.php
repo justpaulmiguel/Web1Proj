@@ -61,7 +61,7 @@ $start = $offset + 1;
 $end = min(($offset + $limit), $count);
 
 // anchor link for pagination url
-$linkName = '?' . 'filter=' . $filterType . '&sort=' . $sortType . '&' . $filterName;
+$linkName = '?' . 'filter=' . $filterType . '&sort=' . $sortType . '&' . $filterName . "=" . $specificFilter;
 
 
 $query = getQuery($filterType, $limit, $offset, $specificFilter, $sortType);
@@ -164,17 +164,18 @@ function getBranchName($code)
                 <?php else : ?>
                     <span class="disabled">&rsaquo;</span>
                     <span class="disabled">&raquo;</span>
+                <?php endif ?>
+
             </div>
+            <div id="paging">
+                <p> <?=
+                    /**Page Information*/
+                    ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $count . ' results ' ?>
+                </p>
+            </div>
+        <?php else : ?>
+            <h2>No Records about that yet!</h2>
         <?php endif ?>
-        <div id="paging">
-            <p> <?=
-                /**Page Information*/
-                ' Page ' . $page . ' of ' . $pages . ' page(s). displaying ' . $start . '-' . $end . ' of ' . $count . ' results ' ?>
-            </p>
-        </div>
-    <?php else : ?>
-        <h2>No Records about that yet!</h2>
-    <?php endif ?>
     </div>
 </main>
 
