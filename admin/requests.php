@@ -6,17 +6,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $state = $_POST['requestType'] == 'accepted' ? 'accepted' : 'declined';
     $query = "";
-    if (!empty($_POST['patientId'])) {
+    if (!empty($_POST['bookingID'])) {
         require("../php/dbConnect.php");
         $query = '';
         if ($state == 'declined') {
             $note = $_POST['declineReason'];
-            foreach ($_POST['patientId'] as $id) {
-                $query .= sprintf("UPDATE  bookings SET state='%s', note='%s' WHERE booking_id='%s' ;", $state, $note, $id);
+            foreach ($_POST['bookingID'] as $id) {
+                $query .= sprintf("UPDATE  bookings SET state='%s', note='%s' WHERE booking_ID='%s' ;", $state, $note, $id);
             }
         } else {
-            foreach ($_POST['patientId'] as $id) {
-                $query .= sprintf("UPDATE  bookings SET state='%s' WHERE booking_id='%s' ;", $state, $id);
+            foreach ($_POST['bookingID'] as $id) {
+                $query .= sprintf("UPDATE  bookings SET state='%s' WHERE booking_ID='%s' ;", $state, $id);
             }
         }
 
@@ -33,26 +33,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $pendingRequests = [];
 
-$query = "SELECT  bookings.account_id ,	
-bookings.booking_ID,bookings.service,
-bookings.date,bookings.time,
-bookings.state,bookings.branch, account_info.fname,account_info.lname FROM bookings
-INNER JOIN account_info
-ON bookings.account_id = account_info.account_id
- WHERE state='pending'";
-
 $query = "SELECT bookings.account_ID,
+    bookings.booking_ID,
       TIME_FORMAT(time, '%l:%i %p') as time,
       DATE_FORMAT(date,'%b %d %Y') as date,
       CONCAT(fname,' ',  lname) as name,
       branch,
       service
-
       FROM bookings 
-      inner join account_info
-      on account_info.account_ID = bookings.account_ID
+      INNER JOIN account_info
+      ON account_info.account_ID = bookings.account_ID
       WHERE state='pending'
-       ORDER BY date ASC,time ASC ";
+       ORDER BY date ASC, time ASC;";
 
 require("../php/dbConnect.php");
 $result = mysqli_query($conn, $query);
@@ -95,7 +87,7 @@ mysqli_close($conn);
                                 <td><?= $pending['name']; ?></td>
                                 <td><?= getServiceName($pending['service']); ?></td>
                                 <td>
-                                    <input type="checkbox" value="<?= $pending['booking_ID']; ?>" name="patientId[]">
+                                    <input type="checkbox" value="<?= $pending['booking_ID']; ?>" name="bookingID[]">
                                 </td>
                             </tr>
                         <?php endforeach; ?>
