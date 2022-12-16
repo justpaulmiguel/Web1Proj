@@ -157,6 +157,14 @@ if (document.querySelector("#patient-requests-form")) {
             confirmButtonText: "Send",
             showLoaderOnConfirm: true,
             preConfirm: (declineText) => {
+              if (declineText.trim().length === 0) {
+                Swal.fire({
+                  title: "Error",
+                  icon: "error",
+                  text: "Decline reason must not be empty",
+                });
+                return false;
+              }
               const input = document.createElement("input");
               input.setAttribute("name", "declineReason");
               input.setAttribute("value", declineText);
