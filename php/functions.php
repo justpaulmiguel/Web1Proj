@@ -22,6 +22,12 @@ function showModalError($message)
     </script>
     ";
 }
+
+
+/**
+ * returns a javascript element that shows success message.
+ * $message is what you want to see as message
+ */
 function showModalSuccess($message)
 {
     return "
@@ -33,4 +39,37 @@ function showModalSuccess($message)
             })
     </script>
     ";
+}
+
+
+/**
+ * returns format based from code
+ * 
+ */
+function getServiceName($code)
+{
+    switch ($code) {
+        case 'clean':
+            return 'Cleaning';
+        case 'pasta':
+            return 'Pasta';
+        case 'd_crown':
+            return 'Dental Crown';
+        case 'wisdom':
+            return 'Wisdom Tooth Extraction';
+    }
+}
+
+/**
+ * returns format based from code
+ * 
+ */
+function getBranchName($code)
+{
+    switch ($code) {
+        case 's_simon':
+            return 'San Simon';
+        case 'mexico':
+            return 'Mexico';
+    }
 }
