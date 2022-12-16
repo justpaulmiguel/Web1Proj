@@ -62,24 +62,48 @@ function getQuery($type, $limit, $offset, $value, $sort)
     $sortMode = $sort == 0 ? 'DESC' : 'ASC';
 
     if ($type == 'email') {
+
         return     sprintf("SELECT * FROM account_info
         WHERE email = '%s'
         LIMIT $limit OFFSET $offset", $value);
     } else if ($type == 'date') {
-        return sprintf("SELECT * FROM bookings
+        return sprintf(
+            "SELECT 
+        DATE_FORMAT(date,'%s') as date, 
+        TIME_FORMAT(time, '%s') as time, 
+        state, 
+        lname,fname,service,
+        bookings.account_ID,booking_ID,
+        branch,note
+         FROM bookings
         INNER JOIN account_info
         ON account_info.account_ID = bookings.account_ID
         WHERE bookings.%s <= '%s'
         ORDER BY date %s, time %s
-        LIMIT $limit OFFSET $offset", $type, $value, $sortMode, $sortMode);
+        LIMIT $limit OFFSET $offset",
+            '%b %d ,%Y',
+            '%l:%i %p',
+            $type,
+            $value,
+            $sortMode,
+            $sortMode
+        );
     } else {
-        return sprintf("SELECT DATE_FORMAT(date,'%s') as date, TIME_FORMAT(time, '%s') as time, 
+        return sprintf(
+            "SELECT DATE_FORMAT(date,'%s') as date, TIME_FORMAT(time, '%s') as time, 
         state, lname,fname,service,bookings.account_ID,booking_ID,branch,note
          FROM bookings
         INNER JOIN account_info
         ON account_info.account_ID = bookings.account_ID
         WHERE bookings.%s = '%s'
         ORDER BY date %s, time %s
-        LIMIT $limit OFFSET $offset", '%M %d ,%Y', '%l:%i %p', $type, $value, $sortMode, $sortMode);
+        LIMIT $limit OFFSET $offset",
+            '%b %d ,%Y',
+            '%l:%i %p',
+            $type,
+            $value,
+            $sortMode,
+            $sortMode
+        );
     }
 }
