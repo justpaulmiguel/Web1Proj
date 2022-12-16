@@ -47,7 +47,7 @@ if ($count == 1) {
                     text: 'Success!',
                     confirmButtonColor: '#e05c2a'
                 }).then(function() {
-                    window.location = "users/dashboard.php";
+                    window.location = "patient/dashboard.php";
                 });
             </script>");
         <?php
