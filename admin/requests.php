@@ -81,8 +81,8 @@ mysqli_close($conn);
                     <table border="2" cellpadding="10" cellspacing="1">
                         <tr>
                             <th>Date</th>
-                            <th>Branch</th>
                             <th>Time</th>
+                            <th>Branch</th>
                             <th>Name</th>
                             <th>Service</th>
                             <th>Checkbox</th>
