@@ -705,15 +705,15 @@ input[type="password"]:enabled {
 }
 input[type="text"],
 input[type="password"] {
-  width: 200px;
   border-radius: 10px;
   margin-left: 16px;
   padding: 8px;
-  font-size: 1.5rem;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  max-width: 100%;
   margin-bottom: 10px;
   border: 2px solid transparent;
 }
+
 /* tab highlighting */
 .options-bar a {
   opacity: 0.7;
@@ -809,21 +809,6 @@ input[type="password"] {
   text-align: right;
 }
 
-input[type="text"]:enabled,
-input[type="password"]:enabled {
-  border-color: #a35709;
-}
-input[type="text"],
-input[type="password"] {
-  width: 200px;
-  border-radius: 10px;
-  margin-left: 16px;
-  padding: 8px;
-  font-size: 1.5rem;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  margin-bottom: 10px;
-  border: 2px solid transparent;
-}
 #edit-account-form .update-btn:hover {
   background-color: #ff8303;
   border: none;
