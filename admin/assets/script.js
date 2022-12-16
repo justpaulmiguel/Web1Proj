@@ -407,7 +407,8 @@ if (
     }
 
     if (confirmPass.value === newPass.value) {
-      confirmPassNotif.textContent = "✔ Passwords Matched!";
+      // confirmPassNotif.textContent = "✔ Passwords Matched!";
+      confirmPassNotif.textContent = "";
       confirmPass.validity.valid = true;
     } else {
       confirmPassNotif.textContent = "X Passwords don't match";

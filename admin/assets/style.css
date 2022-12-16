@@ -24,8 +24,6 @@ body {
 /* Grid Structure of the page.
  */
 
-/* TODO Change this to mobile first. */
-
 main {
   padding: 25px;
   padding-top: 100px;
@@ -485,13 +483,16 @@ hr {
 
 .input-wrapper {
   display: flex;
-  flex-flow: nowrap column;
+  flex-flow: wrap row;
+  align-items: center;
+
   gap: 10px;
   font-family: "Poppins", sans-serif;
 }
 
 .input-wrapper label {
   font-weight: 800;
+  min-width: 200px;
 }
 
 .input-wrapper select,
@@ -785,6 +786,12 @@ input[type="password"] {
   max-width: 500px;
 }
 
+.section-content-md {
+  min-width: 200px;
+  max-width: 600px;
+  min-height: 500px;
+}
+
 .section-content .section-header {
   display: flex;
   flex-flow: row wrap;
@@ -946,7 +953,23 @@ input[type="text"]:user-invalid {
   border: 3px solid #ff0000;
   color: #c90101;
 }
-
+input[type="password"]:valid,
+input[type="text"]:valid {
+  border: 3px solid #411530;
+  color: #411530;
+}
 .disabled-btn {
   opacity: 0.4;
+}
+
+.input-notif-msg {
+  color: red;
+}
+
+.form-input-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
 }
