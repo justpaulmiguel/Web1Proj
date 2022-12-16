@@ -106,7 +106,15 @@ $fname = $value['fname'];
           <p class="outlined-text"><?= $branch ?> Branch</p>
         </div>
       </div>
+      <?php
+      $next_date2 = date('Y-m-d', strtotime('+2 day', strtotime($Today)));
+
+      if(!($dateRaw == $Today || $dateRaw == $NextDay || $dateRaw == $next_date2)) {
+      ?>
       <button class="btn cancel-btn" id="cancelBookBtn" type="button" onclick="cancelBook()">Cancel Booking</button>
+      <?php
+      }
+      ?>
       <br><br>
     </section>
 
