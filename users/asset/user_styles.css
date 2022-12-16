@@ -478,13 +478,16 @@ hr {
 
 .input-wrapper {
   display: flex;
-  flex-flow: nowrap column;
+  flex-flow: wrap row;
+  align-items: center;
+
   gap: 10px;
   font-family: "Poppins", sans-serif;
 }
 
 .input-wrapper label {
   font-weight: 800;
+  min-width: 200px;
 }
 
 .input-wrapper select,
@@ -676,14 +679,22 @@ details[open] summary {
 .hidden-btn {
   display: none;
 }
-.input-wrapper input[type="text"],
-.input-wrapper input[type="password"] {
+
+input[type="text"]:enabled,
+input[type="password"]:enabled {
+  border-color: #a35709;
+}
+input[type="text"],
+input[type="password"] {
   width: 200px;
   border-radius: 10px;
+  margin-left: 16px;
   padding: 8px;
-  border: none;
+  font-size: 1.5rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
 }
-
 /* tab highlighting */
 .options-bar a {
   opacity: 0.7;
