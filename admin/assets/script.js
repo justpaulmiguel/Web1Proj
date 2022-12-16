@@ -109,9 +109,11 @@ if (document.querySelector("#edit-account-form")) {
 if (document.querySelector("#patient-requests-form")) {
   // get all td data
   const rows = [...document.querySelectorAll(".patient-req-row")];
+  const checkboxes = [];
   rows.forEach((row) => {
+    const checkbox = row.querySelector('input[type="checkbox"]');
+    checkboxes.push(checkbox);
     row.addEventListener("click", () => {
-      const checkbox = row.querySelector('input[type="checkbox"]');
       checkbox.checked = !checkbox.checked;
     });
   });
@@ -120,6 +122,19 @@ if (document.querySelector("#patient-requests-form")) {
 
   const btn = document.querySelector(".form-submit");
   btn.addEventListener("click", () => {
+    const isRowsClicked = checkboxes.some((cb) => cb.checked);
+    if (!isRowsClicked) {
+      Swal.fire({
+        title: "Empty Items",
+        text: `No items selected.`,
+        icon: "error",
+        showCancelButton: false,
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        confirmButtonText: "Confirm",
+      });
+      return;
+    }
+
     if (form.requestType.value == "declined") {
       Swal.fire({
         title: "Decline Confirmation",
