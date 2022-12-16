@@ -441,3 +441,22 @@ if (
     currentPassNotif.textContent = "";
   });
 }
+
+if (document.querySelector("#inputContactNumber")) {
+  const contactNum = document.querySelector("#inputContactNumber");
+  const notif = document.querySelector("#inputContactNumber+.input-notif-msg");
+  const submitBtn = document.querySelector("#submit-account-details-btn");
+  const letters = /^[A-Za-z]+$/;
+  contactNum.addEventListener("input", () => {
+    if (contactNum.value.match(letters) || contactNum.value.length != 10) {
+      notif.textContent = "Please input 10 characters and digits only.";
+      contactNum.validity.valid = false;
+      submitBtn.classList.add("disabled-btn");
+      submitBtn.disabled = true;
+    } else {
+      notif.textContent = "";
+      submitBtn.classList.remove("disabled-btn");
+      submitBtn.disabled = false;
+    }
+  });
+}
