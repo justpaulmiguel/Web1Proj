@@ -86,7 +86,7 @@ aside {
   opacity: 1;
   visibility: visible;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: space-between;
 }
 
@@ -163,7 +163,6 @@ aside.menu-closed + .side-content {
 }
 
 .options-bar li {
-  border-bottom: 2px solid #ecd59c;
   margin-bottom: 1rem;
 }
 
@@ -281,14 +280,13 @@ header {
   display: flex;
   justify-content: flex-start;
   gap: 10px;
-}
-
-#signout-text {
   cursor: pointer;
 }
 
-#sign-out-btn:hover {
-  color: #c13500db;
+#signout-btn:hover {
+  color: #e05c2a;
+  transform: translateY(-5px);
+  cursor: pointer;
 }
 
 /* #sign-out-btn:active {
