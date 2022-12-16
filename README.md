@@ -38,13 +38,13 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Add js validation on input
 - Fix modal text
 
 ## Finished
 
 Move your task after you completed it here.
 
+- Add js validation on input
 - Refactor Design on Search Bar
 - Add schedule for the week in dashboard
 - Refactor date and time to more readable format
