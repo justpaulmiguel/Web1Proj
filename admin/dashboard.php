@@ -103,9 +103,9 @@ if (isset($_SESSION['flash_message'])) {
 										<tr>
 											<td><?= $rec["date"] ?></td>
 											<td><?= $rec["time"] ?></td>
-											<td><?= $rec["branch"] ?></td>
+											<td><?= getBranchName($rec["branch"]) ?></td>
 											<td><?= $rec["name"] ?></td>
-											<td><?= $rec["service"] ?></td>
+											<td><?= getServiceName($rec["service"]) ?></td>
 										</tr>
 									<?php endforeach ?>
 								</tbody>
