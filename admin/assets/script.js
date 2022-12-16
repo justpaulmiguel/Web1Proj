@@ -460,4 +460,9 @@ if (document.querySelector("#inputContactNumber")) {
       submitBtn.disabled = true;
     }
   });
+  const cancelBtn = document.querySelector("#cancel-account-details-btn");
+
+  cancelBtn.addEventListener("click", () => {
+    notif.textContent = "";
+  });
 }
