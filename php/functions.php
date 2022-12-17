@@ -52,7 +52,7 @@ function getServiceName($code)
 {
     switch ($code) {
         case 'clean':
-            return 'Cleaning';
+            return 'Oral Prophylaxis';
         case 'pasta':
             return 'Pasta';
         case 'd_crown':
