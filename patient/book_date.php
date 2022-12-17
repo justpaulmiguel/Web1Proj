@@ -58,7 +58,7 @@ switch ($_SESSION["branch"]) {
 
         <form id="formDate" method="post" action="book_time.php" autocomplete="off">
           <div class="input-wrapper">
-            <label for="date-option" class="heading-date">Choose the Date:</label>
+            <label for="date-option" class="label-text">Choose the Date:</label>
             <input type="text" id="date" name="date" placeholder="Select a Date" required>
           </div>
           <div class="form-btn-wrapper">

@@ -44,7 +44,7 @@ switch ($_SESSION["service"]) {
 
         <form method="post" action="book_date.php">
           <div class="input-wrapper">
-            <label for="branch-option" class="heading-date">Choose a Branch:</label>
+            <label for="branch-option" class="label-text">Choose a Branch:</label>
             <select name="branch" id="branch-option" class="booking-select-input select-input">
               <option value="s_simon">San Simon</option>
               <option value="mexico">Mexico</option>

@@ -511,6 +511,10 @@ hr {
   font-size: 1.5rem;
 }
 
+.label-text {
+  font-weight: 800;
+  color: var(--accent-color-dark);
+}
 /* booking form */
 
 .input-wrapper {
@@ -524,7 +528,7 @@ hr {
 
 .input-wrapper label {
   font-weight: 800;
-  min-width: 200px;
+  /* min-width: 200px; */
 }
 
 .input-wrapper select,

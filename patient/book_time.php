@@ -69,7 +69,7 @@ switch ($_SESSION["branch"]) {
 
 
           <div class="input-wrapper time-avail-wrapper">
-            <label for="date-option" class="heading-date">Time Available:</label>
+            <label for="date-option" class="label-text">Time Available:</label>
 
             <div class="fieldset-wrapper">
               <fieldset id="timepick">

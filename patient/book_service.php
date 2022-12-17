@@ -17,7 +17,7 @@ unset($_SESSION["time"]);
       <div class="booking-wrapper">
         <form method="post" action="book_branch.php">
           <div class="input-wrapper">
-            <label for="service-option" class="heading-date">Choose a Service:</label>
+            <label for="service-option" class="label-text">Choose a Service:</label>
             <select name="service" id="service-option" class="booking-select-input select-input">
               <option value="clean">Oral Prophylaxis</option>
               <option value="pasta">Dental Fillings</option>
