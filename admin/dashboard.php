@@ -57,10 +57,11 @@ if (isset($_SESSION['flash_message'])) {
 									$lname = $row1['lname'];
 									$email = $row1['email'];
 									$contactNo = $row1['contactNo'];
-									echo "<tr><td> "
-										. $fname . ",  " . $lname . "</td><td>"
+									echo "<tr>
+									<td> "
+										. $lname . ",  " . $fname . "</td><td>"
 										.
-										"<p>0" .
+										"<p class='dashboard-number'>0" .
 										$contactNo . "</p>" . "<a href=mailto:$email>" . $email . "</a>" . "</td><td>"
 										. $time . "</td><td>"
 										. "<button class='form-btn completed-btn' type=button value='$bookID'>Completed</button>

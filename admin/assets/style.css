@@ -1049,3 +1049,7 @@ label.radio-container.label-checked {
   align-items: baseline;
   align-content: center;
 }
+
+.dashboard-number {
+  font-weight: 800;
+}
