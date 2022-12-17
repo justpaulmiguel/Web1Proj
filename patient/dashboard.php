@@ -152,8 +152,8 @@ $fname = $value['fname'];
   $records = [];
 
   $query = "SELECT * FROM bookings
-  WHERE bookings.account_ID='$id' AND bookings.state in ('completed','declined','cancelled')
-  ORDER BY bookings.date, bookings.time DESC
+  WHERE bookings.account_ID='$id' AND bookings.state in ('completed','declined','cancelled','pending')
+  ORDER BY bookings.date DESC, bookings.time ASC
   LIMIT 10";
   $result = mysqli_query($conn, $query);
 
@@ -162,7 +162,7 @@ $fname = $value['fname'];
     <section class="section past-record-wrapper">
       <br><br>
       <div class="section-content">
-        <h2>You have no Past Records</h2>
+        <h2>You have no records yet</h2>
       </div>
     </section>
   <?php
@@ -175,7 +175,7 @@ $fname = $value['fname'];
 
     <section class="section past-record-wrapper">
       <div class="section-content">
-        <h2>Your Most Recent Past Records:</h2>
+        <h2>Your Recent Records:</h2>
         <div class="table-container">
           <table border="2" cellpadding="8" cellspacing="0">
             <tr>
