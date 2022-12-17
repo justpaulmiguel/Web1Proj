@@ -703,19 +703,33 @@ details[open] summary {
   color: #000;
 }
 
-input[type="text"]:enabled,
-input[type="password"]:enabled {
-  border-color: #a35709;
-}
 input[type="text"],
 input[type="password"] {
   border-radius: 10px;
   margin-left: 16px;
   padding: 8px;
   font-size: 1.1rem;
+  width: 100%;
   max-width: 100%;
   margin-bottom: 10px;
   border: 2px solid transparent;
+}
+
+input[type="text"]:enabled,
+input[type="password"]:enabled {
+  border-color: #a35709;
+}
+
+input[type="password"]:user-invalid,
+input[type="text"]:user-invalid {
+  border: 3px solid #ff0000;
+  color: #c90101;
+}
+
+input[type="password"]:valid,
+input[type="text"]:valid {
+  border: 3px solid #411530;
+  color: #411530;
 }
 
 .emp-wrapper {
@@ -955,16 +969,6 @@ input[type="password"] {
   color: white;
 }
 
-input[type="password"]:user-invalid,
-input[type="text"]:user-invalid {
-  border: 3px solid #ff0000;
-  color: #c90101;
-}
-input[type="password"]:valid,
-input[type="text"]:valid {
-  border: 3px solid #411530;
-  color: #411530;
-}
 .disabled-btn {
   opacity: 0.4;
 }
