@@ -68,8 +68,8 @@ switch ($_SESSION["branch"]) {
 
 
 
-          <div class="input-wrapper">
-            <label for="date-option" class="heading-date">Choose what Time:</label>
+          <div class="input-wrapper time-avail-wrapper">
+            <label for="date-option" class="heading-date">Time Available:</label>
 
             <div class="fieldset-wrapper">
               <fieldset id="timepick">
@@ -94,20 +94,36 @@ switch ($_SESSION["branch"]) {
 
                 if (mysqli_num_rows($result) <= 0) {
                 ?>
-                  <input type="radio" name="datetime" id="val-to-input" value="09:00:00" required />
-                  <label for="val-to-input">9:00 - 10:00 AM</label><br />
-                  <input type="radio" name="datetime" value="10:00:00" id="val-to-input2" />
-                  <label for="val-to-input2">10:00 - 11:00 AM</label><br />
-                  <input type="radio" name="datetime" value="12:30:00" id="val-to-input3" />
-                  <label for="val-to-input3">12:30 - 1:30 PM</label><br />
-                  <input type="radio" name="datetime" value="13:30:00" id="val-to-input4" />
-                  <label for="val-to-input4">1:30 - 2:30 PM</label><br />
-                  <input type="radio" name="datetime" value="14:30:00" id="val-to-input5" />
-                  <label for="val-to-input5">2:30 - 3:30 PM</label><br />
-                  <input type="radio" name="datetime" value="15:30:00" id="val-to-input6" />
-                  <label for="val-to-input6">3:30 - 4:30 PM</label><br />
-                  <input type="radio" name="datetime" value="16:30:00" id="val-to-input7" />
-                  <label for="val-to-input7">4:30 - 5:30 PM</label><br />
+                  <div class="radio-input-wrapper">
+                    <input type="radio" name="datetime" id="val-to-input" value="09:00:00" required />
+                    <label for="val-to-input">9:00 - 10:00 AM</label>
+                  </div>
+                  <div class="radio-input-wrapper">
+
+                    <input type="radio" name="datetime" value="10:00:00" id="val-to-input2" />
+                    <label for="val-to-input2">10:00 - 11:00 AM</label>
+                  </div>
+
+                  <div class="radio-input-wrapper">
+                    <input type="radio" name="datetime" value="12:30:00" id="val-to-input3" />
+                    <label for="val-to-input3">12:30 - 1:30 PM</label>
+                  </div>
+                  <div class="radio-input-wrapper">
+                    <input type="radio" name="datetime" value="13:30:00" id="val-to-input4" />
+                    <label for="val-to-input4">1:30 - 2:30 PM</label>
+                  </div>
+                  <div class="radio-input-wrapper">
+                    <input type="radio" name="datetime" value="14:30:00" id="val-to-input5" />
+                    <label for="val-to-input5">2:30 - 3:30 PM</label>
+                  </div>
+                  <div class="radio-input-wrapper">
+                    <input type="radio" name="datetime" value="15:30:00" id="val-to-input6" />
+                    <label for="val-to-input6">3:30 - 4:30 PM</label>
+                  </div>
+                  <div class="radio-input-wrapper">
+                    <input type="radio" name="datetime" value="16:30:00" id="val-to-input7" />
+                    <label for="val-to-input7">4:30 - 5:30 PM</label>
+                  </div>
                 <?php
                 } else {
                 ?>
@@ -147,50 +163,64 @@ switch ($_SESSION["branch"]) {
                   if (!($count1 >= 2)) {
                     $finalcount++;
                   ?>
-                    <input type="radio" name="datetime" id="val-to-input" value="09:00:00" />
-                    <label for="val-to-input">9:00 - 10:00 AM</label><br />
+                    <div class="radio-input-wrapper">
+                      <input type="radio" name="datetime" id="val-to-input" value="09:00:00" />
+                      <label for="val-to-input">9:00 - 10:00 AM</label><br />
+                    </div>
                   <?php
                   }
                   if (!($count2 >= 2)) {
                     $finalcount++;
                   ?>
-                    <input type="radio" name="datetime" value="10:00:00" id="val-to-input2" />
-                    <label for="val-to-input2">10:00 - 11:00 AM</label><br />
+                    <div class="radio-input-wrapper">
+                      <input type="radio" name="datetime" value="10:00:00" id="val-to-input2" />
+                      <label for="val-to-input2">10:00 - 11:00 AM</label><br />
+                    </div>
                   <?php
                   }
                   if (!($count3 >= 2)) {
                     $finalcount++;
                   ?>
-                    <input type="radio" name="datetime" value="12:30:00" id="val-to-input3" />
-                    <label for="val-to-input3">12:30 - 1:30 PM</label><br />
+                    <div class="radio-input-wrapper">
+                      <input type="radio" name="datetime" value="12:30:00" id="val-to-input3" />
+                      <label for="val-to-input3">12:30 - 1:30 PM</label><br />
+                    </div>
                   <?php
                   }
                   if (!($count4 >= 2)) {
                     $finalcount++;
                   ?>
-                    <input type="radio" name="datetime" value="13:30:00" id="val-to-input4" />
-                    <label for="val-to-input4">1:30 - 2:30 PM</label><br />
+                    <div class="radio-input-wrapper">
+                      <input type="radio" name="datetime" value="13:30:00" id="val-to-input4" />
+                      <label for="val-to-input4">1:30 - 2:30 PM</label><br />
+                    </div>
                   <?php
                   }
                   if (!($count5 >= 2)) {
                     $finalcount++;
                   ?>
-                    <input type="radio" name="datetime" value="14:30:00" id="val-to-input5" />
-                    <label for="val-to-input5">2:30 - 3:30 PM</label><br />
+                    <div class="radio-input-wrapper">
+                      <input type="radio" name="datetime" value="14:30:00" id="val-to-input5" />
+                      <label for="val-to-input5">2:30 - 3:30 PM</label><br />
+                    </div>
                   <?php
                   }
                   if (!($count6 >= 2)) {
                     $finalcount++;
                   ?>
-                    <input type="radio" name="datetime" value="15:30:00" id="val-to-input6" />
-                    <label for="val-to-input6">3:30 - 4:30 PM</label><br />
+                    <div class="radio-input-wrapper">
+                      <input type="radio" name="datetime" value="15:30:00" id="val-to-input6" />
+                      <label for="val-to-input6">3:30 - 4:30 PM</label><br />
+                    </div>
                   <?php
                   }
                   if (!($count7 >= 2)) {
                     $finalcount++;
                   ?>
-                    <input type="radio" name="datetime" value="16:30:00" id="val-to-input7" />
-                    <label for="val-to-input7">4:30 - 5:30 PM</label><br />
+                    <div class="radio-input-wrapper">
+                      <input type="radio" name="datetime" value="16:30:00" id="val-to-input7" />
+                      <label for="val-to-input7">4:30 - 5:30 PM</label><br />
+                    </div>
                   <?php
                   }
                   if ($finalcount == 0) {

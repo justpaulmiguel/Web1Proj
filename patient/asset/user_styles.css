@@ -544,6 +544,7 @@ hr {
   justify-content: center;
   position: relative;
   width: 100%;
+  flex-flow: row wrap;
 }
 
 .submit-btn {
@@ -569,10 +570,18 @@ hr {
   background-color: #c90101;
   color: #fff;
 }
+.time-avail-wrapper {
+  flex-flow: column wrap;
+}
 
-.fieldset-wrapper {
+.fieldset-wrapper fieldset {
+  margin: 0 auto;
   display: flex;
+  max-width: 45%;
   flex-flow: row wrap;
+}
+.radio-input-wrapper {
+  width: 180px;
 }
 
 /* * Services Offered */
@@ -862,10 +871,6 @@ input[type="text"]:valid {
   border-color: #000;
   color: #000;
 }
-.form-btn-wrapper .reset-btn {
-  position: absolute;
-  right: 0;
-}
 
 .reset-btn:hover {
   background-color: #c90101;
@@ -891,4 +896,11 @@ input[type="text"]:valid {
   min-width: 200px;
   max-width: 600px;
   min-height: 500px;
+}
+
+/* Media query on small screens */
+@media only screen and (max-width: 600px) {
+  .form-btn-wrapper .reset-btn {
+    position: static;
+  }
 }
