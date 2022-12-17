@@ -77,8 +77,11 @@ mysqli_close($conn);
           <div class="input-wrapper">
             <label for="inputContactNumber">Contact Number:</label>
             <!-- Use digits  -->
-            <input type="text" maxlength="10" name="contactNo" id="inputContactNumber" required value="<?= $account['contactNo']    ?>" disabled class="disabled-input account-input" />
-            <span class="input-notif-msg"></span>
+            <div class="number-container">
+              <label id="dialCode" for="contactNo">+63</label>
+              <input type="text" maxlength="10" placeholder="91234567890" name="contactNo" id="inputContactNumber" required value="<?= $account['contactNo']    ?>" disabled class="disabled-input account-input" />
+              <span class="input-notif-msg"></span>
+            </div>
 
           </div>
 
