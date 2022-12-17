@@ -81,7 +81,6 @@ if (document.querySelector("#edit-account-form")) {
       lName = formDOM.inputLName.value;
       contactNum = formDOM.inputContactNumber.value;
       input.forEach((element) => {
-        console.log("hlloet");
         element.classList.remove("disabled-input");
         element.disabled = false;
       });

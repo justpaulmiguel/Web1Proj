@@ -728,6 +728,24 @@ input[type="text"]:valid {
   border: 3px solid #411530;
   color: #411530;
 }
+.number-container {
+  min-width: 80%;
+  max-width: 97%;
+  position: relative;
+}
+#dialCode {
+  position: absolute;
+  top: 10px;
+  transform: translateX(-144px);
+  text-align: right;
+  color: gray;
+  font-family: "Tahoma", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+#inputContactNumber {
+  text-indent: 40px;
+}
 
 /* sweet alert input text for its modal box */
 input[type="text"].swal2-input {
