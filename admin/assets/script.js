@@ -240,6 +240,8 @@ if (document.querySelector("#add-employee-btn")) {
       },
       showCancelButton: true,
       confirmButtonText: "Add Employee",
+      confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+
       preConfirm: () => {
         const form = Swal.getPopup().querySelector("form");
         const email = Swal.getPopup().querySelector("#add-email");
