@@ -17,9 +17,9 @@ function showModalError($message)
             Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: '{$message}'
-            confirmButtonColor: '#a35709',
-            })
+            text: '{$message}',
+            confirmButtonColor: '#a35709'
+            });
     </script>
     ";
 }
@@ -36,10 +36,9 @@ function showModalSuccess($message)
             Swal.fire({
             icon: 'success',
             title: 'Success!',
-            text: '{$message}'
-            confirmButtonColor: '#a35709',
-
-            })
+            text: '{$message}',
+            confirmButtonColor: '#a35709'
+            });
     </script>
     ";
 }
