@@ -320,6 +320,7 @@ if (document.querySelector("#search-record-form")) {
       <option value="pending">Pending</option>
       <option value="declined">Declined</option>
       <option value="accepted">Accepted</option>
+      <option value="cancelled">Cancelled</option>
        </select>
 
       `;
