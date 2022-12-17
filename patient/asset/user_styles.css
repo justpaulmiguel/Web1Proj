@@ -500,11 +500,15 @@ hr {
   margin-left: 15px;
 }
 .heading-date {
-  font-size: 1.2rem;
-  color: var(--accent-color-dark);
+  font-size: 3rem;
+  color: var(--accent-color-bg);
   font-weight: 800;
   text-align: center;
   margin: 0;
+}
+.subheading-date {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 /* booking form */

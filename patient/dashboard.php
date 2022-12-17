@@ -90,26 +90,24 @@ $fname = $value['fname'];
     }
 
   ?>
-
     <section class="schedule-wrapper">
 
-      <div class="section-content">
-        <p>Your next approved schedule would be on:</p>
-        <p class="heading-date"><?= $time ?><br><?= $when ?></p>
-        <p class="subheading-date"><?= $date ?></p>
-        <div class="schedule-details-wrapper">
-          <div class="detail-wrapper">
-            <p>Dental Service</p>
-            <p class="outlined-text"><?= $service ?></p>
-          </div>
-          <div class="detail-wrapper">
-            <p>Branch</p>
-            <p class="outlined-text"><?= $branch ?> Branch</p>
-          </div>
+
+      <p>Your next approved schedule would be on:</p>
+      <p class="heading-date"><?= $time ?><br><?= $when ?></p>
+      <p class="subheading-date"><?= $date ?></p>
+      <div class="schedule-details-wrapper">
+        <div class="detail-wrapper">
+          <p>Dental Service</p>
+          <p class="outlined-text"><?= $service ?></p>
         </div>
-        <button class="btn cancel-btn" id="cancelBookBtn" type="button" onclick="cancelBook()">Cancel Booking</button>
-        <br><br>
+        <div class="detail-wrapper">
+          <p>Branch</p>
+          <p class="outlined-text"><?= $branch ?> Branch</p>
+        </div>
       </div>
+      <button class="btn cancel-btn" id="cancelBookBtn" type="button" onclick="cancelBook()">Cancel Booking</button>
+      <br><br>
       <?php
       $next_date2 = date('Y-m-d', strtotime('+2 day', strtotime($Today)));
 

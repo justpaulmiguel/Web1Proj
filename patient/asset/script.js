@@ -90,7 +90,7 @@ if (document.querySelector("#signout-btn")) {
 function cancelBook() {
   Swal.fire({
     title: "Are you sure?",
-    text: "You want to cancel this Booking?",
+    text: "Do you want to cancel this booking?",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
