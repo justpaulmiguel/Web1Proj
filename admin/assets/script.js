@@ -264,7 +264,7 @@ if (document.querySelector("#remove-employee-btn")) {
         title: "Remove an employee",
         html: `
       <form method="post" action="employees.php">
-        <label> Remove an employee! Account is still active</label> 
+        <label>Please enter the email of the employee</label> 
          <input type='hidden' value='remove' name='type'/>
          <input type="email" name="email" required id="remove-email" class="swal2-input" placeholder="Enter Email">
       </form> 
@@ -274,6 +274,8 @@ if (document.querySelector("#remove-employee-btn")) {
         },
         showCancelButton: true,
         confirmButtonText: "Remove Employee",
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+
         preConfirm: () => {
           const form = Swal.getPopup().querySelector("form");
           const email = Swal.getPopup().querySelector("#remove-email");

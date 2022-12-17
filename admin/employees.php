@@ -88,12 +88,14 @@ mysqli_close($conn);
                         </div>
                         <div class="emp-details">
                             <p><?= $employee['lname'] . ", " .  $employee['fname']; ?> </p>
-                            <p class="
-                            <?= $employee["permissionLvl"] == 1
-                                ? "emp-text" : "admin-text" ?>
-                            "><?= $employee["permissionLvl"] == 1
-                                    ? "Employee" : "Administrator"   ?></p>
-                            <p><?= $employee["email"] ?></p>
+                            <div class="emp-bottom">
+                                <p class="
+                                <?= $employee["permissionLvl"] == 1
+                                    ? "emp-text" : "admin-text" ?>
+                                "><?= $employee["permissionLvl"] == 1
+                                        ? "Employee" : "Administrator"   ?></p>
+                                <p><?= $employee["email"] ?></p>
+                            </div>
                         </div>
 
 
