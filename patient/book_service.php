@@ -33,7 +33,6 @@ unset($_SESSION["time"]);
     <div class="section-content">
       <div class="row" id="services">
         <div class="container-fluid">
-          <br><br>
           <div id="servicesTitle" class="heading-date">Services</div>
           <div id="servicesContent">
             <div class="theService1">
