@@ -304,10 +304,6 @@ header {
   margin: 0;
 }
 
-main > section {
-  padding-left: 30px;
-}
-
 /* Tables */
 
 table {
@@ -364,7 +360,7 @@ table tr:hover {
   color: var(--accent-color-dark);
   background-color: #fff;
   border: none;
-  padding: 18px 20px;
+  padding: 10px 30px;
   transition: all 0.2s ease-in-out;
   font-family: "Poppins", sans-serif;
 }
@@ -438,17 +434,9 @@ hr {
   max-width: 1000px;
 }
 
-.heading-date {
-  font-size: 2rem;
-  color: #ff8303;
-  font-weight: 800;
+/* .subheading-date {
   text-align: center;
-  margin: 0;
-}
-
-.subheading-date {
-  text-align: center;
-}
+} */
 
 .schedule-details-wrapper {
   display: flex;
@@ -479,18 +467,44 @@ hr {
 
 /* * User_bookings */
 
+.booking-details {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: left;
+  padding: 0 12px;
+  border-radius: 10px;
+  gap: 24px;
+}
+
+.booking-details p {
+  margin: 0;
+}
+.booking-details p span {
+  font-weight: 800;
+  color: var(--accent-color-bg);
+}
+
 .booking-wrapper form {
-  width: 75%;
-  margin: 0 auto;
   background-color: #fff;
   display: flex;
   flex-flow: wrap column;
   justify-content: center;
   align-items: flex-start;
-  padding: 35px;
+  padding: 12px;
   color: var(--accent-color-dark);
   gap: 10px;
   border-radius: 15px;
+}
+.booking-wrapper .input-wrapper input,
+.booking-wrapper .input-wrapper select {
+  margin-left: 15px;
+}
+.heading-date {
+  font-size: 1.2rem;
+  color: var(--accent-color-dark);
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
 }
 
 /* booking form */
@@ -499,7 +513,7 @@ hr {
   display: flex;
   flex-flow: wrap row;
   align-items: center;
-
+  margin: 0 auto;
   gap: 10px;
   font-family: "Poppins", sans-serif;
 }
@@ -530,13 +544,11 @@ hr {
   justify-content: center;
   position: relative;
   width: 100%;
-  margin-top: 50px;
 }
 
 .submit-btn {
   color: #fff;
   background-color: #ff8303;
-  padding: 10px 35px;
 }
 
 .form-btn-wrapper .reset-btn {

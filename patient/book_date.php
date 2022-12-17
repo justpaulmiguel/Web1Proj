@@ -45,23 +45,28 @@ switch ($_SESSION["branch"]) {
 <main>
   <h1 class="top-heading-text">Booking</h1>
   <p>Reserve an appointment with our doctors.</p>
-  <section class="booking-wrapper">
+  <div class="section-content">
+    <h3>Your Booking Details:</h3>
+    <div class="booking-details">
+      <p>Service:<span> <?= $service ?></span></p>
+      <p id="branch">Branch: <span><?= $branch ?></span></p>
+    </div>
+  </div>
+  <section>
     <div class="section-content">
-      <div class="booking-details">
-        <h3>Your Booking Details:</h3>
-        <p class="subheading-date">Service: <?= $service ?></p>
-        <p id="branch" class="subheading-date">Branch: <?= $branch ?></p>
+      <div class="booking-wrapper">
+
+        <form id="formDate" method="post" action="book_time.php" autocomplete="off">
+          <div class="input-wrapper">
+            <label for="date-option" class="heading-date">Choose the Date:</label>
+            <input type="text" id="date" name="date" placeholder="Select a Date" required>
+          </div>
+          <div class="form-btn-wrapper">
+            <input class="submit-btn btn" type="submit" value="Next"></input>
+            <button class="btn reset-btn" type="button" onClick="location.href='book_branch.php'">Back</button>
+          </div>
+        </form>
       </div>
-      <form id="formDate" method="post" action="book_time.php" autocomplete="off">
-        <div class="input-wrapper">
-          <label for="date-option" class="heading-date">Choose the Date:</label>
-          <input type="text" id="date" name="date" placeholder="Select a Date" required>
-        </div>
-        <div class="form-btn-wrapper">
-          <input class="submit-btn btn" type="submit" value="Next"></input>
-          <button class="btn reset-btn" type="button" onClick="location.href='book_branch.php'">Back</button>
-        </div>
-      </form>
     </div>
   </section>
 </main>

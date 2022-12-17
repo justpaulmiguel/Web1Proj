@@ -50,163 +50,168 @@ switch ($_SESSION["branch"]) {
 <main>
   <h1 class="top-heading-text">Booking</h1>
   <p>Reserve an appointment with our doctors.</p>
-  <section class="booking-wrapper">
+
+  <div class="section-content">
+    <h3>Your Booking Details:</h3>
+    <div class="booking-details">
+      <p>Service: <span><?= $service ?></span></p>
+      <p>Branch: <span><?= $branch ?></span></p>
+      <p>Date: <span><?= $date ?></span></p>
+    </div>
+
+  </div>
+  <section>
     <div class="section-content">
+      <div class="booking-wrapper">
 
-      <div class="booking-details">
-        <h3>Your Booking Details:</h3>
-        <p class="subheading-date">Service: <?= $service ?></p>
-        <p class="subheading-date">Branch: <?= $branch ?></p>
-        <p class="subheading-date">Date: <?= $date ?></p>
-
-      </div>
-      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
 
 
-        <div class="input-wrapper">
-          <label for="date-option" class="heading-date">Choose what Time:</label>
+          <div class="input-wrapper">
+            <label for="date-option" class="heading-date">Choose what Time:</label>
 
-          <div class="fieldset-wrapper">
-            <fieldset id="timepick">
-              <?php
-              //PREVENTING USER FROM CHOOSING ALREADY FULLY BOOKED TIME
-              $count1 = 0;
-              $count2 = 0;
-              $count3 = 0;
-              $count4 = 0;
-              $count5 = 0;
-              $count6 = 0;
-              $count7 = 0;
-              $finalcount = 0;
-              $times = [];
-              $branchRaw = $_SESSION["branch"];
-
-              $query = "SELECT bookings.time FROM bookings
-                  WHERE bookings.date='$dateRaw' AND bookings.state ='accepted' AND bookings.branch = '$branchRaw'";
-
-              $result = mysqli_query($conn, $query);
-              $count = mysqli_num_rows($result);
-
-              if (mysqli_num_rows($result) <= 0) {
-              ?>
-                <input type="radio" name="datetime" id="val-to-input" value="09:00:00" required />
-                <label for="val-to-input">9:00 - 10:00 AM</label><br />
-                <input type="radio" name="datetime" value="10:00:00" id="val-to-input2" />
-                <label for="val-to-input2">10:00 - 11:00 AM</label><br />
-                <input type="radio" name="datetime" value="12:30:00" id="val-to-input3" />
-                <label for="val-to-input3">12:30 - 1:30 PM</label><br />
-                <input type="radio" name="datetime" value="13:30:00" id="val-to-input4" />
-                <label for="val-to-input4">1:30 - 2:30 PM</label><br />
-                <input type="radio" name="datetime" value="14:30:00" id="val-to-input5" />
-                <label for="val-to-input5">2:30 - 3:30 PM</label><br />
-                <input type="radio" name="datetime" value="15:30:00" id="val-to-input6" />
-                <label for="val-to-input6">3:30 - 4:30 PM</label><br />
-                <input type="radio" name="datetime" value="16:30:00" id="val-to-input7" />
-                <label for="val-to-input7">4:30 - 5:30 PM</label><br />
-              <?php
-              } else {
-              ?>
-                <input style="display:none;" type="radio" name="datetime" id="val-to-input0" value="n" required />
+            <div class="fieldset-wrapper">
+              <fieldset id="timepick">
                 <?php
-                while ($row = mysqli_fetch_assoc($result)) {
-                  array_push($times, $row);
-                }
-                mysqli_close($conn);
+                //PREVENTING USER FROM CHOOSING ALREADY FULLY BOOKED TIME
+                $count1 = 0;
+                $count2 = 0;
+                $count3 = 0;
+                $count4 = 0;
+                $count5 = 0;
+                $count6 = 0;
+                $count7 = 0;
+                $finalcount = 0;
+                $times = [];
+                $branchRaw = $_SESSION["branch"];
 
-                foreach ($times as $time) {
-                  switch ($time["time"]) {
-                    case "09:00:00":
-                      $count1++;
-                      break;
-                    case "10:00:00":
-                      $count2++;
-                      break;
-                    case "12:30:00":
-                      $count3++;
-                      break;
-                    case "13:30:00":
-                      $count4++;
-                      break;
-                    case "14:30:00":
-                      $count5++;
-                      break;
-                    case "15:30:00":
-                      $count6++;
-                      break;
-                    case "16:30:00":
-                      $count7++;
-                      break;
-                  }
-                }
+                $query = "SELECT bookings.time FROM bookings
+                    WHERE bookings.date='$dateRaw' AND bookings.state ='accepted' AND bookings.branch = '$branchRaw'";
 
-                if (!($count1 >= 2)) {
-                  $finalcount++;
+                $result = mysqli_query($conn, $query);
+                $count = mysqli_num_rows($result);
+
+                if (mysqli_num_rows($result) <= 0) {
                 ?>
-                  <input type="radio" name="datetime" id="val-to-input" value="09:00:00" />
+                  <input type="radio" name="datetime" id="val-to-input" value="09:00:00" required />
                   <label for="val-to-input">9:00 - 10:00 AM</label><br />
-                <?php
-                }
-                if (!($count2 >= 2)) {
-                  $finalcount++;
-                ?>
                   <input type="radio" name="datetime" value="10:00:00" id="val-to-input2" />
                   <label for="val-to-input2">10:00 - 11:00 AM</label><br />
-                <?php
-                }
-                if (!($count3 >= 2)) {
-                  $finalcount++;
-                ?>
                   <input type="radio" name="datetime" value="12:30:00" id="val-to-input3" />
                   <label for="val-to-input3">12:30 - 1:30 PM</label><br />
-                <?php
-                }
-                if (!($count4 >= 2)) {
-                  $finalcount++;
-                ?>
                   <input type="radio" name="datetime" value="13:30:00" id="val-to-input4" />
                   <label for="val-to-input4">1:30 - 2:30 PM</label><br />
-                <?php
-                }
-                if (!($count5 >= 2)) {
-                  $finalcount++;
-                ?>
                   <input type="radio" name="datetime" value="14:30:00" id="val-to-input5" />
                   <label for="val-to-input5">2:30 - 3:30 PM</label><br />
-                <?php
-                }
-                if (!($count6 >= 2)) {
-                  $finalcount++;
-                ?>
                   <input type="radio" name="datetime" value="15:30:00" id="val-to-input6" />
                   <label for="val-to-input6">3:30 - 4:30 PM</label><br />
-                <?php
-                }
-                if (!($count7 >= 2)) {
-                  $finalcount++;
-                ?>
                   <input type="radio" name="datetime" value="16:30:00" id="val-to-input7" />
                   <label for="val-to-input7">4:30 - 5:30 PM</label><br />
                 <?php
-                }
-                if ($finalcount == 0) {
+                } else {
                 ?>
-                  <p class="subheading-date">NO AVAILABLE TIME SLOT LEFT</p>
+                  <input style="display:none;" type="radio" name="datetime" id="val-to-input0" value="n" required />
+                  <?php
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    array_push($times, $row);
+                  }
+                  mysqli_close($conn);
 
-              <?php
+                  foreach ($times as $time) {
+                    switch ($time["time"]) {
+                      case "09:00:00":
+                        $count1++;
+                        break;
+                      case "10:00:00":
+                        $count2++;
+                        break;
+                      case "12:30:00":
+                        $count3++;
+                        break;
+                      case "13:30:00":
+                        $count4++;
+                        break;
+                      case "14:30:00":
+                        $count5++;
+                        break;
+                      case "15:30:00":
+                        $count6++;
+                        break;
+                      case "16:30:00":
+                        $count7++;
+                        break;
+                    }
+                  }
+
+                  if (!($count1 >= 2)) {
+                    $finalcount++;
+                  ?>
+                    <input type="radio" name="datetime" id="val-to-input" value="09:00:00" />
+                    <label for="val-to-input">9:00 - 10:00 AM</label><br />
+                  <?php
+                  }
+                  if (!($count2 >= 2)) {
+                    $finalcount++;
+                  ?>
+                    <input type="radio" name="datetime" value="10:00:00" id="val-to-input2" />
+                    <label for="val-to-input2">10:00 - 11:00 AM</label><br />
+                  <?php
+                  }
+                  if (!($count3 >= 2)) {
+                    $finalcount++;
+                  ?>
+                    <input type="radio" name="datetime" value="12:30:00" id="val-to-input3" />
+                    <label for="val-to-input3">12:30 - 1:30 PM</label><br />
+                  <?php
+                  }
+                  if (!($count4 >= 2)) {
+                    $finalcount++;
+                  ?>
+                    <input type="radio" name="datetime" value="13:30:00" id="val-to-input4" />
+                    <label for="val-to-input4">1:30 - 2:30 PM</label><br />
+                  <?php
+                  }
+                  if (!($count5 >= 2)) {
+                    $finalcount++;
+                  ?>
+                    <input type="radio" name="datetime" value="14:30:00" id="val-to-input5" />
+                    <label for="val-to-input5">2:30 - 3:30 PM</label><br />
+                  <?php
+                  }
+                  if (!($count6 >= 2)) {
+                    $finalcount++;
+                  ?>
+                    <input type="radio" name="datetime" value="15:30:00" id="val-to-input6" />
+                    <label for="val-to-input6">3:30 - 4:30 PM</label><br />
+                  <?php
+                  }
+                  if (!($count7 >= 2)) {
+                    $finalcount++;
+                  ?>
+                    <input type="radio" name="datetime" value="16:30:00" id="val-to-input7" />
+                    <label for="val-to-input7">4:30 - 5:30 PM</label><br />
+                  <?php
+                  }
+                  if ($finalcount == 0) {
+                  ?>
+                    <p class="subheading-date">NO AVAILABLE TIME SLOT LEFT</p>
+
+                <?php
+                  }
                 }
-              }
 
-              ?>
+                ?>
 
-            </fieldset>
+              </fieldset>
+            </div>
           </div>
-        </div>
-        <div class="form-btn-wrapper">
-          <input id="submit-book-btn" class="submit-btn btn" type="submit" value="Submit Booking">
-          <button class="btn reset-btn" type="button" onClick="location.href='book_date.php'">Back</button>
-        </div>
-      </form>
+          <div class="form-btn-wrapper">
+            <input id="submit-book-btn" class="submit-btn btn" type="submit" value="Submit Booking">
+            <button class="btn reset-btn" type="button" onClick="location.href='book_date.php'">Back</button>
+          </div>
+        </form>
+      </div>
       <?php
       //BOOKING SCRIPT
       if (isset($_POST["datetime"]) && isset($_SESSION["service"]) && isset($_SESSION["branch"]) && isset($_SESSION["date"])) {

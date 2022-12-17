@@ -12,21 +12,25 @@ unset($_SESSION["time"]);
 <main>
   <h1 class="top-heading-text">Booking</h1>
   <p>Reserve an appointment with our doctors.</p>
-  <section class="booking-wrapper">
-    <form method="post" action="book_branch.php">
-      <div class="input-wrapper">
-        <label for="service-option" class="heading-date">Choose a Service:</label>
-        <select name="service" id="service-option" class="booking-select-input select-input">
-          <option value="clean">Oral Prophylaxis</option>
-          <option value="pasta">Dental Fillings</option>
-          <option value="d_crown">Tooth Jacket</option>
-          <option value="wisdom">Wisdom Tooth Extraction</option>
-        </select>
+  <section>
+    <div class="section-content">
+      <div class="booking-wrapper">
+        <form method="post" action="book_branch.php">
+          <div class="input-wrapper">
+            <label for="service-option" class="heading-date">Choose a Service:</label>
+            <select name="service" id="service-option" class="booking-select-input select-input">
+              <option value="clean">Oral Prophylaxis</option>
+              <option value="pasta">Dental Fillings</option>
+              <option value="d_crown">Tooth Jacket</option>
+              <option value="wisdom">Wisdom Tooth Extraction</option>
+            </select>
+          </div>
+          <div class="form-btn-wrapper">
+            <input class="submit-btn btn" type="submit" value="Next"></input>
+          </div>
+        </form>
       </div>
-      <div class="form-btn-wrapper">
-        <input class="submit-btn btn" type="submit" value="Next"></input>
-      </div>
-    </form>
+    </div>
   </section>
 
   <section class="section services-section">
