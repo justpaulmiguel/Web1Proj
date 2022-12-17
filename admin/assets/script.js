@@ -154,6 +154,7 @@ if (document.querySelector("#patient-requests-form")) {
               autocapitalize: "off",
             },
             showCancelButton: true,
+            confirmButtonColor: YES_CONFIRM_BTN_COLOR,
             confirmButtonText: "Send",
             showLoaderOnConfirm: true,
             preConfirm: (declineText) => {
@@ -162,6 +163,7 @@ if (document.querySelector("#patient-requests-form")) {
                   title: "Error",
                   icon: "error",
                   text: "Decline reason must not be empty",
+                  confirmButtonColor: YES_CONFIRM_BTN_COLOR,
                 });
                 return false;
               }

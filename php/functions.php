@@ -18,6 +18,7 @@ function showModalError($message)
             icon: 'error',
             title: 'Oops...',
             text: '{$message}'
+            confirmButtonColor: '#a35709',
             })
     </script>
     ";
@@ -36,6 +37,8 @@ function showModalSuccess($message)
             icon: 'success',
             title: 'Success!',
             text: '{$message}'
+            confirmButtonColor: '#a35709',
+
             })
     </script>
     ";

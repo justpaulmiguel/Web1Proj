@@ -129,12 +129,12 @@ if (isset($_SESSION['flash_message'])) {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
 				Swal.fire({
-					title: 'Missed Appointment Confirmation',
+					title: 'Missed Appointment',
 					text: "Do you want to mark this appointment as missed?",
 					icon: 'warning',
 					showCancelButton: true,
-					confirmButtonColor: '#3085d6',
-					cancelButtonColor: '#d33',
+					confirmButtonColor: '#a35709',
+					cancelButtonColor: 'gray',
 					confirmButtonText: 'Yes'
 				}).then((result) => {
 					if (result.isConfirmed) {
@@ -153,12 +153,12 @@ if (isset($_SESSION['flash_message'])) {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
 				Swal.fire({
-					title: 'Completed Appointment Confirmation',
+					title: 'Complete Appointment ',
 					text: "Do you want to mark this appointment as complete?",
 					icon: 'info',
 					showCancelButton: true,
-					confirmButtonColor: '#3085d6',
-					cancelButtonColor: '#d33',
+					confirmButtonColor: '#a35709',
+					cancelButtonColor: 'gray',
 					confirmButtonText: 'Yes'
 				}).then((result) => {
 					if (result.isConfirmed) {
