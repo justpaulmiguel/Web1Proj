@@ -500,7 +500,7 @@ hr {
 
 .input-wrapper label {
   font-weight: 800;
-  min-width: 200px;
+  /* min-width: 200px; */
 }
 
 .input-wrapper select,
@@ -739,7 +739,7 @@ input[type="text"]:valid {
 #dialCode {
   position: absolute;
   top: 10px;
-  transform: translateX(-144px);
+  transform: translateX(30px);
   text-align: right;
   color: gray;
   font-family: "Tahoma", sans-serif;
@@ -748,6 +748,7 @@ input[type="text"]:valid {
 }
 #inputContactNumber {
   text-indent: 40px;
+  width: 170px;
 }
 
 /* sweet alert input text for its modal box */

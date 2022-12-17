@@ -767,7 +767,7 @@ input[type="text"]:valid {
 #dialCode {
   position: absolute;
   top: 10px;
-  transform: translateX(-144px);
+  transform: translateX(30px);
   text-align: right;
   color: gray;
   font-family: "Tahoma", sans-serif;
@@ -776,6 +776,7 @@ input[type="text"]:valid {
 }
 #inputContactNumber {
   text-indent: 40px;
+  width: 170px;
 }
 
 /* tab highlighting */
