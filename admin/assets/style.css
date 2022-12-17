@@ -59,6 +59,9 @@ footer {
   flex-flow: row wrap;
   position: relative;
 }
+footer a {
+  color: #fff;
+}
 
 /* sidebar */
 
