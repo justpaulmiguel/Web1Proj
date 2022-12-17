@@ -731,7 +731,11 @@ input[type="text"]:valid {
   border: 3px solid #411530;
   color: #411530;
 }
-
+/* sweet alert input text for its modal box */
+input[type="text"].swal2-input {
+  margin: 0 auto;
+  width: 80%;
+}
 .emp-wrapper {
   display: flex;
   flex-flow: row wrap;
