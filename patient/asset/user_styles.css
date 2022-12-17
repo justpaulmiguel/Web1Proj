@@ -596,30 +596,23 @@ hr {
 }
 
 /* * Services Offered */
-
-details {
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  padding: 0.5em 0.5em 0;
-  background-color: #fff;
-  color: #1e1e1e;
+/* TODO finish designing later */
+.service-wrapper {
+  display: flex;
+  flex-flow: row wrap;
 }
-
-summary {
-  font-weight: bold;
-  margin: -0.5em -0.5em 0;
-  padding: 0.5em;
-  font-size: 1.2rem;
+.service-wrapper p {
+  display: inline-block;
 }
-
-details[open] {
-  padding: 0.5em;
+.service-wrapper img {
+  max-width: 100%;
+  object-fit: contain;
+  width: 300px;
+  height: 300px;
 }
+/* .service-details {
 
-details[open] summary {
-  border-bottom: 1px solid #aaa;
-  margin-bottom: 0.5em;
-}
+} */
 
 /* * Cancel Btn */
 
