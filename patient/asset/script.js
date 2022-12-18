@@ -116,7 +116,7 @@ if (document.querySelector("#edit-account-form")) {
   const editBtn = formDOM.querySelector("#btn-edit-info");
   const submitBtn = formDOM.querySelector("#submit-account-details-btn");
   const cancelBtn = formDOM.querySelector("#cancel-account-details-btn");
-  const input = formDOM.querySelectorAll(".disabled-input");
+  const input = formDOM.querySelectorAll(".disabled-input:not(.no-change)");
 
   editBtn.addEventListener("click", () => {
     if (!editBtn.classList.contains(hidden)) {

@@ -909,3 +909,7 @@ input[type="text"]:valid {
     position: static;
   }
 }
+
+#changePassForm label {
+  min-width: 200px;
+}
