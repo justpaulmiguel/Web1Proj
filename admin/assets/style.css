@@ -336,8 +336,12 @@ table tr:hover {
 .appointment-today-wrapper table {
   margin: 0 auto;
 }
-.section-content .appointment-today-wrapper table th {
-  text-align: center;
+
+@media screen and (min-width: 1200px) {
+  .section-content .table-container.appointment-today-wrapper {
+    overflow-x: initial;
+    overflow-y: initial;
+  }
 }
 
 .section-content .appointment-today-wrapper table td {
@@ -396,9 +400,11 @@ table tr:hover {
 /* dashboard btns */
 #complete-appointment .completed-btn:hover {
   color: blue;
+  transform: scale(1.05);
 }
 #complete-appointment .missed-btn:hover {
   color: #c90101;
+  transform: scale(1.05);
 }
 
 /* * Generic btn transition */
