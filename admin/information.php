@@ -5,48 +5,13 @@ require("partials/head.php");
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $contactNum = $_POST['contactNo'];
-
-    $willUpdate = true;
-    // Input validation
-    if (strlen($fname) == 0 || strlen($lname) == 0  || strlen($contactNum) == 0) {
-        echo showModalError("Incorrect Credentials. Please fix details before trying again.");
-        $willUpdate = false;
-    }
-    if ($willUpdate) {
-        require("../php/dbConnect.php");
-        $query = sprintf(
-            "UPDATE  account_info SET lname='%s' , fname='%s', contactNo='%u' WHERE email='%s'; ",
-            trim($lname),
-            trim($fname),
-            trim($contactNum),
-            $_SESSION['email']
-        );
-        if (mysqli_query($conn, $query)) {
-            echo showModalSuccess("Account details updated successfully!");
-        } else {
-            echo showModalError("Error Account update");
-        }
-        mysqli_close($conn);
-    }
+    require("./queryHandler/postInformation.php");
 }
 
 
 // Read account info
 $account = [];
-// todo refactor later to use primary id
-$query = sprintf("SELECT * FROM account_info WHERE email='%s' LIMIT 1;", $_SESSION['email']);
-
-require("../php/dbConnect.php");
-$result = mysqli_query($conn, $query);
-if (mysqli_num_rows($result) <= 0) {
-    echo showModalError("Can't Retrieve Account Details");
-} else {
-    $account = mysqli_fetch_array($result);
-}
-mysqli_close($conn);
+require('./queryHandler/getInformation.php')
 ?>
 
 
