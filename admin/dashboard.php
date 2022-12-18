@@ -48,7 +48,7 @@ mysqli_close($conn);
 
 <main>
 	<h1>Dashboard</h1>
-	<div class="section-content">
+	<div class="section-content appointment-today">
 
 		<?php if (mysqli_num_rows($result) > 0) : ?>
 			<div class="section-header">
@@ -65,7 +65,7 @@ mysqli_close($conn);
 					<table>
 						<thead>
 							<tr>
-								<th>Date</th>
+								<!-- <th>Date</th> -->
 								<th>Account ID</th>
 								<th>Name</th>
 								<th>Contact</th>
@@ -78,16 +78,16 @@ mysqli_close($conn);
 						<tbody>
 							<?php foreach ($todaysAppointment as $row) : ?>
 								<tr class="">
-									<td><?= $row['date']; ?></td>
+									<!-- <td>< ?= $row['date']; ?></td> -->
 									<td><?= $row['account_ID']; ?></td>
 									<td><?= $row['name']; ?></td>
 
 									<td>
-										<p class="dashboard-number"><?= $row['contactNo'] ?></p>
+										<p><?= $row['contactNo'] ?></p>
 										<a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
 
 									</td>
-									<td><?= $row['time']; ?></td>
+									<td class="dashboard-number"><?= $row['time']; ?></td>
 									<td><?= getBranchName($row['branch']); ?></td>
 									<td><?= getServiceName($row['service']); ?></td>
 									<td>
@@ -97,11 +97,11 @@ mysqli_close($conn);
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 												<li>
-													<button class='form-btn completed-btn dropdown-item' type=button value='<?= $bookID ?>'>Completed</button>
+													<button class='form-btn completed-btn dropdown-item' type=button value='<?= $row['booking_ID'] ?>'>Completed</button>
 
 												</li>
 												<li>
-													<button class='form-btn missed-btn dropdown-item' type=button value='<?= $bookID ?>'>Missed</button>
+													<button class='form-btn missed-btn dropdown-item' type=button value='<?= $row['booking_ID'] ?>'>Missed</button>
 												</li>
 											</ul>
 										</div>
@@ -119,7 +119,7 @@ mysqli_close($conn);
 	</div>
 
 
-	<div class="section-content">
+	<div class="section-content appointment-today">
 		<h2>Upcoming Appointments</h2>
 		<?php require('./queryHandler/weekSched.php') ?>
 		<?php if (count($weekRecords) == 0) : ?>
@@ -146,11 +146,11 @@ mysqli_close($conn);
 								<td><?= $row['name']; ?></td>
 
 								<td>
-									<p class="dashboard-number"><?= $row['contactNo'] ?></p>
+									<p><?= $row['contactNo'] ?></p>
 									<a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
 
 								</td>
-								<td><?= $row['time']; ?></td>
+								<td class="dashboard-number"><?= $row['time']; ?></td>
 								<td><?= getBranchName($row['branch']); ?></td>
 								<td><?= getServiceName($row['service']); ?></td>
 

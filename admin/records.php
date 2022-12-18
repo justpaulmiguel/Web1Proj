@@ -111,9 +111,9 @@ $records = getRecords($query);
                             <th>Time</th>
                             <th>Status</th>
                             <th>Branch</th>
+                            <th>Account ID</th>
                             <th>Name</th>
                             <th>Service</th>
-                            <th>Account ID</th>
                             <th>Booking ID</th>
                             <th>Note</th>
                         </tr>
@@ -125,9 +125,9 @@ $records = getRecords($query);
                                 <td><?= $record['time'] ?></td>
                                 <td><?= $record['state'] ?></td>
                                 <td><?= getBranchName($record['branch']); ?></td>
+                                <td><?= $record['account_ID']; ?></td>
                                 <td><?= $record['lname'] . ", " .  $record['fname']; ?></td>
                                 <td><?= getServiceName($record['service'])  ?></td>
-                                <td><?= $record['account_ID']; ?></td>
                                 <td><?= $record['booking_ID']; ?></td>
                                 <td>
                                     <?php if ($record['note'] != '') : ?>

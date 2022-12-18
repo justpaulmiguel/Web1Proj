@@ -334,7 +334,7 @@ table tr:hover {
   width: fit-content;
 }
 .appointment-today-wrapper table {
-  margin: 0 auto;
+  max-width: 100%;
 }
 
 @media screen and (min-width: 1200px) {
@@ -346,10 +346,6 @@ table tr:hover {
     overflow-x: initial;
     overflow-y: initial;
   }
-}
-
-.section-content .appointment-today-wrapper table td {
-  text-align: left;
 }
 
 .remaining-wrapper {
@@ -907,12 +903,26 @@ input[type="text"].swal2-input {
   justify-content: space-between;
   margin-bottom: 16px;
 }
+.section-content h1,
+.section-content h2,
+.section-content h3 {
+  margin-bottom: 32px;
+}
+.section-content.appointment-today {
+  max-width: 1350px;
+}
+
 .section-content table th {
   background-color: transparent;
   border: none;
   color: #e05c2a;
   padding: 0;
-  text-align: left;
+  text-align: center;
+  vertical-align: baseline;
+  margin-left: 10px;
+}
+.section-content.appointment-today table th {
+  text-align: center;
 }
 .section-content tbody td {
   border: none;
