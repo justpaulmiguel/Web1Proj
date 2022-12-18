@@ -3,8 +3,10 @@ $title = 'Employees';
 
 require("partials/head.php");
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require("./queryHandler/postEmployees.php");
+}
 
-require("./queryHandler/postEmployees.php");
 
 
 
