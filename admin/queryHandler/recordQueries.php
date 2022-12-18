@@ -63,9 +63,23 @@ function getQuery($type, $limit, $offset, $value, $sort)
 
     if ($type == 'email') {
 
-        return     sprintf("SELECT * FROM account_info
+        return     sprintf(
+            "SELECT 
+        DATE_FORMAT(date,'%s') as date, 
+        TIME_FORMAT(time, '%s') as time, 
+        state, 
+        lname,fname,service,
+        bookings.account_ID,booking_ID,
+        branch,note
+         FROM bookings
+        INNER JOIN account_info
+        ON account_info.account_ID = bookings.account_ID
         WHERE email = '%s'
-        LIMIT $limit OFFSET $offset", $value);
+        LIMIT $limit OFFSET $offset",
+            '%b %d ,%Y',
+            '%l:%i %p',
+            $value
+        );
     } else if ($type == 'date') {
         return sprintf(
             "SELECT 

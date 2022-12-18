@@ -114,6 +114,7 @@ $records = getRecords($query);
                             <th>Name</th>
                             <th>Service</th>
                             <th>Account ID</th>
+                            <th>Booking ID</th>
                             <th>Note</th>
                         </tr>
                     </thead>
@@ -127,6 +128,7 @@ $records = getRecords($query);
                                 <td><?= $record['lname'] . ", " .  $record['fname']; ?></td>
                                 <td><?= getServiceName($record['service'])  ?></td>
                                 <td><?= $record['account_ID']; ?></td>
+                                <td><?= $record['booking_ID']; ?></td>
                                 <td>
                                     <?php if ($record['note'] != '') : ?>
                                         <button class="show-note-btn" data-note-value="<?= $record['note'] ?>">Show Note</button>
