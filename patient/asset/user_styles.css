@@ -502,6 +502,16 @@ hr {
 .booking-wrapper .input-wrapper select {
   margin-left: 15px;
 }
+.date-alt-message {
+  font-size: 2rem;
+  color: var(--accent-color-bg);
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+}
+.booking-content .btn {
+  margin: 24px 0;
+}
 .heading-date {
   font-size: 3rem;
   color: var(--accent-color-bg);
@@ -864,7 +874,7 @@ input[type="text"]:valid {
 .section-content tbody td {
   border: none;
   padding: 10px;
-  text-align: right;
+  text-align: left;
 }
 
 #edit-account-form .update-btn:hover {

@@ -106,7 +106,7 @@ $fname = $value['fname'];
           <p class="outlined-text"><?= $branch ?> Branch</p>
         </div>
       </div>
-      <button class="btn cancel-btn" id="cancelBookBtn" type="button" onclick="cancelBook()">Cancel Booking</button>
+      <!-- <button class="btn cancel-btn" id="cancelBookBtn" type="button" onclick="cancelBook()">Cancel Booking</button> -->
       <br><br>
       <?php
       $next_date2 = date('Y-m-d', strtotime('+2 day', strtotime($Today)));
@@ -139,9 +139,9 @@ $fname = $value['fname'];
       $button = "Book Now?";
     }
   ?>
-    <section class="schedule-wrapper">
+    <section class="schedule-wrapper  booking-content">
 
-      <p class="heading-date"><?= $message ?></p>
+      <p class="date-alt-message"><?= $message ?></p>
       <div class="form-btn-wrapper">
         <button class="submit-btn btn" onclick="location.href='book_service.php';"><?= $button ?></button>
       </div>
@@ -152,7 +152,8 @@ $fname = $value['fname'];
   $records = [];
 
   $query = "SELECT * FROM bookings
-  WHERE bookings.account_ID='$id' AND bookings.state in ('completed','declined','cancelled','pending')
+  WHERE bookings.account_ID='$id'
+   AND bookings.state in ('completed','declined','cancelled','pending')
   ORDER BY bookings.date DESC, bookings.time ASC
   LIMIT 10";
   $result = mysqli_query($conn, $query);
@@ -179,12 +180,12 @@ $fname = $value['fname'];
         <div class="table-container">
           <table border="2" cellpadding="8" cellspacing="0">
             <tr>
-              <th>TYPE OF SERVICE</th>
-              <th>DATE</th>
-              <th>TIME</th>
-              <th>BRANCH</th>
-              <th>STATE</th>
-              <th>NOTE</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Branch</th>
+              <th>Service</th>
+              <th>Status</th>
+              <th>Note</th>
             </tr>
             <?php foreach ($records as $record) :
               switch ($record['service']) {
@@ -216,11 +217,11 @@ $fname = $value['fname'];
               $state = $record['state'];
               $note = $record['note'];
             ?>
-              <tr align="center">
-                <td><?= $service ?></td>
+              <tr>
                 <td><?= $date ?></td>
                 <td><?= $time ?></td>
                 <td><?= $branch ?></td>
+                <td><?= $service ?></td>
                 <td><?= $state ?></td>
                 <td><?= $note ?></td>
               </tr>
