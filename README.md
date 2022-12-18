@@ -29,7 +29,6 @@ Create tasks here for everyone to see and pick which one would you like to work 
 
 Admin
 
-- Review features
 - Finish todos
 
 ## Working
@@ -38,12 +37,14 @@ Remove the task to the features and add task that you're workin on here.
 
 ### Wil
 
-- Fix modal text
+- Reports feature
 
 ## Finished
 
 Move your task after you completed it here.
 
+- Review features
+- Fix modal text
 - Add js validation on input
 - Refactor Design on Search Bar
 - Add schedule for the week in dashboard
