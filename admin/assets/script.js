@@ -86,6 +86,9 @@ if (document.querySelector("#edit-account-form")) {
       });
     }
   });
+  formDOM.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
   cancelBtn.addEventListener("click", () => {
     cancelBtn.classList.add(hidden);
     submitBtn.classList.add(hidden);
@@ -100,8 +103,46 @@ if (document.querySelector("#edit-account-form")) {
       element.disabled = true;
     });
   });
-
-  // todo add confirmation modal here before passing into the form dom
+  submitBtn.addEventListener("click", () => {
+    if (
+      formDOM.inputFName.value.trim().length === 0 ||
+      formDOM.inputLName.value.trim().length === 0
+    ) {
+      Swal.fire({
+        title: "Empty Input",
+        text: `Please don't leave all textboxes empty!`,
+        icon: "error",
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        confirmButtonText: "Confirm",
+      });
+    } else if (
+      formDOM.inputFName.value.trim() == fName &&
+      formDOM.inputLName.value.trim() === lName &&
+      formDOM.inputContactNumber.value === contactNum
+    ) {
+      Swal.fire({
+        title: "Same Details",
+        text: `Your details are the same as before!`,
+        icon: "warning",
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        confirmButtonText: "Confirm",
+      });
+    } else {
+      Swal.fire({
+        title: "Account Information",
+        text: `Do you want to update your details?`,
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        cancelButtonColor: NO_CONFIRM_BTN_COLOR,
+        confirmButtonText: "Yes",
+      }).then((isConfirmed) => {
+        if (isConfirmed) {
+          formDOM.submit();
+        }
+      });
+    }
+  });
 }
 
 // request schedule script
