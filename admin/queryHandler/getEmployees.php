@@ -2,7 +2,7 @@
 
 
 $query = "SELECT accounts.permissionLvl,
-account_info.email, account_info.lname,account_info.fname
+account_info.email, account_info.lname,account_info.fname,account_info.account_ID,contactNo
 FROM accounts
 INNER JOIN account_info
 ON accounts.email = account_info.email

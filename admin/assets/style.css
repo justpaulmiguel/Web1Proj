@@ -306,7 +306,7 @@ table th {
 }
 
 table td {
-  padding: 8px;
+  padding: 0 10px;
   vertical-align: baseline;
 }
 
@@ -321,9 +321,12 @@ table tr:hover {
 }
 
 .table-container table {
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-left: 12px;
 }
-
+.section-content.emp-container {
+  width: fit-content;
+}
 .appointment-today-wrapper table {
   margin: 0 auto;
 }
@@ -817,6 +820,10 @@ input[type="text"].swal2-input {
   font-weight: 800;
 }
 
+.emp-table th {
+  min-width: 150px;
+}
+
 /* tab highlighting */
 .options-bar a {
   opacity: 0.7;
@@ -866,8 +873,8 @@ input[type="text"].swal2-input {
 }
 .section-content tbody td {
   border: none;
-  padding: 10px;
-  text-align: right;
+  padding: 0 10px;
+  text-align: left;
 }
 
 /* Footer wave design */

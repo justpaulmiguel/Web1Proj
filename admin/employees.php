@@ -18,35 +18,6 @@ $result = require("./queryHandler/getEmployees.php");
 
 <main>
     <h1>Employees</h1>
-    <section>
-        <div class="section-content">
-            <h2>Employee List</h2>
-            <ul class="employee-list no-list-style">
-                <?php foreach ($employees as $employee) : ?>
-                    <div class="emp-wrapper">
-                        <div class="img-wrapper">
-                            <span><?= $employee['lname'][0] ?></span>
-                        </div>
-                        <div class="emp-details">
-                            <p><?= $employee['lname'] . ", " .  $employee['fname']; ?> </p>
-                            <div class="emp-bottom">
-                                <p class="
-                                <?= $employee["permissionLvl"] == 1
-                                    ? "emp-text" : "admin-text" ?>
-                                "><?= $employee["permissionLvl"] == 1
-                                        ? "Employee" : "Administrator"   ?></p>
-                                <p><?= $employee["email"] ?></p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                <?php endforeach; ?>
-            </ul>
-
-        </div>
-
-    </section>
 
 
     <?php if ($_SESSION["permissionLvl"] == 2) : // Gets seen when permission level is admin level 
@@ -55,13 +26,64 @@ $result = require("./queryHandler/getEmployees.php");
             <div class="section-content">
                 <section class="employee-edit-btns-wrapper">
                     <h3>Manage Employees</h3>
-                    <button class="btn add-btn" id="add-employee-btn">Add New</button>
-                    <button class="btn remove-selected-btn" id="remove-employee-btn">Delete</button>
+                    <button class="btn add-btn" id="add-employee-btn">Add New </button>
+                    <button class="btn remove-selected-btn" id="remove-employee-btn">Remove</button>
                 </section>
             </div>
         </section>
 
     <?php endif; ?>
+
+
+    <section>
+        <div class="section-content emp-container">
+            <h2>Employee List</h2>
+            <div class="table-container">
+                <table class="emp-table">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Job</th>
+                            <th>Email</th>
+                            <th>Contact Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($employees as $employee) : ?>
+                            <tr>
+                                <td><?= $employee['account_ID'] ?></td>
+                                <td><?= $employee['fname'] . " " . $employee['lname']; ?></td>
+                                <td>
+                                    <p class="
+                                        <?= $employee["permissionLvl"] == 1
+                                            ? "emp-text" : "admin-text" ?>
+                                        ">
+                                        <?= $employee["permissionLvl"] == 1
+                                            ? "Employee" : "Administrator"   ?>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p><?= $employee["email"] ?></p>
+
+                                </td>
+                                <td>
+                                    <p>0<?= $employee["contactNo"] ?></p>
+
+                                </td>
+                            </tr>
+
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
 </main>
 
 

@@ -17,7 +17,9 @@ $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) <= 0) {
     echo showModalError("No account with that email found.");
     $willUpdate = false;
-} else if ((int)mysqli_fetch_assoc($result)['permissionLvl'] > 0) {
+}
+
+if ($_POST['type'] === 'add' && (int)mysqli_fetch_assoc($result)['permissionLvl'] > 0) {
     // Check if account is already an employee
     echo showModalError("Account is already an employee!");
     $willUpdate = false;
@@ -40,7 +42,6 @@ if ($willUpdate) {
         }
     } else if ($_POST['type'] === 'remove') {
         if ($_SESSION['permissionLvl'] == 2) {
-            mysqli_close($conn);
             echo showModalError("Administrator Access should not be removed.");
         } else {
             $query = sprintf("UPDATE accounts SET permissionLvl='%u' WHERE email='%s' LIMIT 1;", 0, $_POST['email']);
