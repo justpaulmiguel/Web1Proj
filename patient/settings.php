@@ -63,8 +63,8 @@ require("./queryHandler/getInformation.php");
             Cancel
           </button>
         </form>
+      <?php endif ?>
     </div>
-  <?php endif ?>
   </div>
 
   <h2>Change Password</h2>
