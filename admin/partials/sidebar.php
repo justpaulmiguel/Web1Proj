@@ -40,18 +40,6 @@
                 Employees
             </a>
         </li>
-
-        <li>
-            <a href="./information.php">
-                <div class="icon-box">
-                    <span class="material-icons">
-                        account_circle
-                    </span>
-                </div>
-
-                My Information
-            </a>
-        </li>
         <li>
             <a href="./settings.php">
                 <div class="icon-box">

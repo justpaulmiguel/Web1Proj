@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+$account = [];
 require("./queryHandler/getInformation.php");
 ?>
 
