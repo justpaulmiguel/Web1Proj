@@ -31,12 +31,16 @@ require("./queryHandler/getInformation.php");
             <label for="inputFName">First Name:
 
             </label>
-            <input type="text" min="2" max="100" name="fname" value="<?= $account['fname']    ?>" id="inputFName" class="disabled-input account-input" required disabled />
+            <input onkeydown="return /[a-z, ]/i.test(event.key)" type="text" minlength="2" maxlength="100" name="fname" value="<?= $account['fname']    ?>" id="inputFName" class="disabled-input account-input" required disabled />
+
+
           </div>
 
           <div class="input-wrapper">
             <label for="inputLName">Last Name:</label>
-            <input type="text" min="2" max="100" name="lname" value="<?= $account['lname']    ?>" id="inputLName" required disabled class="disabled-input account-input" />
+            <input onkeydown="return /[a-z, ]/i.test(event.key)" type="text" minlength="2" maxlength="100" name="lname" value="<?= $account['lname']    ?>" id="inputLName" required disabled class="disabled-input account-input" />
+            <span class="input-notif-msg"></span>
+
           </div>
 
 
@@ -45,7 +49,7 @@ require("./queryHandler/getInformation.php");
             <!-- Use digits  -->
             <div class="number-container">
               <label id="dialCode" for="contactNo">+63</label>
-              <input type="text" maxlength="10" placeholder="91234567890" name="contactNo" id="inputContactNumber" required value="<?= $account['contactNo']    ?>" disabled class="disabled-input account-input" />
+              <input type="text" onkeypress="return /[0-9]/i.test(event.key)" maxlength="10" placeholder="91234567890" name="contactNo" id="inputContactNumber" required value="<?= $account['contactNo']    ?>" disabled class="disabled-input account-input" />
               <span class="input-notif-msg"></span>
             </div>
 
@@ -63,8 +67,8 @@ require("./queryHandler/getInformation.php");
             Cancel
           </button>
         </form>
-      <?php endif ?>
     </div>
+  <?php endif ?>
   </div>
 
   <h2>Change Password</h2>

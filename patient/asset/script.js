@@ -127,11 +127,13 @@ if (document.querySelector("#edit-account-form")) {
       lName = formDOM.inputLName.value;
       contactNum = formDOM.inputContactNumber.value;
       input.forEach((element) => {
-        console.log("hlloet");
         element.classList.remove("disabled-input");
         element.disabled = false;
       });
     }
+  });
+  formDOM.addEventListener("submit", (e) => {
+    e.preventDefault();
   });
   cancelBtn.addEventListener("click", () => {
     cancelBtn.classList.add(hidden);
@@ -146,6 +148,46 @@ if (document.querySelector("#edit-account-form")) {
       element.classList.add("disabled-input");
       element.disabled = true;
     });
+  });
+  submitBtn.addEventListener("click", () => {
+    if (
+      formDOM.inputFName.value.trim().length === 0 ||
+      formDOM.inputLName.value.trim().length === 0
+    ) {
+      Swal.fire({
+        title: "Empty Input",
+        text: `Please don't leave all textboxes empty!`,
+        icon: "error",
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        confirmButtonText: "Confirm",
+      });
+    } else if (
+      formDOM.inputFName.value.trim() == fName &&
+      formDOM.inputLName.value.trim() === lName &&
+      formDOM.inputContactNumber.value === contactNum
+    ) {
+      Swal.fire({
+        title: "Same Details",
+        text: `Your details are the same as before!`,
+        icon: "warning",
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        confirmButtonText: "Confirm",
+      });
+    } else {
+      Swal.fire({
+        title: "Account Information",
+        text: `Do you want to update your details?`,
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        cancelButtonColor: NO_CONFIRM_BTN_COLOR,
+        confirmButtonText: "Yes",
+      }).then((isConfirmed) => {
+        if (isConfirmed) {
+          formDOM.submit();
+        }
+      });
+    }
   });
 }
 
