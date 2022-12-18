@@ -9,21 +9,20 @@ $pass = $_POST["passSignup"];
 $passHash = password_hash($pass, PASSWORD_DEFAULT);
 $contact = $_POST["contactSignup"];
 $query = "SELECT * FROM accounts WHERE Email='$email'";
-$result = mysqli_query($conn,$query);
+$result = mysqli_query($conn, $query);
 $count =  mysqli_num_rows($result);
 
-if($count==1){
-    ?>
+if ($count == 1) {
+?>
     <script>
         Swal.fire({
-        icon: 'error',
-        text: 'EMAIL ALREADY USED!',
-        confirmButtonColor: '#e05c2a'
+            icon: 'error',
+            text: 'EMAIL ALREADY USED!',
+            confirmButtonColor: '#e05c2a'
         })
     </script>
     <?php
-}
-else{
+} else {
     $query = "INSERT INTO accounts (`email`, `password`, `permissionLvl`) 
     VALUES ('$email', '$passHash', '0');";
 
@@ -36,27 +35,27 @@ else{
 
         session_unset();
         session_destroy();
-        ?>
+    ?>
         <script>
             Swal.fire({
-            icon: 'success',
-            text: 'ACCOUNT SUCCESFULLY CREATED!',
-            confirmButtonColor: '#e05c2a'
+                icon: 'success',
+                text: 'Account Successfully Created! Please login now with your account',
+                confirmButtonColor: '#e05c2a'
             }).then(function() {
                 window.location = "index.php";
             });
         </script>
-        <?php
+    <?php
     } else {
-        ?>
+    ?>
         <script>
             Swal.fire({
-            icon: 'error',
-            text: 'EMAIL ALREADY USED!',
-            confirmButtonColor: '#e05c2a'
+                icon: 'error',
+                text: 'Email Already Used!',
+                confirmButtonColor: '#e05c2a'
             })
         </script>
-        <?php
+<?php
     }
 }
 
