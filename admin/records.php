@@ -3,7 +3,7 @@ $title = 'Past Records';
 require("./partials/head.php");
 
 // functions on record queries
-require("./recordQueries.php");
+require("./queryHandler/recordQueries.php");
 
 // get the GET request properties
 $filterType = isset($_GET['filter']) ? $_GET['filter'] : "date";

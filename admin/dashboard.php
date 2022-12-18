@@ -109,7 +109,7 @@ mysqli_close($conn);
 
 	<div class="section-content">
 		<h2>Upcoming Appointments</h2>
-		<?php require('./weekSched.php') ?>
+		<?php require('./queryHandler/weekSched.php') ?>
 		<?php if (count($weekRecords) == 0) : ?>
 			<h3>No more appointments!</h3>
 		<?php else : ?>
