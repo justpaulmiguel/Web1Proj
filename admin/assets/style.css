@@ -342,6 +342,10 @@ table tr:hover {
     overflow-x: initial;
     overflow-y: initial;
   }
+  .table-container.req-table-wrapper {
+    overflow-x: initial;
+    overflow-y: initial;
+  }
 }
 
 .section-content .appointment-today-wrapper table td {

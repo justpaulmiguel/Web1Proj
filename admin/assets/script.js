@@ -106,38 +106,40 @@ if (document.querySelector("#edit-account-form")) {
 
 // request schedule script
 if (document.querySelector("#patient-requests-form")) {
-  // get all td data
-  const rows = [...document.querySelectorAll(".patient-req-row")];
-  const checkboxes = [];
-  rows.forEach((row) => {
-    const checkbox = row.querySelector('input[type="checkbox"]');
-    checkboxes.push(checkbox);
-    row.addEventListener("click", () => {
-      checkbox.checked = !checkbox.checked;
+  const form = document.querySelector("#patient-requests-form");
+  const acceptBtns = [...form.querySelectorAll(".accept-btn")];
+  acceptBtns.forEach((btn) => {
+    const value = btn.value;
+    btn.addEventListener("click", () => {
+      Swal.fire({
+        title: "Accept Confirmation",
+        text: `Do you want to accept this appointment?`,
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        cancelButtonColor: NO_CONFIRM_BTN_COLOR,
+        confirmButtonText: "Yes",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const input = document.createElement("input");
+          input.setAttribute("name", "completed");
+          input.setAttribute("value", value);
+          input.setAttribute("type", "hidden");
+          form.append(input);
+          form.submit();
+        }
+      });
     });
   });
 
-  const form = document.querySelector("#patient-requests-form");
+  const declinedBtns = [...form.querySelectorAll(".decline-btn")];
+  declinedBtns.forEach((btn) => {
+    const value = btn.value;
 
-  const btn = document.querySelector(".form-submit");
-  btn.addEventListener("click", () => {
-    const isRowsClicked = checkboxes.some((cb) => cb.checked);
-    if (!isRowsClicked) {
-      Swal.fire({
-        title: "Empty Items",
-        text: `No items selected.`,
-        icon: "error",
-        showCancelButton: false,
-        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
-        confirmButtonText: "Confirm",
-      });
-      return;
-    }
-
-    if (form.requestType.value == "declined") {
+    btn.addEventListener("click", () => {
       Swal.fire({
         title: "Decline Confirmation",
-        text: `Do you want to decline all marked appointments?`,
+        text: `Do you want to decline this appointments`,
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: YES_CONFIRM_BTN_COLOR,
@@ -166,6 +168,12 @@ if (document.querySelector("#patient-requests-form")) {
                 });
                 return false;
               }
+              const declinedInput = document.createElement("input");
+              declinedInput.setAttribute("name", "missed");
+              declinedInput.setAttribute("value", value);
+              declinedInput.setAttribute("type", "hidden");
+              form.append(declinedInput);
+
               const input = document.createElement("input");
               input.setAttribute("name", "declineReason");
               input.setAttribute("value", declineText);
@@ -179,22 +187,9 @@ if (document.querySelector("#patient-requests-form")) {
           });
         }
       });
-    } else {
-      Swal.fire({
-        title: "Accept Confirmation",
-        text: `Do you want to accept all marked appointments?`,
-        icon: "info",
-        showCancelButton: true,
-        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
-        cancelButtonColor: NO_CONFIRM_BTN_COLOR,
-        confirmButtonText: "Yes",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          form.submit();
-        }
-      });
-    }
+    });
   });
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
   });
