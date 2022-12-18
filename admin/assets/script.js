@@ -329,13 +329,24 @@ if (document.querySelector("#search-record-form")) {
        </select>
 
       `;
+    } else if (val === "branch") {
+      element = `
+      <select name="stateFilters" id="stateFilters">
+      <option value="selectState"  disabled>Select a Branch</option>
+      <option value="s_simon" selected>San Simon</option>
+      <option value="mexico">Mexico</option>
+
+       </select>
+
+      `;
     } else if (val === "service") {
       element = `
       <select name="serviceFilters" id="serviceFilters">
       <option value="selectService"  disabled>Select a Service</option>
       <option value="clean" selected>Oral Prophylaxis</option>
-      <option value="dentalCrown">Dental Crown</option>
-      <option value="wisdomTExtract">Wisdom Tooth Extraction</option>
+      <option value="d_crown">Dental Crown</option>
+      <option value="pasta">Dental Fillings</option>
+      <option value="wisdom">Wisdom Tooth Extraction</option>
   </select>
       `;
     } else {

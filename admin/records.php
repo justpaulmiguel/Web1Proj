@@ -25,6 +25,10 @@ if ($filterType == 'date') {
     $specificFilter = $_GET['stateFilters'];
     $filterName = 'stateFilters';
     $searchTitle .= "'$specificFilter' status";
+} else if ($filterType == 'branch') {
+    $specificFilter = $_GET['stateFilters'];
+    $filterName = 'stateFilters';
+    $searchTitle .=  getBranchName($specificFilter) .  " Branch";
 } else if ($filterType == 'email') {
     $specificFilter = $_GET['emailFilter'];
     $filterName = 'emailFilter';
@@ -32,7 +36,7 @@ if ($filterType == 'date') {
 } else if ($filterType == 'service') {
     $specificFilter = $_GET['serviceFilters'];
     $filterName = 'serviceFilters';
-    $searchTitle .= "'$specificFilter' Service";
+    $searchTitle .= getServiceName($specificFilter) . "Service";
 }
 
 // get number of pages
@@ -84,6 +88,7 @@ $records = getRecords($query);
                 <option value="" disabled>Select a Filter</option>
                 <option value="date" selected> Date</option>
                 <option value="state">Appointment Status</option>
+                <option value="branch">Branch</option>
                 <option value="email">Email</option>
                 <option value="service">Service</option>
             </select>
