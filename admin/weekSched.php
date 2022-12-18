@@ -2,11 +2,16 @@
 $dateToday = date('Y-m-d');
 $dateOneWeek =  date('Y-m-d', strtotime("+1 week"));
 $query = "SELECT branch,
-        service,
-        bookings.account_ID,
-      TIME_FORMAT(time, '%l:%i %p') as time,
-      DATE_FORMAT(date,'%b %d %Y') as date,
-      CONCAT(fname,' ',  lname) as name
+		booking_ID,
+		bookings.account_ID, 
+		state,
+		 branch, 
+		 service,
+		 email,
+		 contactNo,
+		 CONCAT(fname,' ',  lname) as name,
+		TIME_FORMAT(time, '%l:%i %p') as time ,
+		DATE_FORMAT(date,'%b %d %Y') as date
       FROM bookings 
       inner join account_info
       on account_info.account_ID = bookings.account_ID
@@ -15,10 +20,10 @@ $query = "SELECT branch,
        ORDER BY date ASC,time ASC ";
 
 
+require('../php/dbConnect.php');
 $result = mysqli_query($conn, $query);
 
 $weekRecords = [];
-require('../php/dbConnect.php');
 if (mysqli_num_rows($result) > 0) {
     while ($i = mysqli_fetch_assoc($result)) {
         array_push($weekRecords, $i);

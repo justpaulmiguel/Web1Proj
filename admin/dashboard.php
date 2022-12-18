@@ -10,113 +10,146 @@ if (isset($_SESSION['flash_message'])) {
 	unset($_SESSION['flash_message']);
 }
 
+
+
+$date = date('Y-m-d');
+$query = "SELECT 
+		booking_ID,
+		bookings.account_ID, 
+		state,
+		 branch, 
+		 service,
+		 email,
+		 contactNo,
+		 CONCAT(fname,' ',  lname) as name,
+		TIME_FORMAT(time, '%l:%i %p') as time ,
+		DATE_FORMAT(date,'%b %d %Y') as date
+
+		   FROM bookings
+		   INNER JOIN
+		   account_info on  account_info.account_ID = bookings.account_ID
+		    WHERE state='accepted' AND date='$date' 
+			ORDER BY time ASC ";
+
+require("../php/dbConnect.php");
+$result = mysqli_query($conn, $query);
+$todaysAppointment = [];
+if (mysqli_num_rows($result) <= 0) {
+	$todaysAppointment = [];
+} else {
+	while ($row = mysqli_fetch_assoc($result)) {
+		array_push($todaysAppointment, $row);
+	}
+}
+mysqli_close($conn);
 ?>
 
 
 
 <main>
 	<h1>Dashboard</h1>
-
 	<div class="section-content">
-		<?php
-		require("../php/dbConnect.php");
-		$date = date('Y-m-d');
-		$query = "SELECT booking_ID, account_ID, state,   TIME_FORMAT(time, '%l:%i %p') as time  FROM bookings WHERE state='accepted' AND date='$date' ORDER BY time ASC ";
-		$result = mysqli_query($conn, $query);
-		if (mysqli_num_rows($result) > 0) {
-		?>
+
+		<?php if (mysqli_num_rows($result) > 0) : ?>
 			<div class="section-header">
 				<h2>Appointments Today</h2>
 				<div class="remaining-wrapper">
-					<span>Left:</span>
+					<span>Remaining Appointments:</span>
 					<div class="remaining-number-wrapper">
 						<span><?= mysqli_num_rows($result); ?></span>
 					</div>
 				</div>
 			</div>
-
 			<form method="post" action="updateDashboard.php" id="complete-appointment">
 				<div class="table-container appointment-today-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Account ID</th>
+								<th>Name</th>
+								<th>Contact</th>
+								<th>Appointment Time</th>
+								<th>Branch</th>
+								<th>Type of Service</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($todaysAppointment as $row) : ?>
+								<tr class="">
+									<td><?= $row['date']; ?></td>
+									<td><?= $row['account_ID']; ?></td>
+									<td><?= $row['name']; ?></td>
 
-					<table style="text-align: center;">
+									<td>
+										<p class="dashboard-number"><?= $row['contactNo'] ?></p>
+										<a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
+
+									</td>
+									<td><?= $row['time']; ?></td>
+									<td><?= getBranchName($row['branch']); ?></td>
+									<td><?= getServiceName($row['service']); ?></td>
+									<td>
+										<button class='form-btn completed-btn' type=button value='$bookID'>Completed</button>
+										<button class='form-btn missed-btn' type=button value='$bookID'>Missed</button>
+									</td>
+								</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				</div>
+			</form>
+		<?php else : ?>
+			<h2>No appointments for today!</h2>
+		<?php endif ?>
+
+	</div>
+
+
+	<div class="section-content">
+		<h2>Upcoming Appointments</h2>
+		<?php require('./weekSched.php') ?>
+		<?php if (count($weekRecords) == 0) : ?>
+			<h3>No more appointments!</h3>
+		<?php else : ?>
+			<div class="table-container">
+				<table>
+					<thead>
 						<tr>
+							<th>Date</th>
+							<th>Account ID</th>
 							<th>Name</th>
 							<th>Contact</th>
-							<th>Time</th>
-							<th>Mark As</th>
+							<th>Appointment Time</th>
+							<th>Branch</th>
+							<th>Type of Service</th>
 						</tr>
-						<?php while ($row = mysqli_fetch_assoc($result)) {
-							$bookID = $row["booking_ID"];
-							$accID = $row['account_ID'];
-							$time = $row['time'];
-							$query1 = "SELECT * FROM account_info WHERE account_id='$accID'";
-							$result1 = mysqli_query($conn, $query1);
-							if (mysqli_num_rows($result1) > 0) {
-								while ($row1 = mysqli_fetch_assoc($result1)) {
-									$fname = $row1['fname'];
-									$lname = $row1['lname'];
-									$email = $row1['email'];
-									$contactNo = $row1['contactNo'];
-									echo "<tr>
-									<td> "
-										. $lname . ",  " . $fname . "</td><td>"
-										.
-										"<p class='dashboard-number'>0" .
-										$contactNo . "</p>" . "<a href=mailto:$email>" . $email . "</a>" . "</td><td>"
-										. $time . "</td><td>"
-										. "<button class='form-btn completed-btn' type=button value='$bookID'>Completed</button>
-										 <button class='form-btn missed-btn' type=button value='$bookID'>Missed</button>
-										
-										";
-								}
-							}
-						}
-						echo "</table></div> </form> ";
-						?>
+					</thead>
+					<tbody>
+						<?php foreach ($weekRecords as $row) : ?>
+							<tr class="">
+								<td><?= $row['date']; ?></td>
+								<td><?= $row['account_ID']; ?></td>
+								<td><?= $row['name']; ?></td>
 
-					<?php
-				} else {
-					echo "<h2>No appointments for today!</h2>";
-				}
-					?>
+								<td>
+									<p class="dashboard-number"><?= $row['contactNo'] ?></p>
+									<a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
 
+								</td>
+								<td><?= $row['time']; ?></td>
+								<td><?= getBranchName($row['branch']); ?></td>
+								<td><?= getServiceName($row['service']); ?></td>
 
-				</div>
-				<div class="section-content">
-					<h2>Remaining appointments for the week</h2>
-					<?php require('./weekSched.php') ?>
-					<?php if (count($weekRecords) == 0) : ?>
-						<h3>No more appointments!</h3>
-					<?php else : ?>
-						<div class="table-container">
-							<table>
-								<thead>
-									<tr>
-										<th>Date</th>
-										<th>Time</th>
-										<th>Branch</th>
-										<th>Name</th>
-										<th>Service</th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php foreach ($weekRecords as $rec) : ?>
-										<tr>
-											<td><?= $rec["date"] ?></td>
-											<td><?= $rec["time"] ?></td>
-											<td><?= getBranchName($rec["branch"]) ?></td>
-											<td><?= $rec["name"] ?></td>
-											<td><?= getServiceName($rec["service"]) ?></td>
-										</tr>
-									<?php endforeach ?>
-								</tbody>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		<?php endif ?>
 
-
-							</table>
-						</div>
-					<?php endif ?>
-
-				</div>
+	</div>
 </main>
 
 
