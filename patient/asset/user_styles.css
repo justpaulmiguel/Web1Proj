@@ -588,11 +588,11 @@ hr {
 .fieldset-wrapper fieldset {
   margin: 0 auto;
   display: flex;
-  max-width: 45%;
+  max-width: 50%;
   flex-flow: row wrap;
 }
 .radio-input-wrapper {
-  width: 180px;
+  width: 200px;
 }
 
 /* * Services Offered */
@@ -729,8 +729,8 @@ input[type="password"] {
   margin-left: 16px;
   padding: 8px;
   font-size: 1.1rem;
-  width: 100%;
   max-width: 100%;
+  width: 100%;
   margin-bottom: 10px;
   border: 2px solid transparent;
 }
@@ -912,4 +912,9 @@ input[type="text"]:valid {
 
 #changePassForm label {
   min-width: 200px;
+}
+
+#changePassForm input[type="text"],
+#changePassForm input[type="password"] {
+  width: 100%;
 }

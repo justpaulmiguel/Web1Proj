@@ -91,8 +91,20 @@ mysqli_close($conn);
 									<td><?= getBranchName($row['branch']); ?></td>
 									<td><?= getServiceName($row['service']); ?></td>
 									<td>
-										<button class='form-btn completed-btn' type=button value='$bookID'>Completed</button>
-										<button class='form-btn missed-btn' type=button value='$bookID'>Missed</button>
+										<div class="dropdown">
+											<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+												Mark As
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+												<li>
+													<button class='form-btn completed-btn dropdown-item' type=button value='<?= $bookID ?>'>Completed</button>
+
+												</li>
+												<li>
+													<button class='form-btn missed-btn dropdown-item' type=button value='<?= $bookID ?>'>Missed</button>
+												</li>
+											</ul>
+										</div>
 									</td>
 								</tr>
 							<?php endforeach; ?>

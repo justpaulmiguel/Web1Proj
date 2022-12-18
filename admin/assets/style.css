@@ -32,6 +32,12 @@ body {
   background: #888;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
 /* Grid Structure of the page.
  */
 
@@ -356,8 +362,27 @@ table tr:hover {
   font-weight: 800;
 }
 /* Button Styles */
-
 .btn {
+  font-weight: bold;
+  color: #a35709;
+  background-color: #fff;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+.btn:hover,
+.btn:active,
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  color: white;
+  background-color: #a35709;
+}
+
+.own-btn {
   border-radius: 16px;
   font-weight: bold;
   color: #a35709;
@@ -368,15 +393,22 @@ table tr:hover {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
+/* dashboard btns */
+#complete-appointment .completed-btn:hover {
+  color: blue;
+}
+#complete-appointment .missed-btn:hover {
+  color: #c90101;
+}
 
 /* * Generic btn transition */
 
-.btn:enabled:hover {
+.own-btn:enabled:hover {
   transform: translateY(-5px);
   box-shadow: 5px 5px 6px rgba(2, 2, 2, 0.213);
 }
 
-.btn:enabled:active {
+.own-btn:enabled:active {
   transform: scale(0.9);
 }
 
@@ -712,7 +744,6 @@ input[type="password"] {
   margin-left: 16px;
   padding: 8px;
   font-size: 1.1rem;
-  width: 100%;
   max-width: 100%;
   margin-bottom: 10px;
   border: 2px solid transparent;
@@ -759,7 +790,9 @@ input[type="text"].swal2-input {
   margin: 0 auto;
   width: 80%;
 }
-
+.swal2-input {
+  font-size: 1rem !important;
+}
 .swal2-styled {
   font-family: "Poppins", Arial, sans-serif;
 }
@@ -916,27 +949,17 @@ input[type="text"].swal2-input {
 
 #complete-appointment .form-btn {
   border-radius: 5px;
+  border: none;
   font-family: inherit;
   font-weight: bold;
   color: #a35709;
   background-color: transparent;
-  border: 2px solid #a35709;
   width: 120px;
+  margin-left: 12px;
   padding: 5px 0;
   margin-bottom: 10px;
   transition: all 0.2s ease-in-out;
   font-family: "Poppins", sans-serif;
-}
-
-#complete-appointment .completed-btn:hover {
-  color: white;
-  background-color: #a35709;
-  cursor: pointer;
-}
-#complete-appointment .missed-btn:hover {
-  background-color: #c90101;
-  color: white;
-  cursor: pointer;
 }
 
 #search-record-form input,
