@@ -69,7 +69,7 @@ require("./queryHandler/getInformation.php");
 
     <h2>Change Password</h2>
     <section class="change-password-wrapper">
-        <div class="section-content section-content-md">
+        <div class="section-content section-content-small">
             <form id="changePassForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <input type="hidden" name="change-password" value="1" />
                 <div class="form-input-container">
