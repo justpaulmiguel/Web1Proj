@@ -6,7 +6,8 @@ account_info.email, account_info.lname,account_info.fname,account_info.account_I
 FROM accounts
 INNER JOIN account_info
 ON accounts.email = account_info.email
-WHERE accounts.permissionLvl >0;
+WHERE accounts.permissionLvl >0
+ORDER BY accounts.permissionLvl DESC, account_info.account_ID ASC;
 
 ";
 require("../php/dbConnect.php");
