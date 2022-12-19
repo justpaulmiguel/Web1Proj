@@ -869,12 +869,12 @@ input[type="text"]:valid {
   border: none;
   color: #e05c2a;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 .section-content tbody td {
   border: none;
   padding: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 #edit-account-form .update-btn:hover {

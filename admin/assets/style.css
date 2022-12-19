@@ -943,7 +943,7 @@ input[type="text"].swal2-input {
 .section-content tbody td {
   border: none;
   padding: 0 10px;
-  text-align: left;
+  text-align: center;
 }
 
 /* Footer wave design */
