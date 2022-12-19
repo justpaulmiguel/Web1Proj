@@ -59,7 +59,7 @@ require_once("../php/functions.php");
         </div>
         <div class="header-title">
             <div class="logo footer-place-holder-logo">
-                <img src="../../logo.png" alt="logo">
+                <img src="../logo.png" alt="logo">
             </div>
             <p class="title-text">Joseph Galang Dental Clinic</p>
         </div>
