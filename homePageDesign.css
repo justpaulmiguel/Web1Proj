@@ -214,7 +214,7 @@ body.viewport-lg {
 
 #services {
   background-color: #ecd59c;
-  text-align: center;
+  text-align: left;
   position: sticky;
   display: block;
   size: 100%;
@@ -238,22 +238,8 @@ body.viewport-lg {
 }
 
 .theService1 p {
-  color: #ecd59c;
-  background: #41423d;
-  border-radius: 20px;
-  overflow-y: hidden;
-  height: 250px;
   text-decoration: none;
-  box-shadow: 0px 0px 3px #41423d;
   transition: 0.5s;
-  border: solid white 1px;
-}
-
-.theService1 p:hover {
-  height: 350px;
-  overflow-y: scroll;
-  box-shadow: 0px 0px 10px #121212;
-  border: solid white 1px;
 }
 
 p img {
@@ -337,4 +323,44 @@ p {
   background: none !important;
   border: 0;
   margin-left: 5rem;
+}
+
+/* * Services Offered */
+.service-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  background: white;
+  border-radius: 10px;
+}
+.service-wrapper:nth-child(even) {
+  flex-flow: row-reverse nowrap;
+}
+@media screen and (max-width: 600px) {
+  .service-wrapper {
+    flex-flow: row wrap;
+  }
+}
+.services-section .heading-date {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.service-wrapper p {
+  display: inline-block;
+}
+.service-wrapper img {
+  max-width: 100%;
+  object-fit: contain;
+  width: 300px;
+  height: 300px;
+}
+.service-details {
+  border-radius: 10px;
+  padding: 12px;
+}
+.service-details h3 {
+  margin: 0;
 }

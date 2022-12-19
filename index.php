@@ -116,7 +116,7 @@ include "php/loginCheck.php";
                 <a href="#aboutUs">About Us</a>
                 <a href="#contactUs">Contact Us</a>
                 <div class="split">
-                    <a href="login.html" data-bs-toggle="modal" data-bs-target="#modalId">Login</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalId">Login</a>
                 </div>
             </div>
         </div>
@@ -472,83 +472,91 @@ include "php/loginCheck.php";
                     <div class="theService1">
                         <div class="row">
 
-                            <div id="service1" class="container-fluid col-sm-3">
+                            <div id="service1" class="service-wrapper">
 
                                 <!-----------------------------------------Service 1------------------------------------------------>
-                                <h3 style="text-align: center;">Oral Prophylaxis <br>(cleaning)</h3>
-                                <p>
-                                    <img src="home/images/Oral Prophylaxis.jpg"><br>
-                                    It is called to the procedure done for the teeth cleaning. It removes tartar and
-                                    plaque build-up from the
-                                    surfaces of the teeth as well as those hidden in between and under the gums. Some of
-                                    the benefits of
-                                    having an oral prophylaxis are to Prevent Tooth Decay, Prevents Gum Disease,
-                                    Prevents Bad Breath,
-                                    Removes Extrinsic Stains, Lowers Risk for Diseases, Early detection of Diseases and
-                                    Financial Savings. Oral
-                                    prophylaxis is recommended to be done twice a year as a preventive measure but
-                                    should be performed
-                                    every 3-4 months for patients with more severe periodontal disease.
-                                </p>
+                                <img src="home/images/Oral Prophylaxis.jpg"><br>
+                                <div class="service-details">
+                                    <h3>Oral Prophylaxis (Cleaning)</h3>
+                                    <p>
+                                        It is called to the procedure done for the teeth cleaning. It removes tartar and
+                                        plaque build-up from the
+                                        surfaces of the teeth as well as those hidden in between and under the gums. Some of
+                                        the benefits of
+                                        having an oral prophylaxis are to Prevent Tooth Decay, Prevents Gum Disease,
+                                        Prevents Bad Breath,
+                                        Removes Extrinsic Stains, Lowers Risk for Diseases, Early detection of Diseases and
+                                        Financial Savings. Oral
+                                        prophylaxis is recommended to be done twice a year as a preventive measure but
+                                        should be performed
+                                        every 3-4 months for patients with more severe periodontal disease.
+                                    </p>
+                                </div>
                             </div>
-                            <div id="service2" class="container-fluid col-sm-3">
+                            <div id="service2" class="service-wrapper">
 
                                 <!-----------------------------------------Service 2------------------------------------------------>
-                                <h3 style="text-align: center;">The Dental Fillings <br>(pasta)</h3>
-                                <p>
-                                    <img src="home/images/Dental Fillings.jpg"><br>
-                                    Dental filling is used to treat a small hole, or cavity, in a tooth. To repair a
-                                    cavity, a dentist removes the
-                                    decayed tooth tissue and then fills the space with a filling material. We offer
-                                    several dental filling
-                                    materials. Teeth can be filled with porcelain; silver amalgam (which consists of
-                                    mercury mixed with silver,
-                                    tin, zinc, and copper); or tooth-colored, plastic, and materials called composite
-                                    resin fillings. There is also
-                                    a material that contains glass particles and is known as glass ionomer. This
-                                    material is used in ways like
-                                    the use of composite resin fillings. Materials depends on the availability.
-                                </p>
+                                <img src="home/images/Dental Fillings.jpg"><br>
+                                <div class="service-details">
+                                    <h3>The Dental Fillings (Pasta)</h3>
+                                    <p>
+                                        Dental filling is used to treat a small hole, or cavity, in a tooth. To repair a
+                                        cavity, a dentist removes the
+                                        decayed tooth tissue and then fills the space with a filling material. We offer
+                                        several dental filling
+                                        materials. Teeth can be filled with porcelain; silver amalgam (which consists of
+                                        mercury mixed with silver,
+                                        tin, zinc, and copper); or tooth-colored, plastic, and materials called composite
+                                        resin fillings. There is also
+                                        a material that contains glass particles and is known as glass ionomer. This
+                                        material is used in ways like
+                                        the use of composite resin fillings. Materials depends on the availability.
+                                    </p>
+                                </div>
                             </div>
-                            <div id="service3" class="container-fluid col-sm-3">
+                            <div id="service3" class="service-wrapper">
 
                                 <!-----------------------------------------Service 3------------------------------------------------>
-                                <h3 style="text-align: center;">Tooth Jacket <br>(Dental Crown)</h3>
-                                <p>
-                                    <img src="home/images/Tooth Jacket.jpg"><br>
-                                    A tooth jacket (also known as a dental crown) is a false tooth that comes in a
-                                    variety of material made to
-                                    be placed on a severely damaged tooth. Essentially, this a tooth jacket caps off a
-                                    severely damaged tooth
-                                    protecting it from further damage and replacing it the same time. How is a tooth
-                                    jacket is placed on your
-                                    teeth? To keep it simple, a dentist will file the affected tooth down to size. This
-                                    is to make room for the
-                                    dental crown that goes on top of the tooth. Usually, the dentist will give you a
-                                    temporary crown or jacket
-                                    to wear while the actual crown is being made. The waiting time can be from a few
-                                    days all the way up to
-                                    a week or two.
-                                </p>
+                                <img src="home/images/Tooth Jacket.jpg"><br>
+                                <div class="service-details">
+                                    <h3>Tooth Jacket (Dental Crown)</h3>
+                                    <p>
+                                        A tooth jacket (also known as a dental crown) is a false tooth that comes in a
+                                        variety of material made to
+                                        be placed on a severely damaged tooth. Essentially, this a tooth jacket caps off a
+                                        severely damaged tooth
+                                        protecting it from further damage and replacing it the same time. How is a tooth
+                                        jacket is placed on your
+                                        teeth? To keep it simple, a dentist will file the affected tooth down to size. This
+                                        is to make room for the
+                                        dental crown that goes on top of the tooth. Usually, the dentist will give you a
+                                        temporary crown or jacket
+                                        to wear while the actual crown is being made. The waiting time can be from a few
+                                        days all the way up to
+                                        a week or two.
+                                    </p>
+                                </div>
                             </div>
-                            <div id="service4" class="container-fluid col-sm-3">
+                            <div id="service4" class="service-wrapper">
 
                                 <!-----------------------------------------Service 4------------------------------------------------>
-                                <h3 style="text-align: center;">Wisdom Tooth <br>Extraction</h3>
-                                <p>
-                                    <img src="home/images/Wisdom Tooth Extraction.jpg"><br>
-                                    Wisdom tooth extraction is a surgical procedure to remove one or more wisdom teeth —
-                                    the four
-                                    permanent adult teeth located at the back corners of your mouth on the top and
-                                    bottom. If a wisdom
-                                    tooth doesn't have room to grow (impacted wisdom tooth), resulting in pain,
-                                    infection or other dental
-                                    problems, you'll likely need to have it pulled. This service may be done by a
-                                    dentist or an oral surgeon and
-                                    to prevent potential future problems, some dentists and oral surgeons recommend
-                                    wisdom tooth
-                                    extraction even if impacted teeth aren't currently causing problems.
-                                </p>
+                                <img src="home/images/Wisdom Tooth Extraction.jpg"><br>
+                                <div class="service-details">
+                                    <h3>Wisdom Tooth Extraction</h3>
+                                    <p>
+                                        Wisdom tooth extraction is a surgical procedure to remove one or more wisdom teeth —
+                                        the four
+                                        permanent adult teeth located at the back corners of your mouth on the top and
+                                        bottom. If a wisdom
+                                        tooth doesn't have room to grow (impacted wisdom tooth), resulting in pain,
+                                        infection or other dental
+                                        problems, you'll likely need to have it pulled. This service may be done by a
+                                        dentist or an oral surgeon and
+                                        to prevent potential future problems, some dentists and oral surgeons recommend
+                                        wisdom tooth
+                                        extraction even if impacted teeth aren't currently causing problems.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -595,10 +603,10 @@ include "php/loginCheck.php";
                     <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.652695491258!2d120.774648150173!3d15.011972389490262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f8e1a0ff9e73%3A0xde5f417558a19af!2sJoseph%20Galang%20Dental%20Clinic!5e0!3m2!1sen!2sph!4v1668075967194!5m2!1sen!2sph" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <br><br>
-                Address: San Simon, Pampanga <br>
-                <a href="mailto:"> Email Us </a><br>
-                <a href="tel:">Call Us: +639xxxxxxxxx</a><br>
-                <a href="#"> Facebook </a>
+                <span>Address: San Pedro, San Simon, Pampanga</span> <br>
+                <a href="mailto:example@email.com"> Email Us </a><br>
+                <a href="tel:63912345689">Call Us: +63912345689</a><br>
+                <a href="https://facebook.com"> Facebook </a>
             </div>
         </div>
     </div>
