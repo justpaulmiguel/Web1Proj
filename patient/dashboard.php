@@ -180,6 +180,7 @@ $fname = $value['fname'];
         <div class="table-container">
           <table border="2" cellpadding="8" cellspacing="0">
             <tr>
+              <th>Booking ID</th>
               <th>Date</th>
               <th>Time</th>
               <th>Branch</th>
@@ -203,6 +204,7 @@ $fname = $value['fname'];
                   break;
               }
               $time = $record['time'];
+              $bookingID = $record['booking_ID'];
               $time = date("h:i A", strtotime($time));
               $dateRaw = $record['date'];
               $date = date("F j, Y", strtotime($dateRaw));
@@ -218,6 +220,7 @@ $fname = $value['fname'];
               $note = $record['note'];
             ?>
               <tr>
+                <td><?= $bookingID ?></td>
                 <td><?= $date ?></td>
                 <td><?= $time ?></td>
                 <td><?= $branch ?></td>

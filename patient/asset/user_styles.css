@@ -893,7 +893,7 @@ input[type="text"]:valid {
 .section-content tbody td {
   border: none;
   padding: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 #edit-account-form .update-btn:hover {
