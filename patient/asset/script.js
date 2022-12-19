@@ -1,3 +1,7 @@
+const YES_CONFIRM_BTN_COLOR = "#a35709";
+const NO_CONFIRM_BTN_COLOR = "gray";
+const DEFAULT_CONFIRM_BTN_COLOR = "#c85022";
+
 /**
  * Logic for the sliding header upon scroll.
  * works by checking the window Yoffset and adding/removing class.
@@ -102,7 +106,6 @@ function cancelBook() {
     }
   });
 }
-
 // My information  Logic
 if (document.querySelector("#edit-account-form")) {
   // saves the values of the input first before editing.
@@ -182,8 +185,8 @@ if (document.querySelector("#edit-account-form")) {
         confirmButtonColor: YES_CONFIRM_BTN_COLOR,
         cancelButtonColor: NO_CONFIRM_BTN_COLOR,
         confirmButtonText: "Yes",
-      }).then((isConfirmed) => {
-        if (isConfirmed) {
+      }).then((result) => {
+        if (result.isConfirmed) {
           formDOM.submit();
         }
       });

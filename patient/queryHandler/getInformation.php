@@ -1,6 +1,5 @@
 <?php
 
-// todo refactor later to use primary id
 $query = sprintf("SELECT * FROM account_info WHERE email='%s' LIMIT 1;", $_SESSION['email']);
 
 require("../php/dbConnect.php");

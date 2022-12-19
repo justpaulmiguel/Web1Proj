@@ -136,8 +136,8 @@ if (document.querySelector("#edit-account-form")) {
         confirmButtonColor: YES_CONFIRM_BTN_COLOR,
         cancelButtonColor: NO_CONFIRM_BTN_COLOR,
         confirmButtonText: "Yes",
-      }).then((isConfirmed) => {
-        if (isConfirmed) {
+      }).then((result) => {
+        if (result.isConfirmed) {
           formDOM.submit();
         }
       });
