@@ -2,7 +2,6 @@
 $title = 'Dashboard';
 require("partials/head.php");
 
-// todo get the current record for the week
 
 if (isset($_SESSION['flash_message'])) {
 	$message = $_SESSION['flash_message'];
@@ -42,7 +41,7 @@ $query = "SELECT
 		   FROM bookings
 		   INNER JOIN
 		   account_info on  account_info.account_ID = bookings.account_ID
-		    WHERE state='accepted' AND date='$date' 
+		    WHERE state='accepted' AND date=CURDATE()
 			ORDER BY time ASC ";
 
 require("../php/dbConnect.php");
@@ -51,10 +50,11 @@ $todaysAppointment = [];
 if (mysqli_num_rows($result) <= 0) {
 	$todaysAppointment = [];
 } else {
-	while ($row = mysqli_fetch_assoc($result)) {
+	while ($row = mysqli_fetch_array($result)) {
 		array_push($todaysAppointment, $row);
 	}
 }
+
 mysqli_close($conn);
 
 

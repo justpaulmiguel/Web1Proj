@@ -18,7 +18,7 @@ if (isset($_POST['missed'])) {
     }
 } else if (isset($_POST['completed'])) {
     $id = $_POST['completed'];
-    $query = sprintf("UPDATE  bookings SET state='completed' 
+    $query = sprintf("UPDATE  bookings SET state='accepted' 
     WHERE booking_ID='%s' ;", $id);
 
     if (mysqli_query($conn, $query)) {
