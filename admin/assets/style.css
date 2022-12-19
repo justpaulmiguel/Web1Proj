@@ -353,7 +353,10 @@ table tr:hover {
   align-items: center;
   gap: 10px;
 }
-
+.important-text {
+  font-weight: 600;
+  color: #ff8303;
+}
 .remaining-number-wrapper {
   border-radius: 100%;
   background: #ff8303;

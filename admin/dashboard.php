@@ -10,6 +10,20 @@ if (isset($_SESSION['flash_message'])) {
 	unset($_SESSION['flash_message']);
 }
 
+$email = $_SESSION["email"];
+
+if (!isset($_SESSION['lname']) && !isset($_SESSION['lname'])) {
+	require("../php/dbConnect.php");
+
+	$query = "SELECT account_ID, fname,lname FROM account_info WHERE email='$email'";
+	$result = mysqli_query($conn, $query);
+	$value = mysqli_fetch_array($result);
+	$_SESSION['account_ID'] = $value['account_ID'];
+	$_SESSION['lname'] =  $value['lname'];
+	$_SESSION['fname'] =   $value['fname'];
+	mysqli_close($conn);
+}
+
 
 
 $date = date('Y-m-d');
@@ -47,7 +61,12 @@ mysqli_close($conn);
 
 
 <main>
-	<h1>Dashboard</h1>
+	<h1>
+		Welcome,<div class="important-text"> <?= $_SESSION['fname'] . " " . $_SESSION['lname'] ?></div>
+	</h1>
+	<br>
+	<br>
+	<h2>Dashboard</h2>
 	<div class="section-content appointment-today">
 
 		<?php if (mysqli_num_rows($result) > 0) : ?>
