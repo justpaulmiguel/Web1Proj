@@ -10,7 +10,7 @@
            <div class="contacts-wrapper">
                <div class="logo footer-place-holder-logo">
 
-                   <img src="../../logo.png" alt="brand-logo">
+                   <img src="../logo.png" alt="brand-logo">
 
                </div>
                <div class="contact-details-wrapper">
