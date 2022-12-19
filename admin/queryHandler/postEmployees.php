@@ -41,7 +41,7 @@ if ($willUpdate) {
             echo showModalSuccess("Email successfully added!. Page will get refreshed");
         }
     } else if ($_POST['type'] === 'remove') {
-        if ($_SESSION['permissionLvl'] == 2) {
+        if ($_SESSION['permissionLvl'] == 2 && $_POST['email'] == $_SESSION['email']) {
             echo showModalError("Administrator Access should not be removed.");
         } else {
             $query = sprintf("UPDATE accounts SET permissionLvl='%u' WHERE email='%s' LIMIT 1;", 0, $_POST['email']);
