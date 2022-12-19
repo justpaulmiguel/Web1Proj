@@ -368,13 +368,25 @@ table tr:hover {
 /* Button Styles */
 .btn {
   font-weight: bold;
-  color: #a35709;
-  background-color: #fff;
-  border: none;
   transition: all 0.2s ease-in-out;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
+.btn.btn-outline-primary {
+  color: #198754;
+  border-color: #198754;
+}
+.btn.btn-outline-primary:active,
+.btn.btn-outline-primary:hover {
+  color: white;
+  background-color: #198754;
+}
+.btn.btn-outline-danger:active,
+.btn.btn-outline-danger:hover {
+  color: white;
+  background-color: #dc3545;
+}
+
 .btn:hover,
 .btn:active,
 .btn-check:checked + .btn,
@@ -392,11 +404,12 @@ table tr:hover {
   color: #a35709;
   background-color: #fff;
   border: none;
-  padding: 18px 20px;
+  padding: 10px 15px;
   transition: all 0.2s ease-in-out;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
+
 /* dashboard btns */
 #complete-appointment .completed-btn:hover {
   color: blue;
@@ -410,7 +423,7 @@ table tr:hover {
 /* * Generic btn transition */
 
 .own-btn:enabled:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: 5px 5px 6px rgba(2, 2, 2, 0.213);
 }
 

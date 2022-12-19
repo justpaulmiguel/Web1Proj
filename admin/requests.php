@@ -28,6 +28,7 @@ require("./queryHandler/getRequests.php");
                             <th>Branch</th>
                             <th>Name</th>
                             <th>Service</th>
+                            <th>Booking ID</th>
                             <th>Status</th>
                         </tr>
                         <?php foreach ($pendingRequests as $pending) : ?>
@@ -37,21 +38,12 @@ require("./queryHandler/getRequests.php");
                                 <td><?= getBranchName($pending['branch']); ?></td>
                                 <td><?= $pending['name']; ?></td>
                                 <td><?= getServiceName($pending['service']); ?></td>
+                                <td><?= $pending['booking_ID']; ?></td>
                                 <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Action
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li>
-                                                <button class='form-btn accept-btn dropdown-item' type='button' value='<?= $pending['booking_ID'] ?>'>Accept</button>
 
-                                            </li>
-                                            <li>
-                                                <button class='form-btn decline-btn dropdown-item' type='button' value='<?= $pending['booking_ID']  ?>'>Decline</button>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <button class='form-btn accept-btn  btn btn-outline-primary' type='button' value='<?= $pending['booking_ID'] ?>'>Accept</button>
+
+                                    <button class='form-btn decline-btn btn btn-outline-danger' type='button' value='<?= $pending['booking_ID']  ?>'>Decline</button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

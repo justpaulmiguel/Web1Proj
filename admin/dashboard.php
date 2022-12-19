@@ -92,7 +92,7 @@ mysqli_close($conn);
 									<td><?= getServiceName($row['service']); ?></td>
 									<td>
 										<div class="dropdown">
-											<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+											<button class="own-btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 												Mark As
 											</button>
 											<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
