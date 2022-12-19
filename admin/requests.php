@@ -41,9 +41,10 @@ require("./queryHandler/getRequests.php");
                                 <td><?= $pending['booking_ID']; ?></td>
                                 <td>
 
-                                    <button class='form-btn accept-btn  btn btn-outline-primary' type='button' value='<?= $pending['booking_ID'] ?>'>Accept</button>
-
-                                    <button class='form-btn decline-btn btn btn-outline-danger' type='button' value='<?= $pending['booking_ID']  ?>'>Decline</button>
+                                    <div class="req-btn-container">
+                                        <button class='form-btn accept-btn  btn btn-outline-primary' type='button' value='<?= $pending['booking_ID'] ?>'>Accept</button>
+                                        <button class='form-btn decline-btn btn btn-outline-danger' type='button' value='<?= $pending['booking_ID']  ?>'>Decline</button>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

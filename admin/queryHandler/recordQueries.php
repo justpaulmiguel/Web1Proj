@@ -76,7 +76,7 @@ function getQuery($type, $limit, $offset, $value, $sort)
         ON account_info.account_ID = bookings.account_ID
         WHERE email = '%s'
         LIMIT $limit OFFSET $offset",
-            '%b %d ,%Y',
+            '%b %d %Y',
             '%l:%i %p',
             $value
         );
@@ -95,7 +95,7 @@ function getQuery($type, $limit, $offset, $value, $sort)
         WHERE bookings.%s <= '%s'
         ORDER BY date %s, time %s
         LIMIT $limit OFFSET $offset",
-            '%b %d ,%Y',
+            '%b %d %Y',
             '%l:%i %p',
             $type,
             $value,
@@ -112,7 +112,7 @@ function getQuery($type, $limit, $offset, $value, $sort)
         WHERE bookings.%s = '%s'
         ORDER BY date %s, time %s
         LIMIT $limit OFFSET $offset",
-            '%b %d ,%Y',
+            '%b %d %Y',
             '%l:%i %p',
             $type,
             $value,
