@@ -56,6 +56,24 @@ if (mysqli_num_rows($result) <= 0) {
 	}
 }
 mysqli_close($conn);
+
+
+// Dashboard Reports
+require("./queryHandler/getDashboardSummary.php");
+
+$numOfCompleted = getBookingStateCount('completed');
+$numOfCancelled = getBookingFutureStateCount('cancelled');
+$numOfAccepted = getBookingFutureStateCount('accepted');
+$numOfDeclined = getBookingFutureStateCount('declined');
+$numOfPending = getBookingFutureStateCount('pending');
+
+$totalBookings = getTotalBookings();
+$totalPatients = getTotalPatients();
+$totalEmployees = getTotalEmployees();
+
+
+$mostAvailed = [];
+$mostAvailed = getMostAvailed();
 ?>
 
 
@@ -181,6 +199,73 @@ mysqli_close($conn);
 		<?php endif ?>
 
 	</div>
+
+	<div class="section-content appointment-today">
+		<h2>Reports</h2>
+
+		<div class="appointment-records-summary">
+			<div class="dashboard-card">
+				<p>Total Bookings</p>
+				<div class="card-value"><?= $totalBookings ?></div>
+			</div>
+		</div>
+		<h4>Most Availed Service</h4>
+
+		<div class="appointment-records-summary">
+			<?php foreach ($mostAvailed as $r) : ?>
+				<div class="dashboard-card ">
+					<p><?= getServiceName($r['service']) ?></p>
+
+					<div class="card-value"><?= $r['count'] ?></div>
+
+				</div>
+
+
+			<?php endforeach; ?>
+		</div>
+
+
+		<h4>Appointments</h4>
+		<div class="appointment-records-summary">
+			<div class="dashboard-card green-card">
+				<p> Completed </p>
+				<div class="card-value"><?= $numOfCompleted ?></div>
+			</div>
+			<div class="dashboard-card black-card">
+				<p> Accepted </p>
+				<div class="card-value"><?= $numOfAccepted ?></div>
+			</div>
+			<div class="dashboard-card black-card">
+				<p> Pending </p>
+				<div class="card-value"><?= $numOfPending ?></div>
+			</div>
+
+			<div class="dashboard-card red-card">
+				<p> Declined </p>
+				<div class="card-value"><?= $numOfDeclined ?></div>
+			</div>
+
+			<div class="dashboard-card red-card">
+				<p> Cancelled </p>
+				<div class="card-value"><?= $numOfCancelled ?></div>
+			</div>
+		</div>
+
+
+		<h4>Users</h4>
+		<div class="appointment-records-summary">
+			<div class="dashboard-card">
+				<p>Registered Patients</p>
+				<div class="card-value"><?= $totalPatients ?></div>
+			</div>
+			<div class="dashboard-card ">
+				<p>Total Staffs</p>
+				<div class="card-value"><?= $totalEmployees ?></div>
+			</div>
+		</div>
+	</div>
+
+
 </main>
 
 

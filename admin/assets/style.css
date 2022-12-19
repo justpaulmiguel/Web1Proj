@@ -1127,3 +1127,54 @@ label.radio-container.label-checked {
 #changePassForm label {
   min-width: 200px;
 }
+
+/* Card */
+.dashboard-card {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  border-right: 16px solid #ff9a33;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.red-card {
+  border-right-color: #c90101;
+  color: #c90101;
+}
+.red-card .card-value {
+  color: #c90101;
+}
+.black-card {
+  border-right-color: black;
+  color: black;
+}
+.black-card .card-value {
+  color: black;
+}
+.green-card {
+  border-right-color: green;
+  color: green;
+}
+.green-card .card-value {
+  color: green;
+}
+
+.card-value {
+  color: #ff8303;
+  font-size: 2rem;
+}
+
+.appointment-records-summary {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 24px;
+  gap: 12px;
+}
