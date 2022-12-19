@@ -31,7 +31,7 @@ require_once("../php/functions.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= $title ?></title>
     <!-- page icon -->
-    <link rel="icon" type="image/x-icon" href="../../logo.png">
+    <link rel="icon" type="image/x-icon" href="../../logo.ico">
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -58,7 +58,9 @@ require_once("../php/functions.php");
             <span class="material-icons" id="menu-icon"> menu </span>
         </div>
         <div class="header-title">
-            <div class="logo footer-place-holder-logo"><span>L</span></div>
+            <div class="logo footer-place-holder-logo">
+                <img src="../../logo.png" alt="logo">
+            </div>
             <p class="title-text">Joseph Galang Dental Clinic</p>
         </div>
 

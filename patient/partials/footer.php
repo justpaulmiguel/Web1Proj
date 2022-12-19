@@ -8,7 +8,11 @@
        <div class="footer-wrapper">
            <p>Contact Us</p>
            <div class="contacts-wrapper">
-               <div class="logo footer-place-holder-logo"><span>L</span></div>
+               <div class="logo footer-place-holder-logo">
+
+                   <img src="../../logo.png" alt="brand-logo">
+
+               </div>
                <div class="contact-details-wrapper">
                    <p>Address: San Pedro, San Simon, Pampanga</p>
                    <p>Tel/CP no.: 09876543210</p>

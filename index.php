@@ -1,5 +1,5 @@
 <?php
-    include "php/loginCheck.php";
+include "php/loginCheck.php";
 ?>
 <!DOCTYPE html>
 
@@ -18,17 +18,19 @@
     <title>
         Home
     </title>
-    <link rel="icon" type="image/x-icon" href="logo.png">
-    
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+
     <style>
         #passCheck {
             display: none;
             margin-top: -25px;
             margin-bottom: -25px;
         }
-        #passCheck p{
+
+        #passCheck p {
             text-align: center;
         }
+
         /* Add a green text color and a checkmark when the requirements are right */
         .valid {
             color: green;
@@ -44,6 +46,7 @@
             color: red;
             text-align: justify;
         }
+
         .invalid:before {
             content: "✖    ";
         }
@@ -53,9 +56,11 @@
             margin-top: -25px;
             margin-bottom: -25px;
         }
-        #passCheck2 p{
+
+        #passCheck2 p {
             text-align: center;
         }
+
         /* Add a green text color and a checkmark when the requirements are right */
         .valid2 {
             text-align: center;
@@ -68,24 +73,28 @@
 
         /* Add a red text color and an "x" icon when the requirements are wrong */
         .invalid2 {
-            
+
             color: red;
         }
+
         .invalid2:before {
             content: "✖ PASSWORD DOES NOT MATCH";
         }
+
         #passSignup,
         #passSignupConfirm {
             font-size: 14px;
             outline: none;
             border: none;
         }
+
         #dialCode {
             position: relative;
             top: 30px;
             right: 120px;
             font-size: 14px;
         }
+
         #contactSignup {
             text-indent: 20px;
         }
@@ -94,8 +103,8 @@
 </head>
 
 <body>
-    
-<div id="response" style="display: none;"></div>
+
+    <div id="response" style="display: none;"></div>
 
     <!---------------------------------------------------Top Bar Start------------------------------------------------------>
     <div class="row">
@@ -115,7 +124,7 @@
     <!---------------------------------------------------Top Bar End------------------------------------------------------>
 
 
-    
+
     <!----------------------------------------HOME STARTS HERE---------------------------------------->
     <div onclick="sidebarf2()">
         <div class="row" id="home">
@@ -148,8 +157,7 @@
 
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="home\images\img (1).jpg" class="d-block w-100"
-                            alt="Front of Joseph Galang Dental Clinic">
+                        <img src="home\images\img (1).jpg" class="d-block w-100" alt="Front of Joseph Galang Dental Clinic">
                     </div>
 
                     <div class="carousel-item">
@@ -176,8 +184,7 @@
 
         <!---------------------------------------------------Log in starts here------------------------------------------->
         <!-------------------------------------- Modal Login for pop-up login---------------------------------->
-        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
-            aria-hidden="true">
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div id="modalLogIn" class="modal-content">
                     <div class="modal-header">
@@ -192,17 +199,15 @@
 
                             <div class="mb-3">
                                 <label for="emailLogIn">Email</label>
-                                <input type="email" class="form-control" name="emailLogin" id="email"
-                                    placeholder="Enter Email" required>
-                                    <!-- add required in email when doing the actual-->
+                                <input type="email" class="form-control" name="emailLogin" id="email" placeholder="Enter Email" required>
+                                <!-- add required in email when doing the actual-->
                                 <div class="formBorder"></div>
                             </div>
 
                             <div class="mb-3">
                                 <label for="passLogIn">Password</label>
-                                <input type="password" class="form-control" name="passLogin" id="pass"
-                                    placeholder="Enter Password" required>
-                                    <!-- add required in password when doing the actual-->
+                                <input type="password" class="form-control" name="passLogin" id="pass" placeholder="Enter Password" required>
+                                <!-- add required in password when doing the actual-->
                                 <div class="formBorder"></div>
                             </div>
 
@@ -211,8 +216,7 @@
                             </div>
                             <div id="submitLogin" class="mb-3">
                                 Don't have an account?
-                                <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
-                                    data-bs-target="#modalSignUp"> Sign Up</a>
+                                <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSignUp"> Sign Up</a>
                             </div>
                             <!--------------------------------------Form end-------------------------------------------------->
                         </form>
@@ -224,29 +228,28 @@
         </div>
         <!---------------------------------------------------Log in ends here------------------------------------------->
 
-    <script>
-        var form = document.getElementById("formLogin");
+        <script>
+            var form = document.getElementById("formLogin");
 
-        $(document).ready(function (){
-            $(form).submit(function (event) {
-                event.preventDefault()
+            $(document).ready(function() {
+                $(form).submit(function(event) {
+                    event.preventDefault()
 
-                $.post( $(form).attr("action"),
-                $(form).serializeArray(),
-                function(info) {
-            
-                    $("#response").empty();
-                    $("#response").html(info);
+                    $.post($(form).attr("action"),
+                        $(form).serializeArray(),
+                        function(info) {
 
-                });
+                            $("#response").empty();
+                            $("#response").html(info);
 
+                        });
+
+                })
             })
-        })
-    </script>
+        </script>
         <!-----------------------------------------------------Modal SIGN UP HERE------------------------------------------------>
         <!-------------------------------------- Modal Sign for pop-up login---------------------------------->
-        <div class="modal fade modal-lg" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
-            aria-hidden="true">
+        <div class="modal fade modal-lg" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div id="modalSignUp" class="modal-content">
                     <div class="modal-header">
@@ -262,62 +265,56 @@
                                 <div class="container-fluid col-6">
                                     <div class="mb-3">
                                         <label for="fnameSignUp">First Name</label>
-                                        <input type="text" class="form-control" name="fnameSignup" id="fnameSignup"
-                                            placeholder="Enter First Name" required>
+                                        <input type="text" class="form-control" name="fnameSignup" id="fnameSignup" placeholder="Enter First Name" required>
                                         <div class="formBorder"></div>
                                     </div>
                                 </div>
-                                
+
 
                                 <div class="container-fluid col-6">
                                     <div class="mb-3">
                                         <label for="lnameSignup">Last Name</label>
-                                        <input type="text" class="form-control" name="lnameSignup" id="lnameSignup"
-                                            placeholder="Enter Last Name" required>
+                                        <input type="text" class="form-control" name="lnameSignup" id="lnameSignup" placeholder="Enter Last Name" required>
                                         <div class="formBorder"></div>
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="emailSignup">Email</label>
-                                    <input type="email" class="form-control" name="emailSignup" id="emailSignup"
-                                        placeholder="Enter Email" required>
+                                    <input type="email" class="form-control" name="emailSignup" id="emailSignup" placeholder="Enter Email" required>
                                     <div class="formBorder"></div>
                                 </div>
 
                                 <div class="container-fluid col-6">
                                     <div class="mb-3">
                                         <label for="passSignUp">Password</label>
-                                        <input type="password" class="form-control" name="passSignup" id="passSignup"
-                                            placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                        <input type="password" class="form-control" name="passSignup" id="passSignup" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                         <div class="formBorder"></div>
                                     </div>
                                 </div>
-                                
+
 
                                 <div class="container-fluid col-6">
                                     <div class="mb-3">
                                         <label for="passSignupConfirm">Confirm Password</label>
-                                        <input type="password" class="form-control" name="passSignupConfirm" id="passSignupConfirm"
-                                            placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                        <input type="password" class="form-control" name="passSignupConfirm" id="passSignupConfirm" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                         <div class="formBorder"></div>
                                     </div>
                                 </div>
 
-                                <div id= "passCheck" display = "none">
+                                <div id="passCheck" display="none">
                                     <div role="alert">
-                                        <p id= "passInput" class= "invalid">Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</p>
+                                        <p id="passInput" class="invalid">Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</p>
                                     </div>
                                 </div>
 
-                                <div id= "passCheck2" display = "none">
+                                <div id="passCheck2" display="none">
                                     <div role="alert">
-                                        <p id= "passInput2" class= "invalid2"></p>
+                                        <p id="passInput2" class="invalid2"></p>
                                     </div>
                                 </div>
 
                                 <script type="text/javascript">
-
                                     var pass = document.getElementById("passSignup");
                                     var passConf = document.getElementById("passSignupConfirm");
                                     var passInput = document.getElementById("passInput");
@@ -341,7 +338,7 @@
                                     pass.onfocus = function() {
                                         document.getElementById("passCheck").style.display = "block";
                                     }
-                            
+
                                     // When the user clicks outside of the password field, hide the message box
                                     pass.onblur = function() {
                                         document.getElementById("passCheck").style.display = "none";
@@ -351,7 +348,7 @@
                                     passConf.onfocus = function() {
                                         document.getElementById("passCheck2").style.display = "block";
                                     }
-                            
+
                                     // When the user clicks outside of the password field, hide the message box
                                     passConf.onblur = function() {
                                         document.getElementById("passCheck2").style.display = "none";
@@ -361,15 +358,15 @@
                                     pass.onkeyup = function() {
                                         // Validate lowercase letters
                                         var lowerCaseLetters = /[a-z]/g;
-                                        if(pass.value.match(lowerCaseLetters)) {  
+                                        if (pass.value.match(lowerCaseLetters)) {
                                             lower = true;
                                         } else {
                                             lower = false;
                                         }
-  
+
                                         // Validate capital letters
                                         var upperCaseLetters = /[A-Z]/g;
-                                        if(pass.value.match(upperCaseLetters)) {  
+                                        if (pass.value.match(upperCaseLetters)) {
                                             upper = true;
                                         } else {
                                             upper = false;
@@ -377,20 +374,20 @@
 
                                         // Validate numbers
                                         var numbers = /[0-9]/g;
-                                        if(pass.value.match(numbers)) {  
+                                        if (pass.value.match(numbers)) {
                                             number = true;
                                         } else {
                                             number = false;
                                         }
-                                      
+
                                         // Validate length
-                                        if(pass.value.length >= 8) {
+                                        if (pass.value.length >= 8) {
                                             length = true;
                                         } else {
                                             length = false;
                                         }
 
-                                        if(lower && upper && number && length) {
+                                        if (lower && upper && number && length) {
                                             passInput.classList.remove("invalid");
                                             passInput.classList.add("valid");
                                         } else {
@@ -398,14 +395,12 @@
                                             passInput.classList.add("invalid");
                                         }
                                     }
-
                                 </script>
 
                                 <div div class="mb-3">
                                     <label for="contactSignup">Contact Number</label>
                                     <label id="dialCode" for="contactSignup">+63</label>
-                                    <input type="text" class="form-control" name="contactSignup" id="contactSignup"
-                                        placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" required>
+                                    <input type="text" class="form-control" name="contactSignup" id="contactSignup" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" required>
                                     <div class="formBorder"></div>
                                 </div>
 
@@ -428,7 +423,7 @@
 
                             </div>
                         </form>
-                        
+
 
                         <!------------------------------------------Form for Sign Up end---------------------------------------------->
                     </div>
@@ -442,30 +437,29 @@
         <!----------------------------------------LOGIN SIGNUP ENDS HERE---------------------------------------->
 
         <script>
-            
-        var form2 = document.getElementById("formSignup");
-        var pass = document.getElementById("passSignup");
-        var passConf = document.getElementById("passSignupConfirm");
+            var form2 = document.getElementById("formSignup");
+            var pass = document.getElementById("passSignup");
+            var passConf = document.getElementById("passSignupConfirm");
 
-        $(document).ready(function (){
-            $(form2).submit(function (event) {
-                if(pass.value != passConf.value) {
-                    passConf.focus();
-                    event.preventDefault();
-                } else {
-                    event.preventDefault()
+            $(document).ready(function() {
+                $(form2).submit(function(event) {
+                    if (pass.value != passConf.value) {
+                        passConf.focus();
+                        event.preventDefault();
+                    } else {
+                        event.preventDefault()
 
-                    $.post( $(form2).attr("action"),
-                    $(form2).serializeArray(),
-                    function(info) {
+                        $.post($(form2).attr("action"),
+                            $(form2).serializeArray(),
+                            function(info) {
 
-                        $("#response").empty();
-                        $("#response").html(info);
+                                $("#response").empty();
+                                $("#response").html(info);
 
-                    });
-                }
+                            });
+                    }
+                })
             })
-        })  
         </script>
 
         <!----------------------------------------SERVICES STARTS HERE---------------------------------------->
@@ -598,9 +592,7 @@
             <div id="contactUsContent">
                 <div class="address">
 
-                    <iframe id="gmap_canvas"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.652695491258!2d120.774648150173!3d15.011972389490262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f8e1a0ff9e73%3A0xde5f417558a19af!2sJoseph%20Galang%20Dental%20Clinic!5e0!3m2!1sen!2sph!4v1668075967194!5m2!1sen!2sph"
-                        allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.652695491258!2d120.774648150173!3d15.011972389490262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f8e1a0ff9e73%3A0xde5f417558a19af!2sJoseph%20Galang%20Dental%20Clinic!5e0!3m2!1sen!2sph!4v1668075967194!5m2!1sen!2sph" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <br><br>
                 Address: San Simon, Pampanga <br>

@@ -198,9 +198,11 @@ aside.menu-closed + .side-content {
 
 footer .logo {
   background-color: #fff;
-  color: #1e1e1e;
 }
-
+footer .logo img {
+  max-width: 57px;
+  width: 57px;
+}
 .contacts-wrapper {
   display: flex;
   flex-direction: row;
@@ -216,13 +218,15 @@ footer .logo {
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  background-color: #a35709;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
 }
-
+.logo img {
+  width: 80px;
+  max-width: 80px;
+}
 /* Heading used on h1*/
 
 .top-heading-text {
