@@ -204,7 +204,7 @@ body.viewport-lg {
   right: 100%;
   left: 50%;
   position: fixed;
-  transform: translate(-50%, 10%);
+  transform: translate(-50%, 1%);
   overflow: hidden;
 }
 
