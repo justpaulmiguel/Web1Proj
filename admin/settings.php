@@ -17,7 +17,9 @@ require("./queryHandler/getInformation.php");
 ?>
 
 <main>
-    <h2>Account Details</h2>
+    <div class="settings-section-name">
+        <h2>Account Details</h2>
+    </div>
     <div class="account-details-wrapper">
         <div class="section-content section-content-small">
 
@@ -71,7 +73,9 @@ require("./queryHandler/getInformation.php");
     <?php endif ?>
     </div>
 
-    <h2>Change Password</h2>
+    <div class="settings-section-name">
+        <h2>Change Password</h2>
+    </div>
     <section class="change-password-wrapper">
         <div class="section-content section-content-small">
             <form id="changePassForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

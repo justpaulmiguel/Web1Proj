@@ -1194,3 +1194,7 @@ label.radio-container.label-checked {
   gap: 12px;
   margin-bottom: 12px;
 }
+
+.settings-section-name {
+  margin-top: 24px;
+}
