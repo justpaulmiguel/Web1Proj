@@ -476,7 +476,7 @@ include('php/updateAcceptedState.php');
                             <div id="service1" class="service-wrapper">
 
                                 <!-----------------------------------------Service 1------------------------------------------------>
-                                <img src="home/images/Oral Prophylaxis.jpg"><br>
+                                <img src="home/images/Oral Prophylaxis.jpg" title="Photo by Pavel Danilyuk from Pexels: https://www.pexels.com/photo/man-people-woman-technology-6812523/"><br>
                                 <div class="service-details">
                                     <h3>Oral Prophylaxis (Cleaning)</h3>
                                     <p>
@@ -497,7 +497,7 @@ include('php/updateAcceptedState.php');
                             <div id="service2" class="service-wrapper">
 
                                 <!-----------------------------------------Service 2------------------------------------------------>
-                                <img src="home/images/Dental Fillings.jpg"><br>
+                                <img src="home/images/Dental Fillings.jpg" title="Photo by Karolina Grabowska from Pexels: https://www.pexels.com/photo/close-up-photo-of-a-woman-getting-a-dental-check-up-6627536/"><br>
                                 <div class="service-details">
                                     <h3>The Dental Fillings (Pasta)</h3>
                                     <p>
@@ -518,7 +518,7 @@ include('php/updateAcceptedState.php');
                             <div id="service3" class="service-wrapper">
 
                                 <!-----------------------------------------Service 3------------------------------------------------>
-                                <img src="home/images/Tooth Jacket.jpg"><br>
+                                <img src="home/images/Tooth Jacket.jpg" title="Photo by Andrea Piacquadio from Pexels: https://www.pexels.com/photo/dentist-working-working-on-woman-s-teeth-3779713/"><br>
                                 <div class="service-details">
                                     <h3>Tooth Jacket (Dental Crown)</h3>
                                     <p>
@@ -541,7 +541,7 @@ include('php/updateAcceptedState.php');
                             <div id="service4" class="service-wrapper">
 
                                 <!-----------------------------------------Service 4------------------------------------------------>
-                                <img src="home/images/Wisdom Tooth Extraction.jpg"><br>
+                                <img src="home/images/Wisdom Tooth Extraction.jpg" title="Photo by Anna Shvets from Pexels: https://www.pexels.com/photo/dental-check-up-3845737/"><br>
                                 <div class="service-details">
                                     <h3>Wisdom Tooth Extraction</h3>
                                     <p>
