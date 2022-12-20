@@ -1,5 +1,6 @@
 <?php
 include "php/loginCheck.php";
+include('php/updateAcceptedState.php');
 ?>
 <!DOCTYPE html>
 

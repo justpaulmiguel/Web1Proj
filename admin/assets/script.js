@@ -358,9 +358,10 @@ if (document.querySelector("#search-record-form")) {
       <select name="stateFilters" id="stateFilters">
       <option value="selectState"  disabled>Select a State</option>
       <option selected value="completed">Completed</option>
+      <option value="accepted">Accepted</option>
+      <option value="past">Past</option>
       <option value="pending">Pending</option>
       <option value="declined">Declined</option>
-      <option value="accepted">Accepted</option>
       <option value="cancelled">Cancelled</option>
        </select>
 
