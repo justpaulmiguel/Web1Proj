@@ -8,6 +8,6 @@ $query = "UPDATE
     DATE_ADD(TIMESTAMP(date,time), INTERVAL 1 HOUR) <= NOW()
     ";
 
-require("../php/dbConnect.php");
+require("dbConnect.php");
 mysqli_query($conn, $query);
 mysqli_close($conn);
