@@ -79,12 +79,12 @@ $mostAvailed = getMostAvailed();
 
 
 <main>
-	<h2>
+	<h1>
 		Welcome,<div class="important-text greeting-name"> <?= $_SESSION['fname'] . " " . $_SESSION['lname'] ?></div>
-	</h2>
+	</h1>
 	<br>
 	<br>
-	<h1>Dashboard</h1>
+
 	<div class="section-content appointment-today">
 
 		<?php if (mysqli_num_rows($result) > 0) : ?>
