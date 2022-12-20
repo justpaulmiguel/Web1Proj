@@ -15,9 +15,10 @@ $query = "SELECT branch,
       FROM bookings 
       inner join account_info
       on account_info.account_ID = bookings.account_ID
-      WHERE state='accepted'
-       AND date<='$dateOneWeek' AND  WEEK(date) = WEEK('$dateToday')
-       ORDER BY date ASC,time ASC ";
+      WHERE state='accepted' AND
+	  DATE(date) != DATE(CURDATE()) AND
+      DATE(date) < DATE('$dateOneWeek') AND  WEEK(date) = WEEK(CURDATE())
+       ORDER BY date ASC,TIME(time) ASC ";
 
 
 require('../php/dbConnect.php');
@@ -25,8 +26,8 @@ $result = mysqli_query($conn, $query);
 
 $weekRecords = [];
 if (mysqli_num_rows($result) > 0) {
-    while ($i = mysqli_fetch_assoc($result)) {
-        array_push($weekRecords, $i);
-    }
+	while ($i = mysqli_fetch_assoc($result)) {
+		array_push($weekRecords, $i);
+	}
 }
 $conn->close();

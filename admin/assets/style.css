@@ -981,7 +981,7 @@ input[type="text"].swal2-input {
   color: inherit;
 }
 
-#complete-appointment a:hover {
+a.link:hover {
   color: #ff8303;
 }
 

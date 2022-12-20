@@ -42,7 +42,7 @@ $query = "SELECT
 		   INNER JOIN
 		   account_info on  account_info.account_ID = bookings.account_ID
 		    WHERE state='accepted' AND date=CURDATE()
-			ORDER BY time ASC ";
+			ORDER BY TIME(time) ASC ";
 
 require("../php/dbConnect.php");
 $result = mysqli_query($conn, $query);
@@ -121,7 +121,7 @@ $mostAvailed = getMostAvailed();
 
 									<td>
 										<p><?= $row['contactNo'] ?></p>
-										<a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
+										<a class="link" href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
 
 									</td>
 									<td class="dashboard-number"><?= $row['time']; ?></td>
