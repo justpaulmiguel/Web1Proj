@@ -54,7 +54,7 @@ require("./queryHandler/getInformation.php");
             </div>
 
             <div class="input-wrapper">
-              <label for="inputLName">Email (Not changable):</label>
+              <label for="inputLName">Email (Not Changeable):</label>
               <input type="text" class="no-change" value="<?= $_SESSION['email']    ?>" disabled class="disabled-input account-input" />
             </div>
           </div>
