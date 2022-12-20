@@ -77,8 +77,8 @@ $records = getRecords($query);
 
 
 <main>
-    <h1>History Records</h1>
-    <p>Search our records.</p>
+    <h1>Reports</h1>
+    <p>View and search the reports from our records.</p>
 
     <div class="section-content">
         <h3>Filter By:</h3>

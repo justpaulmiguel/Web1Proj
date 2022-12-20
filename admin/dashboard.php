@@ -68,6 +68,8 @@ $numOfCancelled = getBookingFutureStateCount('cancelled');
 $numOfAccepted = getBookingFutureStateCount('accepted');
 $numOfDeclined = getBookingFutureStateCount('declined');
 $numOfPending = getBookingFutureStateCount('pending');
+$numOfMissed = getBookingFutureStateCount('missed');
+$numOfPast = getBookingFutureStateCount('past');
 
 $totalBookings = getTotalBookings();
 $totalPatients = getTotalPatients();
@@ -249,7 +251,7 @@ $mostAvailed = getMostAvailed();
 	</div>
 
 	<div class="section-content appointment-today">
-		<h2>Reports</h2>
+		<h2>Overview</h2>
 
 		<div class="appointment-records-summary">
 			<div class="dashboard-card">
@@ -288,6 +290,10 @@ $mostAvailed = getMostAvailed();
 				<div class="card-value"><?= $numOfPending ?></div>
 			</div>
 
+			<div class="dashboard-card black-card">
+				<p> Unmarked Past Appointments </p>
+				<div class="card-value"><?= $numOfPast ?></div>
+			</div>
 			<div class="dashboard-card red-card">
 				<p> Declined </p>
 				<div class="card-value"><?= $numOfDeclined ?></div>
@@ -297,6 +303,12 @@ $mostAvailed = getMostAvailed();
 				<p> Cancelled </p>
 				<div class="card-value"><?= $numOfCancelled ?></div>
 			</div>
+
+			<div class="dashboard-card red-card">
+				<p> Missed </p>
+				<div class="card-value"><?= $numOfMissed ?></div>
+			</div>
+
 		</div>
 
 

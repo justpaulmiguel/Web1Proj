@@ -26,7 +26,7 @@
                         inventory
                     </span>
                 </div>
-                Past Records
+                Reports
             </a>
         </li>
         <li>
