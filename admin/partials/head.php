@@ -1,6 +1,6 @@
 <?php
 // Requires session details before accessing admin pages
-// todo might add redirection info
+
 
 
 # CHECKS IF AN ACCOUNT IS ALREADY LOGGED IN
@@ -11,15 +11,10 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESS
     header('Location: ../index.php');
     exit();
 }
-// todo fix later
-// if ($_SESSION["permissionLvl"] !== 2) {
-//     // header("Location: ../users/user.php");
 
-//     echo "<script>alert(" . $_SESSION["permissionLvl"] . ")</script>";
-//     echo $_SESSION["permissionLvl"];
-// }
 
 require_once("../php/functions.php");
+require_once('../php/updateAcceptedState.php');
 ?>
 
 <!DOCTYPE html>

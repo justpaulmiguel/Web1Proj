@@ -57,6 +57,8 @@ if (mysqli_num_rows($result) <= 0) {
 
 mysqli_close($conn);
 
+// Past appointments
+require("./queryHandler/getPastAppointments.php");
 
 // Dashboard Reports
 require("./queryHandler/getDashboardSummary.php");
@@ -87,68 +89,52 @@ $mostAvailed = getMostAvailed();
 
 	<div class="section-content appointment-today">
 
-		<?php if (mysqli_num_rows($result) > 0) : ?>
+		<?php if (count($todaysAppointment) > 0) : ?>
 			<div class="section-header">
 				<h2>Appointments Today</h2>
 				<div class="remaining-wrapper">
 					<span>Remaining Appointments:</span>
 					<div class="remaining-number-wrapper">
-						<span><?= mysqli_num_rows($result); ?></span>
+						<span><?= count($todaysAppointment); ?></span>
 					</div>
 				</div>
 			</div>
-			<form method="post" action="updateDashboard.php" id="complete-appointment">
-				<div class="table-container appointment-today-wrapper">
-					<table>
-						<thead>
-							<tr>
-								<!-- <th>Date</th> -->
-								<th>Account ID</th>
-								<th>Name</th>
-								<th>Contact</th>
-								<th>Appointment Time</th>
-								<th>Branch</th>
-								<th>Type of Service</th>
-								<th>Status</th>
+
+			<div class="table-container appointment-today-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<!-- <th>Date</th> -->
+							<th>Account ID</th>
+							<th>Name</th>
+							<th>Contact</th>
+							<th>Appointment Time</th>
+							<th>Branch</th>
+							<th>Type of Service</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($todaysAppointment as $row) : ?>
+							<tr class="">
+								<!-- <td>< ?= $row['date']; ?></td> -->
+								<td><?= $row['account_ID']; ?></td>
+								<td><?= $row['name']; ?></td>
+
+								<td>
+									<p><?= $row['contactNo'] ?></p>
+									<a class="link" href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
+
+								</td>
+								<td class="dashboard-number"><?= $row['time']; ?></td>
+								<td><?= getBranchName($row['branch']); ?></td>
+								<td><?= getServiceName($row['service']); ?></td>
+
 							</tr>
-						</thead>
-						<tbody>
-							<?php foreach ($todaysAppointment as $row) : ?>
-								<tr class="">
-									<!-- <td>< ?= $row['date']; ?></td> -->
-									<td><?= $row['account_ID']; ?></td>
-									<td><?= $row['name']; ?></td>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
 
-									<td>
-										<p><?= $row['contactNo'] ?></p>
-										<a class="link" href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
-
-									</td>
-									<td class="dashboard-number"><?= $row['time']; ?></td>
-									<td><?= getBranchName($row['branch']); ?></td>
-									<td><?= getServiceName($row['service']); ?></td>
-									<td>
-										<div class="dropdown">
-											<button class="own-btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-												Mark As
-											</button>
-											<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-												<li>
-													<button class='form-btn completed-btn dropdown-item' type=button value='<?= $row['booking_ID'] ?>'>Completed</button>
-
-												</li>
-												<li>
-													<button class='form-btn missed-btn dropdown-item' type=button value='<?= $row['booking_ID'] ?>'>Missed</button>
-												</li>
-											</ul>
-										</div>
-									</td>
-								</tr>
-							<?php endforeach; ?>
-						</tbody>
-					</table>
-				</div>
-			</form>
 		<?php else : ?>
 			<h2>No appointments for today!</h2>
 		<?php endif ?>
@@ -195,6 +181,68 @@ $mostAvailed = getMostAvailed();
 						<?php endforeach; ?>
 					</tbody>
 				</table>
+			</div>
+		<?php endif ?>
+
+	</div>
+
+	<div class="section-content appointment-today">
+		<h2>Past Appointments</h2>
+		<?php require('./queryHandler/weekSched.php') ?>
+		<?php if (count($pastAppointments) == 0) : ?>
+			<h3>No more appointments!</h3>
+		<?php else : ?>
+			<div class="table-container appointment-today-wrapper">
+				<form method="post" action="updateDashboard.php" id="complete-appointment">
+					<table>
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Account ID</th>
+								<th>Name</th>
+								<th>Contact</th>
+								<th>Appointment Time</th>
+								<th>Branch</th>
+								<th>Type of Service</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($pastAppointments as $row) : ?>
+								<tr class="">
+									<td><?= $row['date']; ?></td>
+									<td><?= $row['account_ID']; ?></td>
+									<td><?= $row['name']; ?></td>
+
+									<td>
+										<p><?= $row['contactNo'] ?></p>
+										<a class="link" href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
+
+									</td>
+									<td class="dashboard-number"><?= $row['time']; ?></td>
+									<td><?= getBranchName($row['branch']); ?></td>
+									<td><?= getServiceName($row['service']); ?></td>
+									<td>
+										<div class="dropdown">
+											<button class="own-btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+												Mark As
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+												<li>
+													<button class='form-btn completed-btn dropdown-item' type=button value='<?= $row['booking_ID'] ?>'>Completed</button>
+
+												</li>
+												<li>
+													<button class='form-btn missed-btn dropdown-item' type=button value='<?= $row['booking_ID'] ?>'>Missed</button>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				</form>
 			</div>
 		<?php endif ?>
 

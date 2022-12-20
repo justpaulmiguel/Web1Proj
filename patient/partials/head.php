@@ -10,6 +10,8 @@ if ($_SESSION["permissionLvl"] > 0) {
     exit();
 }
 require("../php/functions.php");
+require_once('../php/updateAcceptedState.php');
+
 ?>
 
 <!DOCTYPE html>

@@ -17,7 +17,7 @@ if (isset($_REQUEST['completed'])) {
 	$result2 = mysqli_query($conn, $query2);
 	mysqli_query($conn, $query2);
 	mysqli_close($conn);
-	$_SESSION['flash_message'] = "Update Successful. Appointment is cancelled.";
+	$_SESSION['flash_message'] = "Update Successful. the appointment is missed.";
 } else {
 	$_SESSION['flash_message'] = "Update Unsucessful";
 }
