@@ -75,7 +75,7 @@ CREATE TABLE `bookings` (
   `service` enum('clean','pasta','d_crown','wisdom') NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `state` enum('pending','accepted','past','completed','declined','cancelled') NOT NULL,
+  `state` enum('pending','accepted','past','completed','declined','cancelled','missed') NOT NULL,
   `branch` enum('s_simon','mexico') NOT NULL,
   `note` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
