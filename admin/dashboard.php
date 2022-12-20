@@ -171,7 +171,7 @@ $mostAvailed = getMostAvailed();
 								<td><?= $row['name']; ?></td>
 
 								<td>
-									<p><?= $row['contactNo'] ?></p>
+									<p>0<?= $row['contactNo'] ?></p>
 									<a class="link" href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
 
 								</td>
@@ -217,7 +217,7 @@ $mostAvailed = getMostAvailed();
 									<td><?= $row['name']; ?></td>
 
 									<td>
-										<p><?= $row['contactNo'] ?></p>
+										<p>0<?= $row['contactNo'] ?></p>
 										<a class="link" href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
 
 									</td>
