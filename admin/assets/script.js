@@ -180,7 +180,7 @@ if (document.querySelector("#patient-requests-form")) {
     btn.addEventListener("click", () => {
       Swal.fire({
         title: "Decline Confirmation",
-        text: `Do you want to decline this appointments`,
+        text: `Do you want to decline this appointment?`,
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: YES_CONFIRM_BTN_COLOR,
