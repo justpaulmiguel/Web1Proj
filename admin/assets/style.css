@@ -1191,11 +1191,16 @@ label.radio-container.label-checked {
 
 .req-btn-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   gap: 12px;
   margin-bottom: 12px;
 }
 
+@media screen and (max-width: 1000px) {
+  .req-btn-container {
+    flex-flow: row wrap;
+  }
+}
 .settings-section-name {
   margin-top: 24px;
 }
