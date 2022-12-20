@@ -362,6 +362,7 @@ if (document.querySelector("#search-record-form")) {
       <option value="past">Past</option>
       <option value="pending">Pending</option>
       <option value="declined">Declined</option>
+      <option value="missed">Missed</option>
       <option value="cancelled">Cancelled</option>
        </select>
 

@@ -13,7 +13,7 @@ if (isset($_REQUEST['completed'])) {
 } else if (isset($_REQUEST['missed'])) {
 
 	$bookID1 = $_POST["missed"];
-	$query2 = "UPDATE `bookings` SET `state` = 'cancelled', `note` = 'Did not show up' WHERE booking_ID='$bookID1'";
+	$query2 = "UPDATE `bookings` SET `state` = 'missed', `note` = 'Did not show up' WHERE booking_ID='$bookID1'";
 	$result2 = mysqli_query($conn, $query2);
 	mysqli_query($conn, $query2);
 	mysqli_close($conn);

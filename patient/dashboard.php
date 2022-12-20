@@ -153,7 +153,7 @@ $fname = $value['fname'];
 
   $query = "SELECT * FROM bookings
   WHERE bookings.account_ID='$id'
-   AND bookings.state in ('completed','declined','cancelled','pending')
+   AND bookings.state in ('completed','declined','cancelled','pending','missed')
   ORDER BY bookings.date DESC, bookings.time ASC
   LIMIT 10";
   $result = mysqli_query($conn, $query);
