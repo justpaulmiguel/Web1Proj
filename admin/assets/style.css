@@ -416,7 +416,10 @@ table tr:hover {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-
+/* dashboard */
+.greeting-name {
+  font-size: 3rem;
+}
 /* dashboard btns */
 #complete-appointment .completed-btn:hover {
   color: blue;
