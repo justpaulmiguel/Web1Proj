@@ -126,7 +126,7 @@ include "php/loginCheck.php";
 
 
     <!----------------------------------------HOME STARTS HERE---------------------------------------->
-    <div onclick="sidebarf2()">
+    <div>
         <div class="row" id="home">
             <div id="homePage" class="container-fluid">
                 <div class="titleHome">
