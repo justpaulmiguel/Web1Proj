@@ -9,7 +9,7 @@ if (isset($_REQUEST['completed'])) {
 	$result2 = mysqli_query($conn, $query2);
 	mysqli_query($conn, $query2);
 	mysqli_close($conn);
-	$_SESSION['flash_message'] = "Update Successful. Appointment is complete.";
+	$_SESSION['flash_message'] = "Update Successful. Appointment is marked as complete.";
 } else if (isset($_REQUEST['missed'])) {
 
 	$bookID1 = $_POST["missed"];
@@ -17,7 +17,7 @@ if (isset($_REQUEST['completed'])) {
 	$result2 = mysqli_query($conn, $query2);
 	mysqli_query($conn, $query2);
 	mysqli_close($conn);
-	$_SESSION['flash_message'] = "Update Successful. the appointment is missed.";
+	$_SESSION['flash_message'] = "Update Successful. the appointment is marked as missed.";
 } else {
 	$_SESSION['flash_message'] = "Update Unsucessful";
 }
