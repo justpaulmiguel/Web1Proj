@@ -1,5 +1,5 @@
 <?php
-$title = 'Past Records';
+$title = 'Reports';
 require("./partials/head.php");
 
 // functions on record queries

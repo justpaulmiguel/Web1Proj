@@ -20,7 +20,7 @@
             </a>
         </li>
         <li>
-            <a href="./records.php">
+            <a href="./reports.php">
                 <div class="icon-box">
                     <span class="material-icons">
                         inventory
