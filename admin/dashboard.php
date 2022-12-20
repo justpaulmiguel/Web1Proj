@@ -148,7 +148,7 @@ $mostAvailed = getMostAvailed();
 		<h2>Upcoming Appointments</h2>
 		<?php require('./queryHandler/weekSched.php') ?>
 		<?php if (count($weekRecords) == 0) : ?>
-			<h3>No more appointments!</h3>
+			<h3>No more appointments for the week!</h3>
 		<?php else : ?>
 			<div class="table-container">
 				<table>
