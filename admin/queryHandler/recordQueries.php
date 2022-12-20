@@ -24,6 +24,8 @@ function getCountQuery($type, $value)
 
     if ($type == 'email') {
         return sprintf("SELECT COUNT(*) FROM account_info WHERE email = '%s'", $value);
+    } else if ($type = 'id') {
+        return sprintf("SELECT COUNT(*) FROM account_info WHERE account_ID = '%s'", $value);
     } else {
         $conditional = $type == 'date' ? '<=' : '=';
         return sprintf("SELECT COUNT(*) FROM bookings WHERE %s %s '%s'", $type, $conditional, $value);
@@ -98,6 +100,22 @@ function getQuery($type, $limit, $offset, $value, $sort)
             '%b %d %Y',
             '%l:%i %p',
             $type,
+            $value,
+            $sortMode,
+            $sortMode
+        );
+    } else if ($type == 'id') {
+        return sprintf(
+            "SELECT DATE_FORMAT(date,'%s') as date, TIME_FORMAT(time, '%s') as time, 
+        state, lname,fname,service,bookings.account_ID,booking_ID,branch,note
+         FROM bookings
+        INNER JOIN account_info
+        ON account_info.account_ID = bookings.account_ID
+        WHERE account_info.account_ID = '%s'
+        ORDER BY date %s, time %s
+        LIMIT $limit OFFSET $offset",
+            '%b %d %Y',
+            '%l:%i %p',
             $value,
             $sortMode,
             $sortMode

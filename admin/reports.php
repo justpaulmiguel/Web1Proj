@@ -33,6 +33,10 @@ if ($filterType == 'date') {
     $specificFilter = $_GET['emailFilter'];
     $filterName = 'emailFilter';
     $searchTitle .= "'$specificFilter' Email";
+} else if ($filterType == 'id') {
+    $specificFilter = $_GET['idFilter'];
+    $filterName = 'idFilter';
+    $searchTitle .= "Account ID '$specificFilter' ";
 } else if ($filterType == 'service') {
     $specificFilter = $_GET['serviceFilters'];
     $filterName = 'serviceFilters';
@@ -89,6 +93,7 @@ $records = getRecords($query);
                 <option value="date" selected> Date</option>
                 <option value="state">Appointment Status</option>
                 <option value="branch">Branch</option>
+                <option value="id">Account ID</option>
                 <option value="email">Email</option>
                 <option value="service">Service</option>
             </select>

@@ -387,6 +387,12 @@ if (document.querySelector("#search-record-form")) {
       <option value="wisdom">Wisdom Tooth Extraction</option>
   </select>
       `;
+    } else if (val === "id") {
+      element = `
+      <input type="number"
+      onkeypress="return /[0-9]/i.test(event.key)" 
+      placeholder="account id" name="idFilter" id="idFilter" required>
+      `;
     } else {
       element = `
       <input type="email" placeholder="email" name="emailFilter" id="emailFilter" required>
