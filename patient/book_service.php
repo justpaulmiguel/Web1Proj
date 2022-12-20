@@ -38,7 +38,7 @@ unset($_SESSION["time"]);
       <div id="servicesTitle" class="heading-date">Services</div>
       <div id="service1" class="service-wrapper">
         <!-----------------------------------------Service 1------------------------------------------------>
-        <img src="../home/images/Oral Prophylaxis.jpg" />
+        <img src="../home/images/Oral Prophylaxis.jpg" title="Photo by Pavel Danilyuk from Pexels: https://www.pexels.com/photo/man-people-woman-technology-6812523/" />
         <div class="service-details">
           <h3>
             Oral Prophylaxis (cleaning)
@@ -65,7 +65,7 @@ unset($_SESSION["time"]);
       </div>
       <div id="service2" class="service-wrapper">
         <!-----------------------------------------Service 2------------------------------------------------>
-        <img src="../home/images/Dental Fillings.jpg" />
+        <img src="../home/images/Dental Fillings.jpg" title="Photo by Karolina Grabowska from Pexels: https://www.pexels.com/photo/close-up-photo-of-a-woman-getting-a-dental-check-up-6627536/" />
         <div class="service-details">
           <h3>
             Dental Fillings (Pasta)
@@ -88,7 +88,7 @@ unset($_SESSION["time"]);
       </div>
       <div id="service3" class="service-wrapper">
         <!-----------------------------------------Service 3------------------------------------------------>
-        <img src="../home/images/Tooth Jacket.jpg" />
+        <img src="../home/images/Tooth Jacket.jpg" title="Photo by Andrea Piacquadio from Pexels: https://www.pexels.com/photo/dentist-working-working-on-woman-s-teeth-3779713/" />
         <div class="service-details">
           <h3>
             Tooth Jacket (Dental Crown)
@@ -112,7 +112,7 @@ unset($_SESSION["time"]);
       </div>
       <div id="service4" class="service-wrapper">
         <!-----------------------------------------Service 4------------------------------------------------>
-        <img src="../home/images/Wisdom Tooth Extraction.jpg" />
+        <img src="../home/images/Wisdom Tooth Extraction.jpg" title="Photo by Anna Shvets from Pexels: https://www.pexels.com/photo/dental-check-up-3845737/" />
         <div class="service-details">
           <h3>
             Wisdom Tooth Extraction
