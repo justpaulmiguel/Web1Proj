@@ -184,7 +184,7 @@ $mostAvailed = getMostAvailed();
 
 								<td>
 									<p><?= $row['contactNo'] ?></p>
-									<a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
+									<a class="link" href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>
 
 								</td>
 								<td class="dashboard-number"><?= $row['time']; ?></td>

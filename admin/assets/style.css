@@ -947,7 +947,7 @@ input[type="text"].swal2-input {
 .section-content tbody td {
   border: none;
   padding: 0 10px;
-  text-align: center;
+  text-align: left;
 }
 
 /* Footer wave design */
@@ -984,7 +984,9 @@ input[type="text"].swal2-input {
 a.link:hover {
   color: #ff8303;
 }
-
+a.link {
+  color: #a35709;
+}
 /* dashboard form btn */
 
 #complete-appointment .form-btn {
