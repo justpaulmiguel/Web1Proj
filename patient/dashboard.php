@@ -226,7 +226,13 @@ $fname = $value['fname'];
                 <td><?= $branch ?></td>
                 <td><?= $service ?></td>
                 <td><?= $state ?></td>
-                <td><?= $note ?></td>
+                <td>
+                  <?php if ($note != '') : ?>
+                    <button class="show-note-btn" data-note-value="<?= $note ?>">Show Note</button>
+                  <?php else : ?>
+                    ----
+                  <?php endif ?>
+                </td>
               </tr>
             <?php endforeach; ?>
           </table>

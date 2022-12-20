@@ -90,6 +90,22 @@ if (document.querySelector("#signout-btn")) {
   activeTab.classList.add("active");
 })();
 
+// show note btn functionality
+if (document.querySelector(".show-note-btn")) {
+  const btns = [...document.querySelectorAll(".show-note-btn")];
+  btns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      Swal.fire({
+        title: "Note",
+        text: btn.dataset.noteValue,
+        icon: "info",
+        confirmButtonColor: YES_CONFIRM_BTN_COLOR,
+        cancelButtonColor: NO_CONFIRM_BTN_COLOR,
+      });
+    });
+  });
+}
+
 // Cancel Booking
 function cancelBook() {
   Swal.fire({

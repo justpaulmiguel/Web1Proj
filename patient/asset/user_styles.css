@@ -372,6 +372,21 @@ table tr:hover {
   transition: all 0.2s ease-in-out;
   font-family: "Poppins", sans-serif;
 }
+.show-note-btn {
+  padding: 5px 0;
+  width: 100px;
+  background-color: transparent;
+  border: 2px solid #a35709;
+  color: #a35709;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.7rem;
+}
+.show-note-btn:hover {
+  background-color: #a35709;
+  color: white;
+}
 
 /* * Generic btn transition */
 
