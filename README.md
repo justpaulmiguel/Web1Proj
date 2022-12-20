@@ -15,13 +15,13 @@ Git clone the repo. Create new database named `jgdc_db`. Import the data from th
 
 ## Superuser (Admin) Account
 
-email: `test2@gmail.com`
-pasword : `aA345678`
+email: `adminPassword0@gmail.com`
+pasword : `adminPassword0`
 
 ## Patient Account
 
-email: `carmelomelvincent2@gmail.com`
-password: `aA345678`
+email: `userPassword0@gmail.com`
+password: `userPassword0`
 
 ## Features to be implemeted
 
