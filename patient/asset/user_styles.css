@@ -44,8 +44,6 @@ body {
 /* Grid Structure of the page.
  */
 
-/* TODO Change this to mobile first. */
-
 main {
   padding: 25px;
   padding-top: 100px;
@@ -456,10 +454,6 @@ hr {
     rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   max-width: 1000px;
 }
-
-/* .subheading-date {
-  text-align: center;
-} */
 
 .schedule-details-wrapper {
   display: flex;
