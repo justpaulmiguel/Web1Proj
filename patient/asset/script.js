@@ -1,3 +1,10 @@
+/**
+ *  Sweet alert library must be loaded first in order for most of the script
+ * to work.
+ *
+ * Requires latest version of browsers
+ *  */
+
 const YES_CONFIRM_BTN_COLOR = "#a35709";
 const NO_CONFIRM_BTN_COLOR = "gray";
 const DEFAULT_CONFIRM_BTN_COLOR = "#c85022";
@@ -106,7 +113,10 @@ if (document.querySelector(".show-note-btn")) {
   });
 }
 
-// Cancel Booking
+/**
+ * dashboard.php Cancel button modal
+ * fires a modal to confirm cancellation
+ */
 function cancelBook() {
   Swal.fire({
     title: "Are you sure?",
@@ -122,7 +132,8 @@ function cancelBook() {
     }
   });
 }
-// My information  Logic
+
+// settings.php Account Details  Logic
 if (document.querySelector("#edit-account-form")) {
   // saves the values of the input first before editing.
 
@@ -168,6 +179,7 @@ if (document.querySelector("#edit-account-form")) {
       element.disabled = true;
     });
   });
+
   submitBtn.addEventListener("click", () => {
     if (
       formDOM.inputFName.value.trim().length === 0 ||
@@ -210,8 +222,10 @@ if (document.querySelector("#edit-account-form")) {
   });
 }
 
-// input validation
-
+/**
+ * Logic for settings.php changing of passwords
+ * Adds input validation
+ */
 if (
   document.querySelector("#inputConfirmNewPassword") &&
   document.querySelector("#inputNewPassword")
@@ -302,6 +316,11 @@ if (
     currentPassNotif.textContent = "";
   });
 }
+
+/**
+ * Contact Number input validation
+ *
+ */
 
 if (document.querySelector("#inputContactNumber")) {
   const contactNum = document.querySelector("#inputContactNumber");

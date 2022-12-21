@@ -1,5 +1,10 @@
-// Sweet alert library must be loaded first
-
+/**
+ *  Sweet alert library must be loaded first in order for most of the script
+ * to work.
+ *
+ * Requires latest version of browsers
+ *  */
+// color constants
 const YES_CONFIRM_BTN_COLOR = "#a35709";
 const NO_CONFIRM_BTN_COLOR = "gray";
 const DEFAULT_CONFIRM_BTN_COLOR = "#c85022";
@@ -57,7 +62,7 @@ const DEFAULT_CONFIRM_BTN_COLOR = "#c85022";
   window.addEventListener("load", adjustSidebar);
 })();
 
-// My information  Logic
+// settings.php Account Details  Logic
 if (document.querySelector("#edit-account-form")) {
   // saves the values of the input first before editing.
 
@@ -145,7 +150,9 @@ if (document.querySelector("#edit-account-form")) {
   });
 }
 
-// request schedule script
+/**
+ * Requests.php request schedule functionality
+ */
 if (document.querySelector("#patient-requests-form")) {
   const form = document.querySelector("#patient-requests-form");
   const acceptBtns = [...form.querySelectorAll(".accept-btn")];
@@ -173,6 +180,10 @@ if (document.querySelector("#patient-requests-form")) {
     });
   });
 
+  /**
+   *
+   * Decline appointment button logic
+   */
   const declinedBtns = [...form.querySelectorAll(".decline-btn")];
   declinedBtns.forEach((btn) => {
     const value = btn.value;
@@ -188,6 +199,7 @@ if (document.querySelector("#patient-requests-form")) {
         confirmButtonText: "Yes",
       }).then((result) => {
         if (result.isConfirmed) {
+          // gets the text reason for declining
           Swal.fire({
             title: "Declining Reason",
             icon: "info",
@@ -201,6 +213,7 @@ if (document.querySelector("#patient-requests-form")) {
             showLoaderOnConfirm: true,
             preConfirm: (declineText) => {
               if (declineText.trim().length === 0) {
+                // ends if no input was submitted
                 Swal.fire({
                   title: "Error",
                   icon: "error",
@@ -209,6 +222,7 @@ if (document.querySelector("#patient-requests-form")) {
                 });
                 return false;
               }
+              // inserts missed value to the form
               const declinedInput = document.createElement("input");
               declinedInput.setAttribute("name", "missed");
               declinedInput.setAttribute("value", value);
@@ -222,6 +236,7 @@ if (document.querySelector("#patient-requests-form")) {
               form.append(input);
             },
           }).then((result) => {
+            // submits the form
             if (result.isConfirmed) {
               form.submit();
             }
@@ -236,7 +251,9 @@ if (document.querySelector("#patient-requests-form")) {
   });
 }
 
-// Signout modal
+/**
+ * Logic for the Sign Out button
+ */
 if (document.querySelector("#signout-btn")) {
   const logoutBtn = document.querySelector("#signout-btn");
 
@@ -257,10 +274,13 @@ if (document.querySelector("#signout-btn")) {
   });
 }
 
-// Employee page
+/**
+ * Logic for the employees.php
+ */
 // Add new Employee logic
 if (document.querySelector("#add-employee-btn")) {
   document.querySelector("#add-employee-btn").addEventListener("click", () => {
+    // Gets the email of the employee
     Swal.fire({
       icon: "question",
       title: "Add a new employee",
@@ -284,6 +304,7 @@ if (document.querySelector("#add-employee-btn")) {
         if (!email.value || !email.validity.valid) {
           Swal.showValidationMessage(`Please enter proper email!`);
         } else {
+          // Submits the form
           form.submit();
         }
       },
@@ -296,6 +317,7 @@ if (document.querySelector("#remove-employee-btn")) {
   document
     .querySelector("#remove-employee-btn")
     .addEventListener("click", () => {
+      // Gets the email of the employee
       Swal.fire({
         icon: "warning",
         title: "Remove an employee",
@@ -325,6 +347,8 @@ if (document.querySelector("#remove-employee-btn")) {
       });
     });
 }
+
+// Formats the date today
 const getTodayDate = () => {
   const now = new Date();
   const day = ("0" + now.getDate()).slice(-2);
@@ -333,9 +357,11 @@ const getTodayDate = () => {
   return now.getFullYear() + "-" + month + "-" + day;
 };
 
-// Records Logic
+/**
+ * Logic for the Reports records section
+ *
+ * */
 if (document.querySelector("#search-record-form")) {
-  console.log("first");
   const form = document.querySelector("#search-record-form");
   const select = form.querySelector("#filter-select");
 
@@ -398,7 +424,7 @@ if (document.querySelector("#search-record-form")) {
       <input type="email" placeholder="email" name="emailFilter" id="emailFilter" required>
       `;
     }
-    // clears all the content
+    // clears all the content of an element
     insertedNode.replaceChildren();
     // inserts new content
     insertedNode.innerHTML = element;
@@ -410,12 +436,19 @@ if (document.querySelector("#search-record-form")) {
   // works by comparing last url name to last link url
   const sidebarLinks = [...document.querySelectorAll(".options-bar a")];
   const pageName = window.location.href.split("/").pop();
+  // Checks each section link if it includes the name in the url
   const activeTab = sidebarLinks.find((a) => {
     return pageName.includes(a.href.split("/").pop());
   });
   activeTab.classList.add("active");
 })();
 
+/**
+ * Logic for the show note button in records
+ * Adds on click listener and gets the note
+ *  value included in the dataset of the button element
+ *
+ */
 if (document.querySelector(".show-note-btn")) {
   const btns = [...document.querySelectorAll(".show-note-btn")];
   btns.forEach((btn) => {
@@ -431,7 +464,10 @@ if (document.querySelector(".show-note-btn")) {
   });
 }
 
-// input validation
+/**
+ * Logic for settings.php changing of passwords
+ * Adds input validation
+ */
 
 if (
   document.querySelector("#inputConfirmNewPassword") &&
@@ -456,6 +492,8 @@ if (
     "X Must contain at least 8 characters with number and uppercase";
 
   const submitBtn = form.querySelector(".submit-btn");
+
+  // function that checks if all values are in correct format and new passwords are matched
   const isAllValid = () =>
     newPass.validity.valid &&
     confirmPass.validity.valid &&
@@ -524,12 +562,18 @@ if (
   });
 }
 
+/**
+ * Contact Number input validation
+ *
+ */
+
 if (document.querySelector("#inputContactNumber")) {
   const contactNum = document.querySelector("#inputContactNumber");
   const notif = document.querySelector("#inputContactNumber+.input-notif-msg");
   const submitBtn = document.querySelector("#submit-account-details-btn");
-
+  // regex pattern that checks if it only uses digits
   const letters = /^\d+$/;
+
   contactNum.addEventListener("input", () => {
     if (contactNum.value.match(letters) && contactNum.value.length == 10) {
       notif.textContent = "";
@@ -549,6 +593,9 @@ if (document.querySelector("#inputContactNumber")) {
   });
 }
 
+/**
+ * Emulates a radio input functionality on radio-container class elements.
+ */
 if (document.querySelector(".radio-container")) {
   const labels = document.querySelectorAll(".radio-container");
   labels.forEach((label) => {
