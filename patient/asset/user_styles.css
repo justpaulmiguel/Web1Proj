@@ -647,6 +647,7 @@ hr {
 
 .service-wrapper p {
   display: inline-block;
+  text-align: justify;
 }
 .service-wrapper img {
   max-width: 100%;

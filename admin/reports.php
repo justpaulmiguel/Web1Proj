@@ -40,7 +40,7 @@ if ($filterType == 'date') {
 } else if ($filterType == 'service') {
     $specificFilter = $_GET['serviceFilters'];
     $filterName = 'serviceFilters';
-    $searchTitle .= getServiceName($specificFilter) . "Service";
+    $searchTitle .= getServiceName($specificFilter) . " Service";
 }
 
 // get number of pages

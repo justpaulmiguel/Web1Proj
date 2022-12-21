@@ -41,7 +41,7 @@ unset($_SESSION["time"]);
         <img src="../home/images/Oral Prophylaxis.jpg" title="Photo by Pavel Danilyuk from Pexels: https://www.pexels.com/photo/man-people-woman-technology-6812523/" />
         <div class="service-details">
           <h3>
-            Oral Prophylaxis (cleaning)
+            Oral Prophylaxis (Cleaning)
           </h3>
           <p>
             It is called to the procedure done for the teeth

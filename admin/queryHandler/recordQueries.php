@@ -24,7 +24,7 @@ function getCountQuery($type, $value)
 
     if ($type == 'email') {
         return sprintf("SELECT COUNT(*) FROM account_info WHERE email = '%s'", $value);
-    } else if ($type = 'id') {
+    } else if ($type == 'id') {
         return sprintf("SELECT COUNT(*) FROM account_info WHERE account_ID = '%s'", $value);
     } else {
         $conditional = $type == 'date' ? '<=' : '=';
