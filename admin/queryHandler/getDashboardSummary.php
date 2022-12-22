@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Gets the most availed services of the clinic
+ * returns an ordered array
+ */
 function getMostAvailed()
 {
     require("../php/dbConnect.php");
@@ -26,6 +30,7 @@ function getMostAvailed()
     return $val;
 }
 
+// Fetches the count of the bookings
 function getTotalBookings()
 {
     require("../php/dbConnect.php");
@@ -47,6 +52,8 @@ function getTotalBookings()
     mysqli_close($conn);
     return $val;
 }
+
+// Fetches the total patients (permissionLvl == 0)
 function getTotalPatients()
 {
     require("../php/dbConnect.php");
@@ -69,6 +76,7 @@ function getTotalPatients()
     return $val;
 }
 
+// Fetches the total count of employeees (permissionLvl >0)
 function getTotalEmployees()
 {
     require("../php/dbConnect.php");
@@ -94,7 +102,7 @@ function getTotalEmployees()
 
 
 
-
+// fetch the total counts of the state for all dates before the current date. Accepts a string which is the name of the state.
 function getBookingStateCount($state)
 {
     require("../php/dbConnect.php");
@@ -117,6 +125,7 @@ function getBookingStateCount($state)
     return $val;
 }
 
+// fetch the total counts of the state . Accepts a string which is the name of the state.
 function getBookingFutureStateCount($state)
 {
     require("../php/dbConnect.php");

@@ -1,4 +1,5 @@
 <?php
+// Handles the database connection
     $server = "localhost";
     $unmae = "root";
     $dbpass = "";
@@ -10,4 +11,3 @@
     if(!$conn) {
         die("connection error");
     }
-?>

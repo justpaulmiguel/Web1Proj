@@ -2,7 +2,7 @@
 $title = 'Dashboard';
 require("partials/head.php");
 
-
+// checks if there is a message 
 if (isset($_SESSION['flash_message'])) {
 	$message = $_SESSION['flash_message'];
 	echo showModalSuccess($message);
@@ -11,7 +11,8 @@ if (isset($_SESSION['flash_message'])) {
 
 $email = $_SESSION["email"];
 
-if (!isset($_SESSION['lname']) && !isset($_SESSION['lname'])) {
+// Saves the name of the user
+if (!isset($_SESSION['lname']) && !isset($_SESSION['fname'])) {
 	require("../php/dbConnect.php");
 
 	$query = "SELECT account_ID, fname,lname FROM account_info WHERE email='$email'";
@@ -24,7 +25,7 @@ if (!isset($_SESSION['lname']) && !isset($_SESSION['lname'])) {
 }
 
 
-
+// Fetches today's Appointments
 $date = date('Y-m-d');
 $query = "SELECT 
 		booking_ID,
@@ -57,10 +58,10 @@ if (mysqli_num_rows($result) <= 0) {
 
 mysqli_close($conn);
 
-// Past appointments
+// Fetch Past appointments
 require("./queryHandler/getPastAppointments.php");
 
-// Dashboard Reports
+// Fetch Dashboard Overview Functions
 require("./queryHandler/getDashboardSummary.php");
 
 $numOfCompleted = getBookingStateCount('completed');

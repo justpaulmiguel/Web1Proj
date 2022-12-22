@@ -1,4 +1,8 @@
 <?php
+
+
+// Requires session details before accessing patient pages
+
 //CHECKS FOR LOGIN SESSION
 session_start();
 if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESSION["permissionLvl"])) {
@@ -9,7 +13,12 @@ if ($_SESSION["permissionLvl"] > 0) {
     header("Location: ../admin/dashboard.php");
     exit();
 }
+
+// Adds helper functions
+
 require("../php/functions.php");
+// Script that runs every refresh, updates all accepted state into past state in  bookings table  that is 1 hour after the initial time.
+
 require_once('../php/updateAcceptedState.php');
 
 ?>
@@ -34,7 +43,7 @@ require_once('../php/updateAcceptedState.php');
     <script src="bootstrap\bootstrap.min.js"></script>
     <!-- Asset CSS -->
     <link rel="stylesheet" href="asset/user_styles.css" />
-    <!-- Modal Library -->
+    <!-- Sweet Alert Modal Library -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

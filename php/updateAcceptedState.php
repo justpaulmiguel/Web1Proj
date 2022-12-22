@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Script that gets run every refresh of the site.
+ * What it does is getting all accepted state where the date and time 
+ *  is less than
+ * today's date, and marking them all with past state.
+ */
 $query = "UPDATE 
     bookings
    SET state='past'

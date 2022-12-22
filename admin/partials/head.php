@@ -1,8 +1,8 @@
 <?php
+
+
+
 // Requires session details before accessing admin pages
-
-
-
 # CHECKS IF AN ACCOUNT IS ALREADY LOGGED IN
 session_start();
 if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESSION["permissionLvl"])) {
@@ -12,8 +12,9 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["password"]) && !isset($_SESS
     exit();
 }
 
-
+// Adds helper functions
 require_once("../php/functions.php");
+// Script that runs every refresh, updates all accepted state into past state in  bookings table  that is 1 hour after the initial time.
 require_once('../php/updateAcceptedState.php');
 ?>
 
@@ -37,7 +38,7 @@ require_once('../php/updateAcceptedState.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- css styles -->
     <link rel="stylesheet" href="assets/style.css">
-    <!-- Modal Library -->
+    <!-- Sweet Alert Modal Library -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

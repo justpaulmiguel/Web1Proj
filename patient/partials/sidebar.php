@@ -37,4 +37,5 @@
             <span>Logout</span>
         </div>
     </div>
+    <!-- end sidebar -->
 </aside>
